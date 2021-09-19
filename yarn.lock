@@ -1566,6 +1566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eva-design/processor@npm:^2.0.0":
 "@expo/config-plugins@npm:2.0.4":
   version: 2.0.4
   resolution: "@expo/config-plugins@npm:2.0.4"

@@ -1,34 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, Button } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
+import { Text, Button } from '@ui-kitten/components';
+import PageLayout from '../components/PageLayout';
 
 const Home = (props) => {
   const { navigation } = props;
 
   return (
     <>
-      <SafeAreaView style={styles.safeView}>
-        <Text>Home Page</Text>
+      <PageLayout>
+        <Text category='h1' style={styles.header}>
+          Home
+        </Text>
 
-        <Button
-          style={styles.button}
-          title='About'
-          onPress={() => navigation.navigate('About')}
-        />
-      </SafeAreaView>
+        <Button onPress={() => navigation.navigate('About')}>About</Button>
+      </PageLayout>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  safeView: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  button: {
-    backgroundColor: 'blue',
+  header: {
+    marginTop: 10,
+    marginBottom: 20,
   },
 });
 

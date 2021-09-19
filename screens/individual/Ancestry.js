@@ -1,23 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
+import { Text } from '@ui-kitten/components';
+import PageLayout from '../components/PageLayout';
 
 const Ancestry = () => {
   return (
     <>
-      <SafeAreaView style={styles.safeView}>
-        <Text>Ancestry Page</Text>
-      </SafeAreaView>
+      <PageLayout>
+        <Text category='h1' style={styles.header}>
+          Ancestry
+        </Text>
+      </PageLayout>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  safeView: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingLeft: 10,
-    paddingRight: 10,
+  header: {
+    marginTop: 10,
+    marginBottom: 20,
   },
 });
 

@@ -3,12 +3,14 @@ import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import PageLayout from '../../components/PageLayout';
 
-const Age = () => {
+const Age = (props) => {
+  const { route } = props;
+  const { name } = route.params;
   return (
     <>
       <PageLayout>
         <Text category='h1' style={styles.header}>
-          Age
+          {name} Age
         </Text>
       </PageLayout>
     </>

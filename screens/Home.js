@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Text, Button } from '@ui-kitten/components';
+import { Layout, Text, Button } from '@ui-kitten/components';
 import PageLayout from '../components/PageLayout';
 
 const Home = (props) => {
@@ -13,7 +13,31 @@ const Home = (props) => {
           Home
         </Text>
 
-        <Button onPress={() => navigation.navigate('About')}>About</Button>
+        <Layout style={styles.btnLayout}>
+          <Button
+            appearance='outline'
+            status='primary'
+            style={styles.btn}
+            onPress={() => navigation.navigate('About')}>
+            About
+          </Button>
+        </Layout>
+        <Layout style={styles.btnLayout}>
+          <Button
+            appearance='outline'
+            status='primary'
+            style={styles.btn}
+            onPress={() => navigation.navigate('Age', { name: 'stephan' })}>
+            Stephan Age
+          </Button>
+          <Button
+            appearance='outline'
+            status='primary'
+            style={styles.btn}
+            onPress={() => navigation.navigate('Age', { name: 'laura' })}>
+            Laura Age
+          </Button>
+        </Layout>
       </PageLayout>
     </>
   );
@@ -22,7 +46,15 @@ const Home = (props) => {
 const styles = StyleSheet.create({
   header: {
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 40,
+  },
+  btn: {
+    marginRight: 5,
+  },
+  btnLayout: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
   },
 });
 

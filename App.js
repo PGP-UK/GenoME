@@ -1,9 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
 
 import Home from './screens/Home';
 import About from './screens/About';
@@ -39,6 +41,11 @@ const App = () => {
           <Stack.Screen
             name='Ancestry'
             component={Ancestry}
+            initialParams={{ name: 'Stephan' }}
+          />
+          <Stack.Screen
+            name='Age'
+            component={Age}
             initialParams={{ name: 'Stephan' }}
           />
           <Stack.Screen

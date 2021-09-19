@@ -1,9 +1,11 @@
 import React from 'react';
+import { Text } from 'react-native';
+
 
 const Home = () => {
   return (
     <>
-      <p>hello my peoples</p>
+      <Text>hello my peoples</Text>
     </>
   )
 }

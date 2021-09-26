@@ -10,12 +10,23 @@ const Home = (props) => {
   return (
     <>
       <PageLayout>
-        <HeaderRow navigation={navigation} />
+        <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
       </PageLayout>
     </>
   );
 };
 
-// const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  headerRow: {
+    marginTop: 20,
+    marginBottom: 25,
+  },
+
+  main_text: {
+    color: '#666E7A',
+    fontSize: 20,
+    marginBottom: 20,
+  },
+});
 
 export default Home;

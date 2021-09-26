@@ -22,11 +22,11 @@ const HeaderText = () => (
 );
 
 const HeaderRow = (props) => {
-  const { navigation } = props;
+  const { navigation, HeaderStyle } = props;
 
   return (
     <Grid>
-      <Section style={styles.headerRow}>
+      <Section style={HeaderStyle}>
         {/* For small screens */}
         <Block xsSize='100%' mdHidden>
           <HeaderText />
@@ -54,10 +54,6 @@ const HeaderRow = (props) => {
 };
 
 const styles = StyleSheet.create({
-  headerRow: {
-    marginTop: 10,
-    marginBottom: 40,
-  },
   header: {
     color: '#63BEE1',
     fontWeight: '400',

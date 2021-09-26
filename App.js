@@ -10,11 +10,13 @@ import AppNavigator from './components/AppNavigator';
 const App = () => {
   return (
     <>
-      <IconRegistry icons={EvaIconsPack} />
-      <ApplicationProvider {...eva} theme={eva.light}>
-        <AppNavigator />
-        <StatusBar style='auto' />
-      </ApplicationProvider>
+      <SafeAreaProvider>
+        <IconRegistry icons={EvaIconsPack} />
+        <ApplicationProvider {...eva} theme={eva.light}>
+          <AppNavigator />
+          <StatusBar style='auto' />
+        </ApplicationProvider>
+      </SafeAreaProvider>
     </>
   );
 };

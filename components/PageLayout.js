@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Layout } from '@ui-kitten/components';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const PageLayout = ({ children }) => {
   return (

@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { Layout } from '@ui-kitten/components';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const PageLayout = ({ children }) => {
   return (
     <SafeAreaView style={styles.safeView}>
-      <Layout style={styles.layout}>{children}</Layout>
+      <ScrollView>
+        <Layout style={styles.layout}>{children}</Layout>
+      </ScrollView>
     </SafeAreaView>
   );
 };

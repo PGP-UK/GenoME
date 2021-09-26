@@ -17,45 +17,49 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          cardStyle: { backgroundColor: '#fff' },
+        }}>
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='About' component={About} />
 
         <Stack.Screen
           name='Variant'
           component={Variant}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
           name='Landing'
           component={Landing}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
 
         <Stack.Screen
           name='Ancestry'
           component={Ancestry}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
           name='Age'
           component={Age}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
           name='Eyes'
           component={Eyes}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
           name='Health'
           component={Health}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
           name='Smoking'
           component={Smoking}
-          initialParams={{ name: 'Stephan' }}
+          initialParams={{ name: 'stephan' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

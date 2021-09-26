@@ -3,12 +3,14 @@ import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import PageLayout from '../../components/PageLayout';
 
-const Landing = () => {
+const Landing = (props) => {
+  const { route } = props;
+  const { name } = route.params;
   return (
     <>
       <PageLayout>
         <Text category='h1' style={styles.header}>
-          Landing
+          {name} Landing
         </Text>
       </PageLayout>
     </>

@@ -8,34 +8,30 @@ const AllAmbassadors = [
     name: 'Stephan',
     hexId: 'uk35C650',
     image: require('../../assets/ambassadors/stephan.gif'),
-    link: '',
     themeColor: '#8CD8C4',
   },
   {
     name: 'Laura',
     hexId: 'uk33D02F',
     image: require('../../assets/ambassadors/laura.gif'),
-    link: '',
     themeColor: '#F6BD4A',
   },
   {
     name: 'Momodou',
     hexId: 'uk481F67',
     image: require('../../assets/ambassadors/momodou.gif'),
-    link: '',
     themeColor: '#D94553',
   },
   {
     name: 'Colin',
     hexId: 'uk4CA868',
     image: require('../../assets/ambassadors/colin.gif'),
-    link: '',
     themeColor: '#9C82DE',
   },
 ];
 
 const Ambassador = (props) => {
-  const { name, hexId, image, themeColor, link, navigation } = props;
+  const { name, hexId, image, themeColor, navigation } = props;
 
   return (
     <Block xsSize='100%' smSize='50%' mdSize='25%'>

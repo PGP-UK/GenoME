@@ -1,0 +1,15 @@
+{
+  "total": {
+    "num": "3,896,926",
+    "percent": "100%"
+  },
+  "shared": {
+    "num": "3,840,714",
+    "percent": "98.6%"
+  },
+  "private": {
+    "num": "56,212",
+    "percent": "1.4%"
+  },
+  "themeColor": "#38BA9C"
+}

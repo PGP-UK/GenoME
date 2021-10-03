@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Image, View, Dimensions } from 'react-native';
+
 import PageLayout from '../../../components/PageLayout';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
 import TopSection from './TopSection';
 import BottomSection from './BottomSection';
+import CenterImage from './CenterImage';
 
 const AllAmbassadorsData = {
   stephan: {
@@ -32,39 +32,11 @@ const Variant = (props) => {
     <>
       <PageLayout>
         <TopSection data={AllAmbassadorsData[name].data} />
-        <Section stretch>
-          <Block size="stretch">
-            <View
-              style={{
-                justifyContent: 'center',
-                flex: 1,
-              }}>
-              <Image
-                source={AllAmbassadorsData[name].image}
-                style={[styles.image]}
-              />
-            </View>
-          </Block>
-        </Section>
+        <CenterImage source={AllAmbassadorsData[name].image} />
         <BottomSection data={AllAmbassadorsData[name].data} />
       </PageLayout>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  header: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  image: {
-    flex: 1,
-    alignSelf: 'center',
-    width: 600,
-    height: 600,
-    maxWidth: '80%',
-    resizeMode: 'contain',
-  },
-});
 
 export default Variant;

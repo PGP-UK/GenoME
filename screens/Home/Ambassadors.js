@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
 const AllAmbassadors = [
   {
@@ -30,9 +32,21 @@ const AllAmbassadors = [
   },
 ];
 
+const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const numImagesPerRow = sizeSelector({ xs: 1, sm: 2, md: 4 });
+  const imageWidth =
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
+  return (
+    <Image
+      {...props}
+      style={{ width: imageWidth, height: imageWidth }}
+      resizeMode='contain'
+    />
+  );
+});
+
 const Ambassador = (props) => {
   const { name, hexId, image, themeColor, navigation } = props;
-
   return (
     <Block xsSize='100%' smSize='50%' mdSize='25%'>
       <Pressable
@@ -40,7 +54,7 @@ const Ambassador = (props) => {
           navigation.navigate('Landing', { name: name.toLowerCase() })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} />
+        <AmbassadorImage source={image} />
         <Text category='p1' style={{ ...styles.header, color: themeColor }}>
           {hexId}
         </Text>
@@ -68,11 +82,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 10,
-  },
-  image: {
-    width: '100%',
-    resizeMode: 'contain',
-    padding: 10,
   },
   header: {
     fontSize: 24,

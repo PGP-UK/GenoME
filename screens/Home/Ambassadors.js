@@ -40,7 +40,7 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
     <Image
       {...props}
       style={{ width: imageWidth, height: imageWidth }}
-      resizeMode='contain'
+      resizeMode="contain"
     />
   );
 });
@@ -48,17 +48,17 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
 const Ambassador = (props) => {
   const { name, hexId, image, themeColor, navigation } = props;
   return (
-    <Block xsSize='100%' smSize='50%' mdSize='25%'>
+    <Block xsSize="100%" smSize="50%" mdSize="25%">
       <Pressable
         onPress={() =>
           navigation.navigate('Landing', { name: name.toLowerCase() })
         }
         style={styles.box}>
         <AmbassadorImage source={image} />
-        <Text category='p1' style={{ ...styles.header, color: themeColor }}>
+        <Text category="p1" style={{ ...styles.header, color: themeColor }}>
           {hexId}
         </Text>
-        <Text category='p1' style={styles.secondLineText}>
+        <Text category="p1" style={styles.secondLineText}>
           Also known as: {name}
         </Text>
       </Pressable>

@@ -7,7 +7,7 @@ const Smoking = () => {
   return (
     <>
       <PageLayout>
-        <Text category='h1' style={styles.header}>
+        <Text category="h1" style={styles.header}>
           Smoking
         </Text>
       </PageLayout>

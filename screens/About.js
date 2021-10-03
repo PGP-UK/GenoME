@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <PageLayout>
-        <Text category='h1' style={styles.header}>
+        <Text category="h1" style={styles.header}>
           About
         </Text>
       </PageLayout>

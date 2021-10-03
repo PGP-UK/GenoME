@@ -22,42 +22,42 @@ const AppNavigator = () => {
           headerShown: false,
           cardStyle: { backgroundColor: '#fff' },
         }}>
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='About' component={About} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="About" component={About} />
 
         <Stack.Screen
-          name='Variant'
+          name="Variant"
           component={Variant}
           initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
-          name='Landing'
+          name="Landing"
           component={Landing}
           initialParams={{ name: 'stephan' }}
         />
 
         <Stack.Screen
-          name='Ancestry'
+          name="Ancestry"
           component={Ancestry}
           initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
-          name='Age'
+          name="Age"
           component={Age}
           initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
-          name='Eyes'
+          name="Eyes"
           component={Eyes}
           initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
-          name='Health'
+          name="Health"
           component={Health}
           initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen
-          name='Smoking'
+          name="Smoking"
           component={Smoking}
           initialParams={{ name: 'stephan' }}
         />

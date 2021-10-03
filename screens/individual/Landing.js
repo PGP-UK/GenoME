@@ -9,7 +9,7 @@ const Landing = (props) => {
   return (
     <>
       <PageLayout>
-        <Text category='h1' style={styles.header}>
+        <Text category="h1" style={styles.header}>
           {name} Landing
         </Text>
       </PageLayout>

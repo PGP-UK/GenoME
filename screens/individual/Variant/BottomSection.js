@@ -32,21 +32,21 @@ const RightText = ({ textStyle, data }) => (
 const BottomSection = ({ data }) => (
   <Section style={styles.main}>
     {/* For small screens */}
-    <Block xsSize='100%' mdHidden style={styles.textRowSm}>
+    <Block xsSize="100%" mdHidden style={styles.textRowSm}>
       <RightText
         data={data.shared}
         textStyle={{ ...styles.rightTextSm, color: data.themeColor }}
       />
     </Block>
-    <Block xsSize='100%' mdHidden style={styles.textRowSm}>
+    <Block xsSize="100%" mdHidden style={styles.textRowSm}>
       <LeftText data={data.total} textStyle={styles.leftTextSm} />
     </Block>
 
     {/* For larger screens */}
-    <Block xsSize='50%' hidden mdVisible>
+    <Block xsSize="50%" hidden mdVisible>
       <LeftText data={data.total} textStyle={styles.leftTextMd} />
     </Block>
-    <Block xsSize='50%' hidden mdVisible>
+    <Block xsSize="50%" hidden mdVisible>
       <RightText
         data={data.shared}
         textStyle={{ ...styles.rightTextMd, color: data.themeColor }}

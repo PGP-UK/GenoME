@@ -6,8 +6,8 @@ import { Grid, Section, Block } from 'react-native-responsive-layout';
 const MoreInfoBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
     <Button
-      size='small'
-      status='primary'
+      size="small"
+      status="primary"
       style={styles.headerBtn}
       onPress={() => navigation.navigate('About')}>
       MORE INFORMATION
@@ -16,7 +16,7 @@ const MoreInfoBtn = ({ layoutStyle, navigation }) => (
 );
 
 const HeaderText = () => (
-  <Text category='h1' style={styles.header}>
+  <Text category="h1" style={styles.header}>
     Personal Genome Project
   </Text>
 );
@@ -28,10 +28,10 @@ const HeaderRow = (props) => {
     <Grid>
       <Section style={HeaderStyle}>
         {/* For small screens */}
-        <Block xsSize='100%' mdHidden>
+        <Block xsSize="100%" mdHidden>
           <HeaderText />
         </Block>
-        <Block xsSize='100%' mdHidden>
+        <Block xsSize="100%" mdHidden>
           <MoreInfoBtn
             layoutStyle={styles.headerBtnLayoutXs}
             navigation={navigation}
@@ -39,10 +39,10 @@ const HeaderRow = (props) => {
         </Block>
 
         {/* For larger screens */}
-        <Block xsSize='70%' hidden mdVisible>
+        <Block xsSize="70%" hidden mdVisible>
           <HeaderText />
         </Block>
-        <Block xsSize='30%' hidden mdVisible>
+        <Block xsSize="30%" hidden mdVisible>
           <MoreInfoBtn
             layoutStyle={styles.headerBtnLayoutMd}
             navigation={navigation}

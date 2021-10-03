@@ -33,7 +33,7 @@ const Variant = (props) => {
       <PageLayout>
         <TopSection data={AllAmbassadorsData[name].data} />
         <Section stretch>
-          <Block size='stretch'>
+          <Block size="stretch">
             <View
               style={{
                 justifyContent: 'center',

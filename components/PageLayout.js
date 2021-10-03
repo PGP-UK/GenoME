@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Grid } from 'react-native-responsive-layout';
 
 const PageLayout = ({ children }) => {
   return (
     <SafeAreaView style={styles.safeView}>
-      <ScrollView>
+      <Grid scrollable stretchable>
         <Layout style={styles.layout}>{children}</Layout>
-      </ScrollView>
+      </Grid>
     </SafeAreaView>
   );
 };

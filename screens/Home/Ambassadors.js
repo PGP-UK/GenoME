@@ -52,17 +52,15 @@ const Ambassador = (props) => {
   );
 };
 
-const Ambassadors = ({ navigation }) => {
-  return (
-    <Grid>
-      <Section>
-        {AllAmbassadors.map((AmbassadorData, idx) => (
-          <Ambassador key={idx} {...AmbassadorData} navigation={navigation} />
-        ))}
-      </Section>
-    </Grid>
-  );
-};
+const Ambassadors = ({ navigation }) => (
+  <Grid>
+    <Section>
+      {AllAmbassadors.map((AmbassadorData, idx) => (
+        <Ambassador key={idx} {...AmbassadorData} navigation={navigation} />
+      ))}
+    </Section>
+  </Grid>
+);
 
 const styles = StyleSheet.create({
   box: {

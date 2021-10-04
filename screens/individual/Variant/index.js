@@ -1,26 +1,26 @@
 import React from 'react';
-import { StyleSheet, Image, View, Dimensions } from 'react-native';
+
 import PageLayout from '../../../components/PageLayout';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
 import TopSection from './TopSection';
 import BottomSection from './BottomSection';
+import CenterImage from './CenterImage';
 
 const AllAmbassadorsData = {
   stephan: {
-    data: require(`../../../assets/variants/stephan/data.json`),
-    image: require(`../../../assets/variants/stephan/pie_chart.png`),
+    data: require(`../../../assets/data/variant/stephan.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/stephan.png`),
   },
   colin: {
-    data: require(`../../../assets/variants/colin/data.json`),
-    image: require(`../../../assets/variants/colin/pie_chart.png`),
+    data: require(`../../../assets/data/variant/colin.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/colin.png`),
   },
   laura: {
-    data: require(`../../../assets/variants/laura/data.json`),
-    image: require(`../../../assets/variants/laura/pie_chart.png`),
+    data: require(`../../../assets/data/variant/laura.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/laura.png`),
   },
   momodou: {
-    data: require(`../../../assets/variants/momodou/data.json`),
-    image: require(`../../../assets/variants/momodou/pie_chart.png`),
+    data: require(`../../../assets/data/variant/momodou.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/momodou.png`),
   },
 };
 
@@ -32,39 +32,11 @@ const Variant = (props) => {
     <>
       <PageLayout>
         <TopSection data={AllAmbassadorsData[name].data} />
-        <Section stretch>
-          <Block size='stretch'>
-            <View
-              style={{
-                justifyContent: 'center',
-                flex: 1,
-              }}>
-              <Image
-                source={AllAmbassadorsData[name].image}
-                style={[styles.image]}
-              />
-            </View>
-          </Block>
-        </Section>
+        <CenterImage source={AllAmbassadorsData[name].image} />
         <BottomSection data={AllAmbassadorsData[name].data} />
       </PageLayout>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  header: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  image: {
-    flex: 1,
-    alignSelf: 'center',
-    width: 600,
-    height: 600,
-    maxWidth: '80%',
-    resizeMode: 'contain',
-  },
-});
 
 export default Variant;

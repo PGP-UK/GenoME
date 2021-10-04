@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
 const MoreInfoBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
     <Button
-      size='small'
-      status='primary'
+      size="small"
+      status="primary"
       style={styles.headerBtn}
       onPress={() => navigation.navigate('About')}>
       MORE INFORMATION
@@ -16,42 +17,29 @@ const MoreInfoBtn = ({ layoutStyle, navigation }) => (
 );
 
 const HeaderText = () => (
-  <Text category='h1' style={styles.header}>
+  <Text category="h1" style={styles.header}>
     Personal Genome Project
   </Text>
 );
 
-const HeaderRow = (props) => {
-  const { navigation, HeaderStyle } = props;
-
+const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
+  const btnStyles = sizeSelector({
+    xs: styles.headerBtnLayoutXs,
+    md: styles.headerBtnLayoutMd,
+  });
   return (
     <Grid>
       <Section style={HeaderStyle}>
-        {/* For small screens */}
-        <Block xsSize='100%' mdHidden>
+        <Block xsSize="100%" mdSize="70%">
           <HeaderText />
         </Block>
-        <Block xsSize='100%' mdHidden>
-          <MoreInfoBtn
-            layoutStyle={styles.headerBtnLayoutXs}
-            navigation={navigation}
-          />
-        </Block>
-
-        {/* For larger screens */}
-        <Block xsSize='70%' hidden mdVisible>
-          <HeaderText />
-        </Block>
-        <Block xsSize='30%' hidden mdVisible>
-          <MoreInfoBtn
-            layoutStyle={styles.headerBtnLayoutMd}
-            navigation={navigation}
-          />
+        <Block xsSize="100%" mdSize="30%">
+          <MoreInfoBtn layoutStyle={btnStyles} navigation={navigation} />
         </Block>
       </Section>
     </Grid>
   );
-};
+});
 
 const styles = StyleSheet.create({
   header: {

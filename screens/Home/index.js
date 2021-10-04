@@ -13,18 +13,18 @@ const Home = (props) => {
     <>
       <PageLayout>
         <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
-        <Text category='p1' style={styles.main_text}>
+        <Text category="p1" style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of active
           participants who share their DNA sequence, medical records and trait
           data for reasearch under open access.
         </Text>
 
-        <Text category='p1' style={styles.main_text}>
+        <Text category="p1" style={styles.main_text}>
           Four PGP-UK participants have volunteered as ambassadors to share
           their identities and genomes to showcase the project.
         </Text>
 
-        <Text category='p1' style={styles.main_text}>
+        <Text category="p1" style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of active
           participants who share their DNA sequence, medical records and trait
           data for reasearch under open access.

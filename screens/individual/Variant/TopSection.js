@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
 const TextSection = ({ textStyle, lines }) => (
   <>
@@ -13,45 +14,45 @@ const TextSection = ({ textStyle, lines }) => (
   </>
 );
 
-const LeftText = ({ textStyle, data }) => (
-  <TextSection
-    textStyle={textStyle}
-    lines={['Total Number of variants:', data.num, data.percent]}
-  />
-);
+const TopSection = withSizeInfo(({ sizeSelector, data }) => {
+  const rowStyles = sizeSelector({
+    xs: styles.textRowSm,
+    md: styles.textRowMd,
+  });
+  const leftTextStyles = sizeSelector({
+    xs: styles.leftTextSm,
+    md: styles.leftTextMd,
+  });
+  const rightTextStyles = sizeSelector({
+    xs: styles.rightTextSm,
+    md: styles.rightTextMd,
+  });
 
-const RightText = ({ textStyle, data }) => (
-  <TextSection
-    textStyle={textStyle}
-    lines={['Number of shared variants:', data.num, data.percent]}
-  />
-);
-
-const TopSection = ({ data }) => (
-  <Section style={styles.main}>
-    {/* For small screens */}
-    <Block xsSize="100%" mdHidden style={styles.textRowSm}>
-      <LeftText data={data.total} textStyle={styles.leftTextSm} />
-    </Block>
-    <Block xsSize="100%" mdHidden style={styles.textRowSm}>
-      <RightText
-        data={data.shared}
-        textStyle={{ ...styles.rightTextSm, color: data.themeColor }}
-      />
-    </Block>
-
-    {/* For larger screens */}
-    <Block xsSize="50%" hidden mdVisible>
-      <LeftText data={data.total} textStyle={styles.leftTextMd} />
-    </Block>
-    <Block xsSize="50%" hidden mdVisible>
-      <RightText
-        data={data.shared}
-        textStyle={{ ...styles.rightTextMd, color: data.themeColor }}
-      />
-    </Block>
-  </Section>
-);
+  return (
+    <Section style={styles.main}>
+      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
+        <TextSection
+          textStyle={leftTextStyles}
+          lines={[
+            'Total Number of variants:',
+            data.total.num,
+            data.total.percent,
+          ]}
+        />
+      </Block>
+      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
+        <TextSection
+          textStyle={[rightTextStyles, { color: data.themeColor }]}
+          lines={[
+            'Number of shared variants:',
+            data.shared.num,
+            data.shared.percent,
+          ]}
+        />
+      </Block>
+    </Section>
+  );
+});
 
 const styles = StyleSheet.create({
   main: {
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
   textRowSm: {
     marginTop: 20,
   },
+  textRowMd: {},
   leftTextSm: {
     fontSize: 35,
     color: '#45B0D4',

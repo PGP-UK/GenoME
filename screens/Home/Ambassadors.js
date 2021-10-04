@@ -78,8 +78,8 @@ const Ambassadors = ({ navigation }) => (
 
 const styles = StyleSheet.create({
   box: {
-    padding: 10,
     alignItems: 'center',
+    padding: 10,
     marginTop: 10,
     marginBottom: 10,
   },
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
   },
   secondLineText: {
     fontSize: 20,
+    textAlign: 'center',
   },
 });
 

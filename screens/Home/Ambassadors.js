@@ -55,7 +55,7 @@ const Ambassador = (props) => {
         }
         style={styles.box}>
         <AmbassadorImage source={image} />
-        <Text category="p1" style={{ ...styles.header, color: themeColor }}>
+        <Text category="p1" style={[styles.header, { color: themeColor }]}>
           {hexId}
         </Text>
         <Text category="p1" style={styles.secondLineText}>

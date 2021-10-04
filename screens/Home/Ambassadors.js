@@ -9,25 +9,25 @@ const AllAmbassadors = [
   {
     name: 'Stephan',
     hexId: 'uk35C650',
-    image: require('../../assets/ambassadors/stephan.gif'),
+    image: require('../../assets/images/home_screen_profiles/stephan.gif'),
     themeColor: '#8CD8C4',
   },
   {
     name: 'Laura',
     hexId: 'uk33D02F',
-    image: require('../../assets/ambassadors/laura.gif'),
+    image: require('../../assets/images/home_screen_profiles/laura.gif'),
     themeColor: '#F6BD4A',
   },
   {
     name: 'Momodou',
     hexId: 'uk481F67',
-    image: require('../../assets/ambassadors/momodou.gif'),
+    image: require('../../assets/images/home_screen_profiles/momodou.gif'),
     themeColor: '#D94553',
   },
   {
     name: 'Colin',
     hexId: 'uk4CA868',
-    image: require('../../assets/ambassadors/colin.gif'),
+    image: require('../../assets/images/home_screen_profiles/colin.gif'),
     themeColor: '#9C82DE',
   },
 ];

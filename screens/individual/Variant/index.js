@@ -7,20 +7,20 @@ import CenterImage from './CenterImage';
 
 const AllAmbassadorsData = {
   stephan: {
-    data: require(`../../../assets/variants/stephan/data.json`),
-    image: require(`../../../assets/variants/stephan/pie_chart.png`),
+    data: require(`../../../assets/data/variant/stephan.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/stephan.png`),
   },
   colin: {
-    data: require(`../../../assets/variants/colin/data.json`),
-    image: require(`../../../assets/variants/colin/pie_chart.png`),
+    data: require(`../../../assets/data/variant/colin.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/colin.png`),
   },
   laura: {
-    data: require(`../../../assets/variants/laura/data.json`),
-    image: require(`../../../assets/variants/laura/pie_chart.png`),
+    data: require(`../../../assets/data/variant/laura.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/laura.png`),
   },
   momodou: {
-    data: require(`../../../assets/variants/momodou/data.json`),
-    image: require(`../../../assets/variants/momodou/pie_chart.png`),
+    data: require(`../../../assets/data/variant/momodou.json`),
+    image: require(`../../../assets/images/variant_screen_pie_charts/momodou.png`),
   },
 };
 

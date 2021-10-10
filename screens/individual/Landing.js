@@ -6,6 +6,13 @@ import { Section, Block, Grid } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
+const ThemeColors = {
+  stephan: '#8CD8C4',
+  laura: '#F6BD4A',
+  momodou: '#D94553',
+  colin: '#9C82DE',
+};
+
 const Icons = [
   {
     pageName: 'Ancestry',
@@ -47,7 +54,7 @@ const Landing = (props) => {
   const { name } = route.params;
   return (
     <>
-      <PageLayout backgroundColor="blue">
+      <PageLayout backgroundColor={ThemeColors[name]}>
         <Text category="h1" style={styles.header}>
           My GENOME contains many layers of INFORMATION, including GENETIC and
           EPIGENETIC information.
@@ -86,11 +93,11 @@ const Landing = (props) => {
                 >
                   <Iconimage source={IconData.image} />
                   <Text
-                    category="p1"
+                    category="h4"
                     style={{
                       paddingTop: 20,
-                      fontSize: 25,
                       textAlign: 'center',
+                      color: 'white',
                     }}
                   >
                     {IconData.pageName}
@@ -112,6 +119,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     fontSize: 85,
     textAlign: 'center',
+    color: 'white',
   },
   subheader: {
     marginTop: 10,
@@ -120,6 +128,7 @@ const styles = StyleSheet.create({
     paddingRight: 70,
     fontSize: 30,
     textAlign: 'center',
+    color: 'white',
   },
   main_text: {
     marginTop: 10,
@@ -128,6 +137,7 @@ const styles = StyleSheet.create({
     paddingRight: 100,
     fontSize: 20,
     textAlign: 'center',
+    color: 'white',
   },
   avpic: {
     width: 200,

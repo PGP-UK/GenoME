@@ -1,10 +1,86 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image, Pressable } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 
-const Health = () => {
+const AllAmbassadors = [
+  {
+    name: 'Stephan',
+    heart_image: require('../../../assets/images/health_screen_SNV/stephan_heart_SNV.png'),
+    crohn_image: require('../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png'),
+    ovarian_image: require('../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png'),
+    themeColor: '#8CD8C4',
+  },
+  // {
+  //   name: 'Laura',
+  //   image: require('../../assets/images/home_screen_profiles/laura.gif'),
+  //   themeColor: '#F6BD4A',
+  // },
+  // {
+  //   name: 'Momodou',
+  //   image: require('../../assets/images/home_screen_profiles/momodou.gif'),
+  //   themeColor: '#D94553',
+  // },
+  // {
+  //   name: 'Colin',
+  //   image: require('../../assets/images/home_screen_profiles/colin.gif'),
+  //   themeColor: '#9C82DE',
+  // },
+];
+
+const SVNs = (props) => {
+  const {
+    name,
+    heart_image,
+    crohn_image,
+    ovarian_image,
+    themeColor,
+    navigation,
+  } = props;
+  return (
+    <>
+      <Block xsSize="100%" smSize="50%" mdSize="25%">
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Heart', { name: name.toLowerCase() })
+          }
+          style={styles.box}>
+          <Image {...heart_image} resizeMode="contain" />
+          <Text category="h2" style={(styles.header, { color: themeColor })}>
+            Heart Disease
+          </Text>
+        </Pressable>
+      </Block>
+      <Block xsSize="100%" smSize="50%" mdSize="25%">
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Crohn', { name: name.toLowerCase() })
+          }
+          style={styles.box}>
+          <Image {...heart_image} resizeMode="contain" />
+          <Text category="h2" style={(styles.header, { color: themeColor })}>
+            Crohn's Disease
+          </Text>
+        </Pressable>
+      </Block>
+      <Block xsSize="100%" smSize="50%" mdSize="25%">
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Ovarian', { name: name.toLowerCase() })
+          }
+          style={styles.box}>
+          <Image {...heart_image} resizeMode="contain" />
+          <Text category="h2" style={(styles.header, { color: themeColor })}>
+            Ovarian cancer
+          </Text>
+        </Pressable>
+      </Block>
+    </>
+  );
+};
+
+const Health = ({ navigation }) => {
   return (
     <>
       <PageLayout>
@@ -15,6 +91,8 @@ const Health = () => {
                 Health
               </Text>
             </Block>
+          </Section>
+          <Section>
             <Block>
               <Text category="p1" style={styles.main_text}>
                 Genetic makeup can also give inidications on inherited risks and
@@ -33,6 +111,13 @@ const Health = () => {
                 Tap below to explore the frequency and risk associated with
                 three of my SNVs.
               </Text>
+            </Block>
+          </Section>
+          <Section>
+            <Block>
+              {AllAmbassadors.map((AmbassadorData, idx) => (
+                <SVNs key={idx} {...AmbassadorData} navigation={navigation} />
+              ))}
             </Block>
           </Section>
         </Grid>

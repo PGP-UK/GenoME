@@ -5,7 +5,6 @@ import PageLayout from '../../../components/PageLayout';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import CenterImage from './CenterImage';
 
-
 const AllAmbassadorsData = {
   stephan: {
     data: require(`../../../assets/data/ancestry/stephan.json`),
@@ -25,7 +24,6 @@ const AllAmbassadorsData = {
   },
 };
 
-
 const TextSection = ({ textStyle, lines }) => (
   <>
     {lines.map((l, i) => (
@@ -36,11 +34,9 @@ const TextSection = ({ textStyle, lines }) => (
   </>
 );
 
-
-
 const Ancestry = (props) => {
-    const { route} = props;
-    const { name } = route.params;
+  const { route } = props;
+  const { name } = route.params;
 
   return (
     <>
@@ -52,7 +48,10 @@ const Ancestry = (props) => {
                 Ancestry
               </Text>
               <Text category="p1" style={styles.main_text}>
-                Different populations have their own distinctive pattern of genetic variants. By comparing thousands of my variants with those of individuals from different populations, my ancestry can be predicted.
+                Different populations have their own distinctive pattern of
+                genetic variants. By comparing thousands of my variants with
+                those of individuals from different populations, my ancestry can
+                be predicted.
               </Text>
             </Block>
 
@@ -68,23 +67,19 @@ const Ancestry = (props) => {
                   AllAmbassadorsData[name].data.most_percent,
                   AllAmbassadorsData[name].data.other_percent_1,
                 ]}
-              />              
+              />
             </Block>
           </Section>
 
           <Section mdSize="50%">
             <View>
               <Image
-              style={{height: 700, width: 1340}}
-              source={require('../../../assets/images/ancestry_screen_pie/ancestry_world.jpeg')}
+                style={{ height: 700, width: 1340 }}
+                source={require('../../../assets/images/ancestry_screen_pie/ancestry_world.jpeg')}
               />
-
-              
             </View>
           </Section>
         </Grid>
-        
-        
       </PageLayout>
     </>
   );
@@ -102,7 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginBottom: 20,
     marginLeft: 50,
-    lineHeight: 45
+    lineHeight: 45,
   },
   percent_box: {
     alignItems: 'flex-end',
@@ -112,8 +107,6 @@ const styles = StyleSheet.create({
   },
   percent_text: {
     fontSize: 25,
-    
-    
   },
   leftTextSm: {
     fontSize: 35,

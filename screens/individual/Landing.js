@@ -1,31 +1,31 @@
-import React from "react";
-import { StyleSheet, Image, View, Pressable } from "react-native";
-import { Text } from "@ui-kitten/components";
-import PageLayout from "../../components/PageLayout";
-import { Section, Block, Grid } from "react-native-responsive-layout";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { useSafeAreaFrame } from "react-native-safe-area-context";
+import React from 'react';
+import { StyleSheet, Image, Pressable } from 'react-native';
+import { Text } from '@ui-kitten/components';
+import PageLayout from '../../components/PageLayout';
+import { Section, Block, Grid } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
 const Icons = [
   {
-    pageName: "Ancestry",
-    image: require("../../assets/images/landing_screen_icons/globe-europe-duotone.png"),
+    pageName: 'Ancestry',
+    image: require('../../assets/images/landing_screen_icons/globe-europe-duotone.png'),
   },
   {
-    pageName: "Eyes",
-    image: require("../../assets/images/landing_screen_icons/eye-duotone.png"),
+    pageName: 'Eyes',
+    image: require('../../assets/images/landing_screen_icons/eye-duotone.png'),
   },
   {
-    pageName: "Health",
-    image: require("../../assets/images/landing_screen_icons/heartbeat-duotone.png"),
+    pageName: 'Health',
+    image: require('../../assets/images/landing_screen_icons/heartbeat-duotone.png'),
   },
   {
-    pageName: "Age",
-    image: require("../../assets/images/landing_screen_icons/birthday-cake-duotone.png"),
+    pageName: 'Age',
+    image: require('../../assets/images/landing_screen_icons/birthday-cake-duotone.png'),
   },
   {
-    pageName: "Smoking",
-    image: require("../../assets/images/landing_screen_icons/smoking-duotone.png"),
+    pageName: 'Smoking',
+    image: require('../../assets/images/landing_screen_icons/smoking-duotone.png'),
   },
 ];
 
@@ -47,7 +47,7 @@ const Landing = (props) => {
   const { name } = route.params;
   return (
     <>
-      <PageLayout>
+      <PageLayout backgroundColor="">
         <Text category="h1" style={styles.header}>
           My GENOME contains many layers of INFORMATION, including GENETIC and
           EPIGENETIC information.
@@ -73,7 +73,7 @@ const Landing = (props) => {
                 xsSize="100%"
                 smSize="50%"
                 mdSize="20%"
-                style={{ alignItems: "center" }}
+                style={{ alignItems: 'center' }}
               >
                 <Pressable
                   onPress={() =>
@@ -89,7 +89,7 @@ const Landing = (props) => {
                     style={{
                       paddingTop: 20,
                       fontSize: 25,
-                      textAlign: "center",
+                      textAlign: 'center',
                     }}
                   >
                     {IconData.pageName}
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginLeft: 30,
     fontSize: 85,
-    textAlign: "center",
+    textAlign: 'center',
   },
   subheader: {
     marginTop: 10,
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     paddingLeft: 70,
     paddingRight: 70,
     fontSize: 30,
-    textAlign: "center",
+    textAlign: 'center',
   },
   main_text: {
     marginTop: 10,
@@ -126,20 +126,20 @@ const styles = StyleSheet.create({
     paddingLeft: 100,
     paddingRight: 100,
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
   },
   avpic: {
     width: 200,
     height: 200,
     borderRadius: 205 / 2,
-    overflow: "hidden",
+    overflow: 'hidden',
     borderWidth: 3,
   },
   avcontainer: {
-    alignItems: "center",
-    flexWrap: "wrap",
+    alignItems: 'center',
+    flexWrap: 'wrap',
     padding: 8,
-    flexWrap: "wrap",
+    flexWrap: 'wrap',
   },
 });
 

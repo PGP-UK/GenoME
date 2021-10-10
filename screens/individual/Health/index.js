@@ -32,7 +32,7 @@ const AllAmbassadors = {
 };
 
 const HeartSVN = (props) => {
-  const { image, themeColor, navigation } = props;
+  const { name, image, themeColor, navigation } = props;
   return (
     <>
       <Block xsSize="100%" smSize="33%" mdSize="33%">
@@ -52,7 +52,7 @@ const HeartSVN = (props) => {
 };
 
 const CrohnSVN = (props) => {
-  const { image, themeColor, navigation } = props;
+  const { name, image, themeColor, navigation } = props;
   return (
     <>
       <Block xsSize="100%" smSize="33%" mdSize="33%">
@@ -72,7 +72,7 @@ const CrohnSVN = (props) => {
 };
 
 const OvarianSVN = (props) => {
-  const { image, themeColor, navigation } = props;
+  const { name, image, themeColor, navigation } = props;
   return (
     <>
       <Block xsSize="100%" smSize="33%" mdSize="33%">

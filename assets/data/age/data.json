@@ -1,0 +1,41 @@
+{
+    "stephan":{
+        "Age": "57",
+    "Epigenic": "56",
+    "Diferrence":"1",
+    "AccDec": "Acceleration",
+    "Identifier": "uk35C650",
+    "themeColor": "#38BA9C",
+    "smoker": "non-smoker"
+    },
+    "laura":{
+        "Age": "46",
+    "Epigenic": "44",
+    "Diferrence":"2",
+    "AccDec": "Acceleration",
+    "Identifier": "uk35C650",
+    "themeColor": "#f7b552",
+    "smoker": "non-smoker"
+    },
+    "momodou":{
+        "Age": "57",
+    "Epigenic": "56",
+    "Diferrence":"1",
+    "AccDec": "Acceleration",
+    "Identifier": "uk35C650",
+    "themeColor": "#e64949",
+    "smoker": "non-smoker"
+    },
+    "colin":{
+        "Age": "57",
+    "Epigenic": "56",
+    "Diferrence":"1",
+    "AccDec": "Acceleration",
+    "Identifier": "uk35C650",
+    "themeColor": "#a572f7",
+    "smoker": "non-smoker"
+    }
+    
+    
+    
+}

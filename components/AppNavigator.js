@@ -4,12 +4,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '../screens/Home';
 import About from '../screens/About';
-import Age from '../screens/individual/Age';
+import Age from '../screens/individual/Age/index.js';
 import Ancestry from '../screens/individual/Ancestry';
 import Eyes from '../screens/individual/Eyes';
 import Health from '../screens/individual/Health';
 import Landing from '../screens/individual/Landing';
-import Smoking from '../screens/individual/Smoking';
+import Smoking from '../screens/individual/Smoking/index.js';
 import Variant from '../screens/individual/Variant';
 
 const Stack = createStackNavigator();

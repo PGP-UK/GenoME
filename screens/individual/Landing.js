@@ -16,23 +16,23 @@ const ThemeColors = {
 const Icons = [
   {
     pageName: 'Ancestry',
-    image: require('../../assets/images/landing_screen_icons/globe-europe-regular.png'),
+    image: require('../../assets/images/landing_screen_icons/globe-europe-light.png'),
   },
   {
     pageName: 'Eyes',
-    image: require('../../assets/images/landing_screen_icons/eye-solid.png'),
+    image: require('../../assets/images/landing_screen_icons/eye-light.png'),
   },
   {
     pageName: 'Health',
-    image: require('../../assets/images/landing_screen_icons/heartbeat-solid.png'),
+    image: require('../../assets/images/landing_screen_icons/heartbeat-light.png'),
   },
   {
     pageName: 'Age',
-    image: require('../../assets/images/landing_screen_icons/birthday-cake-regular.png'),
+    image: require('../../assets/images/landing_screen_icons/birthday-cake-light.png'),
   },
   {
     pageName: 'Smoking',
-    image: require('../../assets/images/landing_screen_icons/smoking-regular.png'),
+    image: require('../../assets/images/landing_screen_icons/smoking-light.png'),
   },
 ];
 

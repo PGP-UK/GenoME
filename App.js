@@ -46,11 +46,11 @@ async function cacheResourcesAsync() {
     require('./assets/images/variant_screen_pie_charts/laura.png'),
     require('./assets/images/variant_screen_pie_charts/momodou.png'),
     require('./assets/images/variant_screen_pie_charts/colin.png'),
-    require('./assets/images/landing_screen_icons/globe-europe-regular.png'),
-    require('./assets/images/landing_screen_icons/eye-solid.png'),
-    require('./assets/images/landing_screen_icons/heartbeat-solid.png'),
-    require('./assets/images/landing_screen_icons/birthday-cake-regular.png'),
-    require('./assets/images/landing_screen_icons/smoking-regular.png'),
+    require('./assets/images/landing_screen_icons/globe-europe-light.png'),
+    require('./assets/images/landing_screen_icons/eye-light.png'),
+    require('./assets/images/landing_screen_icons/heartbeat-light.png'),
+    require('./assets/images/landing_screen_icons/birthday-cake-light.png'),
+    require('./assets/images/landing_screen_icons/smoking-light.png'),
   ];
 
   const cacheImages = images.map((image) =>

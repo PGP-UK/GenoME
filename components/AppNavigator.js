@@ -8,6 +8,9 @@ import Age from '../screens/individual/Age';
 import Ancestry from '../screens/individual/Ancestry';
 import Eyes from '../screens/individual/Eyes';
 import Health from '../screens/individual/Health';
+import Crohn from '../screens/individual/Health/Crohn';
+import Heart from '../screens/individual/Health/Heart';
+import Ovarian from '../screens/individual/Health/Ovarian';
 import Landing from '../screens/individual/Landing';
 import Smoking from '../screens/individual/Smoking';
 import Variant from '../screens/individual/Variant';
@@ -55,6 +58,21 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Health"
           component={Health}
+          initialParams={{ name: 'stephan' }}
+        />
+        <Stack.Screen
+          name="Crohn"
+          component={Crohn}
+          initialParams={{ name: 'stephan' }}
+        />
+        <Stack.Screen
+          name="Heart"
+          component={Heart}
+          initialParams={{ name: 'stephan' }}
+        />
+        <Stack.Screen
+          name="Ovarian"
+          component={Ovarian}
           initialParams={{ name: 'stephan' }}
         />
         <Stack.Screen

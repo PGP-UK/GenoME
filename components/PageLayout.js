@@ -4,11 +4,15 @@ import { Layout } from '@ui-kitten/components';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Grid } from 'react-native-responsive-layout';
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({ children, backgroundColor = '#fff' }) => {
   return (
-    <SafeAreaView style={styles.safeView}>
+    <SafeAreaView
+      style={[styles.safeView, , { backgroundColor: backgroundColor }]}
+    >
       <Grid scrollable stretchable>
-        <Layout style={styles.layout}>{children}</Layout>
+        <Layout style={[styles.layout, { backgroundColor: backgroundColor }]}>
+          {children}
+        </Layout>
       </Grid>
     </SafeAreaView>
   );

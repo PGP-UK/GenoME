@@ -47,7 +47,7 @@ const Landing = (props) => {
   const { name } = route.params;
   return (
     <>
-      <PageLayout backgroundColor="">
+      <PageLayout backgroundColor="blue">
         <Text category="h1" style={styles.header}>
           My GENOME contains many layers of INFORMATION, including GENETIC and
           EPIGENETIC information.
@@ -68,8 +68,9 @@ const Landing = (props) => {
 
         <Grid>
           <Section style={{ marginTop: 30 }}>
-            {Icons.map((IconData) => (
+            {Icons.map((IconData, idx) => (
               <Block
+                key={idx}
                 xsSize="100%"
                 smSize="50%"
                 mdSize="20%"

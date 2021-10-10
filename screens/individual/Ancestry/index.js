@@ -62,7 +62,7 @@ const Ancestry = (props) => {
 
             <Block xsSize="100%" mdSize="30%" style={styles.percent_box}>
               <Text
-                style={rightTextStyles}
+                // style={rightTextStyles}
                 lines={[
                   'hello',
                   AllAmbassadorsData[name].data.most_percent,

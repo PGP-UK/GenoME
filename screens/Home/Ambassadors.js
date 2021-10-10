@@ -50,9 +50,7 @@ const Ambassador = (props) => {
   return (
     <Block xsSize="100%" smSize="50%" mdSize="25%">
       <Pressable
-        onPress={() =>
-          navigation.navigate('Health', { name: name.toLowerCase() })
-        }
+        onPress={() => navigation.navigate('', { name: name.toLowerCase() })}
         style={styles.box}>
         <AmbassadorImage source={image} />
         <Text category="p1" style={[styles.header, { color: themeColor }]}>

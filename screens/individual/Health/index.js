@@ -34,60 +34,54 @@ const AllAmbassadors = {
 const HeartSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
-    <>
-      <Block xsSize="100%" smSize="33%" mdSize="33%">
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Heart', { name: name.toLowerCase() })
-          }
-          style={styles.box}>
-          <Image source={image} style={styles.image} resizeMode="contain" />
-          <Text category="h2" style={(styles.header, { color: themeColor })}>
-            Heart disease
-          </Text>
-        </Pressable>
-      </Block>
-    </>
+    <Block xsSize="100%" smSize="100%" mdSize="33%">
+      <Pressable
+        onPress={() =>
+          navigation.navigate('Heart', { name: name.toLowerCase() })
+        }
+        style={styles.box}>
+        <Image source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={(styles.header, { color: themeColor })}>
+          Heart disease
+        </Text>
+      </Pressable>
+    </Block>
   );
 };
 
 const CrohnSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
-    <>
-      <Block xsSize="100%" smSize="33%" mdSize="33%">
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Crohn', { name: name.toLowerCase() })
-          }
-          style={styles.box}>
-          <Image source={image} style={styles.image} resizeMode="contain" />
-          <Text category="h2" style={(styles.header, { color: themeColor })}>
-            Crohn's disease
-          </Text>
-        </Pressable>
-      </Block>
-    </>
+    <Block xsSize="100%" smSize="100%" mdSize="33%">
+      <Pressable
+        onPress={() =>
+          navigation.navigate('Crohn', { name: name.toLowerCase() })
+        }
+        style={styles.box}>
+        <Image source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={(styles.header, { color: themeColor })}>
+          Crohn's disease
+        </Text>
+      </Pressable>
+    </Block>
   );
 };
 
 const OvarianSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
-    <>
-      <Block xsSize="100%" smSize="33%" mdSize="33%">
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Ovarian', { name: name.toLowerCase() })
-          }
-          style={styles.box}>
-          <Image source={image} style={styles.image} resizeMode="contain" />
-          <Text category="h2" style={(styles.header, { color: themeColor })}>
-            Ovarian cancer
-          </Text>
-        </Pressable>
-      </Block>
-    </>
+    <Block xsSize="100%" smSize="100%" mdSize="33%">
+      <Pressable
+        onPress={() =>
+          navigation.navigate('Ovarian', { name: name.toLowerCase() })
+        }
+        style={styles.box}>
+        <Image source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={(styles.header, { color: themeColor })}>
+          Ovarian cancer
+        </Text>
+      </Pressable>
+    </Block>
   );
 };
 

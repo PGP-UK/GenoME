@@ -51,7 +51,7 @@ const Ambassador = (props) => {
     <Block xsSize="100%" smSize="50%" mdSize="25%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Landing', { name: name.toLowerCase() })
+          navigation.navigate('Ancestry', { name: name.toLowerCase() })
         }
         style={styles.box}>
         <AmbassadorImage source={image} />

@@ -46,6 +46,18 @@ async function cacheResourcesAsync() {
     require('./assets/images/variant_screen_pie_charts/laura.png'),
     require('./assets/images/variant_screen_pie_charts/momodou.png'),
     require('./assets/images/variant_screen_pie_charts/colin.png'),
+    require('./assets/images/health_screen_SNV/stephan_heart_SNV.png'),
+    require('./assets/images/health_screen_SNV/stephan_crohn_SNV.png'),
+    require('./assets/images/health_screen_SNV/stephan_ovarian_SNV.png'),
+    require('./assets/images/health_screen_SNV/laura_heart_SNV.png'),
+    require('./assets/images/health_screen_SNV/laura_crohn_SNV.png'),
+    require('./assets/images/health_screen_SNV/laura_ovarian_SNV.png'),
+    require('./assets/images/health_screen_SNV/momodou_heart_SNV.png'),
+    require('./assets/images/health_screen_SNV/momodou_crohn_SNV.png'),
+    require('./assets/images/health_screen_SNV/momodou_ovarian_SNV.png'),
+    require('./assets/images/health_screen_SNV/colin_heart_SNV.png'),
+    require('./assets/images/health_screen_SNV/colin_crohn_SNV.png'),
+    require('./assets/images/health_screen_SNV/colin_ovarian_SNV.png'),
   ];
 
   const cacheImages = images.map((image) =>

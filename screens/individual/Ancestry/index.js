@@ -39,22 +39,8 @@ const TextSection = ({ textStyle, lines }) => (
 
 
 const Ancestry = (props) => {
-    const { route } = props;
+    const { route} = props;
     const { name } = route.params;
-
-    const TopSection = withSizeInfo(({ sizeSelector, data }) => {
-  const rowStyles = sizeSelector({
-    xs: styles.textRowSm,
-    md: styles.textRowMd,
-  });
-  const leftTextStyles = sizeSelector({
-    xs: styles.leftTextSm,
-    md: styles.leftTextMd,
-  });
-  const rightTextStyles = sizeSelector({
-    xs: styles.rightTextSm,
-    md: styles.rightTextMd,
-  });
 
   return (
     <>
@@ -75,7 +61,7 @@ const Ancestry = (props) => {
             </Block>
 
             <Block xsSize="100%" mdSize="30%" style={styles.percent_box}>
-              <TextSection
+              <Text
                 style={rightTextStyles}
                 lines={[
                   'hello',
@@ -102,7 +88,7 @@ const Ancestry = (props) => {
       </PageLayout>
     </>
   );
-});
+};
 
 const styles = StyleSheet.create({
   header: {

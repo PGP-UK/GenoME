@@ -23,6 +23,23 @@ const Heart = (props) => {
               </Text>
             </Block>
           </Section>
+          <Section>
+            <Block>
+              <Text category="p1" style={styles.main_text}>
+                Heart disease includes many medical conditions and accounts for
+                up to 40% of all deaths in developed countries.
+              </Text>
+            </Block>
+            <Block>
+              <Text category="p1" style={styles.main_text}>
+                rs238206 is one of many variants associated with the disease.
+                Individual variants contribute a small amount to the development
+                of the disease. A combination of other genetic, epigenetic,
+                environmental and lifestyle factors influence the overall risk
+                of developing heart disease.
+              </Text>
+            </Block>
+          </Section>
         </Grid>
       </PageLayout>
     </>

@@ -23,6 +23,24 @@ const Crohn = (props) => {
               </Text>
             </Block>
           </Section>
+          <Section>
+            <Block>
+              <Text category="p1" style={styles.main_text}>
+                Crohn's disease is a chronic inflammatory condition of the
+                digestive system that affects around 115,000 people per year in
+                the UK.
+              </Text>
+            </Block>
+            <Block>
+              <Text category="p1" style={styles.main_text}>
+                rs2066847 is one of many variants associated with the disease.
+                Individual variants contribute a small amount to the development
+                of the disease. A combination of other genetic, epigenetic,
+                environmental and lifestyle factors influence the overall risk
+                of developing Crohn's disease.
+              </Text>
+            </Block>
+          </Section>
         </Grid>
       </PageLayout>
     </>

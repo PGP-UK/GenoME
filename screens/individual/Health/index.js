@@ -31,7 +31,7 @@ const AllAmbassadors = {
   },
 };
 
-const HeartSVN = (props) => {
+const HeartSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
     <>
@@ -51,7 +51,7 @@ const HeartSVN = (props) => {
   );
 };
 
-const CrohnSVN = (props) => {
+const CrohnSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
     <>
@@ -71,7 +71,7 @@ const CrohnSVN = (props) => {
   );
 };
 
-const OvarianSVN = (props) => {
+const OvarianSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
     <>
@@ -127,19 +127,19 @@ const Health = (props) => {
             </Block>
           </Section>
           <Section>
-            <HeartSVN
+            <HeartSNV
               name={name}
               image={AllAmbassadors[name].heart_image}
               themeColor={AllAmbassadors[name].themeColor}
               navigation={navigation}
             />
-            <CrohnSVN
+            <CrohnSNV
               name={name}
               image={AllAmbassadors[name].crohn_image}
               themeColor={AllAmbassadors[name].themeColor}
               navigation={navigation}
             />
-            <OvarianSVN
+            <OvarianSNV
               name={name}
               image={AllAmbassadors[name].ovarian_image}
               themeColor={AllAmbassadors[name].themeColor}

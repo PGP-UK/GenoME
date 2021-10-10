@@ -4,7 +4,9 @@ import { Layout, Text, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../../components/PageLayout';
 
-const Crohn = () => {
+const Crohn = (props) => {
+  const { route, navigation } = props;
+  const { name } = route.params;
   return (
     <>
       <PageLayout>
@@ -17,9 +19,7 @@ const Crohn = () => {
             </Block>
             <Block>
               <Text category="p1" style={styles.main_text}>
-                Genetic makeup can also give inidications on inherited risks and
-                general disease risks. Environmental factors can also have a
-                bearing on these results.
+                This is {name} Page
               </Text>
             </Block>
           </Section>

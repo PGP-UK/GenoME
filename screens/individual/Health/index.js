@@ -40,37 +40,49 @@ const SVNs = (props) => {
   } = props;
   return (
     <>
-      <Block xsSize="100%" smSize="50%" mdSize="25%">
+      <Block xsSize="100%" smSize="33%" mdSize="33%">
         <Pressable
           onPress={() =>
             navigation.navigate('Heart', { name: name.toLowerCase() })
           }
           style={styles.box}>
-          <Image {...heart_image} resizeMode="contain" />
+          <Image
+            source={heart_image}
+            style={styles.image}
+            resizeMode="contain"
+          />
           <Text category="h2" style={(styles.header, { color: themeColor })}>
-            Heart Disease
+            Heart disease
           </Text>
         </Pressable>
       </Block>
-      <Block xsSize="100%" smSize="50%" mdSize="25%">
+      <Block xsSize="100%" smSize="33%" mdSize="33%">
         <Pressable
           onPress={() =>
             navigation.navigate('Crohn', { name: name.toLowerCase() })
           }
           style={styles.box}>
-          <Image {...heart_image} resizeMode="contain" />
+          <Image
+            source={crohn_image}
+            style={styles.image}
+            resizeMode="contain"
+          />
           <Text category="h2" style={(styles.header, { color: themeColor })}>
-            Crohn's Disease
+            Crohn's disease
           </Text>
         </Pressable>
       </Block>
-      <Block xsSize="100%" smSize="50%" mdSize="25%">
+      <Block xsSize="100%" smSize="33%" mdSize="33%">
         <Pressable
           onPress={() =>
             navigation.navigate('Ovarian', { name: name.toLowerCase() })
           }
           style={styles.box}>
-          <Image {...heart_image} resizeMode="contain" />
+          <Image
+            source={ovarian_image}
+            style={styles.image}
+            resizeMode="contain"
+          />
           <Text category="h2" style={(styles.header, { color: themeColor })}>
             Ovarian cancer
           </Text>
@@ -142,6 +154,16 @@ const styles = StyleSheet.create({
     color: '#666E7A',
     fontSize: 20,
     marginBottom: 20,
+  },
+  box: {
+    alignItems: 'center',
+    padding: 10,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  image: {
+    height: 250,
+    width: 250,
   },
 });
 

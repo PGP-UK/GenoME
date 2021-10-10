@@ -4,40 +4,35 @@ import { Layout, Text, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 
-const AllAmbassadors = [
-  {
-    name: 'Stephan',
-    heart_image: require('../../../assets/images/health_screen_SNV/stephan_heart_SNV.png'),
-    crohn_image: require('../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png'),
-    ovarian_image: require('../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png'),
+const AllAmbassadors = {
+  stephan: {
+    heart_image: require(`../../../assets/images/health_screen_SNV/stephan_heart_SNV.png`),
+    crohn_image: require(`../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png`),
+    ovarian_image: require(`../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png`),
     themeColor: '#8CD8C4',
   },
-  // {
-  //   name: 'Laura',
-  //   image: require('../../assets/images/home_screen_profiles/laura.gif'),
-  //   themeColor: '#F6BD4A',
-  // },
-  // {
-  //   name: 'Momodou',
-  //   image: require('../../assets/images/home_screen_profiles/momodou.gif'),
-  //   themeColor: '#D94553',
-  // },
-  // {
-  //   name: 'Colin',
-  //   image: require('../../assets/images/home_screen_profiles/colin.gif'),
-  //   themeColor: '#9C82DE',
-  // },
-];
+  colin: {
+    heart_image: require(`../../../assets/images/health_screen_SNV/colin_heart_SNV.png`),
+    crohn_image: require(`../../../assets/images/health_screen_SNV/colin_crohn_SNV.png`),
+    ovarian_image: require(`../../../assets/images/health_screen_SNV/colin_ovarian_SNV.png`),
+    themeColor: '#9C82DE',
+  },
+  laura: {
+    heart_image: require(`../../../assets/images/health_screen_SNV/laura_heart_SNV.png`),
+    crohn_image: require(`../../../assets/images/health_screen_SNV/laura_crohn_SNV.png`),
+    ovarian_image: require(`../../../assets/images/health_screen_SNV/laura_ovarian_SNV.png`),
+    themeColor: '#F6BD4A',
+  },
+  momodou: {
+    heart_image: require(`../../../assets/images/health_screen_SNV/momodou_heart_SNV.png`),
+    crohn_image: require(`../../../assets/images/health_screen_SNV/momodou_crohn_SNV.png`),
+    ovarian_image: require(`../../../assets/images/health_screen_SNV/momodou_ovarian_SNV.png`),
+    themeColor: '#D94553',
+  },
+};
 
-const SVNs = (props) => {
-  const {
-    name,
-    heart_image,
-    crohn_image,
-    ovarian_image,
-    themeColor,
-    navigation,
-  } = props;
+const HeartSVN = (props) => {
+  const { image, themeColor, navigation } = props;
   return (
     <>
       <Block xsSize="100%" smSize="33%" mdSize="33%">
@@ -46,43 +41,47 @@ const SVNs = (props) => {
             navigation.navigate('Heart', { name: name.toLowerCase() })
           }
           style={styles.box}>
-          <Image
-            source={heart_image}
-            style={styles.image}
-            resizeMode="contain"
-          />
+          <Image source={image} style={styles.image} resizeMode="contain" />
           <Text category="h2" style={(styles.header, { color: themeColor })}>
             Heart disease
           </Text>
         </Pressable>
       </Block>
+    </>
+  );
+};
+
+const CrohnSVN = (props) => {
+  const { image, themeColor, navigation } = props;
+  return (
+    <>
       <Block xsSize="100%" smSize="33%" mdSize="33%">
         <Pressable
           onPress={() =>
             navigation.navigate('Crohn', { name: name.toLowerCase() })
           }
           style={styles.box}>
-          <Image
-            source={crohn_image}
-            style={styles.image}
-            resizeMode="contain"
-          />
+          <Image source={image} style={styles.image} resizeMode="contain" />
           <Text category="h2" style={(styles.header, { color: themeColor })}>
             Crohn's disease
           </Text>
         </Pressable>
       </Block>
+    </>
+  );
+};
+
+const OvarianSVN = (props) => {
+  const { image, themeColor, navigation } = props;
+  return (
+    <>
       <Block xsSize="100%" smSize="33%" mdSize="33%">
         <Pressable
           onPress={() =>
             navigation.navigate('Ovarian', { name: name.toLowerCase() })
           }
           style={styles.box}>
-          <Image
-            source={ovarian_image}
-            style={styles.image}
-            resizeMode="contain"
-          />
+          <Image source={image} style={styles.image} resizeMode="contain" />
           <Text category="h2" style={(styles.header, { color: themeColor })}>
             Ovarian cancer
           </Text>
@@ -92,7 +91,9 @@ const SVNs = (props) => {
   );
 };
 
-const Health = ({ navigation }) => {
+const Health = (props) => {
+  const { route, navigation } = props;
+  const { name } = route.params;
   return (
     <>
       <PageLayout>
@@ -126,11 +127,24 @@ const Health = ({ navigation }) => {
             </Block>
           </Section>
           <Section>
-            <Block>
-              {AllAmbassadors.map((AmbassadorData, idx) => (
-                <SVNs key={idx} {...AmbassadorData} navigation={navigation} />
-              ))}
-            </Block>
+            <HeartSVN
+              name={name}
+              image={AllAmbassadors[name].heart_image}
+              themeColor={AllAmbassadors[name].themeColor}
+              navigation={navigation}
+            />
+            <CrohnSVN
+              name={name}
+              image={AllAmbassadors[name].crohn_image}
+              themeColor={AllAmbassadors[name].themeColor}
+              navigation={navigation}
+            />
+            <OvarianSVN
+              name={name}
+              image={AllAmbassadors[name].ovarian_image}
+              themeColor={AllAmbassadors[name].themeColor}
+              navigation={navigation}
+            />
           </Section>
         </Grid>
       </PageLayout>

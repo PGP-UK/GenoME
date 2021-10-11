@@ -4,9 +4,8 @@ import { Text, Button } from '@ui-kitten/components';
 import PageLayout from '../../components/PageLayout';
 
 const Landing = (props) => {
-  const { route } = props;
+  const { route, navigation } = props;
   const { name } = route.params;
-  const { navigation } = props;
   return (
     <>
       <PageLayout>

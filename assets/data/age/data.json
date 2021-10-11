@@ -1,7 +1,7 @@
 {
     "stephan":{
         "Age": "57",
-        "Epigenic": "56",
+        "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
@@ -10,7 +10,7 @@
     },
     "laura":{
         "Age": "46",
-        "Epigenic": "44",
+        "Epigenetic": "44",
         "Diferrence":"2",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
@@ -19,7 +19,7 @@
     },
     "momodou":{
         "Age": "57",
-        "Epigenic": "56",
+        "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
@@ -28,7 +28,7 @@
     },
     "colin":{
             "Age": "57",
-        "Epigenic": "56",
+        "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",

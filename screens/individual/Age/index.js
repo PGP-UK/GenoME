@@ -44,7 +44,7 @@ const Age = (props) => {
           Actual Age: {ambassadors.Age} years
         </Text>
         <Text style={styles.epigenetic}>
-          Epigenetic Age: {ambassadors.Epigenic} years
+          Epigenetic Age: {ambassadors.Epigenetic} years
         </Text>
         <Text style={styles.plain}>
           Epigenetic Age {ambassadors.AccDec} of {ambassadors.Diferrence} Year/s

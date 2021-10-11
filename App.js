@@ -46,6 +46,15 @@ async function cacheResourcesAsync() {
     require('./assets/images/variant_screen_pie_charts/laura.png'),
     require('./assets/images/variant_screen_pie_charts/momodou.png'),
     require('./assets/images/variant_screen_pie_charts/colin.png'),
+    require(`./assets/images/age_pie_charts/stephan.png`),
+    require(`./assets/images/age_pie_charts/laura.png`),
+    require(`./assets/images/age_pie_charts/momodou.png`),
+    require(`./assets/images/age_pie_charts/colin.png`),
+    require(`./assets/images/smokers/no-smoking.png`),
+    require(`./assets/images/smokers/no-smoking.png`),
+    require(`./assets/images/smokers/no-smoking.png`),
+    require(`./assets/images/smokers/no-smoking.png`),
+    <Text style={styles.text}></Text>,
   ];
 
   const cacheImages = images.map((image) =>

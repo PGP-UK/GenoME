@@ -25,9 +25,7 @@ const AmbassadorsData = {
 const Smoking = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const myObjStr = JSON.stringify(dataFile.data[name]);
-  const ambassadors = JSON.parse(myObjStr);
-  console.log(ambassadors.Age);
+  const ambassadors = dataFile.data[name];
   return (
     <>
       <ScrollView>

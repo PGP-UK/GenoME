@@ -39,24 +39,13 @@ const Smoking = (props) => {
         </Text>
         <View>
           <Image
-            style={{
-              width: 350,
-              height: 350,
-              backgroundColor: ambassadors.themeColor,
-              marginBottom: 20,
-            }}
+            style={[styles.image, { backgroundColor: ambassadors.themeColor }]}
             source={AmbassadorsData[name].image}
           />
-          <Text style={{ fontSize: 30, color: ambassadors.themeColor }}>
+          <Text style={[styles.plain, { color: ambassadors.themeColor }]}>
             My epigenetic variants correctly predicted me to be a:
           </Text>
-          <Text
-            style={{
-              fontSize: 30,
-              fontWeight: 'bold',
-              marginBottom: 40,
-              color: ambassadors.themeColor,
-            }}>
+          <Text style={[styles.weight, { color: ambassadors.themeColor }]}>
             {ambassadors.smoker}
           </Text>
         </View>
@@ -76,23 +65,17 @@ const Smoking = (props) => {
           }}>
           Actual Smoking status
         </Text>
-        <Text
-          style={{
-            marginBottom: 40,
-            fontSize: 30,
-            fontWeight: 'bold',
-            color: ambassadors.themeColor,
-          }}>
+        <Text style={[styles.weight, { color: ambassadors.themeColor }]}>
           {ambassadors.smoker}
         </Text>
         <View style={{ backgroundColor: ambassadors.themeColor }}>
-          <Text style={{ fontSize: 20, marginBottom: 20, color: 'white' }}>
+          <Text style={styles.text}>
             Epigenetic variants are chemical changes to your DNA, which alter
             how it is used without changing the DNA sequence. When people smoke,
             their epigenetic patterns change and we can use this to predict if
             they are past/never or current smokers.
           </Text>
-          <Text style={{ fontSize: 20, marginBottom: 20, color: 'white' }}>
+          <Text style={styles.text}>
             The smoking prediction was calculated from 187 epigenetic variants
             across the participant's genome. These variants have been found to
             change when people smoke, and because of this, can be used to
@@ -110,7 +93,34 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   text: {
+    fontSize: 20,
     marginBottom: 20,
+    color: 'white',
+  },
+  image: {
+    width: 350,
+    height: 350,
+    marginBottom: 20,
+  },
+  actual: {
+    fontSize: 30,
+    marginBottom: 20,
+  },
+  weight: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginBottom: 40,
+  },
+  paragraph: {
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  footer: {
+    fontSize: 20,
+    marginTop: 20,
+  },
+  plain: {
+    fontSize: 30,
   },
 });
 

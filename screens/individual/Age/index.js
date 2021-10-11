@@ -37,15 +37,10 @@ const Age = (props) => {
         <View>
           <Image style={styles.image} source={AmbassadorsData[name].image} />
         </View>
-        <Text style={{ fontSize: 30, color: ambassadors.themeColor }}>
+        <Text style={[styles.actual, { color: ambassadors.themeColor }]}>
           {ambassadors.Identifier} ({name}).
         </Text>
-        <Text
-          style={{
-            marginBottom: 20,
-            fontSize: 30,
-            color: ambassadors.themeColor,
-          }}>
+        <Text style={[styles.actual, { color: ambassadors.themeColor }]}>
           Actual Age: {ambassadors.Age} years
         </Text>
         <Text style={styles.epigenetic}>
@@ -55,11 +50,10 @@ const Age = (props) => {
           Epigenetic Age {ambassadors.AccDec} of {ambassadors.Diferrence} Year/s
         </Text>
         <Text
-          style={{
-            fontSize: 20,
-            color: 'white',
-            backgroundColor: ambassadors.themeColor,
-          }}>
+          style={[
+            styles.paragraph,
+            { backgroundColor: ambassadors.themeColor },
+          ]}>
           Epigenetic age was calculated from 353 epigenetic variants across the
           participant's genome. These epigenetic variants correlate very well
           with actual age, meaning they can be used as an 'epigenetic clock' to
@@ -92,11 +86,17 @@ const styles = StyleSheet.create({
   },
   actual: {
     fontSize: 30,
+    marginBottom: 20,
   },
   epigenetic: {
     fontSize: 30,
     color: '#11b6d4',
     marginBottom: 20,
+  },
+  paragraph: {
+    fontSize: 20,
+    marginBottom: 20,
+    color: 'white',
   },
   footer: {
     fontSize: 20,

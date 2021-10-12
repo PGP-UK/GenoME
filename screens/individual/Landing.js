@@ -152,6 +152,16 @@ const styles = StyleSheet.create({
     padding: 8,
     flexWrap: 'wrap',
   },
+  button_style: {
+    color: 'white',
+    backgroundColor: '#00d5ff',
+    padding: 10,
+  },
+  headerBtn: {
+    backgroundColor: '#3BAEDA',
+    borderWidth: 0,
+    color: '#fff',
+  },
 });
 
 export default Landing;

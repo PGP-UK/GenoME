@@ -27,7 +27,7 @@
         "smoker": "non-smoker"
     },
     "colin":{
-            "Age": "57",
+        "Age": "57",
         "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
@@ -35,7 +35,4 @@
         "themeColor": "#a572f7",
         "smoker": "non-smoker"
     }
-    
-    
-    
 }

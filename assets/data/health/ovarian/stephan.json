@@ -1,1 +1,13 @@
-{}
+{
+    "risk": {
+      "first": "Normal",
+      "second": "Reduced (-)",
+      "third": "Reduced (-)"
+    },
+    "population": {
+      "percent": "90%"
+    },
+    "themeColor": "#8CD8C4"
+  }
+  
+

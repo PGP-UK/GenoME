@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
-import { Layout, Text, Button } from '@ui-kitten/components';
+import { Text } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 

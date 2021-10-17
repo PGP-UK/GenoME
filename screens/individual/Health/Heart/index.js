@@ -143,17 +143,17 @@ const styles = StyleSheet.create({
   square1: {
     width: 25,
     height: 25,
-    backgroundColor: 'red',
+    backgroundColor: '#977ABD',
   },
   square2: {
     width: 25,
     height: 25,
-    backgroundColor: 'red',
+    backgroundColor: '#34BC99',
   },
   square3: {
     width: 25,
     height: 25,
-    backgroundColor: 'red',
+    backgroundColor: '#F6BB41',
   },
 });
 

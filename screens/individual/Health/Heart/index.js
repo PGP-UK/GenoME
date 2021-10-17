@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import { Text, Card } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import PageLayout from '../../../../components/PageLayout';
 
 const AllAmbassadorsData = {
@@ -23,6 +25,19 @@ const AllAmbassadorsData = {
   },
 };
 
+const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const numImagesPerRow = sizeSelector({ xs: 1, sm: 3, md: 3 });
+  const imageWidth =
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
+  return (
+    <Image
+      {...props}
+      style={{ width: imageWidth, height: imageWidth }}
+      resizeMode="contain"
+    />
+  );
+});
+
 const Heart = (props) => {
   const { route } = props;
   const { name } = route.params;
@@ -32,13 +47,13 @@ const Heart = (props) => {
     <>
       <PageLayout>
         <Grid>
-          <Section>
-            <Block xsSize="100%" smSize="100%" mdSize="50%">
+          <Section style={{ paddingBottom: 50 }}>
+            <Block xsSize="100%" smSize="100%" mdSize="70%">
               <Text category="h1" style={styles.header}>
                 Heart disease
               </Text>
             </Block>
-            <Block xsSize="100%" smSize="100%" mdSize="50%">
+            <Block xsSize="100%" smSize="100%" mdSize="30%">
               <Text
                 category="h1"
                 style={(styles.header, { color: data.themeColor })}>
@@ -46,7 +61,7 @@ const Heart = (props) => {
               </Text>
             </Block>
           </Section>
-          <Section>
+          <Section style={{ paddingBottom: 100 }}>
             <Block xsSize="100%" smSize="100%" mdSize="33%">
               <Text category="h1" style={styles.header2}>
                 Risk with each variant type:
@@ -65,25 +80,24 @@ const Heart = (props) => {
               </Text>
             </Block>
             <Block xsSize="100%" smSize="100%" mdSize="33%">
-              <Image
-                source={AllAmbassadorsData[name].image}
-                style={styles.image}
-                resizeMode="contain"
-              />
+              <AmbassadorImage source={AllAmbassadorsData[name].image} />
             </Block>
             <Block xsSize="100%" smSize="100%" mdSize="33%">
               <Card>
                 <Text style={styles.main_text}>
                   There are three versions of this variant and{' '}
                   {data.population.percent} of the population have the same
-                  variant as me {'\n'}This version of the variant increases my
-                  risk of heart disease
+                  variant as me {'\n'}
+                  {'\n'}This version of the variant increases my risk of heart
+                  disease
                 </Text>
               </Card>
-              <Text category="p1" style={styles.main_text}>
-                The colour split illustrates how common each variant type is in
-                the population.
-              </Text>
+              <Block style={{ paddingTop: 50 }}>
+                <Text category="p1" style={styles.main_text}>
+                  The colour split illustrates how common each variant type is
+                  in the population.
+                </Text>
+              </Block>
             </Block>
           </Section>
           <Section>
@@ -131,19 +145,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 20,
   },
-  button_text: {
-    color: '#666E7A',
-    fontSize: 20,
-    marginBottom: 20,
-  },
-  image: {
-    height: 250,
-    width: 250,
-  },
   square1: {
     width: 25,
     height: 25,
     backgroundColor: '#977ABD',
+    paddingRight: 0,
   },
   square2: {
     width: 25,

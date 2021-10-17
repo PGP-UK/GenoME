@@ -61,7 +61,7 @@ const Heart = (props) => {
               </Text>
             </Block>
           </Section>
-          <Section style={{ paddingBottom: 100 }}>
+          <Section style={{ paddingBottom: 50 }}>
             <Block xsSize="100%" smSize="100%" mdSize="33%">
               <Text category="h1" style={styles.header2}>
                 Risk with each variant type:
@@ -87,12 +87,12 @@ const Heart = (props) => {
                 <Text style={styles.main_text}>
                   There are three versions of this variant and{' '}
                   {data.population.percent} of the population have the same
-                  variant as me {'\n'}
-                  {'\n'}This version of the variant increases my risk of heart
-                  disease
+                  variant as me. {'\n'}
+                  {'\n'}
+                  {data.message}
                 </Text>
               </Card>
-              <Block style={{ paddingTop: 50 }}>
+              <Block style={{ paddingTop: 25 }}>
                 <Text category="p1" style={styles.main_text}>
                   The colour split illustrates how common each variant type is
                   in the population.

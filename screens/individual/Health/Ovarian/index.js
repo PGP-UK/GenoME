@@ -38,7 +38,7 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const Heart = (props) => {
+const Ovarian = (props) => {
   const { route } = props;
   const { name } = route.params;
   const data = AllAmbassadorsData[name].data;
@@ -166,4 +166,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Heart;
+export default Ovarian;

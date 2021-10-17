@@ -50,7 +50,7 @@ const Heart = (props) => {
           <Section style={{ paddingBottom: 50 }}>
             <Block xsSize="100%" smSize="100%" mdSize="70%">
               <Text category="h1" style={styles.header}>
-                Ovarian's disease
+                Ovarian disease
               </Text>
             </Block>
             <Block xsSize="100%" smSize="100%" mdSize="30%">

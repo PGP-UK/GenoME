@@ -3,6 +3,8 @@ import { StyleSheet, Image, Pressable } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
 const AllAmbassadors = {
   stephan: {
@@ -31,6 +33,18 @@ const AllAmbassadors = {
   },
 };
 
+const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const divisor = sizeSelector({ xs: 1, sm: 1, md: 4 });
+  const imageWidth = Math.round(useSafeAreaFrame().width / divisor) - 40;
+  return (
+    <Image
+      {...props}
+      style={{ width: imageWidth, height: imageWidth }}
+      resizeMode="contain"
+    />
+  );
+});
+
 const HeartSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
@@ -40,7 +54,7 @@ const HeartSNV = (props) => {
           navigation.navigate('Heart', { name: name.toLowerCase() })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
+        <SNVImage source={image} />
         <Text category="h2" style={(styles.header, { color: themeColor })}>
           Heart disease
         </Text>
@@ -58,7 +72,7 @@ const CrohnSNV = (props) => {
           navigation.navigate('Crohn', { name: name.toLowerCase() })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
+        <SNVImage source={image} />
         <Text category="h2" style={(styles.header, { color: themeColor })}>
           Crohn's disease
         </Text>
@@ -76,7 +90,7 @@ const OvarianSNV = (props) => {
           navigation.navigate('Ovarian', { name: name.toLowerCase() })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
+        <SNVImage source={image} />
         <Text category="h2" style={(styles.header, { color: themeColor })}>
           Ovarian cancer
         </Text>

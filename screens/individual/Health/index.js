@@ -58,7 +58,7 @@ const CrohnSNV = (props) => {
     <Block xsSize="100%" smSize="100%" mdSize="33%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Crohn', {
+          navigation.navigate('Diseases', {
             name: name.toLowerCase(),
             disease: 'crohn',
           })
@@ -79,7 +79,7 @@ const OvarianSNV = (props) => {
     <Block xsSize="100%" smSize="100%" mdSize="33%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Ovarian', {
+          navigation.navigate('Diseases', {
             name: name.toLowerCase(),
             disease: 'ovarian',
           })

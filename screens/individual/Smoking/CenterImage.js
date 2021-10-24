@@ -11,7 +11,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <Section stretch>

@@ -50,6 +50,31 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
+const LandingIcon = ({ IconData, name, navigation }) => {
+  return (
+    <Block xsSize="100%" smSize="50%" mdSize="20%" style={styles.landingIconWrapper}>
+      <Pressable
+        onPress={() =>
+          navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
+        }
+        style={styles.box}
+      >
+        <Iconimage source={IconData.image} />
+        <Text
+          category="h4"
+          style={{
+            paddingTop: 20,
+            textAlign: 'center',
+            color: 'white',
+          }}
+        >
+          {IconData.pageName}
+        </Text>
+      </Pressable>
+    </Block>
+  )
+}
+
 const Landing = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
@@ -59,37 +84,9 @@ const Landing = (props) => {
       <PageLayout backgroundColor={ThemeColors[name]}>
         <Grid>
           <TextSection />
-
           <Section>
             {Icons.map((IconData, idx) => (
-              <Block
-                key={idx}
-                xsSize="100%"
-                smSize="50%"
-                mdSize="20%"
-                style={{ alignItems: 'center', marginTop: 30 }}
-              >
-                <Pressable
-                  onPress={() =>
-                    navigation.navigate(IconData.pageName, {
-                      name: name.toLowerCase(),
-                    })
-                  }
-                  style={styles.box}
-                >
-                  <Iconimage source={IconData.image} />
-                  <Text
-                    category="h4"
-                    style={{
-                      paddingTop: 20,
-                      textAlign: 'center',
-                      color: 'white',
-                    }}
-                  >
-                    {IconData.pageName}
-                  </Text>
-                </Pressable>
-              </Block>
+              <LandingIcon key={idx} IconData={IconData} name={name} navigation={navigation} />
             ))}
           </Section>
         </Grid>
@@ -99,6 +96,16 @@ const Landing = (props) => {
 };
 
 const styles = StyleSheet.create({
+  landingIconWrapper: {
+    alignItems: 'center',
+    marginTop: 30
+  },
+  box: {
+    alignItems: 'center',
+    padding: 10,
+    marginTop: 10,
+    marginBottom: 10,
+  },
   avpic: {
     width: 200,
     height: 200,

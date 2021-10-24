@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, Image, Pressable } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
-import { Section, Block, Grid } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
 const TextSection = withSizeInfo(({ sizeSelector }) => {
   const headerStyles = sizeSelector({
     xs: styles.headerxs,
+    md: styles.headermd,
     lg: styles.headerlg,
   });
   const subheaderStyles = sizeSelector({
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 20,
     textAlign: 'center',
+    fontWeight: '400',
     color: 'white',
   },
   headerlg: {
@@ -55,13 +57,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginLeft: 30,
     fontSize: 75,
+    fontWeight: '400',
     textAlign: 'center',
     color: 'white',
   },
+  // headermd: {
+  //   marginTop: 30,
+  //   marginBottom: 20,
+  //   textAlign: 'center',
+  //   fontWeight: '400',
+  //   // color: 'white',
+  //   fontSize: 35,
+  // },
   subheaderxs: {
     marginTop: 10,
     marginBottom: 20,
     fontSize: 25,
+    fontWeight: '300',
     textAlign: 'center',
     color: 'white',
   },
@@ -69,6 +81,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     fontSize: 35,
+    fontWeight: '300',
     textAlign: 'center',
     color: 'white',
   },

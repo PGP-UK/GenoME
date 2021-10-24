@@ -34,7 +34,7 @@ const AllAmbassadors = {
 };
 
 const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, sm: 3 });
+  const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
   return (
@@ -46,72 +46,29 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const HeartSNV = (props) => {
-  const { name, image, themeColor, navigation } = props;
-  return (
-    <Block xsSize="100%" smSize="100%" mdSize="33%">
-      <Pressable
-        onPress={() =>
-          navigation.navigate('Diseases', {
-            name: name.toLowerCase(),
-            disease: 'heart',
-          })
-        }
-        style={styles.box}>
-        <SNVImage source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
-          Heart disease
-        </Text>
-      </Pressable>
-    </Block>
-  );
-};
-
-const CrohnSNV = (props) => {
-  const { name, image, themeColor, navigation } = props;
-  return (
-    <Block xsSize="100%" smSize="100%" mdSize="33%">
-      <Pressable
-        onPress={() =>
-          navigation.navigate('Diseases', {
-            name: name.toLowerCase(),
-            disease: 'crohn',
-          })
-        }
-        style={styles.box}>
-        <SNVImage source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
-          Crohn's disease
-        </Text>
-      </Pressable>
-    </Block>
-  );
-};
-
-const OvarianSNV = (props) => {
-  const { name, image, themeColor, navigation } = props;
-  return (
-    <Block xsSize="100%" smSize="100%" mdSize="33%">
-      <Pressable
-        onPress={() =>
-          navigation.navigate('Diseases', {
-            name: name.toLowerCase(),
-            disease: 'ovarian',
-          })
-        }
-        style={styles.box}>
-        <SNVImage source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
-          Ovarian cancer
-        </Text>
-      </Pressable>
-    </Block>
-  );
-};
+const SNVImages = ({ name, image, themeColor, navigation, disease, header }) => (
+  <Block xsSize="100%" smSize="100%" mdSize="33%">
+    <Pressable
+      onPress={() =>
+        navigation.navigate('Diseases', {
+          name: name.toLowerCase(),
+          disease: disease,
+        })
+      }
+      style={styles.box}>
+      <SNVImage source={image} style={styles.image} resizeMode="contain" />
+      <Text category="h2" style={[styles.header2, { color: themeColor }]}>
+        {header}
+      </Text>
+    </Pressable>
+  </Block>
+)
 
 const Health = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
+  const healthData = AllAmbassadors[name]
+  const themeColor = healthData.themeColor
   return (
     <>
       <PageLayout>
@@ -145,29 +102,29 @@ const Health = (props) => {
             </Block>
           </Section>
           <Section>
-            <HeartSNV
+            <SNVImages
+              disease='heart'
+              header='Heart disease'
               name={name}
-              image={AllAmbassadors[name].SNV_heart_image}
-              themeColor={AllAmbassadors[name].themeColor}
+              image={healthData.SNV_heart_image}
+              themeColor={themeColor}
               navigation={navigation}
-              data={AllAmbassadors[name].heart_data}
-              disease_image={AllAmbassadors[name].heart_image}
             />
-            <CrohnSNV
+            <SNVImages
+              disease='crohn'
+              header="Crohn's disease"
               name={name}
-              image={AllAmbassadors[name].SNV_crohn_image}
-              themeColor={AllAmbassadors[name].themeColor}
+              image={healthData.SNV_crohn_image}
+              themeColor={themeColor}
               navigation={navigation}
-              data={AllAmbassadors[name].crohn_data}
-              disease_image={AllAmbassadors[name].crohn_image}
             />
-            <OvarianSNV
+            <SNVImages
+              disease='ovarian'
+              header='Ovarian cancer'
               name={name}
-              image={AllAmbassadors[name].SNV_ovarian_image}
-              themeColor={AllAmbassadors[name].themeColor}
+              image={healthData.SNV_ovarian_image}
+              themeColor={themeColor}
               navigation={navigation}
-              data={AllAmbassadors[name].ovarian_data}
-              disease_image={AllAmbassadors[name].ovarian_image}
             />
           </Section>
         </Grid>

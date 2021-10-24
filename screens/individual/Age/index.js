@@ -1,43 +1,51 @@
 import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 
 import PageLayout from '../../../components/PageLayout';
-import TopSection from './TopSection';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
+import AgeExplanationText from './AgeExplanationText';
 
-const dataFile = {
-  data: require(`../../../assets/data/age/data.json`),
-};
+const AgeData = require('../../../assets/data/age/data.json')
 
 const AmbassadorsData = {
   stephan: {
-    image: require(`../../../assets/images/age_pie_charts/stephan.png`),
+    image: require('../../../assets/images/age_pie_charts/stephan.png'),
   },
   laura: {
-    image: require(`../../../assets/images/age_pie_charts/laura.png`),
+    image: require('../../../assets/images/age_pie_charts/laura.png'),
   },
   momodou: {
-    image: require(`../../../assets/images/age_pie_charts/momodou.png`),
+    image: require('../../../assets/images/age_pie_charts/momodou.png'),
   },
   colin: {
-    image: require(`../../../assets/images/age_pie_charts/colin.png`),
+    image: require('../../../assets/images/age_pie_charts/colin.png'),
   },
 };
 
 const Age = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const ambassadors = dataFile.data[name];
-
+  const data = AgeData[name]
   return (
     <>
       <PageLayout>
-        <TopSection data={AmbassadorsData[name].data} />
-        <CenterImage source={AmbassadorsData[name].image} />
-        <BottomSection data={dataFile.data[name]} />
+        <Text style={styles.heading}>Epigenetic Age</Text>
+        <AgeExplanationText themeColor={data.themeColor} />
+        <CenterImage image={AmbassadorsData[name].image} data={data} />
+        <BottomSection data={data} />
       </PageLayout>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  heading: {
+    marginTop: 10,
+    marginBottom: 20,
+    fontSize: 40,
+    fontWeight: '200',
+  },
+});
 
 export default Age;

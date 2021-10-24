@@ -11,8 +11,7 @@ const TopSection = withSizeInfo(({ sizeSelector, data }) => {
 
   return (
     <Section>
-      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={styles.heading}>Epigenetic Age</Text>
+      <Block>
       </Block>
     </Section>
   );

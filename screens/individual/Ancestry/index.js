@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import PageLayout from '../../../components/PageLayout';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { Grid, Section } from 'react-native-responsive-layout';
 import TopText from './TopText';
 
 const AllAmbassadorsData = {

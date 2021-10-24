@@ -7,20 +7,20 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 const TextSection = withSizeInfo(({ sizeSelector }) => {
   const headerStyles = sizeSelector({
     xs: styles.headerxs,
-    md: styles.headerMd,
+    lg: styles.headerlg,
   });
   const subheaderStyles = sizeSelector({
     xs: styles.subheaderxs,
-    md: styles.subheaderMd,
+    lg: styles.subheaderlg,
   });
   const mainTextStyles = sizeSelector({
     xs: styles.main_textxs,
-    md: styles.main_textMd,
+    lg: styles.main_textlg,
   });
 
   return (
     <Section>
-      <Block xsSize="100%" mdSize="100%">
+      <Block xsSize="100%" lgSize="100%">
         <Text category="h1" style={headerStyles}>
           My GENOME contains many layers of INFORMATION, including GENETIC and
           EPIGENETIC information.
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
   },
-  headerMd: {
+  headerlg: {
     marginTop: 60,
     marginBottom: 20,
     marginLeft: 30,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
   },
-  subheaderMd: {
+  subheaderlg: {
     marginTop: 10,
     marginBottom: 20,
     fontSize: 35,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
   },
-  main_textMd: {
+  main_textlg: {
     marginTop: 10,
     marginBottom: 20,
     fontSize: 25,

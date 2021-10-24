@@ -50,14 +50,9 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const Landing = withSizeInfo(({ sizeSelector, ...props }) => {
+const Landing = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
-
-  const headerStyles = sizeSelector({
-    xs: styles.headerxs,
-    md: styles.headerMd,
-  });
 
   return (
     <>
@@ -101,43 +96,9 @@ const Landing = withSizeInfo(({ sizeSelector, ...props }) => {
       </PageLayout>
     </>
   );
-});
+};
 
 const styles = StyleSheet.create({
-  headerxs: {
-    marginTop: 60,
-    marginBottom: 20,
-    // marginLeft: 30,
-    // fontSize: 85,
-    textAlign: 'center',
-    color: 'white',
-  },
-  headerMd: {
-    marginTop: 60,
-    marginBottom: 20,
-    marginLeft: 30,
-    fontSize: 85,
-    textAlign: 'center',
-    color: 'white',
-  },
-  subheader: {
-    marginTop: 10,
-    marginBottom: 20,
-    // paddingLeft: 70,
-    // paddingRight: 70,
-    // fontSize: 30,
-    textAlign: 'center',
-    color: 'white',
-  },
-  main_text: {
-    marginTop: 10,
-    marginBottom: 20,
-    // paddingLeft: 100,
-    // paddingRight: 100,
-    fontSize: 20,
-    textAlign: 'center',
-    color: 'white',
-  },
   avpic: {
     width: 200,
     height: 200,

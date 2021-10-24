@@ -3,7 +3,7 @@ import { StyleSheet, Image, View } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import PageLayout from '../../../components/PageLayout';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
-import CenterImage from './CenterImage';
+import TopText from './TopText';
 
 const AllAmbassadorsData = {
   stephan: {
@@ -43,32 +43,10 @@ const Ancestry = (props) => {
       <PageLayout>
         <Grid>
           <Section mdSize="50%">
-            <Block xsSize="100%" mdSize="35%">
-              <Text category="h1" style={styles.header}>
-                Ancestry
-              </Text>
-              <Text category="p1" style={styles.main_text}>
-                Different populations have their own distinctive pattern of
-                genetic variants. By comparing thousands of my variants with
-                those of individuals from different populations, my ancestry can
-                be predicted.
-              </Text>
-            </Block>
-
-            <Block xsSize="100%" mdSize="35%">
-              <CenterImage source={AllAmbassadorsData[name].image} />
-            </Block>
-
-            <Block xsSize="100%" mdSize="30%" style={styles.percent_box}>
-              <Text
-                // style={rightTextStyles}
-                lines={[
-                  'hello',
-                  AllAmbassadorsData[name].data.most_percent,
-                  AllAmbassadorsData[name].data.other_percent_1,
-                ]}
-              />
-            </Block>
+            <TopText
+              data={AllAmbassadorsData[name].data}
+              image={AllAmbassadorsData[name]}
+            />
           </Section>
 
           <Section mdSize="50%">

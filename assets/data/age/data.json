@@ -1,38 +1,42 @@
 {
     "stephan":{
+        "Name": "Stephan",
         "Age": "57",
         "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
-        "themeColor": "#38BA9C",
+        "themeColor": "#8CD8C4",
         "smoker": "non-smoker"
     },
     "laura":{
+        "Name": "Laura",
         "Age": "46",
         "Epigenetic": "44",
         "Diferrence":"2",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
-        "themeColor": "#f7b552",
+        "themeColor": "#F6BD4A",
         "smoker": "non-smoker"
     },
     "momodou":{
+        "Name": "Momodou",
         "Age": "57",
         "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
-        "themeColor": "#e64949",
+        "themeColor": "#D94553",
         "smoker": "non-smoker"
     },
     "colin":{
+        "Name": "Colin",
         "Age": "57",
         "Epigenetic": "56",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
-        "themeColor": "#a572f7",
+        "themeColor": "#9C82DE",
         "smoker": "non-smoker"
     }
 }

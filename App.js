@@ -71,6 +71,10 @@ async function cacheResourcesAsync() {
     require('./assets/images/health_screen_SNV/colin_heart_SNV.png'),
     require('./assets/images/health_screen_SNV/colin_crohn_SNV.png'),
     require('./assets/images/health_screen_SNV/colin_ovarian_SNV.png'),
+    require('./assets/images/ancestry_screen_pie/stephan_ancestry.jpeg'),
+    require('./assets/images/ancestry_screen_pie/colin_ancestry.jpeg'),
+    require('./assets/images/ancestry_screen_pie/laura_ancestry.jpeg'),
+    require('./assets/images/ancestry_screen_pie/momodou_ancestry.jpeg'),
   ];
 
   const cacheImages = images.map((image) =>

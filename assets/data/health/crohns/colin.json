@@ -1,1 +1,14 @@
-{}
+{
+    "risk": {
+      "first": "Normal",
+      "second": "Increased (+)",
+      "third": "Increased (++)"
+    },
+    "population": {
+      "percent": "99%"
+    },
+    "message":"This version of the variant suggests a normal risk of Crohn's disease",
+    "themeColor": "#9C82DE"
+  }
+  
+

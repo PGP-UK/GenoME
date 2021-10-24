@@ -53,8 +53,7 @@ const Ambassador = (props) => {
         onPress={() =>
           navigation.navigate('Landing', { name: name.toLowerCase() })
         }
-        style={styles.box}
-      >
+        style={styles.box}>
         <AmbassadorImage source={image} />
         <Text category="p1" style={[styles.header, { color: themeColor }]}>
           {hexId}

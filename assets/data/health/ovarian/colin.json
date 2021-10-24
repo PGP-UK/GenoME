@@ -1,1 +1,14 @@
-{}
+{
+    "risk": {
+      "first": "Normal",
+      "second": "Reduced (-)",
+      "third": "Reduced (-)"
+    },
+    "population": {
+      "percent": "90%"
+    },
+    "message":"This version of the variant suggests a normal risk of ovarian cancer",
+    "themeColor": "#9C82DE"
+  }
+  
+

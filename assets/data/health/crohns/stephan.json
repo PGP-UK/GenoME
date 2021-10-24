@@ -5,8 +5,9 @@
       "third": "Increased (++)"
     },
     "population": {
-      "percent": "49%"
+      "percent": "1%"
     },
-    "themeColor": "#38BA9C"
+    "message":"This version of the variant increases my risk of Crohn's disease",
+    "themeColor": "#8CD8C4"
   }
   

@@ -1,35 +1,50 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
-import { Layout, Text, Button } from '@ui-kitten/components';
+import { Text } from '@ui-kitten/components';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 
 const AllAmbassadors = {
   stephan: {
-    heart_image: require(`../../../assets/images/health_screen_SNV/stephan_heart_SNV.png`),
-    crohn_image: require(`../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png`),
-    ovarian_image: require(`../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png`),
+    SNV_heart_image: require(`../../../assets/images/health_screen_SNV/stephan_heart_SNV.png`),
+    SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png`),
+    SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png`),
     themeColor: '#8CD8C4',
   },
   colin: {
-    heart_image: require(`../../../assets/images/health_screen_SNV/colin_heart_SNV.png`),
-    crohn_image: require(`../../../assets/images/health_screen_SNV/colin_crohn_SNV.png`),
-    ovarian_image: require(`../../../assets/images/health_screen_SNV/colin_ovarian_SNV.png`),
+    SNV_heart_image: require(`../../../assets/images/health_screen_SNV/colin_heart_SNV.png`),
+    SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/colin_crohn_SNV.png`),
+    SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/colin_ovarian_SNV.png`),
     themeColor: '#9C82DE',
   },
   laura: {
-    heart_image: require(`../../../assets/images/health_screen_SNV/laura_heart_SNV.png`),
-    crohn_image: require(`../../../assets/images/health_screen_SNV/laura_crohn_SNV.png`),
-    ovarian_image: require(`../../../assets/images/health_screen_SNV/laura_ovarian_SNV.png`),
+    SNV_heart_image: require(`../../../assets/images/health_screen_SNV/laura_heart_SNV.png`),
+    SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/laura_crohn_SNV.png`),
+    SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/laura_ovarian_SNV.png`),
     themeColor: '#F6BD4A',
   },
   momodou: {
-    heart_image: require(`../../../assets/images/health_screen_SNV/momodou_heart_SNV.png`),
-    crohn_image: require(`../../../assets/images/health_screen_SNV/momodou_crohn_SNV.png`),
-    ovarian_image: require(`../../../assets/images/health_screen_SNV/momodou_ovarian_SNV.png`),
+    SNV_heart_image: require(`../../../assets/images/health_screen_SNV/momodou_heart_SNV.png`),
+    SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/momodou_crohn_SNV.png`),
+    SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/momodou_ovarian_SNV.png`),
     themeColor: '#D94553',
   },
 };
+
+const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const numImagesPerRow = sizeSelector({ xs: 1, sm: 3 });
+  const imageWidth =
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
+  return (
+    <Image
+      {...props}
+      style={{ width: imageWidth, height: imageWidth }}
+      resizeMode="contain"
+    />
+  );
+});
 
 const HeartSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
@@ -37,11 +52,14 @@ const HeartSNV = (props) => {
     <Block xsSize="100%" smSize="100%" mdSize="33%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Heart', { name: name.toLowerCase() })
+          navigation.navigate('Diseases', {
+            name: name.toLowerCase(),
+            disease: 'heart',
+          })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={(styles.header, { color: themeColor })}>
+        <SNVImage source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
           Heart disease
         </Text>
       </Pressable>
@@ -55,11 +73,14 @@ const CrohnSNV = (props) => {
     <Block xsSize="100%" smSize="100%" mdSize="33%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Crohn', { name: name.toLowerCase() })
+          navigation.navigate('Diseases', {
+            name: name.toLowerCase(),
+            disease: 'crohn',
+          })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={(styles.header, { color: themeColor })}>
+        <SNVImage source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
           Crohn's disease
         </Text>
       </Pressable>
@@ -73,11 +94,14 @@ const OvarianSNV = (props) => {
     <Block xsSize="100%" smSize="100%" mdSize="33%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Ovarian', { name: name.toLowerCase() })
+          navigation.navigate('Diseases', {
+            name: name.toLowerCase(),
+            disease: 'ovarian',
+          })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={(styles.header, { color: themeColor })}>
+        <SNVImage source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
           Ovarian cancer
         </Text>
       </Pressable>
@@ -102,7 +126,7 @@ const Health = (props) => {
           <Section>
             <Block>
               <Text category="p1" style={styles.main_text}>
-                Genetic makeup can also give inidications on inherited risks and
+                Genetic makeup can also give indications on inherited risks and
                 general disease risks. Environmental factors can also have a
                 bearing on these results.
               </Text>
@@ -123,21 +147,27 @@ const Health = (props) => {
           <Section>
             <HeartSNV
               name={name}
-              image={AllAmbassadors[name].heart_image}
+              image={AllAmbassadors[name].SNV_heart_image}
               themeColor={AllAmbassadors[name].themeColor}
               navigation={navigation}
+              data={AllAmbassadors[name].heart_data}
+              disease_image={AllAmbassadors[name].heart_image}
             />
             <CrohnSNV
               name={name}
-              image={AllAmbassadors[name].crohn_image}
+              image={AllAmbassadors[name].SNV_crohn_image}
               themeColor={AllAmbassadors[name].themeColor}
               navigation={navigation}
+              data={AllAmbassadors[name].crohn_data}
+              disease_image={AllAmbassadors[name].crohn_image}
             />
             <OvarianSNV
               name={name}
-              image={AllAmbassadors[name].ovarian_image}
+              image={AllAmbassadors[name].SNV_ovarian_image}
               themeColor={AllAmbassadors[name].themeColor}
               navigation={navigation}
+              data={AllAmbassadors[name].ovarian_data}
+              disease_image={AllAmbassadors[name].ovarian_image}
             />
           </Section>
         </Grid>
@@ -150,6 +180,12 @@ const styles = StyleSheet.create({
   header: {
     color: '#63BEE1',
     fontWeight: '400',
+    marginTop: 20,
+    marginBottom: 25,
+  },
+  header2: {
+    fontWeight: '400',
+    textAlign: 'center',
     marginTop: 20,
     marginBottom: 25,
   },

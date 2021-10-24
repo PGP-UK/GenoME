@@ -8,20 +8,60 @@ import PageLayout from '../../../../components/PageLayout';
 
 const AllAmbassadorsData = {
   stephan: {
-    data: require(`../../../../assets/data/health/heart/stephan.json`),
-    image: require(`../../../../assets/images/heart_profiles/stephan_heart_profile.png`),
+    heart: {
+      data: require(`../../../../assets/data/health/heart/stephan.json`),
+      image: require(`../../../../assets/images/heart_profiles/stephan_heart_profile.png`),
+    },
+    ovarian: {
+      data: require(`../../../../assets/data/health/ovarian/stephan.json`),
+      image: require(`../../../../assets/images/ovarian_profiles/stephan_ovarian_profile.png`),
+    },
+    crohn: {
+      data: require(`../../../../assets/data/health/crohns/stephan.json`),
+      image: require(`../../../../assets/images/crohns_profiles/stephan_crohn_profile.png`),
+    },
   },
   colin: {
-    data: require(`../../../../assets/data/health/heart/colin.json`),
-    image: require(`../../../../assets/images/heart_profiles/colin_heart_profile.png`),
+    heart: {
+      data: require(`../../../../assets/data/health/heart/colin.json`),
+      image: require(`../../../../assets/images/heart_profiles/colin_heart_profile.png`),
+    },
+    ovarian: {
+      data: require(`../../../../assets/data/health/ovarian/colin.json`),
+      image: require(`../../../../assets/images/ovarian_profiles/colin_ovarian_profile.png`),
+    },
+    crohn: {
+      data: require(`../../../../assets/data/health/crohns/colin.json`),
+      image: require(`../../../../assets/images/crohns_profiles/colin_crohn_profile.png`),
+    },
   },
   laura: {
-    data: require(`../../../../assets/data/health/heart/laura.json`),
-    image: require(`../../../../assets/images/heart_profiles/laura_heart_profile.png`),
+    heart: {
+      data: require(`../../../../assets/data/health/heart/laura.json`),
+      image: require(`../../../../assets/images/heart_profiles/laura_heart_profile.png`),
+    },
+    ovarian: {
+      data: require(`../../../../assets/data/health/ovarian/laura.json`),
+      image: require(`../../../../assets/images/ovarian_profiles/laura_ovarian_profile.png`),
+    },
+    crohn: {
+      data: require(`../../../../assets/data/health/crohns/laura.json`),
+      image: require(`../../../../assets/images/crohns_profiles/laura_crohn_profile.png`),
+    },
   },
   momodou: {
-    data: require(`../../../../assets/data/health/heart/momodou.json`),
-    image: require(`../../../../assets/images/heart_profiles/momodou_heart_profile.png`),
+    heart: {
+      data: require(`../../../../assets/data/health/heart/momodou.json`),
+      image: require(`../../../../assets/images/heart_profiles/momodou_heart_profile.png`),
+    },
+    ovarian: {
+      data: require(`../../../../assets/data/health/ovarian/momodou.json`),
+      image: require(`../../../../assets/images/ovarian_profiles/momodou_ovarian_profile.png`),
+    },
+    crohn: {
+      data: require(`../../../../assets/data/health/crohns/momodou.json`),
+      image: require(`../../../../assets/images/crohns_profiles/momodou_crohn_profile.png`),
+    },
   },
 };
 
@@ -41,7 +81,7 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
 const Heart = (props) => {
   const { route } = props;
   const { name, disease } = route.params;
-  const data = AllAmbassadorsData[name].data;
+  const data = AllAmbassadorsData[name][disease].data;
 
   return (
     <>
@@ -79,7 +119,7 @@ const Heart = (props) => {
             </Text>
           </Block>
           <Block xsSize="100%" smSize="100%" mdSize="33%">
-            <AmbassadorImage source={AllAmbassadorsData[name].image} />
+            <AmbassadorImage source={AllAmbassadorsData[name][disease].image} />
           </Block>
           <Block xsSize="100%" smSize="100%" mdSize="33%">
             <Card>

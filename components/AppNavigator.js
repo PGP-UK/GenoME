@@ -8,6 +8,7 @@ import Age from '../screens/individual/Age';
 import Ancestry from '../screens/individual/Ancestry';
 import Eyes from '../screens/individual/Eyes';
 import Health from '../screens/individual/Health';
+import Diseases from '../screens/individual/Health/Diseases';
 import Crohn from '../screens/individual/Health/Crohn';
 import Heart from '../screens/individual/Health/Heart';
 import Ovarian from '../screens/individual/Health/Ovarian';
@@ -24,8 +25,7 @@ const AppNavigator = () => {
         screenOptions={{
           headerShown: false,
           cardStyle: { backgroundColor: '#fff' },
-        }}
-      >
+        }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="About" component={About} />
 
@@ -78,6 +78,11 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Smoking"
           component={Smoking}
+          initialParams={{ name: 'stephan' }}
+        />
+        <Stack.Screen
+          name="Diseases"
+          component={Diseases}
           initialParams={{ name: 'stephan' }}
         />
       </Stack.Navigator>

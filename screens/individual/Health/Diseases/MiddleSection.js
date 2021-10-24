@@ -6,20 +6,28 @@ import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { StyleSheet, View, Image } from 'react-native';
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, sm: 3 });
-  const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
+  const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
+  const imageWidth = Math.round(useSafeAreaFrame().width * 0.35) - 40;
+  const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.35);
+  const finalImageWidth =
+    imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
+
   return (
-    <Image
-      {...props}
-      style={{ width: imageWidth, height: imageWidth }}
-      resizeMode="contain"
-    />
+    <View style={{ justifyContent: 'center', flex: 1 }}>
+      <Image
+        {...props}
+        style={[
+          ImageStyles,
+          { width: finalImageWidth, height: finalImageWidth },
+        ]}
+        resizeMode="contain"
+      />
+    </View>
   );
 });
 
 const MiddleSection = (props) => {
-  const { disease, data, name, image } = props;
+  const { disease, data, image } = props;
   if (disease === 'heart') {
     return (
       <Section style={{ paddingBottom: 50 }}>
@@ -182,6 +190,13 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     backgroundColor: '#F6BB41',
+  },
+  imageMd: {
+    alignSelf: 'center',
+    marginTop: -50,
+  },
+  imageSm: {
+    alignSelf: 'center',
   },
 });
 

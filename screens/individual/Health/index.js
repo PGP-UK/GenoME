@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 import { Text } from '@ui-kitten/components';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 
@@ -31,6 +33,19 @@ const AllAmbassadors = {
   },
 };
 
+const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const numImagesPerRow = sizeSelector({ xs: 1, sm: 3 });
+  const imageWidth =
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
+  return (
+    <Image
+      {...props}
+      style={{ width: imageWidth, height: imageWidth }}
+      resizeMode="contain"
+    />
+  );
+});
+
 const HeartSNV = (props) => {
   const { name, image, themeColor, navigation } = props;
   return (
@@ -43,8 +58,8 @@ const HeartSNV = (props) => {
           })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={(styles.header, { color: themeColor })}>
+        <SNVImage source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
           Heart disease
         </Text>
       </Pressable>
@@ -64,8 +79,8 @@ const CrohnSNV = (props) => {
           })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={(styles.header, { color: themeColor })}>
+        <SNVImage source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
           Crohn's disease
         </Text>
       </Pressable>
@@ -85,8 +100,8 @@ const OvarianSNV = (props) => {
           })
         }
         style={styles.box}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-        <Text category="h2" style={(styles.header, { color: themeColor })}>
+        <SNVImage source={image} style={styles.image} resizeMode="contain" />
+        <Text category="h2" style={[styles.header2, { color: themeColor }]}>
           Ovarian cancer
         </Text>
       </Pressable>
@@ -165,6 +180,12 @@ const styles = StyleSheet.create({
   header: {
     color: '#63BEE1',
     fontWeight: '400',
+    marginTop: 20,
+    marginBottom: 25,
+  },
+  header2: {
+    fontWeight: '400',
+    textAlign: 'center',
     marginTop: 20,
     marginBottom: 25,
   },

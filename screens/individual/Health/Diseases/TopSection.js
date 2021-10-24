@@ -16,7 +16,7 @@ const TopSection = (props) => {
         <Block xsSize="100%" smSize="100%" mdSize="30%">
           <Text
             category="h1"
-            style={(styles.header, { color: data.themeColor })}>
+            style={[styles.header, { color: data.themeColor }]}>
             Genetic variant ID: {'\n'}rs238206
           </Text>
         </Block>
@@ -34,7 +34,7 @@ const TopSection = (props) => {
         <Block xsSize="100%" smSize="100%" mdSize="30%">
           <Text
             category="h1"
-            style={(styles.header, { color: data.themeColor })}>
+            style={[styles.header, { color: data.themeColor }]}>
             Genetic variant ID: {'\n'}rs2066847
           </Text>
         </Block>
@@ -52,7 +52,7 @@ const TopSection = (props) => {
         <Block xsSize="100%" smSize="100%" mdSize="30%">
           <Text
             category="h1"
-            style={(styles.header, { color: data.themeColor })}>
+            style={[styles.header, { color: data.themeColor }]}>
             Genetic variant ID: {'\n'}rs3218536
           </Text>
         </Block>

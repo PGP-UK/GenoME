@@ -73,42 +73,10 @@ const BottomSection = (props) => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    color: '#63BEE1',
-    fontWeight: '400',
-    marginTop: 20,
-    marginBottom: 25,
-  },
-  header2: {
-    color: '#666E7A',
-    fontWeight: '400',
-    marginTop: 20,
-    marginBottom: 25,
-  },
-  header3: {
-    color: '#666E7A',
-    fontWeight: '400',
-  },
   main_text: {
     color: '#666E7A',
     fontSize: 20,
     marginBottom: 20,
-  },
-  square1: {
-    width: 25,
-    height: 25,
-    backgroundColor: '#977ABD',
-    paddingRight: 0,
-  },
-  square2: {
-    width: 25,
-    height: 25,
-    backgroundColor: '#34BC99',
-  },
-  square3: {
-    width: 25,
-    height: 25,
-    backgroundColor: '#F6BB41',
   },
 });
 

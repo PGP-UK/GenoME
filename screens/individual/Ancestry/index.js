@@ -24,16 +24,6 @@ const AllAmbassadorsData = {
   },
 };
 
-const TextSection = ({ textStyle, lines }) => (
-  <>
-    {lines.map((l, i) => (
-      <Text key={i} style={textStyle}>
-        {l}
-      </Text>
-    ))}
-  </>
-);
-
 const Ancestry = (props) => {
   const { route } = props;
   const { name } = route.params;

@@ -22,7 +22,7 @@ const TopSection = (props) => {
   const { disease, data } = props;
   const textData = textInformation[disease];
   return (
-    <Section style={{ paddingBottom: 50 }}>
+    <Section>
       <Block xsSize="100%" smSize="100%" mdSize="70%">
         <Text category="h1" style={styles.header}>
           {textData.heading}
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     color: '#63BEE1',
     fontWeight: '400',
     marginTop: 20,
-    marginBottom: 25,
   },
 });
 

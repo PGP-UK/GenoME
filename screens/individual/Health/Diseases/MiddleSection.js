@@ -44,6 +44,7 @@ const VariantRisk = ({ riskData }) => (
 
 const MiddleSection = (props) => {
   const { data, image } = props;
+  const colours = data.population.colour;
   return (
     <>
       <Section>
@@ -53,15 +54,13 @@ const MiddleSection = (props) => {
         </Block>
         {/* <VariantRisk variantRisk={data.risk} smHidden /> */}
         <Block xsSize="100%" mdSize="33%">
-          <Card>
-            <Text style={styles.main_text}>
-              There are three versions of this variant and{' '}
-              {data.population.percent} of the population have the same variant
-              as me. {'\n'}
-              {'\n'}
-              {data.message}
-            </Text>
-          </Card>
+          <Text style={[styles.box_text, { backgroundColor: colours }]}>
+            There are three versions of this variant and{' '}
+            {data.population.percent} of the population have the same variant as
+            me. {'\n'}
+            {'\n'}
+            {data.message}
+          </Text>
           <Block>
             <Text category="p1" style={styles.main_text}>
               The colour split illustrates how common each variant type is in
@@ -89,6 +88,12 @@ const styles = StyleSheet.create({
     color: '#666E7A',
     fontSize: 20,
     marginBottom: 20,
+  },
+  box_text: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: '400',
+    padding: 10,
   },
   square1: {
     width: 25,

@@ -22,8 +22,34 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
+const VariantRisk2 = withSizeInfo(({ sizeSelector, riskData }) => {
+  const ImageStyles = sizeSelector({
+    xs: styles.xsHeader3,
+    md: styles.mdHeader3,
+  });
+  return (
+    <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
+      <Text category="h1" style={styles.header2}>
+        Risk with each variant type:
+      </Text>
+      <Text category="h1" style={ImageStyles}>
+        <View style={styles.square1} />
+        {riskData.first}
+      </Text>
+      <Text category="h1" style={ImageStyles}>
+        <View style={styles.square2} />
+        {riskData.second}
+      </Text>
+      <Text category="h1" style={ImageStyles}>
+        <View style={styles.square3} />
+        {riskData.third}
+      </Text>
+    </Block>
+  );
+});
+
 const VariantRisk = ({ riskData }) => (
-  <Block xsSize="100%" mdSize="33%">
+  <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
     <Text category="h1" style={styles.header2}>
       Risk with each variant type:
     </Text>
@@ -44,17 +70,18 @@ const VariantRisk = ({ riskData }) => (
 
 const MiddleSection = (props) => {
   const { data, image } = props;
-  const colours = data.population.colour;
+  const backgroundColour = data.population.colour;
   return (
     <>
       <Section>
-        <VariantRisk riskData={data.risk} />
-        <Block xsSize="100%" mdSize="33%">
+        <VariantRisk2 riskData={data.risk} smHidden />
+        <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
           <AmbassadorImage source={image} />
         </Block>
         {/* <VariantRisk variantRisk={data.risk} smHidden /> */}
         <Block xsSize="100%" mdSize="33%">
-          <Text style={[styles.box_text, { backgroundColor: colours }]}>
+          <Text
+            style={[styles.box_text, { backgroundColor: backgroundColour }]}>
             There are three versions of this variant and{' '}
             {data.population.percent} of the population have the same variant as
             me. {'\n'}
@@ -77,10 +104,13 @@ const styles = StyleSheet.create({
   header2: {
     color: '#666E7A',
     fontWeight: '400',
-    // marginTop: 20,
-    // marginBottom: 25,
   },
-  header3: {
+  mdHeader3: {
+    color: '#666E7A',
+    fontWeight: '400',
+    fontSize: 30,
+  },
+  xsHeader3: {
     color: '#666E7A',
     fontWeight: '400',
   },
@@ -94,6 +124,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '400',
     padding: 10,
+    marginBottom: 50,
   },
   square1: {
     width: 25,

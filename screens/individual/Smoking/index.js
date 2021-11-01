@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PageLayout from '../../../components/PageLayout';
 import TopSection from './TopSection';
 import BottomSection from './BottomSection';
@@ -27,18 +26,31 @@ const AmbassadorsData = {
 const Smoking = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const ambassadors = dataFile.data[name];
+  const data = dataFile.data[name];
 
   return (
-    <>
-      <PageLayout>
-        <TopSection data={AmbassadorsData[name].data} />
-        <CenterImage source={AmbassadorsData[name].image} />
-        <CenterImage data={dataFile.data[name]} />
-        <BottomSection data={dataFile.data[name]} />
-      </PageLayout>
-    </>
+    <PageLayout backgroundColor={data.themeColor}>
+      <Text style={[styles.heading, { backgroundColor: data.themeColor }]}>
+        Smoking Prediction
+      </Text>
+      <SmokingExText data={dataFile.data[name]} />
+      <CenterImage
+        source={AmbassadorsData[name].image}
+        data={dataFile.data[name]}
+      />
+      <BottomSection data={dataFile.data[name]} />
+    </PageLayout>
   );
 };
+
+const styles = StyleSheet.create({
+  heading: {
+    marginTop: 10,
+    marginBottom: 20,
+    fontSize: 40,
+    fontWeight: '600',
+    color: 'white',
+  },
+});
 
 export default Smoking;

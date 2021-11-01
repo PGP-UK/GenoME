@@ -8,7 +8,6 @@ const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
     xs: styles.mainSm,
     md: styles.mainMd,
   });
-
   const rowStyles = sizeSelector({
     xs: styles.textRowSm,
     md: styles.textRowMd,
@@ -23,30 +22,22 @@ const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
   });
 
   return (
-    <Section>
+    <Section style={[{ backgroundColor: data.themeColor }]}>
       <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={[styles.actual, { color: data.themeColor }]}>
+        <Text style={[styles.actual]}>
           My epigenetic variants correctly predicted me to be a:{'\n'}
           {data.smoker}
         </Text>
       </Block>
       <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={[styles.actual, { color: data.themeColor }]}>
+        <Text style={[styles.actual]}>
           Actual Smoking status:{'\n'}
           {data.smoker}
           {'\n'}
         </Text>
       </Block>
-      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={styles.text}>
-          Epigenetic variants are chemical changes to your DNA, which alter how
-          it is used without changing the DNA sequence. When people smoke, their
-          epigenetic patterns change and we can use this to predict if they are
-          past/never or current smokers.
-        </Text>
-      </Block>
-      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={styles.text}>
+      <Block xsSize="100%" mdHidden>
+        <Text style={[styles.text, { backgroundColor: data.themeColor }]}>
           The smoking prediction was calculated from 187 epigenetic variants
           across the participant's genome. These variants have been found to
           change when people smoke, and because of this, can be used to predict
@@ -96,10 +87,14 @@ const styles = StyleSheet.create({
   actual: {
     fontSize: 30,
     marginBottom: 20,
+    fontWeight: '500',
+    color: 'white',
   },
   text: {
     fontSize: 20,
     marginBottom: 20,
+    fontWeight: '500',
+    color: 'white',
   },
   epigenetic: {
     fontSize: 30,

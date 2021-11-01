@@ -7,14 +7,12 @@ import { useSafeAreaFrame } from 'react-native-safe-area-context';
 const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
   const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
   const imageWidth = Math.round(useSafeAreaFrame().width * 0.8) - 40;
-  const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
+  const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.5);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
-  // console.log(data);
-
   return (
-    <Section stretch>
+    <Section stretch style={[{ backgroundColor: data.themeColor }]}>
       <Block>
         <View
           style={{
@@ -23,10 +21,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
           }}>
           <Image
             {...props}
-            style={[
-              ImageStyles,
-              { width: finalImageWidth, height: finalImageWidth },
-            ]}
+            style={[ImageStyles, { width: finalImageWidth }]}
             resizeMode="contain"
           />
         </View>
@@ -38,7 +33,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
 const styles = StyleSheet.create({
   imageMd: {
     alignSelf: 'center',
-    marginTop: -50,
+    marginTop: 20,
   },
   imageSm: {
     alignSelf: 'center',

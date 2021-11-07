@@ -1,8 +1,16 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import { StyleSheet, Text } from 'react-native';
+>>>>>>> a5765ae (fix conflicts)
 import PageLayout from '../../../components/PageLayout';
 import TopSection from './TopSection';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
+<<<<<<< HEAD
+=======
+import SmokingExText from './SmokingExText';
+>>>>>>> a5765ae (fix conflicts)
 
 const dataFile = {
   data: require(`../../../assets/data/age/data.json`),
@@ -27,8 +35,8 @@ const Smoking = (props) => {
   const { route } = props;
   const { name } = route.params;
   const data = dataFile.data[name];
-
   return (
+<<<<<<< HEAD
     <PageLayout backgroundColor={data.themeColor}>
       <Text style={[styles.heading, { backgroundColor: data.themeColor }]}>
         Smoking Prediction
@@ -40,6 +48,21 @@ const Smoking = (props) => {
       />
       <BottomSection data={dataFile.data[name]} />
     </PageLayout>
+=======
+    <>
+      <PageLayout backgroundColor={data.themeColor}>
+        <Text style={[styles.heading, { backgroundColor: data.themeColor }]}>
+          Smoking Prediction
+        </Text>
+        <SmokingExText data={dataFile.data[name]} />
+        <CenterImage
+          source={AmbassadorsData[name].image}
+          data={dataFile.data[name]}
+        />
+        <BottomSection data={dataFile.data[name]} />
+      </PageLayout>
+    </>
+>>>>>>> a5765ae (fix conflicts)
   );
 };
 

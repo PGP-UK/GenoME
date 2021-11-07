@@ -87,6 +87,7 @@ async function cacheResourcesAsync() {
     require('./assets/images/ovarian_profiles/colin_ovarian_profile.png'),
     require('./assets/images/ovarian_profiles/momodou_ovarian_profile.png'),
     require('./assets/images/ovarian_profiles/stephan_ovarian_profile.png'),
+    require('./assets/images/ancestry_screen_pie/ancestry_world.jpeg'),
   ];
 
   const cacheImages = images.map((image) =>

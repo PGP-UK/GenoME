@@ -10,8 +10,8 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
     xs: styles.headerxs,
     lg: styles.headerlg,
   });
-  const subheaderStyles = sizeSelector({
-    xs: styles.subheaderxs,
+  const rightTextStyles = sizeSelector({
+    xs: styles.rightTextxs,
     lg: styles.subheaderlg,
   });
 
@@ -34,9 +34,24 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
 
       <Block xsSize="100%" mdSize="30%" style={styles.percent_box}>
         <Text
-          // style={rightTextStyles}
-          lines={['hello', data.most_percent, data.other_percent_1]}
-        />
+          style={{
+            fontSize: 45,
+            color: data.themeColor,
+            textAlign: 'right',
+          }}
+        >
+          {data.most_percent}
+        </Text>
+        <Text
+          style={{
+            fontSize: 45,
+            color: data.themeColor,
+            textAlign: 'right',
+            marginTop: 15,
+          }}
+        >
+          {data.other_percent_1}
+        </Text>
       </Block>
     </Section>
   );
@@ -71,24 +86,36 @@ const styles = StyleSheet.create({
   percent_text: {
     fontSize: 25,
   },
-  leftTextSm: {
-    fontSize: 35,
-    color: '#45B0D4',
-    textAlign: 'center',
-  },
-  leftTextMd: {
-    fontSize: 35,
-    color: '#45B0D4',
-    textAlign: 'left',
-  },
-  rightTextSm: {
+  rightTextupperxs: {
     fontSize: 35,
     textAlign: 'center',
   },
-  rightTextMd: {
+  rightTextuppermd: {
+    fontSize: 35,
+    textAlign: 'center',
+  },
+  rightTextupperlg: {
     fontSize: 35,
     textAlign: 'right',
   },
+  // // rightTextlowerxs: {
+  // //   fontSize: 45,
+  // //   color: data.themeColor,
+  // //   textAlign: 'right',
+  // //   marginTop: 15,
+  // // },
+  // // rightTextlowermd: {
+  // //   fontSize: 45,
+  // //   color: data.themeColor,
+  // //   textAlign: 'right',
+  // //   marginTop: 15,
+  // // },
+  // // rightTextlowerlg: {
+  // //   fontSize: 45,
+  // //   color: data.themeColor,
+  // //   textAlign: 'right',
+  // //   marginTop: 15,
+  // },
 });
 
 export default TopText;

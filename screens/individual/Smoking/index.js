@@ -1,8 +1,9 @@
 import React from 'react';
 import PageLayout from '../../../components/PageLayout';
-import TopSection from './TopSection';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
+import SmokingExText from './SmokingExText'
+import { StyleSheet, Text } from 'react-native';
 
 const dataFile = {
   data: require(`../../../assets/data/age/data.json`),

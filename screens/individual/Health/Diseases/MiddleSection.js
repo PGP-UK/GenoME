@@ -22,13 +22,13 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const VariantRisk2 = withSizeInfo(({ sizeSelector, riskData }) => {
+const VariantRisk = withSizeInfo(({ sizeSelector, riskData, visbility }) => {
   const ImageStyles = sizeSelector({
     xs: styles.xsHeader3,
     md: styles.mdHeader3,
   });
   return (
-    <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
+    <>
       <Text category="h1" style={styles.header2}>
         Risk with each variant type:
       </Text>
@@ -44,29 +44,9 @@ const VariantRisk2 = withSizeInfo(({ sizeSelector, riskData }) => {
         <View style={styles.square3} />
         {riskData.third}
       </Text>
-    </Block>
+    </>
   );
 });
-
-const VariantRisk = ({ riskData }) => (
-  <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
-    <Text category="h1" style={styles.header2}>
-      Risk with each variant type:
-    </Text>
-    <Text category="h1" style={styles.header3}>
-      <View style={styles.square1} />
-      {riskData.first}
-    </Text>
-    <Text category="h1" style={styles.header3}>
-      <View style={styles.square2} />
-      {riskData.second}
-    </Text>
-    <Text category="h1" style={styles.header3}>
-      <View style={styles.square3} />
-      {riskData.third}
-    </Text>
-  </Block>
-);
 
 const MiddleSection = (props) => {
   const { data, image } = props;
@@ -74,11 +54,24 @@ const MiddleSection = (props) => {
   return (
     <>
       <Section>
-        <VariantRisk2 riskData={data.risk} smHidden />
+        <Block
+          xsSize="100%"
+          mdSize="33%"
+          style={{ paddingBottom: 50 }}
+          hidden
+          smVisible>
+          <VariantRisk riskData={data.risk} />
+        </Block>
         <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
           <AmbassadorImage source={image} />
         </Block>
-        {/* <VariantRisk variantRisk={data.risk} smHidden /> */}
+        <Block
+          xsSize="100%"
+          mdSize="33%"
+          style={{ paddingBottom: 50 }}
+          smHidden>
+          <VariantRisk riskData={data.risk} />
+        </Block>
         <Block xsSize="100%" mdSize="33%">
           <Text
             style={[styles.box_text, { backgroundColor: backgroundColour }]}>

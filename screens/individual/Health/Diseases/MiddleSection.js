@@ -28,7 +28,7 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData, visbility }) => {
     md: styles.mdHeader3,
   });
   return (
-    <>
+    <View>
       <Text category="h1" style={styles.header2}>
         Risk with each variant type:
       </Text>
@@ -44,7 +44,7 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData, visbility }) => {
         <View style={styles.square3} />
         {riskData.third}
       </Text>
-    </>
+    </View>
   );
 });
 
@@ -59,7 +59,7 @@ const MiddleSection = (props) => {
           mdSize="33%"
           style={{ paddingBottom: 50 }}
           hidden
-          smVisible>
+          mdVisible>
           <VariantRisk riskData={data.risk} />
         </Block>
         <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
@@ -69,7 +69,7 @@ const MiddleSection = (props) => {
           xsSize="100%"
           mdSize="33%"
           style={{ paddingBottom: 50 }}
-          smHidden>
+          mdHidden>
           <VariantRisk riskData={data.risk} />
         </Block>
         <Block xsSize="100%" mdSize="33%">

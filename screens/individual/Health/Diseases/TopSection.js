@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 const textInformation = {
   heart: {
-    heading: 'Heart Disease',
+    heading: 'Heart disease',
     id: 'rs238206',
   },
   crohn: {
@@ -23,13 +23,13 @@ const TopSection = (props) => {
   const textData = textInformation[disease];
   return (
     <Section style={{ marginBottom: 50 }}>
-      <Block xsSize="100%" smSize="100%" mdSize="70%">
+      <Block smSize="100%" mdSize="70%">
         <Text category="h1" style={styles.header}>
           {textData.heading}
         </Text>
       </Block>
-      <Block xsSize="100%" smSize="100%" mdSize="30%">
-        <Text category="h1" style={[styles.header, { color: data.themeColor }]}>
+      <Block smSize="100%" mdSize="30%">
+        <Text category="h4" style={[styles.header, { color: data.themeColor }]}>
           Genetic variant ID: {'\n'}
           {textData.id}
         </Text>

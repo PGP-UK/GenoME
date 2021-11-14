@@ -46,7 +46,14 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const SNVImages = ({ name, image, themeColor, navigation, disease, header }) => (
+const SNVImages = ({
+  name,
+  image,
+  themeColor,
+  navigation,
+  disease,
+  header,
+}) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
     <Pressable
       onPress={() =>
@@ -62,13 +69,13 @@ const SNVImages = ({ name, image, themeColor, navigation, disease, header }) => 
       </Text>
     </Pressable>
   </Block>
-)
+);
 
 const Health = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
-  const healthData = AllAmbassadors[name]
-  const themeColor = healthData.themeColor
+  const healthData = AllAmbassadors[name];
+  const themeColor = healthData.themeColor;
   return (
     <>
       <PageLayout>
@@ -103,15 +110,15 @@ const Health = (props) => {
           </Section>
           <Section>
             <SNVImages
-              disease='heart'
-              header='Heart disease'
+              disease="heart"
+              header="Heart disease"
               name={name}
               image={healthData.SNV_heart_image}
               themeColor={themeColor}
               navigation={navigation}
             />
             <SNVImages
-              disease='crohn'
+              disease="crohn"
               header="Crohn's disease"
               name={name}
               image={healthData.SNV_crohn_image}
@@ -119,8 +126,8 @@ const Health = (props) => {
               navigation={navigation}
             />
             <SNVImages
-              disease='ovarian'
-              header='Ovarian cancer'
+              disease="ovarian"
+              header="Ovarian cancer"
               name={name}
               image={healthData.SNV_ovarian_image}
               themeColor={themeColor}

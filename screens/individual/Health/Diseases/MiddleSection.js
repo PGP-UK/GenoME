@@ -22,13 +22,13 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const VariantRisk2 = withSizeInfo(({ sizeSelector, riskData }) => {
+const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
   const ImageStyles = sizeSelector({
     xs: styles.xsHeader3,
     md: styles.mdHeader3,
   });
   return (
-    <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
+    <View>
       <Text category="h1" style={styles.header2}>
         Risk with each variant type:
       </Text>
@@ -44,29 +44,9 @@ const VariantRisk2 = withSizeInfo(({ sizeSelector, riskData }) => {
         <View style={styles.square3} />
         {riskData.third}
       </Text>
-    </Block>
+    </View>
   );
 });
-
-const VariantRisk = ({ riskData }) => (
-  <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
-    <Text category="h1" style={styles.header2}>
-      Risk with each variant type:
-    </Text>
-    <Text category="h1" style={styles.header3}>
-      <View style={styles.square1} />
-      {riskData.first}
-    </Text>
-    <Text category="h1" style={styles.header3}>
-      <View style={styles.square2} />
-      {riskData.second}
-    </Text>
-    <Text category="h1" style={styles.header3}>
-      <View style={styles.square3} />
-      {riskData.third}
-    </Text>
-  </Block>
-);
 
 const MiddleSection = (props) => {
   const { data, image } = props;
@@ -74,11 +54,33 @@ const MiddleSection = (props) => {
   return (
     <>
       <Section>
-        <VariantRisk2 riskData={data.risk} smHidden />
+        {/* Hidden in large screens */}
+        <Block
+          xsSize="100%"
+          mdSize="33%"
+          style={{ paddingBottom: 50 }}
+          hidden
+          mdVisible>
+          <VariantRisk riskData={data.risk} />
+        </Block>
         <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
           <AmbassadorImage source={image} />
         </Block>
-        {/* <VariantRisk variantRisk={data.risk} smHidden /> */}
+        {/* Hidden in large screens */}
+        <Block mdHidden>
+          <Text category="p1" style={styles.main_text}>
+            The colour split illustrates how common each variant type is in the
+            population.
+          </Text>
+        </Block>
+        {/* Hidden in small screens */}
+        <Block
+          xsSize="100%"
+          mdSize="33%"
+          style={{ paddingBottom: 50 }}
+          mdHidden>
+          <VariantRisk riskData={data.risk} />
+        </Block>
         <Block xsSize="100%" mdSize="33%">
           <Text
             style={[styles.box_text, { backgroundColor: backgroundColour }]}>
@@ -88,7 +90,8 @@ const MiddleSection = (props) => {
             {'\n'}
             {data.message}
           </Text>
-          <Block>
+          {/* Hidden in small screens */}
+          <Block hidden mdVisible>
             <Text category="p1" style={styles.main_text}>
               The colour split illustrates how common each variant type is in
               the population.

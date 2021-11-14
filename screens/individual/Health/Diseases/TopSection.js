@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 const textInformation = {
   heart: {
-    heading: 'Heart Disease',
+    heading: 'Heart disease',
     id: 'rs238206',
   },
   crohn: {

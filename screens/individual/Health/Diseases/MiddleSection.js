@@ -22,7 +22,7 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const VariantRisk = withSizeInfo(({ sizeSelector, riskData, visbility }) => {
+const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
   const ImageStyles = sizeSelector({
     xs: styles.xsHeader3,
     md: styles.mdHeader3,
@@ -54,6 +54,7 @@ const MiddleSection = (props) => {
   return (
     <>
       <Section>
+        {/* Hidden in large screens */}
         <Block
           xsSize="100%"
           mdSize="33%"
@@ -65,6 +66,14 @@ const MiddleSection = (props) => {
         <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
           <AmbassadorImage source={image} />
         </Block>
+        {/* Hidden in large screens */}
+        <Block mdHidden>
+          <Text category="p1" style={styles.main_text}>
+            The colour split illustrates how common each variant type is in the
+            population.
+          </Text>
+        </Block>
+        {/* Hidden in small screens */}
         <Block
           xsSize="100%"
           mdSize="33%"
@@ -81,7 +90,8 @@ const MiddleSection = (props) => {
             {'\n'}
             {data.message}
           </Text>
-          <Block>
+          {/* Hidden in small screens */}
+          <Block hidden mdVisible>
             <Text category="p1" style={styles.main_text}>
               The colour split illustrates how common each variant type is in
               the population.

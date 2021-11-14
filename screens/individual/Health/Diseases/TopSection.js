@@ -23,13 +23,13 @@ const TopSection = (props) => {
   const textData = textInformation[disease];
   return (
     <Section style={{ marginBottom: 50 }}>
-      <Block smSize="100%" mdSize="65%">
+      <Block smSize="100%" mdSize="70%">
         <Text category="h1" style={styles.header}>
           {textData.heading}
         </Text>
       </Block>
-      <Block smSize="100%" mdSize="35 %">
-        <Text category="h1" style={[styles.header, { color: data.themeColor }]}>
+      <Block smSize="100%" mdSize="30%">
+        <Text category="h4" style={[styles.header, { color: data.themeColor }]}>
           Genetic variant ID: {'\n'}
           {textData.id}
         </Text>

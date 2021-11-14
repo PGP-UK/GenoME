@@ -2,7 +2,7 @@ import React from 'react';
 import PageLayout from '../../../components/PageLayout';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
-import SmokingExText from './SmokingExText'
+import SmokingExText from './SmokingExText';
 import { StyleSheet, Text } from 'react-native';
 
 const dataFile = {
@@ -30,10 +30,8 @@ const Smoking = (props) => {
   const data = dataFile.data[name];
 
   return (
-    <PageLayout backgroundColor={data.themeColor}>
-      <Text style={[styles.heading, { backgroundColor: data.themeColor }]}>
-        Smoking Prediction
-      </Text>
+    <PageLayout>
+      <Text style={[styles.heading]}>Smoking Prediction</Text>
       <SmokingExText data={dataFile.data[name]} />
       <CenterImage
         source={AmbassadorsData[name].image}
@@ -46,11 +44,11 @@ const Smoking = (props) => {
 
 const styles = StyleSheet.create({
   heading: {
+    color: '#63BEE1',
     marginTop: 10,
     marginBottom: 20,
     fontSize: 40,
-    fontWeight: '600',
-    color: 'white',
+    fontWeight: '400',
   },
 });
 

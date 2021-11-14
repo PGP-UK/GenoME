@@ -12,7 +12,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <Section stretch style={[{ backgroundColor: data.themeColor }]}>
+    <Section>
       <Block>
         <View
           style={{

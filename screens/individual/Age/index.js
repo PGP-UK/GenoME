@@ -6,7 +6,7 @@ import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
 import AgeExplanationText from './AgeExplanationText';
 
-const AgeData = require('../../../assets/data/age/data.json')
+const AgeData = require('../../../assets/data/age/data.json');
 
 const AmbassadorsData = {
   stephan: {
@@ -26,7 +26,7 @@ const AmbassadorsData = {
 const Age = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const data = AgeData[name]
+  const data = AgeData[name];
   return (
     <>
       <PageLayout>
@@ -41,10 +41,11 @@ const Age = (props) => {
 
 const styles = StyleSheet.create({
   heading: {
+    color: '#63BEE1',
     marginTop: 10,
     marginBottom: 20,
     fontSize: 40,
-    fontWeight: '200',
+    fontWeight: '400',
   },
 });
 

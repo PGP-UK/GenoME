@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     marginBottom: 20,
-    fontWeight: '500',
+    fontWeight: '300',
     color: 'white',
+    padding: 10,
   },
 });
 

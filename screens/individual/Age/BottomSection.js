@@ -16,20 +16,20 @@ const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
     <Grid>
       <Section>
         <ImageKey data={data} />
-        <Block hidden mdVisible >
+        <Block hidden mdVisible>
           <AgeExplanationText themeColor={data.themeColor} />
         </Block>
         <Block xsSize="100%" style={rowStyles}>
           <Text style={styles.footer}>
-            Epigenetic variants are chemical changes to your DNA, which alter how
-            it is used without changing the DNA sequence. As people age, their
-            epigenetic patterns change and we can use this to predict a
-            participant's epigenetic age. This predicted epigenetic age can be the
-            same as the actual age, older (age acceleration) or younger (age
+            Epigenetic variants are chemical changes to your DNA, which alter
+            how it is used without changing the DNA sequence. As people age,
+            their epigenetic patterns change and we can use this to predict a
+            participant's epigenetic age. This predicted epigenetic age can be
+            the same as the actual age, older (age acceleration) or younger (age
             deceleration).
           </Text>
         </Block>
-      </Section >
+      </Section>
     </Grid>
   );
 });
@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
   },
   footer: {
     fontSize: 20,
+    fontWeight: '300',
+    padding: 10,
   },
 });
 

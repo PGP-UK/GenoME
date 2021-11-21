@@ -22,28 +22,49 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
+const ColorSplitText = withSizeInfo(({ sizeSelector }) => {
+  const ColorSplitStyles = sizeSelector({
+    xs: styles.xsColorSplitText,
+    md: styles.mdColorSplitText
+  })
+  return(
+    <Text category="h5" style={ColorSplitStyles}>
+      The colour split illustrates how common each variant type is in the
+      population.
+    </Text>
+  )
+})
+
 const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
   const ImageStyles = sizeSelector({
     xs: styles.xsHeader3,
     md: styles.mdHeader3,
   });
+
   return (
     <View>
-      <Text category="h1" style={styles.header2}>
+      <Text category="h3" style={styles.header2}>
         Risk with each variant type:
       </Text>
-      <Text category="h1" style={ImageStyles}>
+      <Text category="h4" style={ImageStyles}>
         <View style={styles.square1} />
+        &nbsp;
         {riskData.first}
       </Text>
-      <Text category="h1" style={ImageStyles}>
+      <Text category="h4" style={ImageStyles}>
         <View style={styles.square2} />
+        &nbsp;
         {riskData.second}
       </Text>
-      <Text category="h1" style={ImageStyles}>
+      <Text category="h4" style={ImageStyles}>
         <View style={styles.square3} />
+        &nbsp;
         {riskData.third}
       </Text>
+      {/* Hidden in small screens */}
+      <Block hidden mdVisible>
+        <ColorSplitText/>
+      </Block>
     </View>
   );
 });
@@ -53,34 +74,35 @@ const MiddleSection = (props) => {
   const backgroundColour = data.population.colour;
   return (
     <>
-      <Section>
-        {/* Hidden in large screens */}
-        <Block
-          xsSize="100%"
-          mdSize="33%"
-          style={{ paddingBottom: 50 }}
-          hidden
-          mdVisible>
-          <VariantRisk riskData={data.risk} />
-        </Block>
-        <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 50 }}>
-          <AmbassadorImage source={image} />
-        </Block>
+      <Section stretch style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignContent: 'center', flexWrap: 'wrap' }}>
         {/* Hidden in large screens */}
         <Block mdHidden>
-          <Text category="p1" style={styles.main_text}>
-            The colour split illustrates how common each variant type is in the
-            population.
-          </Text>
+          <ColorSplitText/>
         </Block>
+
         {/* Hidden in small screens */}
         <Block
           xsSize="100%"
           mdSize="33%"
-          style={{ paddingBottom: 50 }}
+          style={{ paddingBottom: 20 }}
+          hidden
+          mdVisible>
+          <VariantRisk riskData={data.risk} />
+        </Block>
+
+        <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 20  }}>
+          <AmbassadorImage source={image} />
+        </Block>
+
+        {/* Hidden in small screens */}
+        <Block
+          xsSize="100%"
+          mdSize="33%"
+          style={{ paddingBottom: 20 }}
           mdHidden>
           <VariantRisk riskData={data.risk} />
         </Block>
+
         <Block xsSize="100%" mdSize="33%">
           <Text
             style={[styles.box_text, { backgroundColor: backgroundColour }]}>
@@ -90,13 +112,6 @@ const MiddleSection = (props) => {
             {'\n'}
             {data.message}
           </Text>
-          {/* Hidden in small screens */}
-          <Block hidden mdVisible>
-            <Text category="p1" style={styles.main_text}>
-              The colour split illustrates how common each variant type is in
-              the population.
-            </Text>
-          </Block>
         </Block>
       </Section>
     </>
@@ -106,16 +121,18 @@ const MiddleSection = (props) => {
 const styles = StyleSheet.create({
   header2: {
     color: '#666E7A',
-    fontWeight: '400',
+    fontWeight: '300',
+    marginBottom: 10
   },
   mdHeader3: {
     color: '#666E7A',
-    fontWeight: '400',
+    fontWeight: '300',
     fontSize: 30,
   },
   xsHeader3: {
     color: '#666E7A',
-    fontWeight: '400',
+    fontWeight: '300',
+    fontSize: 30,
   },
   main_text: {
     color: '#666E7A',
@@ -127,7 +144,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '400',
     padding: 10,
-    marginBottom: 50,
+    marginBottom: 20,
   },
   square1: {
     width: 25,
@@ -150,6 +167,17 @@ const styles = StyleSheet.create({
   },
   imageSm: {
     alignSelf: 'center',
+  },
+  xsColorSplitText: {
+    fontWeight: '300',
+    textAlign: 'center',
+    marginBottom: 20,
+    color: '#666E7A',
+  },
+  mdColorSplitText:{
+    fontWeight: '300',
+    marginTop: 20,
+    color: '#666E7A',
   },
 });
 

@@ -22,28 +22,31 @@ const TopSection = (props) => {
   const { disease, data } = props;
   const textData = textInformation[disease];
   return (
-    <Section style={{ marginBottom: 50 }}>
+    <Section style={{ marginBottom: 20 }}>
       <Block smSize="100%" mdSize="70%">
-        <Text category="h1" style={styles.header}>
+        <Text category="h1" style={styles.header1}>
           {textData.heading}
+        </Text>
+        <Text category="h2" style={[styles.header2, { color: data.themeColor }]}>
+          Genetic variant ID: {textData.id}
         </Text>
       </Block>
       <Block smSize="100%" mdSize="30%">
-        <Text category="h4" style={[styles.header, { color: data.themeColor }]}>
-          Genetic variant ID: {'\n'}
-          {textData.id}
-        </Text>
       </Block>
     </Section>
   );
 };
 
 const styles = StyleSheet.create({
-  header: {
+  header1: {
     color: '#63BEE1',
     fontWeight: '400',
     marginTop: 20,
   },
+  header2: {
+    marginTop: 5,
+    fontWeight: '300',
+  }
 });
 
 export default TopSection;

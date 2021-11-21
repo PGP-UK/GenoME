@@ -42,7 +42,7 @@ const Ancestry = (props) => {
           <Section mdSize="50%">
             <View>
               <Image
-                style={{ height: 700, width: 1340 }}
+                // style={{ height: 700, width: 1340 }}
                 source={require('../../../assets/images/ancestry_screen_pie/ancestry_world.jpeg')}
               />
             </View>

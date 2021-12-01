@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
-import PageLayout from '../../components/PageLayout';
+import PageLayout from '../../../components/PageLayout';
 
 const Eyes = () => {
   return (

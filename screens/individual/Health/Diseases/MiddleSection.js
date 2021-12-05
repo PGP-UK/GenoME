@@ -90,12 +90,7 @@ const MiddleSection = (props) => {
         </Block>
 
         {/* Hidden in small screens */}
-        <Block
-          xsSize="100%"
-          mdSize="33%"
-          style={{ paddingBottom: 20 }}
-          hidden
-          mdVisible>
+        <Block xsSize="100%" mdSize="33%" hidden mdVisible>
           <VariantRisk riskData={data.risk} />
         </Block>
 
@@ -104,11 +99,7 @@ const MiddleSection = (props) => {
         </Block>
 
         {/* Hidden in small screens */}
-        <Block
-          xsSize="100%"
-          mdSize="33%"
-          style={{ paddingBottom: 20 }}
-          mdHidden>
+        <Block xsSize="100%" mdSize="33%" mdHidden>
           <VariantRisk riskData={data.risk} />
         </Block>
 

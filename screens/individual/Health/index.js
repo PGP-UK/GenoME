@@ -79,62 +79,78 @@ const Health = (props) => {
   return (
     <>
       <PageLayout>
-        <Grid>
-          <Section>
-            <Block>
-              <Text category="h1" style={styles.header}>
-                Health
-              </Text>
-            </Block>
-          </Section>
-          <Section>
-            <Block>
-              <Text category="p1" style={styles.main_text}>
-                Genetic makeup can also give indications on inherited risks and
-                general disease risks. Environmental factors can also have a
-                bearing on these results.
-              </Text>
-              <Text category="p1" style={styles.main_text}>
-                Just like everyone else, I have millions of single nucleotide
-                variants (SNVs). These are positions in my DNA which differ
-                between individuals. For the majority of my SNVs, their
-                functions are not yet known. While some SNVs act individually to
-                increase or reduce my risk for a given trait or disease, most
-                act in groups together with environmental and other factors.
-              </Text>
-              <Text category="p1" style={styles.main_text}>
-                Tap below to explore the frequency and risk associated with
-                three of my SNVs.
-              </Text>
-            </Block>
-          </Section>
-          <Section>
-            <SNVImages
-              disease="heart"
-              header="Heart disease"
-              name={name}
-              image={healthData.SNV_heart_image}
-              themeColor={themeColor}
-              navigation={navigation}
-            />
-            <SNVImages
-              disease="crohn"
-              header="Crohn's disease"
-              name={name}
-              image={healthData.SNV_crohn_image}
-              themeColor={themeColor}
-              navigation={navigation}
-            />
-            <SNVImages
-              disease="ovarian"
-              header="Ovarian cancer"
-              name={name}
-              image={healthData.SNV_ovarian_image}
-              themeColor={themeColor}
-              navigation={navigation}
-            />
-          </Section>
-        </Grid>
+        <Section>
+          <Block>
+            <Text category="h1" style={styles.header}>
+              Health
+            </Text>
+          </Block>
+        </Section>
+        <Section
+          stretch
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            flexWrap: 'wrap',
+          }}>
+          <Block>
+            <Text category="p1" style={styles.main_text}>
+              Genetic makeup can also give indications on inherited risks and
+              general disease risks. Environmental factors can also have a
+              bearing on these results.
+            </Text>
+            <Text category="p1" style={styles.main_text}>
+              Just like everyone else, I have millions of single nucleotide
+              variants (SNVs). These are positions in my DNA which differ
+              between individuals. For the majority of my SNVs, their functions
+              are not yet known. While some SNVs act individually to increase or
+              reduce my risk for a given trait or disease, most act in groups
+              together with environmental and other factors.
+            </Text>
+            <Text category="p1" style={styles.main_text}>
+              Tap below to explore the frequency and risk associated with three
+              of my SNVs.
+            </Text>
+          </Block>
+        </Section>
+        <Section
+          stretch
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            flexWrap: 'wrap',
+          }}>
+          <SNVImages
+            disease="heart"
+            header="Heart disease"
+            name={name}
+            image={healthData.SNV_heart_image}
+            themeColor={themeColor}
+            navigation={navigation}
+          />
+          <SNVImages
+            disease="crohn"
+            header="Crohn's disease"
+            name={name}
+            image={healthData.SNV_crohn_image}
+            themeColor={themeColor}
+            navigation={navigation}
+          />
+          <SNVImages
+            disease="ovarian"
+            header="Ovarian cancer"
+            name={name}
+            image={healthData.SNV_ovarian_image}
+            themeColor={themeColor}
+            navigation={navigation}
+          />
+        </Section>
       </PageLayout>
     </>
   );

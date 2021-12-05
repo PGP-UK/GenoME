@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import PageLayout from '../../../components/PageLayout';
 
@@ -7,21 +7,21 @@ const Eyes = () => {
   return (
     <>
       <PageLayout>
-      <View style={styles.mainContainer}>
-        <View style={styles.navBar} />
+        <View style={styles.mainContainer}>
+          <View style={styles.navBar} />
 
-        <Text category="h1" style={styles.header}>
-          Eye colour
-        </Text>
+          <Text category="h1" style={styles.header}>
+            Eye colour
+          </Text>
 
-        <View style={styles.body} />
+          <View style={styles.body} />
 
-        <Text category="p1" style={styles.main_text}>
-          Eye colour is determined by multiple genetic variants, some of which have been 
-          used to predict my eye colour. Below you can see my actual eyes and the 
-          predicted eye colour - how well do you think the prediction has 
-          worked?
-        </Text>
+          <Text category="p1" style={styles.main_text}>
+            Eye colour is determined by multiple genetic variants, some of which
+            have been used to predict my eye colour. Below you can see my actual
+            eyes and the predicted eye colour - how well do you think the
+            prediction has worked?
+          </Text>
         </View>
       </PageLayout>
     </>

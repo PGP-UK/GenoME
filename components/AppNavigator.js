@@ -6,7 +6,7 @@ import Home from '../screens/Home';
 import About from '../screens/About';
 import Age from '../screens/individual/Age';
 import Ancestry from '../screens/individual/Ancestry';
-import Eyes from '../screens/individual/Eyes';
+import Eyes from '../screens/individual/Eyes/Eyes.js';
 import Health from '../screens/individual/Health';
 import Diseases from '../screens/individual/Health/Diseases';
 import Landing from '../screens/individual/Landing';

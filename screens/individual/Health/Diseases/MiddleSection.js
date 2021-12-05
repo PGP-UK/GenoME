@@ -25,15 +25,15 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
 const ColorSplitText = withSizeInfo(({ sizeSelector }) => {
   const ColorSplitStyles = sizeSelector({
     xs: styles.xsColorSplitText,
-    md: styles.mdColorSplitText
-  })
-  return(
+    md: styles.mdColorSplitText,
+  });
+  return (
     <Text category="h5" style={ColorSplitStyles}>
       The colour split illustrates how common each variant type is in the
       population.
     </Text>
-  )
-})
+  );
+});
 
 const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
   const ImageStyles = sizeSelector({
@@ -63,7 +63,7 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
       </Text>
       {/* Hidden in small screens */}
       <Block hidden mdVisible>
-        <ColorSplitText/>
+        <ColorSplitText />
       </Block>
     </View>
   );
@@ -74,10 +74,19 @@ const MiddleSection = (props) => {
   const backgroundColour = data.population.colour;
   return (
     <>
-      <Section stretch style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignContent: 'center', flexWrap: 'wrap' }}>
+      <Section
+        stretch
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
+          flexWrap: 'wrap',
+        }}>
         {/* Hidden in large screens */}
         <Block mdHidden>
-          <ColorSplitText/>
+          <ColorSplitText />
         </Block>
 
         {/* Hidden in small screens */}
@@ -90,7 +99,7 @@ const MiddleSection = (props) => {
           <VariantRisk riskData={data.risk} />
         </Block>
 
-        <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 20  }}>
+        <Block xsSize="100%" mdSize="33%" style={{ paddingBottom: 20 }}>
           <AmbassadorImage source={image} />
         </Block>
 
@@ -122,7 +131,7 @@ const styles = StyleSheet.create({
   header2: {
     color: '#666E7A',
     fontWeight: '300',
-    marginBottom: 10
+    marginBottom: 10,
   },
   mdHeader3: {
     color: '#666E7A',
@@ -174,7 +183,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#666E7A',
   },
-  mdColorSplitText:{
+  mdColorSplitText: {
     fontWeight: '300',
     marginTop: 20,
     color: '#666E7A',

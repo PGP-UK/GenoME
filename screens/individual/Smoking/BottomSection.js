@@ -1,9 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { Section, Block } from 'react-native-responsive-layout';
+import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
-const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
+import ImageKey from './Imagekey.js';
+import SmokingExText from './SmokingExText';
+
+const dataFile = {
+  data: require(`../../../assets/data/age/data.json`),
+};
+
+const BottomSection = withSizeInfo(({ sizeSelector, data, name }) => {
   const mainStyles = sizeSelector({
     xs: styles.mainSm,
     md: styles.mainMd,
@@ -22,29 +29,19 @@ const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
   });
 
   return (
-    <Section>
-      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={[styles.actual, { color: data.themeColor }]}>
-          My epigenetic variants correctly predicted me to be a:{'\n'}
-          {data.smoker}
-        </Text>
-      </Block>
-      <Block xsSize="100%" mdSize="50%" style={rowStyles}>
-        <Text style={[styles.actual]}>
-          Actual Smoking status:{'\n'}
-          {data.smoker}
-          {'\n'}
-        </Text>
-      </Block>
-      <Block xsSize="100%">
-        <Text style={[styles.text]}>
-          The smoking prediction was calculated from 187 epigenetic variants
-          across the participant's genome. These variants have been found to
-          change when people smoke, and because of this, can be used to predict
-          their smoking status.
-        </Text>
-      </Block>
-    </Section>
+    <Grid>
+      <Section>
+        <ImageKey data={data} />
+        <Block xsSize="100%" style={rowStyles}>
+          <Text style={styles.footer}>
+            The smoking prediction was calculated from 187 epigenetic variants
+            across the participant's genome. These variants have been found to
+            change when people smoke, and because of this, can be used to
+            predict their smoking status.
+          </Text>
+        </Block>
+      </Section>
+    </Grid>
   );
 });
 
@@ -104,6 +101,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     fontSize: 20,
+    fontWeight: '300',
     marginTop: 20,
   },
 });

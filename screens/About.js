@@ -1,33 +1,23 @@
 import React from 'react';
 import { StyleSheet, View, Image, Pressable } from 'react-native';
-import { Text } from '@ui-kitten/components';
-import PageLayout from '../components/PageLayout';
+import { Text, Button, Layout } from '@ui-kitten/components';
+
 import { Section, Block, Grid } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
-import { TextStyleProps } from '@ui-kitten/components/devsupport';
 
 
-const BackBtn = ({ layoutStyle, navigation }) => (
-  <Layout style={layoutStyle}>
-    <Button
-      size="small"
-      status="primary"
-      style={styles.headerBtn}
-      onPress={() => navigation.navigate('Home/Index.js')}>
-      BACK
-    </Button>
-  </Layout>
-);
+import PageLayout from '../components/PageLayout';
+import HeaderRow from './individual/About/HeaderRow';
+import SocialMedia from './individual/About/SocialMedia';
+import logError from 'react-native/Libraries/Utilities/logError';
 
-const About = () => {
+const About = (props) => {
+  const { navigation } = props;
   return (
     <>
       <PageLayout>
-        <Text category="h1" style={styles.header}>
-          About PGP-UK and the global network of Personal Genome Projects
-        </Text>
-
+       <HeaderRow navigation={navigation} />
         <Text category="p1" style={styles.main_text}>
           The PGP-UK project is part of the global network of Personal Genome Projects, which all share
           the vision of advancing science through open data sharing. Currently, there are projects in America,
@@ -35,34 +25,7 @@ const About = () => {
           with the project - just follow the links.
         </Text>
 
-        <Text>Twitter</Text>
-        <Image 
-                style={styles.socialMediaLogo}
-                source={require('../assets/images/about_us/more-information_twitter.png')}
-            /> 
-        <Text>Blogs</Text>
-        <Image 
-                style={styles.socialMediaLogo}
-                source={require('../assets/images/about_us/more-information_blogs.png')}
-            /> 
-        <Text>Web</Text>
-        <Image 
-                style={styles.socialMediaLogo}
-                source={require('../assets/images/about_us/more-information_www.png')}
-            /> 
-
-        <Text category="p1" style={styles.main_text}>
-          We look forward to making great science with you!
-        </Text>
-
-        <Text category="p1" style={styles.main_text}>
-          Director: Professor Stephan Beck
-        </Text>
-
-        <Text category="p1" style={styles.main_text}>
-          Location: University College London
-        </Text>
-
+       <SocialMedia navigation={navigation} />
         <Text category="p1" style={styles.bottom_red_text}>
           DISCLAIMER: The generation of genomic data is not an error-free process and our analysis system is 
           still under development. becasue the body of knowledge of genetic and epigenetic variants has many 
@@ -70,7 +33,7 @@ const About = () => {
         </Text>
 
         <Text category="p1" style={styles.bottom_text}>
-          This app was designed and develpoed by
+          This app was designed and develpoed by the PGP-UK/GenoME team.
         </Text>
 
         <Image style={{
@@ -85,17 +48,13 @@ const About = () => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    color: '#63BEE1',
-    fontWeight: '400',
-    marginTop: 20,
-    marginBottom: 25,
-    alignItems: 'center',
-  },
+
   main_text: {
     color: '#666E7A',
     fontSize: 20,
     marginBottom: 20,
+    paddingTop: 20,
+    paddingBottom:20,
   },
   bottom_text: {
     color: '#666E7A',
@@ -117,7 +76,7 @@ const styles = StyleSheet.create({
   },
   socialMediaLogo: {
     width: 50,
-    height: 50,
+    height: 50,  
   },
   
 });

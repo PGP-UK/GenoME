@@ -4,22 +4,16 @@ import { Layout, Text, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
-const MoreInfoBtn = ({ layoutStyle, navigation }) => (
+const BackBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
     <Button
       size="small"
       status="primary"
       style={styles.headerBtn}
       onPress={() => navigation.navigate('Home')}>
-      MORE INFORMATION
+      BACK
     </Button>
   </Layout>
-);
-expo
-const HeaderText = () => (
-  <Text category="h1" style={styles.header}>
-    Personal Genome Project
-  </Text>
 );
 
 const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
@@ -27,6 +21,7 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
     xs: styles.headerBtnLayoutXs,
     md: styles.headerBtnLayoutMd,
   });
+  
   return (
     <Grid>
       <Section style={HeaderStyle}>
@@ -34,17 +29,26 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
           <HeaderText />
         </Block>
         <Block xsSize="100%" mdSize="30%">
-          <MoreInfoBtn layoutStyle={btnStyles} navigation={navigation} />
+          <BackBtn layoutStyle={btnStyles} navigation={navigation} />
         </Block>
       </Section>
     </Grid>
   );
 });
 
+const HeaderText = () => (
+  <Text category="h1" style={styles.header}>
+    About PGP-UK and the global network of Personal Genome Projects  
+  </Text>
+);
+
 const styles = StyleSheet.create({
   header: {
     color: '#63BEE1',
     fontWeight: '400',
+    marginTop: 20,
+    marginBottom: 25,
+    alignItems: 'center',
   },
   headerBtn: {
     backgroundColor: '#3BAEDA',

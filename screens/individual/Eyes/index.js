@@ -1,27 +1,44 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
+import Video from 'react-native-video';
+
 import PageLayout from '../../../components/PageLayout';
+import HeaderRow from './HeaderRow';
+import video from '../../../assets/videos/';
 
 const Eyes = () => {
   return (
     <>
       <PageLayout>
-      <View style={styles.mainContainer}>
-        <View style={styles.navBar} />
+        <View style={[styles.container, {flexDirection: "column"}]}>
 
-        <Text category="h1" style={styles.header}>
-          Eye colour
-        </Text>
+        <View style={{ flex: 1 }} />
 
-        <View style={styles.body} />
+         <HeaderRow navigation={navigation} />
+          <View style={styles.mainContainer}>
+      
 
-        <Text category="p1" style={styles.main_text}>
-          Eye colour is determined by multiple genetic variants, some of which have been 
-          used to predict my eye colour. Below you can see my actual eyes and the 
-          predicted eye colour - how well do you think the prediction has 
-          worked?
-        </Text>
+           <View style={styles.body} />
+
+           <Text category="p1" style={styles.main_text}>
+            Eye colour is determined by multiple genetic variants, some of which have been 
+            used to predict my eye colour. Below you can see my actual eyes and the 
+            predicted eye colour - how well do you think the prediction has 
+            worked?
+            </Text>
+
+            const VideoComponent = () => {
+              return (
+                <Video 
+                  source = {../../../assets/videos/Stephan_eye_colour.mp4}
+                  pause = {false}
+                />
+           </View>
+          </View>
+
+          <View style={{ flex: 1 }} />
+          </View>
         </View>
       </PageLayout>
     </>

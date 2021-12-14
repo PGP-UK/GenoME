@@ -14,7 +14,7 @@
     "@react-navigation/stack": "^6.0.7",
     "@ui-kitten/components": "^5.1.1",
     "@ui-kitten/eva-icons": "^5.1.1",
-    "expo": "~42.0.1",
+    "expo": "^42.0.5",
     "expo-app-loading": "1.1.2",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",

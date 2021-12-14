@@ -10,7 +10,7 @@ const BackBtn = ({ layoutStyle, navigation }) => (
       size="small"
       status="primary"
       style={styles.headerBtn}
-      onPress={() => navigation.navigate('Home')}>
+      onPress={() => navigation.navigate('Landing')}>
       BACK
     </Button>
   </Layout>
@@ -25,9 +25,6 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
   return (
     <Grid>
       <Section style={HeaderStyle}>
-        <Block xsSize="100%" mdSize="70%">
-          <HeaderText />
-        </Block>
         <Block xsSize="100%" mdSize="30%">
           <BackBtn layoutStyle={btnStyles} navigation={navigation} />
         </Block>
@@ -35,12 +32,6 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
     </Grid>
   );
 });
-
-const HeaderText = () => (
-  <Text category="h1" style={styles.header}>
-    About PGP-UK and the global network of Personal Genome Projects  
-  </Text>
-);
 
 const styles = StyleSheet.create({
   header: {

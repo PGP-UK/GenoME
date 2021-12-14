@@ -10,12 +10,11 @@ const MoreInfoBtn = ({ layoutStyle, navigation }) => (
       size="small"
       status="primary"
       style={styles.headerBtn}
-      onPress={() => navigation.navigate('Home')}>
+      onPress={() => navigation.navigate('About')}>
       MORE INFORMATION
     </Button>
   </Layout>
 );
-expo
 const HeaderText = () => (
   <Text category="h1" style={styles.header}>
     Personal Genome Project

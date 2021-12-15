@@ -37,7 +37,6 @@ const About = (props) => {
         </Text>
 
         <Image style={{
-          
           height: 225,
           width: 400
         }} source={require("../assets/images/about_us/more-information_globe.png")} />

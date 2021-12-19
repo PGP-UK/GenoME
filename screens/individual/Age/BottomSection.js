@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   footer: {
+    color: '#666E7A',
     fontSize: 20,
     fontWeight: '300',
     padding: 10,

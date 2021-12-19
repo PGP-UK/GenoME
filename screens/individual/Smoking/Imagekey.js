@@ -13,15 +13,12 @@ const ImageKey = withSizeInfo(({ sizeSelector, data }) => {
     <Block xsSize="100%" style={rowStyles}>
       <Text style={[styles.actual, { color: data.themeColor }]}>
         My epigenetic variants correctly predicted me to be a:{'\n'}
-        {'\n'}
         {data.smoker}
         {'\n'}
       </Text>
       <Text style={styles.epigenetic}>
         Actual Smoking status:{'\n'}
-        {'\n'}
         {data.smoker}
-        {'\n'}
       </Text>
     </Block>
   );

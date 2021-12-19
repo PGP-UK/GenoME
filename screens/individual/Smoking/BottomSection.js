@@ -100,9 +100,9 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   footer: {
+    color: '#666E7A',
     fontSize: 20,
     fontWeight: '300',
-    marginTop: 20,
   },
 });
 

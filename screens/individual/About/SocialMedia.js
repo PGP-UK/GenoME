@@ -1,3 +1,8 @@
+
+
+
+
+
 import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import { Text } from '@ui-kitten/components';
@@ -32,10 +37,8 @@ const SocialMedia = (props) => {
         We look forward to making great science with you!
       </Text>
        <Text style={styles.main_text}>
-       Director: Professor Stephan Beck
-      </Text>
-      <Text style={styles.main_text}>
-        Location: University College London
+       Director: Professor Stephan Beck {"\n"}
+       Location: University College London
       </Text>
       </View>
 </View>
@@ -47,32 +50,38 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-evenly",
   },
-main_text: {
+
+  main_text: {
     color: '#666E7A',
-    fontSize: 15,
+    fontSize: 20,
     marginBottom: 10,
     paddingTop: 40,
     paddingBottom: 20,
     textAlign: "left",
   },
+
   bottom_text: {
     color: '#666E7A',
     fontSize: 10,
     marginBottom: 20,
   },
+
   bottom_red_text: {
     color: '#ff0000',
     fontSize: 10,
     marginBottom: 20,
   },
+
   bottomImage:{
     marginTop: 20,
     marginBottom: 25,
   },
+
   socialMediaText:{
     justifyContent: "space-between" ,
     paddingVertical: 20,
   },
+
   socialMediaLogo: {
     width: 50,
     height: 50, 

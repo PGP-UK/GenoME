@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, Pressable } from 'react-native';
+import { StyleSheet, View, Image, ImageBackground, Pressable } from 'react-native';
 import { Text, Button, Layout } from '@ui-kitten/components';
 
 import { Section, Block, Grid } from 'react-native-responsive-layout';
@@ -26,21 +26,19 @@ const About = (props) => {
         </Text>
 
        <SocialMedia navigation={navigation} />
-        <Text category="p1" style={styles.bottom_red_text}>
-          DISCLAIMER: The generation of genomic data is not an error-free process and our analysis system is 
-          still under development. becasue the body of knowledge of genetic and epigenetic variants has many 
-          uncertainties, we cannot guarantee that our analyses are either accurate or complete. 
-        </Text>
 
-        <Text category="p1" style={styles.bottom_text}>
-          This app was designed and develpoed by the PGP-UK/GenoME team.
-        </Text>
-
-        <Image style={{
-          height: 225,
-          width: 400
-        }} source={require("../assets/images/about_us/more-information_globe.png")} />
-      
+        <ImageBackground style={styles.bottomImage} source={require("../assets/images/about_us/more-information_globe.png")} >
+          
+          <Text category="p1" style={styles.bottom_red_text}>
+            DISCLAIMER: The generation of genomic data is not an error-free process and our analysis system is 
+            still under development. becasue the body of knowledge of genetic and epigenetic variants has many 
+            uncertainties, we cannot guarantee that our analyses are either accurate or complete. 
+          </Text>
+          
+          <Text style={styles.bottom_text}>
+            This app was designed and developed by the PGP-UK/GenoME team.
+          </Text>
+        </ImageBackground>
       </PageLayout>
     </>
   );
@@ -55,24 +53,31 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom:20,
   },
+
   bottom_text: {
     color: '#666E7A',
     fontSize: 10,
     marginBottom: 20,
   },
+
   bottom_red_text: {
     color: '#ff0000',
     fontSize: 10,
     marginBottom: 20,
   },
+
   bottomImage:{
+    height: 225,
+    width: 400,
     marginTop: 20,
-    marginBottom: 25,
+    justifyContent:"flex-end"
   },
+
   socialMedia:{
     marginTop: 20,
     marginBottom: 25,
   },
+
   socialMediaLogo: {
     width: 50,
     height: 50,  

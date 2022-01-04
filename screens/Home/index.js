@@ -31,6 +31,13 @@ const Home = (props) => {
         </Text>
 
         <Ambassadors navigation={navigation} />
+
+        <Text style={{display: 'flex', alignItems: 'flex-end', flexWrap: 'wrap-reverse'}}>
+          Tap here to listen to 'GenoME' our ambassador's genetic code for their eye colour.
+        
+          'GenoMe' was peformed by The Benyounes Quartet and composed by Deidre Gribbin.
+        </Text>
+          
       </PageLayout>
     </>
   );
@@ -43,6 +50,12 @@ const styles = StyleSheet.create({
   },
 
   main_text: {
+    color: '#666E7A',
+    fontSize: 20,
+    marginBottom: 20,
+  },
+
+  footer_text: {
     color: '#666E7A',
     fontSize: 20,
     marginBottom: 20,

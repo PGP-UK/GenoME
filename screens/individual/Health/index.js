@@ -164,6 +164,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   header2: {
+    fontSize: 30,
     fontWeight: '400',
     textAlign: 'center',
     marginTop: 20,

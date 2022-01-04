@@ -66,13 +66,13 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
 const styles = StyleSheet.create({
   headerxs: {
     color: '#666E7A',
-    marginTop: 80,
+    marginTop: 60,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 30,
   },
   headerlg: {
     color: '#666E7A',
-    marginTop: 80,
+    marginTop: 50,
     marginBottom: 20,
     marginLeft: 50,
   },
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     color: '#666E7A',
     fontSize: 25,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 30,
     marginRight: 50,
     lineHeight: 45,
     textAlign: 'justify',

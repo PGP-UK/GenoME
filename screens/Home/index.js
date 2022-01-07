@@ -38,7 +38,6 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
   headerRow: {
-    marginTop: 20,
     marginBottom: 25,
   },
 

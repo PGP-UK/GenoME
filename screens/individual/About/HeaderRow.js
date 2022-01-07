@@ -21,7 +21,7 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
     xs: styles.headerBtnLayoutXs,
     md: styles.headerBtnLayoutMd,
   });
-  
+
   return (
     <Grid>
       <Section style={HeaderStyle}>
@@ -38,7 +38,7 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
 
 const HeaderText = () => (
   <Text category="h1" style={styles.header}>
-    About PGP-UK and the global network of Personal Genome Projects  
+    About PGP-UK and the global network of Personal Genome Projects
   </Text>
 );
 
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
   header: {
     color: '#63BEE1',
     fontWeight: '400',
-    marginTop: 20,
     marginBottom: 25,
     alignItems: 'center',
   },

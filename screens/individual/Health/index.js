@@ -160,7 +160,6 @@ const styles = StyleSheet.create({
   header: {
     color: '#63BEE1',
     fontWeight: '400',
-    marginTop: 20,
     marginBottom: 25,
   },
   header2: {

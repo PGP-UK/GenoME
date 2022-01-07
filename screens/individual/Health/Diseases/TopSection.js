@@ -27,12 +27,13 @@ const TopSection = (props) => {
         <Text category="h1" style={styles.header1}>
           {textData.heading}
         </Text>
-        <Text category="h2" style={[styles.header2, { color: data.themeColor }]}>
+        <Text
+          category="h2"
+          style={[styles.header2, { color: data.themeColor }]}>
           Genetic variant ID: {textData.id}
         </Text>
       </Block>
-      <Block smSize="100%" mdSize="30%">
-      </Block>
+      <Block smSize="100%" mdSize="30%"></Block>
     </Section>
   );
 };
@@ -41,12 +42,11 @@ const styles = StyleSheet.create({
   header1: {
     color: '#63BEE1',
     fontWeight: '400',
-    marginTop: 20,
   },
   header2: {
     marginTop: 5,
     fontWeight: '300',
-  }
+  },
 });
 
 export default TopSection;

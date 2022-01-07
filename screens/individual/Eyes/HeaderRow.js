@@ -21,7 +21,7 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
     xs: styles.headerBtnLayoutXs,
     md: styles.headerBtnLayoutMd,
   });
-  
+
   return (
     <Grid>
       <Section style={HeaderStyle}>

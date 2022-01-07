@@ -9,28 +9,30 @@ const Eyes = (props) => {
   return (
     <>
       <PageLayout>
-          <View style={styles.mainContainer}>
-          <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow}/>
+        <View style={styles.mainContainer}>
+          <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
           <View style={{ flex: 1 }} />
           <Text category="p1" style={styles.main_text}>
-            Eye colour is determined by multiple genetic variants, some of which have been 
-            used to predict my eye colour. Below you can see my actual eyes and the 
-            predicted eye colour - how well do you think the prediction has 
-            worked?
+            Eye colour is determined by multiple genetic variants, some of which
+            have been used to predict my eye colour. Below you can see my actual
+            eyes and the predicted eye colour - how well do you think the
+            prediction has worked?
           </Text>
           <View style={{ flex: 1 }} />
-          <Image style={styles.eye_image} source={require("../../../assets/images/eyes/blue_eye.png")} />
+          <Image
+            style={styles.eye_image}
+            source={require('../../../assets/images/eyes/blue_eye.png')}
+          />
           <Text category="p1" style={styles.eye_text}>
             My eye colour is predicted to be blue
           </Text>
-          </View> 
+        </View>
       </PageLayout>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-
   mainContainer: {
     height: '100%',
     display: 'flex',
@@ -40,13 +42,12 @@ const styles = StyleSheet.create({
   },
 
   headerRow: {
-    marginTop: 20,
     marginBottom: 25,
   },
 
   eye_image: {
-      height: 400,
-      width: 400,
+    height: 400,
+    width: 400,
   },
 
   header: {
@@ -67,7 +68,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingTop: 30,
   },
-
 });
 
 export default Eyes;

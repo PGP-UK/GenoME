@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
-import { Section, Block, Grid } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import CenterImage from './CenterImage';
+import { PageHeader } from '../../../components/Text';
 
 const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   const headerStyles = sizeSelector({
@@ -18,9 +19,9 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   return (
     <Section>
       <Block xsSize="100%" mdSize="35%">
-        <Text category="h1" style={headerStyles}>
+        <PageHeader style={headerStyles}>
           Ancestry
-        </Text>
+        </PageHeader>
         <Text category="p1" style={styles.main_text}>
           Different populations have their own distinctive pattern of genetic
           variants. By comparing thousands of my variants with those of
@@ -59,22 +60,20 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
 
 const styles = StyleSheet.create({
   headerxs: {
-    color: '#666E7A',
-    marginTop: 100,
+    marginTop: 20,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 20,
   },
   headerlg: {
-    color: '#666E7A',
-    marginTop: 100,
+    marginTop: 20,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 20,
   },
   main_text: {
     color: '#666E7A',
     fontSize: 25,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 20,
     lineHeight: 45,
   },
   percent_box: {

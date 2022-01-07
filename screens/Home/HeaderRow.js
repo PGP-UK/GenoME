@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Layout, Text, Button } from '@ui-kitten/components';
+import { Layout, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import {PageHeader} from '../../components/Text'
 
 const MoreInfoBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
@@ -15,11 +16,6 @@ const MoreInfoBtn = ({ layoutStyle, navigation }) => (
     </Button>
   </Layout>
 );
-const HeaderText = () => (
-  <Text category="h1" style={styles.header}>
-    Personal Genome Project
-  </Text>
-);
 
 const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
   const btnStyles = sizeSelector({
@@ -30,7 +26,7 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
     <Grid>
       <Section style={HeaderStyle}>
         <Block xsSize="100%" mdSize="70%">
-          <HeaderText />
+          <PageHeader>Personal Genome Project</PageHeader>
         </Block>
         <Block xsSize="100%" mdSize="30%">
           <MoreInfoBtn layoutStyle={btnStyles} navigation={navigation} />
@@ -41,10 +37,6 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
 });
 
 const styles = StyleSheet.create({
-  header: {
-    color: '#63BEE1',
-    fontWeight: '400',
-  },
   headerBtn: {
     backgroundColor: '#3BAEDA',
     borderWidth: 0,

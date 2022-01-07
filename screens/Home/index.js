@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
+import { Section } from 'react-native-responsive-layout';
 
 import PageLayout from '../../components/PageLayout';
 import HeaderRow from './HeaderRow';
@@ -30,7 +31,15 @@ const Home = (props) => {
           data for reasearch under open access.
         </Text>
 
-        <Ambassadors navigation={navigation} />
+        <Section
+          stretch
+          style={{
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingBottom: 50,
+          }}>
+          <Ambassadors navigation={navigation} />
+        </Section>
       </PageLayout>
     </>
   );

@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Layout, Text, Button } from '@ui-kitten/components';
+import { Layout, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import {PageHeader} from '../../../components/Text'
 
 const BackBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
@@ -21,7 +22,7 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
     xs: styles.headerBtnLayoutXs,
     md: styles.headerBtnLayoutMd,
   });
-  
+
   return (
     <Grid>
       <Section style={HeaderStyle}>
@@ -37,15 +38,13 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
 });
 
 const HeaderText = () => (
-  <Text category="h1" style={styles.header}>
-    About PGP-UK and the global network of Personal Genome Projects  
-  </Text>
+  <PageHeader style={styles.header}>
+    About PGP-UK and the global network of Personal Genome Projects
+  </PageHeader>
 );
 
 const styles = StyleSheet.create({
   header: {
-    color: '#63BEE1',
-    fontWeight: '400',
     marginTop: 20,
     marginBottom: 25,
     alignItems: 'center',

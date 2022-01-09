@@ -14,7 +14,13 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   });
   const rightTextStyles = sizeSelector({
     xs: styles.rightTextxs,
-    lg: styles.subheaderlg,
+    md: styles.rightTextmd,
+    lg: styles.rightTextlg,
+  });
+  const percent_boxStyles = sizeSelector({
+    xs: styles.percent_boxxs,
+    md: styles.percent_boxmd,
+    lg: styles.percent_boxlg,
   });
 
   return (
@@ -32,7 +38,7 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
         <CenterImage source={image.image} />
       </Block>
 
-      <Block xsSize="100%" mdSize="30%" style={styles.percent_box}>
+      <Block xsSize="100%" mdSize="30%" style={percent_boxStyles}>
         <Text
           style={{
             fontSize: 45,
@@ -57,12 +63,14 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
 
 const styles = StyleSheet.create({
   headerxs: {
-    marginTop: 20,
+    color: '#666E7A',
+    marginTop: 80,
     marginBottom: 20,
     marginLeft: 20,
   },
   headerlg: {
-    marginTop: 20,
+    color: '#666E7A',
+    marginTop: 80,
     marginBottom: 20,
     marginLeft: 20,
   },
@@ -70,10 +78,23 @@ const styles = StyleSheet.create({
     // color: '#666E7A',
     // fontSize: 25,
     marginBottom: 20,
-    marginLeft: 20,
+    marginLeft: 50,
+    marginRight: 50,
     lineHeight: 45,
+    textAlign: 'justify',
   },
-  percent_box: {
+  percent_boxxs: {
+    alignItems: 'center',
+    marginBottom: 20,
+    marginTop: 50,
+  },
+  percent_boxmd: {
+    alignItems: 'flex-end',
+    marginBottom: 20,
+    marginTop: 100,
+    paddingRight: 50,
+  },
+  percent_boxlg: {
     alignItems: 'flex-end',
     marginBottom: 20,
     marginTop: 100,
@@ -82,15 +103,15 @@ const styles = StyleSheet.create({
   percent_text: {
     fontSize: 25,
   },
-  rightTextupperxs: {
+  rightTextxs: {
     fontSize: 35,
     textAlign: 'center',
   },
-  rightTextuppermd: {
+  rightTextmd: {
     fontSize: 35,
     textAlign: 'center',
   },
-  rightTextupperlg: {
+  rightTextlg: {
     fontSize: 35,
     textAlign: 'right',
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 
+import { Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import Ambassadors from './Ambassadors';
@@ -32,6 +33,13 @@ const Home = (props) => {
         </PageText>
 
         <Ambassadors navigation={navigation} />
+
+        <Section style={{flex: 1,flexWrap: 'wrap-reverse'}}>
+          <Text style={styles.footer_text}>
+            Tap here to listen to 'GenoME' our ambassador's genetic code for their eye colour. {"\n"}
+            'GenoME' was peformed by The Benyounes Quartet and composed by Deidre Gribbin.
+          </Text>
+        </Section>
       </PageLayout>
     </>
   );
@@ -42,9 +50,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 25,
   },
-
   main_text: {
     marginBottom: 20,
+  },
+  footer_text: {
+    color: '#666E7A',
+    fontSize: 25,
+    paddingBottom: 50,
   },
 });
 

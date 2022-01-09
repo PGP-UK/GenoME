@@ -38,7 +38,7 @@ const Icons = [
 ];
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, sm: 2, md: 5 });
+  const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 5 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
   return (
@@ -53,8 +53,8 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
 const LandingIcon = ({ IconData, name, navigation }) => {
   return (
     <Block
-      xsSize="100%"
-      smSize="50%"
+      xsSize="50%"
+      smSize="33%"
       mdSize="20%"
       style={styles.landingIconWrapper}>
       <Pressable
@@ -65,11 +65,7 @@ const LandingIcon = ({ IconData, name, navigation }) => {
         <Iconimage source={IconData.image} />
         <Text
           category="h4"
-          style={{
-            paddingTop: 20,
-            textAlign: 'center',
-            color: 'white',
-          }}>
+          style={styles.iconText}>
           {IconData.pageName}
         </Text>
       </Pressable>
@@ -86,7 +82,7 @@ const Landing = (props) => {
       <PageLayout backgroundColor={ThemeColors[name]}>
         <Grid>
           <TextSection />
-          <Section>
+          <Section style={styles.iconsWrapper}>
             {Icons.map((IconData, idx) => (
               <LandingIcon
                 key={idx}
@@ -105,12 +101,10 @@ const Landing = (props) => {
 const styles = StyleSheet.create({
   landingIconWrapper: {
     alignItems: 'center',
-    marginTop: 30,
   },
   box: {
     alignItems: 'center',
     padding: 10,
-    marginTop: 10,
     marginBottom: 10,
   },
   avpic: {
@@ -135,6 +129,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#3BAEDA',
     borderWidth: 0,
     color: '#fff',
+  },
+  iconText: {
+    paddingTop: 7,
+    textAlign: 'center',
+    color: 'white',
+  },
+  iconsWrapper: {
+    justifyContent: 'center'
   },
 });
 

@@ -5,6 +5,7 @@ import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import CenterImage from './CenterImage';
 import { PageHeader } from '../../../components/Text';
+import { PageText } from '../../../components/Text';
 
 const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   const headerStyles = sizeSelector({
@@ -19,14 +20,12 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   return (
     <Section>
       <Block xsSize="100%" mdSize="35%">
-        <PageHeader style={headerStyles}>
-          Ancestry
-        </PageHeader>
-        <Text category="p1" style={styles.main_text}>
+        <PageHeader style={headerStyles}>Ancestry</PageHeader>
+        <PageText category="p1" style={styles.main_text}>
           Different populations have their own distinctive pattern of genetic
           variants. By comparing thousands of my variants with those of
           individuals from different populations, my ancestry can be predicted.
-        </Text>
+        </PageText>
       </Block>
 
       <Block xsSize="100%" mdSize="35%">
@@ -39,8 +38,7 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
             fontSize: 45,
             color: data.themeColor,
             textAlign: 'right',
-          }}
-        >
+          }}>
           {data.most_percent}
         </Text>
         <Text
@@ -49,8 +47,7 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
             color: data.themeColor,
             textAlign: 'right',
             marginTop: 15,
-          }}
-        >
+          }}>
           {data.other_percent_1}
         </Text>
       </Block>
@@ -70,8 +67,8 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   main_text: {
-    color: '#666E7A',
-    fontSize: 25,
+    // color: '#666E7A',
+    // fontSize: 25,
     marginBottom: 20,
     marginLeft: 20,
     lineHeight: 45,

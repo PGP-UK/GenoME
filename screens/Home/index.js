@@ -5,7 +5,7 @@ import { Text } from '@ui-kitten/components';
 import PageLayout from '../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import Ambassadors from './Ambassadors';
-import {PageText} from '../../components/Text'
+import { PageText } from '../../components/Text';
 
 const Home = (props) => {
   const { navigation } = props;

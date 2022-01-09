@@ -18,7 +18,7 @@ const App = () => {
       <AppLoading
         startAsync={cacheResourcesAsync}
         onFinish={() => setAppReady(true)}
-        onError={console.warn}
+        onError={console.warn}d
       />
     );
   }
@@ -88,6 +88,7 @@ async function cacheResourcesAsync() {
     require('./assets/images/ovarian_profiles/momodou_ovarian_profile.png'),
     require('./assets/images/ovarian_profiles/stephan_ovarian_profile.png'),
     require('./assets/images/ancestry_screen_pie/ancestry_world.jpeg'),
+    require("./assets/images/eyes/blue_eye.png"),
   ];
 
   const cacheImages = images.map((image) =>

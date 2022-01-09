@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 import { Text } from '@ui-kitten/components';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
@@ -67,13 +67,20 @@ const Ambassador = (props) => {
 };
 
 const Ambassadors = ({ navigation }) => (
-  <Grid>
-    <Section>
-      {AllAmbassadors.map((AmbassadorData, idx) => (
-        <Ambassador key={idx} {...AmbassadorData} navigation={navigation} />
-      ))}
-    </Section>
-  </Grid>
+  <Section
+    stretch
+    style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        flexWrap: 'wrap',
+    }}>
+    {AllAmbassadors.map((AmbassadorData, idx) => (
+      <Ambassador key={idx} {...AmbassadorData} navigation={navigation} />
+    ))}
+  </Section>
 );
 
 const styles = StyleSheet.create({

@@ -1,17 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Block } from 'react-native-responsive-layout';
+import { PageText } from '../../../components/Text';
 
 const SmokingExText = ({ data }) => {
   return (
     <>
       <Block xsSize="100%" mdHidden>
-        <Text style={[styles.text, { backgroundColor: data.themeColor }]}>
+        <PageText style={[styles.text, { backgroundColor: data.themeColor }]}>
           Epigenetic variants are chemical changes to your DNA, which alter how
           it is used without changing the DNA sequence. When people smoke, their
           epigenetic patterns change and we can use this to predict if they are
           past/never or current smokers.
-        </Text>
+        </PageText>
       </Block>
     </>
   );
@@ -28,9 +29,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   text: {
-    fontSize: 20,
+    //fontSize: 20,
     marginBottom: 20,
-    fontWeight: '300',
+    //fontWeight: '300',
     color: 'white',
     padding: 10,
   },

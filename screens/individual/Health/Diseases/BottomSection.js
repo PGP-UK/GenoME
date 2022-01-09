@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { StyleSheet } from 'react-native';
+import { PageText } from '../../../../components/Text';
 
 const textInformation = {
   heart: {
@@ -30,14 +30,14 @@ const BottomSection = (props) => {
   return (
     <Section>
       <Block>
-        <Text category="p1" style={styles.main_text}>
+        <PageText category="p1" style={styles.main_text}>
           {textData.topText}
-        </Text>
+        </PageText>
       </Block>
       <Block>
-        <Text category="p1" style={styles.main_text}>
+        <PageText category="p1" style={styles.main_text}>
           {textData.bottomText}
-        </Text>
+        </PageText>
       </Block>
     </Section>
   );
@@ -46,7 +46,6 @@ const BottomSection = (props) => {
 const styles = StyleSheet.create({
   main_text: {
     color: '#666E7A',
-    fontSize: 20,
     marginBottom: 20,
   },
 });

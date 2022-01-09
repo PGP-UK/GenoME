@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
-import { Section, Block, Grid } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import CenterImage from './CenterImage';
+import { PageHeader } from '../../../components/Text';
+import { PageText } from '../../../components/Text';
 
 const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   const headerStyles = sizeSelector({
@@ -12,34 +14,37 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   });
   const rightTextStyles = sizeSelector({
     xs: styles.rightTextxs,
-    lg: styles.subheaderlg,
+    md: styles.rightTextmd,
+    lg: styles.rightTextlg,
+  });
+  const percent_boxStyles = sizeSelector({
+    xs: styles.percent_boxxs,
+    md: styles.percent_boxmd,
+    lg: styles.percent_boxlg,
   });
 
   return (
     <Section>
       <Block xsSize="100%" mdSize="35%">
-        <Text category="h1" style={headerStyles}>
-          Ancestry
-        </Text>
-        <Text category="p1" style={styles.main_text}>
+        <PageHeader style={headerStyles}>Ancestry</PageHeader>
+        <PageText category="p1" style={styles.main_text}>
           Different populations have their own distinctive pattern of genetic
           variants. By comparing thousands of my variants with those of
           individuals from different populations, my ancestry can be predicted.
-        </Text>
+        </PageText>
       </Block>
 
       <Block xsSize="100%" mdSize="35%">
         <CenterImage source={image.image} />
       </Block>
 
-      <Block xsSize="100%" mdSize="30%" style={styles.percent_box}>
+      <Block xsSize="100%" mdSize="30%" style={percent_boxStyles}>
         <Text
           style={{
             fontSize: 45,
             color: data.themeColor,
             textAlign: 'right',
-          }}
-        >
+          }}>
           {data.most_percent}
         </Text>
         <Text
@@ -48,8 +53,7 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
             color: data.themeColor,
             textAlign: 'right',
             marginTop: 15,
-          }}
-        >
+          }}>
           {data.other_percent_1}
         </Text>
       </Block>
@@ -60,24 +64,37 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
 const styles = StyleSheet.create({
   headerxs: {
     color: '#666E7A',
-    marginTop: 100,
+    marginTop: 80,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 20,
   },
   headerlg: {
     color: '#666E7A',
-    marginTop: 100,
+    marginTop: 80,
     marginBottom: 20,
-    marginLeft: 50,
+    marginLeft: 20,
   },
   main_text: {
-    color: '#666E7A',
-    fontSize: 25,
+    // color: '#666E7A',
+    // fontSize: 25,
     marginBottom: 20,
     marginLeft: 50,
+    marginRight: 50,
     lineHeight: 45,
+    textAlign: 'justify',
   },
-  percent_box: {
+  percent_boxxs: {
+    alignItems: 'center',
+    marginBottom: 20,
+    marginTop: 50,
+  },
+  percent_boxmd: {
+    alignItems: 'flex-end',
+    marginBottom: 20,
+    marginTop: 100,
+    paddingRight: 50,
+  },
+  percent_boxlg: {
     alignItems: 'flex-end',
     marginBottom: 20,
     marginTop: 100,
@@ -86,15 +103,15 @@ const styles = StyleSheet.create({
   percent_text: {
     fontSize: 25,
   },
-  rightTextupperxs: {
+  rightTextxs: {
     fontSize: 35,
     textAlign: 'center',
   },
-  rightTextuppermd: {
+  rightTextmd: {
     fontSize: 35,
     textAlign: 'center',
   },
-  rightTextupperlg: {
+  rightTextlg: {
     fontSize: 35,
     textAlign: 'right',
   },

@@ -3,6 +3,7 @@ import { View, Image, StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import PageLayout from '../../../components/PageLayout';
 import HeaderRow from './HeaderRow';
+import { PageText } from '../../../components/Text';
 
 const Eyes = (props) => {
   const { navigation } = props;
@@ -12,20 +13,21 @@ const Eyes = (props) => {
         <View style={styles.mainContainer}>
           <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
           <View style={{ flex: 1 }} />
-          <Text category="p1" style={styles.main_text}>
+
+          <PageText category="p1" style={styles.main_text}>
             Eye colour is determined by multiple genetic variants, some of which
             have been used to predict my eye colour. Below you can see my actual
             eyes and the predicted eye colour - how well do you think the
             prediction has worked?
-          </Text>
+          </PageText>
           <View style={{ flex: 1 }} />
           <Image
             style={styles.eye_image}
             source={require('../../../assets/images/eyes/blue_eye.png')}
           />
-          <Text category="p1" style={styles.eye_text}>
+          <PageText category="p1" style={styles.eye_text}>
             My eye colour is predicted to be blue
-          </Text>
+          </PageText>
         </View>
       </PageLayout>
     </>
@@ -57,8 +59,6 @@ const styles = StyleSheet.create({
   },
 
   main_text: {
-    color: '#666E7A',
-    fontSize: 20,
     marginBottom: 20,
   },
 

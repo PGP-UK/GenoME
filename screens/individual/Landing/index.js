@@ -52,13 +52,16 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
 
 const LandingIcon = ({ IconData, name, navigation }) => {
   return (
-    <Block xsSize="100%" smSize="50%" mdSize="20%" style={styles.landingIconWrapper}>
+    <Block
+      xsSize="100%"
+      smSize="50%"
+      mdSize="20%"
+      style={styles.landingIconWrapper}>
       <Pressable
         onPress={() =>
           navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
         }
-        style={styles.box}
-      >
+        style={styles.box}>
         <Iconimage source={IconData.image} />
         <Text
           category="h4"
@@ -66,14 +69,13 @@ const LandingIcon = ({ IconData, name, navigation }) => {
             paddingTop: 20,
             textAlign: 'center',
             color: 'white',
-          }}
-        >
+          }}>
           {IconData.pageName}
         </Text>
       </Pressable>
     </Block>
-  )
-}
+  );
+};
 
 const Landing = (props) => {
   const { route, navigation } = props;
@@ -86,7 +88,12 @@ const Landing = (props) => {
           <TextSection />
           <Section>
             {Icons.map((IconData, idx) => (
-              <LandingIcon key={idx} IconData={IconData} name={name} navigation={navigation} />
+              <LandingIcon
+                key={idx}
+                IconData={IconData}
+                name={name}
+                navigation={navigation}
+              />
             ))}
           </Section>
         </Grid>
@@ -98,7 +105,7 @@ const Landing = (props) => {
 const styles = StyleSheet.create({
   landingIconWrapper: {
     alignItems: 'center',
-    marginTop: 30
+    marginTop: 30,
   },
   box: {
     alignItems: 'center',

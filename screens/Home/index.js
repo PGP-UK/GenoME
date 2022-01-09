@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
+import { Section } from 'react-native-responsive-layout';
 
 import { Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../components/PageLayout';
@@ -32,7 +33,15 @@ const Home = (props) => {
           data for reasearch under open access.
         </PageText>
 
-        <Ambassadors navigation={navigation} />
+        <Section
+          stretch
+          style={{
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingBottom: 50,
+          }}>
+          <Ambassadors navigation={navigation} />
+        </Section>
 
         <Section style={{flex: 1,flexWrap: 'wrap-reverse'}}>
           <Text style={styles.footer_text}>
@@ -47,7 +56,6 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
   headerRow: {
-    marginTop: 20,
     marginBottom: 25,
   },
   main_text: {

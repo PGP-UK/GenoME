@@ -42,11 +42,9 @@ const TopSection = (props) => {
 const styles = StyleSheet.create({
   header1: {
     color: '#63BEE1',
-    marginTop: 20,
   },
   header2: {
     marginTop: 5,
-    fontSize: 30,
   },
 });
 

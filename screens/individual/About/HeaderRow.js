@@ -45,7 +45,6 @@ const HeaderText = () => (
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: 20,
     marginBottom: 25,
     alignItems: 'center',
   },

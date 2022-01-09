@@ -13,6 +13,7 @@ const Eyes = (props) => {
         <View style={styles.mainContainer}>
           <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
           <View style={{ flex: 1 }} />
+
           <PageText category="p1" style={styles.main_text}>
             Eye colour is determined by multiple genetic variants, some of which
             have been used to predict my eye colour. Below you can see my actual
@@ -43,7 +44,6 @@ const styles = StyleSheet.create({
   },
 
   headerRow: {
-    marginTop: 20,
     marginBottom: 25,
   },
 

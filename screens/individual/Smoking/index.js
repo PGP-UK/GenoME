@@ -45,7 +45,6 @@ const Smoking = (props) => {
 const styles = StyleSheet.create({
   heading: {
     color: '#63BEE1',
-    marginTop: 10,
     marginBottom: 20,
   },
 });

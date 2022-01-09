@@ -36,8 +36,10 @@ const AllAmbassadors = {
 
 const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
+  const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
+
   const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - spacingBetweenImages;
   return (
     <Image
       {...props}
@@ -64,7 +66,7 @@ const SNVImages = ({
         })
       }
       style={styles.box}>
-      <SNVImage source={image} style={styles.image} resizeMode="contain" />
+      <SNVImage source={image} resizeMode="contain" />
       <PageHeader style={[styles.header2, { color: themeColor }]}>
         {header}
       </PageHeader>
@@ -129,7 +131,7 @@ const Health = (props) => {
           }}>
           <SNVImages
             disease="heart"
-            header="Heart disease"
+            header={"Heart Disease"}
             name={name}
             image={healthData.SNV_heart_image}
             themeColor={themeColor}
@@ -137,7 +139,7 @@ const Health = (props) => {
           />
           <SNVImages
             disease="crohn"
-            header="Crohn's disease"
+            header={"Crohn's Disease"}
             name={name}
             image={healthData.SNV_crohn_image}
             themeColor={themeColor}
@@ -145,7 +147,7 @@ const Health = (props) => {
           />
           <SNVImages
             disease="ovarian"
-            header="Ovarian cancer"
+            header={"Ovarian Cancer"}
             name={name}
             image={healthData.SNV_ovarian_image}
             themeColor={themeColor}
@@ -177,13 +179,10 @@ const styles = StyleSheet.create({
   box: {
     alignItems: 'center',
     padding: 10,
-    marginTop: 10,
-    marginBottom: 10,
+    // marginTop: 10,
+    // marginBottom: 10,
   },
-  image: {
-    height: 250,
-    width: 250,
-  },
+
 });
 
 export default Health;

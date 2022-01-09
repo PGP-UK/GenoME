@@ -2,6 +2,7 @@ import React from 'react';
 import { Text } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { StyleSheet } from 'react-native';
+import { PageHeader } from '../../../../components/Text';
 
 const textInformation = {
   heart: {
@@ -22,27 +23,30 @@ const TopSection = (props) => {
   const { disease, data } = props;
   const textData = textInformation[disease];
   return (
-    <Section style={{ marginBottom: 50 }}>
+    <Section style={{ marginBottom: 20 }}>
       <Block smSize="100%" mdSize="70%">
-        <Text category="h1" style={styles.header}>
+        <PageHeader category="h1" style={styles.header1}>
           {textData.heading}
-        </Text>
+        </PageHeader>
+        <PageHeader
+          category="h2"
+          style={[styles.header2, { color: data.themeColor }]}>
+          Genetic variant ID: {textData.id}
+        </PageHeader>
       </Block>
-      <Block smSize="100%" mdSize="30%">
-        <Text category="h4" style={[styles.header, { color: data.themeColor }]}>
-          Genetic variant ID: {'\n'}
-          {textData.id}
-        </Text>
-      </Block>
+      <Block smSize="100%" mdSize="30%"></Block>
     </Section>
   );
 };
 
 const styles = StyleSheet.create({
-  header: {
+  header1: {
     color: '#63BEE1',
-    fontWeight: '400',
     marginTop: 20,
+  },
+  header2: {
+    marginTop: 5,
+    fontSize: 30,
   },
 });
 

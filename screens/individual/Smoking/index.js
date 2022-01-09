@@ -47,8 +47,6 @@ const styles = StyleSheet.create({
     color: '#63BEE1',
     marginTop: 10,
     marginBottom: 20,
-    fontSize: 40,
-    fontWeight: '400',
   },
 });
 

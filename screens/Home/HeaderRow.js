@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Layout, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-import {PageHeader} from '../../components/Text'
+import { PageHeader } from '../../components/Text';
 
 const MoreInfoBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>

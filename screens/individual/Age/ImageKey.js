@@ -18,8 +18,8 @@ const ImageKey = withSizeInfo(({ sizeSelector, data }) => {
         Epigenetic Age: {data.Epigenetic} Years
       </Text>
     </Block>
-  )
-})
+  );
+});
 
 const styles = StyleSheet.create({
   textRowSm: {
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#11b6d4',
   },
-
 });
 
-export default ImageKey
+export default ImageKey;

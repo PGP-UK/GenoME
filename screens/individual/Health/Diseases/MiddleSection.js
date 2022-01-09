@@ -4,6 +4,8 @@ import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { StyleSheet, View, Image } from 'react-native';
+import { PageText } from '../../../../components/Text';
+import { PageHeader } from '../../../../components/Text';
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
@@ -28,10 +30,10 @@ const ColorSplitText = withSizeInfo(({ sizeSelector }) => {
     md: styles.mdColorSplitText,
   });
   return (
-    <Text category="h5" style={ColorSplitStyles}>
+    <PageText style={ColorSplitStyles}>
       The colour split illustrates how common each variant type is in the
       population.
-    </Text>
+    </PageText>
   );
 });
 
@@ -43,24 +45,24 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
 
   return (
     <View>
-      <Text category="h3" style={styles.header2}>
+      <PageHeader category="h3" style={styles.header2}>
         Risk with each variant type:
-      </Text>
-      <Text category="h4" style={ImageStyles}>
+      </PageHeader>
+      <PageHeader category="h4" style={ImageStyles}>
         <View style={styles.square1} />
         &nbsp;
         {riskData.first}
-      </Text>
-      <Text category="h4" style={ImageStyles}>
+      </PageHeader>
+      <PageHeader category="h4" style={ImageStyles}>
         <View style={styles.square2} />
         &nbsp;
         {riskData.second}
-      </Text>
-      <Text category="h4" style={ImageStyles}>
+      </PageHeader>
+      <PageHeader category="h4" style={ImageStyles}>
         <View style={styles.square3} />
         &nbsp;
         {riskData.third}
-      </Text>
+      </PageHeader>
       {/* Hidden in small screens */}
       <Block hidden mdVisible>
         <ColorSplitText />
@@ -104,14 +106,14 @@ const MiddleSection = (props) => {
         </Block>
 
         <Block xsSize="100%" mdSize="33%">
-          <Text
+          <PageText
             style={[styles.box_text, { backgroundColor: backgroundColour }]}>
             There are three versions of this variant and{' '}
             {data.population.percent} of the population have the same variant as
             me. {'\n'}
             {'\n'}
             {data.message}
-          </Text>
+          </PageText>
         </Block>
       </Section>
     </>
@@ -121,28 +123,20 @@ const MiddleSection = (props) => {
 const styles = StyleSheet.create({
   header2: {
     color: '#666E7A',
-    fontWeight: '300',
     marginBottom: 10,
   },
   mdHeader3: {
     color: '#666E7A',
-    fontWeight: '300',
-    fontSize: 30,
   },
   xsHeader3: {
     color: '#666E7A',
-    fontWeight: '300',
-    fontSize: 30,
   },
   main_text: {
     color: '#666E7A',
-    fontSize: 20,
     marginBottom: 20,
   },
   box_text: {
-    fontSize: 20,
     color: 'white',
-    fontWeight: '400',
     padding: 10,
     marginBottom: 20,
   },
@@ -169,13 +163,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   xsColorSplitText: {
-    fontWeight: '300',
     textAlign: 'center',
     marginBottom: 20,
     color: '#666E7A',
   },
   mdColorSplitText: {
-    fontWeight: '300',
     marginTop: 20,
     color: '#666E7A',
   },

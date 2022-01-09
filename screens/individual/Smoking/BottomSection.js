@@ -5,6 +5,7 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
 import ImageKey from './Imagekey.js';
 import SmokingExText from './SmokingExText';
+import { PageText } from '../../../components/Text';
 
 const dataFile = {
   data: require(`../../../assets/data/age/data.json`),
@@ -33,12 +34,12 @@ const BottomSection = withSizeInfo(({ sizeSelector, data, name }) => {
       <Section>
         <ImageKey data={data} />
         <Block xsSize="100%" style={rowStyles}>
-          <Text style={styles.footer}>
+          <PageText style={styles.footer}>
             The smoking prediction was calculated from 187 epigenetic variants
             across the participant's genome. These variants have been found to
             change when people smoke, and because of this, can be used to
             predict their smoking status.
-          </Text>
+          </PageText>
         </Block>
       </Section>
     </Grid>

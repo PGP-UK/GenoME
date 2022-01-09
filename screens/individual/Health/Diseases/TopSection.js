@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { StyleSheet } from 'react-native';
 import { PageHeader } from '../../../../components/Text';

@@ -1,8 +1,3 @@
-
-
-
-
-
 import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import { Text } from '@ui-kitten/components';

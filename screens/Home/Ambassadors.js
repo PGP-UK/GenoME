@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 import { Text } from '@ui-kitten/components';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 

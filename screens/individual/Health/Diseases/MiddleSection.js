@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, Card } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';

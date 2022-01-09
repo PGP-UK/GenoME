@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
-import { Text } from '@ui-kitten/components';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import { PageHeader } from '../../../components/Text';

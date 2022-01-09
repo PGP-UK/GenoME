@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import { Text } from '@ui-kitten/components';
 import PageLayout from '../../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import { PageText } from '../../../components/Text';

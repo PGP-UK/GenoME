@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import PageLayout from '../../../components/PageLayout';
-import { Grid, Section } from 'react-native-responsive-layout';
+import { Grid, Section, Block } from 'react-native-responsive-layout';
 import TopText from './TopText';
 
 const AllAmbassadorsData = {
@@ -39,12 +39,14 @@ const Ancestry = (props) => {
           </Section>
 
           <Section mdSize="50%">
-            <View>
+            <Block hidden xlVisible>
+              <View>
               <Image
-                style={{ height: 700, width: 1340 }}
+                style={{ height: 500, width: 1340 }}
                 source={require('../../../assets/images/ancestry_screen_pie/ancestry_world.jpeg')}
               />
-            </View>
+              </View>
+            </Block>
           </Section>
         </Grid>
       </PageLayout>

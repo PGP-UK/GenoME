@@ -5,7 +5,7 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, sm: 2, md: 5 });
+  const numImagesPerRow = sizeSelector({ xs: 1, sm: 2, md: 4.8});
   const imageWidth = Math.round(useSafeAreaFrame().width / numImagesPerRow) - 0;
   return (
     <Image
@@ -20,15 +20,9 @@ const CenterImage = (props) => {
   return (
     <Section>
       <Block style={{ alignItems: 'center', marginTop: 50 }}>
-        <View style={{ justifyContent: 'center', flex: 1 }}>
+        <View style={{ alignItems: 'center', flex: 1 }}>
           <Iconimage
             {...props}
-            // style={{
-            //   width: '75%',
-            //   marginTop: -80,
-            //   marginBottom: -60,
-            //   alignItems: 'center',
-            // }}
             resizeMode="contain"
           />
         </View>

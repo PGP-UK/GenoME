@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, ImageBackground } from 'react-native';
-import { Text, Button, Layout } from '@ui-kitten/components';
+import { StyleSheet, ImageBackground } from 'react-native';
 import PageLayout from '../components/PageLayout';
 import HeaderRow from './individual/About/HeaderRow';
 import SocialMedia from './individual/About/SocialMedia';
@@ -31,8 +30,16 @@ const About = (props) => {
          <SocialMedia navigation={navigation} SocialMediaStyle={styles.socialMedia}/>
         </Section>
        
-
-        <ImageBackground style={styles.bottomImage} source={require("../assets/images/about_us/more-information_globe.png")} >
+        <Section
+          stretch
+          style={{
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingBottom: 50,
+          }}>
+         <ImageBackground style={styles.bottomImage} source={require("../assets/images/about_us/more-information_globe.png")} >
+       
+        
           
           <PageText style={styles.bottom_red_text}>
             DISCLAIMER: The generation of genomic data is not an error-free process and our analysis system is 
@@ -44,6 +51,7 @@ const About = (props) => {
             This app was designed and developed by the PGP-UK/GenoME team.
           </PageText>
         </ImageBackground>
+        </Section>
       </PageLayout>
     </>
   );

@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import { Text } from '@ui-kitten/components';
 
-import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-
 const SocialMedia = (props) => {
   const { navigation } = props;
   return (
@@ -28,10 +26,10 @@ const SocialMedia = (props) => {
     </View>
    
     <View style={{ flex: 1 }}>
-      <Text style={styles.main_text}>
+      <Text style={styles.main_text1}>
         We look forward to making great science with you!
       </Text>
-       <Text style={styles.main_text}>
+       <Text style={styles.main_text2}>
        Director: Professor Stephan Beck {"\n"}
        Location: University College London
       </Text>
@@ -46,7 +44,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
 
-  main_text: {
+  main_text2: {
+    color: '#666E7A',
+    fontSize: 20,
+    textAlign: "left",
+  },
+
+  main_text1: {
     color: '#666E7A',
     fontSize: 20,
     marginBottom: 10,
@@ -54,7 +58,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     textAlign: "left",
   },
-
   bottom_text: {
     color: '#666E7A',
     fontSize: 10,

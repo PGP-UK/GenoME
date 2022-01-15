@@ -15,6 +15,7 @@ const Home = (props) => {
     <>
       <PageLayout>
         <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
+        
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of active
           participants who share their DNA sequence, medical records and trait

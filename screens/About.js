@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
   main_text: {
     color: '#666E7A',
     fontSize: 20,
+    marginBottom: 25,
   },
 
   socialMedia: {

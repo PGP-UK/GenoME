@@ -3,6 +3,8 @@ import { View, Image, StyleSheet } from 'react-native';
 import PageLayout from '../../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import { PageText } from '../../../components/Text';
+import { Video } from 'expo-av';
+import StephanEyeVideo from "./stephanEyeVideo.mp4";
 
 const Eyes = (props) => {
   const { navigation } = props;
@@ -11,6 +13,14 @@ const Eyes = (props) => {
       <PageLayout>
         <View style={styles.mainContainer}>
           <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
+         
+          <Video
+               source={StephanEyeVideo}
+               resizeMode={Video.RESIZE_MODE_CONTAIN}
+               shouldPlay
+               style={styles.eye_video}
+               onError={() => this.setState({ videoNotLoaded: true })}
+          />
           <View style={{ flex: 1 }} />
 
           <PageText category="p1" style={styles.main_text}>
@@ -47,6 +57,11 @@ const styles = StyleSheet.create({
   },
 
   eye_image: {
+    height: 400,
+    width: 400,
+  },
+
+  eye_video: {
     height: 400,
     width: 400,
   },

@@ -6,7 +6,7 @@ import { PageText } from '../../../components/Text';
 const SmokingExText = ({ data }) => {
   return (
     <>
-      <Block xsSize="100%" mdHidden>
+      <Block xsSize="100%" lgSize="100%">
         <PageText style={[styles.text, { backgroundColor: data.themeColor }]}>
           Epigenetic variants are chemical changes to your DNA, which alter how
           it is used without changing the DNA sequence. When people smoke, their

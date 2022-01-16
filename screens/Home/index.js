@@ -6,7 +6,7 @@ import { Section } from 'react-native-responsive-layout';
 import PageLayout from '../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import Ambassadors from './Ambassadors';
-import { PageText } from '../../components/Text';
+import { PageText, PageFooter } from '../../components/Text';
 
 const Home = (props) => {
   const { navigation } = props;
@@ -15,7 +15,7 @@ const Home = (props) => {
     <>
       <PageLayout>
         <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
-        
+
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of active
           participants who share their DNA sequence, medical records and trait
@@ -43,11 +43,13 @@ const Home = (props) => {
           <Ambassadors navigation={navigation} />
         </Section>
 
-        <Section style={{flex: 1,flexWrap: 'wrap-reverse'}}>
-          <Text style={styles.footer_text}>
-            Tap here to listen to 'GenoME' our ambassador's genetic code for their eye colour. {"\n"}
-            'GenoME' was peformed by The Benyounes Quartet and composed by Deidre Gribbin.
-          </Text>
+        <Section style={{ flex: 1, flexWrap: 'wrap-reverse' }}>
+          <PageFooter style={styles.footer_text}>
+            Tap here to listen to 'GenoME' our ambassador's genetic code for
+            their eye colour. {'\n'}
+            'GenoME' was peformed by The Benyounes Quartet and composed by
+            Deidre Gribbin.
+          </PageFooter>
         </Section>
       </PageLayout>
     </>
@@ -63,7 +65,6 @@ const styles = StyleSheet.create({
   },
   footer_text: {
     color: '#666E7A',
-    fontSize: 25,
     paddingBottom: 50,
   },
 });

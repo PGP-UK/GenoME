@@ -37,6 +37,7 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
     xs: 1,
     sm: 2,
     md: 4,
+    lg: 2,
     xl: 2,
     xxl: 4,
   });
@@ -54,7 +55,13 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
 const Ambassador = (props) => {
   const { name, hexId, image, themeColor, navigation } = props;
   return (
-    <Block xsSize="100%" smSize="50%" mdSize="25%" xlSize="50%" xxlSize="25%">
+    <Block
+      xsSize="100%"
+      smSize="50%"
+      mdSize="25%"
+      lgSize="50%"
+      xlSize="50%"
+      xxlSize="25%">
       <Pressable
         onPress={() =>
           navigation.navigate('Landing', { name: name.toLowerCase() })

@@ -6,7 +6,6 @@ import SocialMedia from './individual/About/SocialMedia';
 import { PageText } from '../components/Text';
 import { Section } from 'react-native-responsive-layout';
 
-
 const About = (props) => {
   const { navigation } = props;
   return (
@@ -76,20 +75,21 @@ const styles = StyleSheet.create({
   bottom_text: {
     color: '#666E7A',
     fontSize: 10,
-    marginBottom: 20,
+    marginBottom: 5,
   },
 
   bottom_red_text: {
     color: '#ff0000',
     fontSize: 10,
-    marginBottom: 10,
+    marginBottom: 5,
+    textAlign: "justify",
   },
 
   bottomImage:{
     height: 225,
-    width: 400,
+    width: 380,
     marginTop: 20,
-    justifyContent:"flex-end"
+    justifyContent:"flex-end",
   },
 
   socialMedia:{

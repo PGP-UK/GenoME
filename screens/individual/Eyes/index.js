@@ -4,7 +4,7 @@ import PageLayout from '../../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import { PageText } from '../../../components/Text';
 import { Video } from 'expo-av';
-import StephanEyeVideo from "./stephanEyeVideo.mp4";
+import StephanEyeVideo from "../../../assets/videos/stephan_eyes.mp4";
 
 const Eyes = (props) => {
   const { navigation } = props;
@@ -13,7 +13,7 @@ const Eyes = (props) => {
       <PageLayout>
         <View style={styles.mainContainer}>
           <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
-         
+
           <Video
                source={StephanEyeVideo}
                resizeMode={Video.RESIZE_MODE_CONTAIN}
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
 
   headerRow: {
@@ -59,11 +59,15 @@ const styles = StyleSheet.create({
   eye_image: {
     height: 400,
     width: 400,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   eye_video: {
     height: 400,
     width: 400,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   header: {

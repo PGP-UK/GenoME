@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 
   bottomImage:{
     height: 225,
-    width: 350,
+    width: 380,
     marginTop: 20,
     justifyContent:"flex-end"
   },

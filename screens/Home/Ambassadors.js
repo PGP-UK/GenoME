@@ -33,7 +33,14 @@ const AllAmbassadors = [
 ];
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, sm: 2, md: 4 });
+  const numImagesPerRow = sizeSelector({
+    xs: 1,
+    sm: 2,
+    md: 4,
+    lg: 2,
+    xl: 2,
+    xxl: 4,
+  });
   const imageWidth =
     Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
   return (
@@ -48,7 +55,13 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
 const Ambassador = (props) => {
   const { name, hexId, image, themeColor, navigation } = props;
   return (
-    <Block xsSize="100%" smSize="50%" mdSize="25%">
+    <Block
+      xsSize="100%"
+      smSize="50%"
+      mdSize="25%"
+      lgSize="50%"
+      xlSize="50%"
+      xxlSize="25%">
       <Pressable
         onPress={() =>
           navigation.navigate('Landing', { name: name.toLowerCase() })
@@ -70,12 +83,12 @@ const Ambassadors = ({ navigation }) => (
   <Section
     stretch
     style={{
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
-        flexWrap: 'wrap',
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center',
+      flexWrap: 'wrap',
     }}>
     {AllAmbassadors.map((AmbassadorData, idx) => (
       <Ambassador key={idx} {...AmbassadorData} navigation={navigation} />

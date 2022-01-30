@@ -63,9 +63,7 @@ const LandingIcon = ({ IconData, name, navigation }) => {
         }
         style={styles.box}>
         <Iconimage source={IconData.image} />
-        <Text
-          category="h4"
-          style={styles.iconText}>
+        <Text category="h4" style={styles.iconText}>
           {IconData.pageName}
         </Text>
       </Pressable>
@@ -136,7 +134,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   iconsWrapper: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 });
 

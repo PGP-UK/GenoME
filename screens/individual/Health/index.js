@@ -39,7 +39,8 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
   const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) - spacingBetweenImages;
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) -
+    spacingBetweenImages;
   return (
     <Image
       {...props}
@@ -57,7 +58,13 @@ const SNVImages = ({
   disease,
   header,
 }) => (
-  <Block xsSize="100%" smSize="100%" mdSize="33%">
+  <Block
+    xsSize="100%"
+    smSize="100%"
+    mdSize="33%"
+    lgSize="33%"
+    xlSize="50%"
+    xxlSize="33%">
     <Pressable
       onPress={() =>
         navigation.navigate('Diseases', {
@@ -89,16 +96,7 @@ const Health = (props) => {
             </PageHeader>
           </Block>
         </Section>
-        <Section
-          stretch
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignContent: 'center',
-            flexWrap: 'wrap',
-          }}>
+        <Section>
           <Block>
             <PageText category="p1" style={styles.main_text}>
               Genetic makeup can also give indications on inherited risks and
@@ -131,7 +129,7 @@ const Health = (props) => {
           }}>
           <SNVImages
             disease="heart"
-            header={"Heart Disease"}
+            header={'Heart Disease'}
             name={name}
             image={healthData.SNV_heart_image}
             themeColor={themeColor}
@@ -147,7 +145,7 @@ const Health = (props) => {
           />
           <SNVImages
             disease="ovarian"
-            header={"Ovarian Cancer"}
+            header={'Ovarian Cancer'}
             name={name}
             image={healthData.SNV_ovarian_image}
             themeColor={themeColor}
@@ -182,7 +180,6 @@ const styles = StyleSheet.create({
     // marginTop: 10,
     // marginBottom: 10,
   },
-
 });
 
 export default Health;

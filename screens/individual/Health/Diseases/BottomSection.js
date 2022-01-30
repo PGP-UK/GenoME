@@ -30,12 +30,12 @@ const BottomSection = (props) => {
   return (
     <Section>
       <Block>
-        <PageText category="p1" style={styles.main_text}>
+        <PageText category="p1" style={styles.top_text}>
           {textData.topText}
         </PageText>
       </Block>
       <Block>
-        <PageText category="p1" style={styles.main_text}>
+        <PageText category="p1" style={styles.bottom_text}>
           {textData.bottomText}
         </PageText>
       </Block>
@@ -44,8 +44,11 @@ const BottomSection = (props) => {
 };
 
 const styles = StyleSheet.create({
-  main_text: {
-    color: '#666E7A',
+  top_text: {
+    paddingTop: 20,
+    marginBottom: 20,
+  },
+  bottom_text: {
     marginBottom: 20,
   },
 });

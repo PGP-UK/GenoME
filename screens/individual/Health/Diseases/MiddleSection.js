@@ -44,9 +44,7 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
 
   return (
     <View>
-      <PageHeader category="h3" style={styles.header2}>
-        Risk with each variant type:
-      </PageHeader>
+      <PageText style={styles.header2}>Risk with each variant type:</PageText>
       <PageHeader category="h4" style={ImageStyles}>
         <View style={styles.square1} />
         &nbsp;
@@ -104,7 +102,7 @@ const MiddleSection = (props) => {
           <VariantRisk riskData={data.risk} />
         </Block>
 
-        <Block xsSize="100%" mdSize="33%">
+        <Block xsSize="100%" mdSize="33%" style={{ paddingTop: 30 }}>
           <PageText
             style={[styles.box_text, { backgroundColor: backgroundColour }]}>
             There are three versions of this variant and{' '}
@@ -125,9 +123,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   mdHeader3: {
+    fontSize: 25,
     color: '#666E7A',
   },
   xsHeader3: {
+    fontSize: 25,
     color: '#666E7A',
   },
   main_text: {

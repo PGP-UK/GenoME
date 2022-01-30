@@ -88,7 +88,13 @@ async function cacheResourcesAsync() {
     require('./assets/images/ovarian_profiles/momodou_ovarian_profile.png'),
     require('./assets/images/ovarian_profiles/stephan_ovarian_profile.png'),
     require('./assets/images/ancestry_screen_pie/ancestry_world.jpeg'),
-    require("./assets/images/eyes/blue_eye.png"),
+    require('./assets/images/eyes/blue_eye.png'),
+    require('./assets/images/eyes/brown_eye.png'),
+    require('./assets/images/eyes/brown_eye.png'),
+    require('./assets/videos/stephan_eyes.mp4'),
+    require('./assets/videos/colin_eyes.mp4'),
+    require('./assets/videos/laura_eyes.mp4'),
+    require('./assets/videos/momodou_eyes.mp4'),
   ];
 
   const cacheImages = images.map((image) =>

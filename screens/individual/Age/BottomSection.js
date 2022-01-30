@@ -17,7 +17,7 @@ const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
     <Grid>
       <Section>
         <ImageKey data={data} />
-        <Block hidden mdVisible>
+        <Block smHidden mdHidden>
           <AgeExplanationText themeColor={data.themeColor} />
         </Block>
         <Block xsSize="100%" style={rowStyles}>

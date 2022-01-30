@@ -5,7 +5,7 @@ import { PageText } from '../../../components/Text';
 
 const AgeExplanationText = ({ themeColor }) => {
   return (
-    <Block xsSize="100%" mdHidden>
+    <Block xsSize="100%" lgSize="100%">
       <PageText style={[styles.paragraph, { backgroundColor: themeColor }]}>
         Epigenetic age was calculated from 353 epigenetic variants across the
         participant's genome. These epigenetic variants correlate very well with

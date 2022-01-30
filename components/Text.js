@@ -4,40 +4,60 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { StyleSheet } from 'react-native';
 
 const PgpText = withSizeInfo((props) => {
-  const { sizeSelector, children, style, sizeSelectorStyles, baseStyle,
-    category} = props
+  const {
+    sizeSelector,
+    children,
+    style,
+    sizeSelectorStyles,
+    baseStyle,
+    category,
+  } = props;
 
-  const defaultStyles = sizeSelector(sizeSelectorStyles)
-  return(
+  const defaultStyles = sizeSelector(sizeSelectorStyles);
+  return (
     <Text category={category} style={[baseStyle, defaultStyles, style]}>
       {children}
     </Text>
-  )
-})
+  );
+});
 
 const PageHeader = (props) => {
-  return(
+  return (
     <PgpText
       {...props}
-      category='h1'
+      category="h1"
       baseStyle={Styles.page_header_base}
       sizeSelectorStyles={{}}
     />
-  )
-}
+  );
+};
 
 const PageText = (props) => {
-  return(
+  return (
     <PgpText
       {...props}
-      category='p1'
+      category="p1"
       baseStyle={Styles.page_text_base}
       sizeSelectorStyles={{
         lg: Styles.page_text_lg,
       }}
     />
-  )
-}
+  );
+};
+
+const PageFooter = (props) => {
+  return (
+    <PgpText
+      {...props}
+      category="p1"
+      baseStyle={Styles.footer_base}
+      sizeSelectorStyles={{
+        sm: Styles.page_footer_xs,
+        lg: Styles.page_text_lg,
+      }}
+    />
+  );
+};
 
 const Styles = StyleSheet.create({
   page_header_base: {
@@ -48,13 +68,15 @@ const Styles = StyleSheet.create({
     color: '#666E7A',
     fontSize: 20,
   },
-  page_text_lg:{
-    fontSize: 23
-  }
-})
+  page_footer_base: {
+    color: '#666E7A',
+  },
+  page_text_lg: {
+    fontSize: 23,
+  },
+  page_footer_xs: {
+    fontSize: 10,
+  },
+});
 
-
-export {
-  PageHeader,
-  PageText
-};
+export { PageHeader, PageText, PageFooter };

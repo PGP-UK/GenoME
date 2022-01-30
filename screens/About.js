@@ -1,44 +1,56 @@
 import React from 'react';
-import { StyleSheet, View, Image, ImageBackground, Pressable } from 'react-native';
-import { Text, Button, Layout } from '@ui-kitten/components';
-
-import { Section, Block, Grid } from 'react-native-responsive-layout';
-import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-import { useSafeAreaFrame } from 'react-native-safe-area-context';
-
-
+import { StyleSheet, ImageBackground } from 'react-native';
 import PageLayout from '../components/PageLayout';
 import HeaderRow from './individual/About/HeaderRow';
 import SocialMedia from './individual/About/SocialMedia';
-import logError from 'react-native/Libraries/Utilities/logError';
+import { PageText } from '../components/Text';
+import { Section } from 'react-native-responsive-layout';
 
 const About = (props) => {
   const { navigation } = props;
   return (
     <>
       <PageLayout>
-       <HeaderRow navigation={navigation} />
-        <Text category="p1" style={styles.main_text}>
+       <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
+        <PageText style={styles.main_text}>
           The PGP-UK project is part of the global network of Personal Genome Projects, which all share
           the vision of advancing science through open data sharing. Currently, there are projects in America,
           Austria, Canada, China and the UK. There are multiple ways to join the PGP-UK community and keep-up-date 
           with the project - just follow the links.
-        </Text>
+        </PageText>
 
-       <SocialMedia navigation={navigation} />
-
-        <ImageBackground style={styles.bottomImage} source={require("../assets/images/about_us/more-information_globe.png")} >
+        <Section
+          stretch
+          style={{
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingBottom: 50,
+          }}>
+         <SocialMedia navigation={navigation} SocialMediaStyle={styles.socialMedia}/>
+        </Section>
+       
+        <Section
+          stretch
+          style={{
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingBottom: 50,
+          }}>
+         <ImageBackground style={styles.bottomImage} source={require("../assets/images/about_us/more-information_globe.png")} >
+       
+        
           
-          <Text category="p1" style={styles.bottom_red_text}>
+          <PageText style={styles.bottom_red_text}>
             DISCLAIMER: The generation of genomic data is not an error-free process and our analysis system is 
             still under development. becasue the body of knowledge of genetic and epigenetic variants has many 
             uncertainties, we cannot guarantee that our analyses are either accurate or complete. 
-          </Text>
+          </PageText>
           
-          <Text style={styles.bottom_text}>
+          <PageText style={styles.bottom_text}>
             This app was designed and developed by the PGP-UK/GenoME team.
-          </Text>
+          </PageText>
         </ImageBackground>
+        </Section>
       </PageLayout>
     </>
   );
@@ -46,31 +58,38 @@ const About = (props) => {
 
 const styles = StyleSheet.create({
 
+  headerRow: {
+    marginBottom: 25,
+  },
+
   main_text: {
     color: '#666E7A',
     fontSize: 20,
-    marginBottom: 20,
-    paddingTop: 20,
-    paddingBottom:20,
+    marginBottom: 25,
+  },
+
+  socialMedia: {
+    marginBottom: 25,
   },
 
   bottom_text: {
     color: '#666E7A',
     fontSize: 10,
-    marginBottom: 20,
+    marginBottom: 5,
   },
 
   bottom_red_text: {
     color: '#ff0000',
     fontSize: 10,
-    marginBottom: 20,
+    marginBottom: 5,
+    textAlign: "justify",
   },
 
   bottomImage:{
     height: 225,
     width: 380,
     marginTop: 20,
-    justifyContent:"flex-end"
+    justifyContent:"flex-end",
   },
 
   socialMedia:{

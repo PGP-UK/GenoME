@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Image, StyleSheet, Pressable } from 'react-native';
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
@@ -75,6 +75,7 @@ const EyeImages = ({
 );
 
 const Eyes = (props) => {
+  const [videoNotLoaded, setVideoNotLoaded] = useState(false)
   const { route, navigation } = props;
   const { name } = route.params;
   const eyeData = AllAmbassadors[name];
@@ -105,7 +106,7 @@ const Eyes = (props) => {
                  resizeMode={Video.RESIZE_MODE_CONTAIN}
                  shouldPlay
                  style={styles.eye_video}
-                 onError={() => this.setState({ videoNotLoaded: true })}
+                 onError={() => setVideoNotLoaded(true)}
             /></Section>
         <Section
           stretch

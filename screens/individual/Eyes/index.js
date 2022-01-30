@@ -56,6 +56,7 @@ const EyeImages = ({
   image,
   themeColor,
   header,
+  navigation
 }) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
     <Pressable
@@ -142,6 +143,7 @@ const Eyes = (props) => {
             image={eyeData.eye_image}
             themeColor={themeColor}
             header={eyeData.colorText}
+            navigation={navigation}
           />
         </Section>
       </PageLayout>

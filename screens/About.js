@@ -10,9 +10,6 @@ const About = (props) => {
   return (
     <>
       <PageLayout>
-      <PageHeader style={styles.header}>
-        About PGP-UK and the global network of Personal Genome Projects
-      </PageHeader>
       <Section
           stretch
           style={{
@@ -22,6 +19,25 @@ const About = (props) => {
             alignItems: 'center',
             alignContent: 'center',
             flexWrap: 'wrap',
+            marginBottom: 40,
+          }}>
+        <Block>
+          <PageHeader style={styles.header}  >
+        About PGP-UK and the global network of Personal Genome Projects
+          </PageHeader>
+        </Block>
+      </Section>
+      
+      <Section
+          stretch
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            flexWrap: 'wrap',
+            marginBottom: 20,
           }}>
       <Block>
       <PageText style={styles.main_text}>
@@ -56,6 +72,7 @@ const About = (props) => {
             alignItems: 'center',
             alignContent: 'center',
             flexWrap: 'wrap',
+            marginBottom: 20,
           }}>
         <Block>
          <ImageBackground style={styles.bottomImage} source={require("../assets/images/about_us/more-information_globe.png")} >
@@ -80,8 +97,7 @@ const About = (props) => {
 const styles = StyleSheet.create({
 
   headerRow: {
-    marginBottom: 25,
-    
+    marginBottom: 25, 
   },
 
   main_text: {
@@ -105,7 +121,7 @@ const styles = StyleSheet.create({
   bottom_red_text: {
     color: '#ff0000',
     fontSize: 10,
-    marginBottom: 5,
+    marginTop: 150,
     textAlign: 'auto'
     //position: 'relative',
   },

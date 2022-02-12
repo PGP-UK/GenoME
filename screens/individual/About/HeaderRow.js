@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: 25,
     alignItems: 'center',
+    
   },
   headerBtn: {
     backgroundColor: '#3BAEDA',

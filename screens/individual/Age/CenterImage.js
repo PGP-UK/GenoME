@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
-import { Section, Block } from 'react-native-responsive-layout';
+import { Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
-
 const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const imagePercentage = sizeSelector({ xs: 1, md: 0.4 })
-  const imageWidth = Math.round(useSafeAreaFrame().width * imagePercentage) - 40;
+  const imagePercentage = sizeSelector({ xs: 0.8, md: 0.8, xl: 0.8, xxl: 0.4 });
+  const imageWidth =
+    Math.round(useSafeAreaFrame().width * imagePercentage) - 40;
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
@@ -26,25 +26,19 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-
 const CenterRow = ({ image, data }) => {
   return (
-    <Section stretch>
-      <Block hidden mdVisible md="30%" >
-
-      </Block>
-      <Block sm="100%" md="40%">
-        <CenterImage source={image} />
-      </Block>
-    </Section >
-  )
-}
+    <Block>
+      <CenterImage source={image} />
+    </Block>
+  );
+};
 
 const styles = StyleSheet.create({
   image: {
     marginTop: 20,
     alignSelf: 'center',
-  }
+  },
 });
 
 export default CenterRow;

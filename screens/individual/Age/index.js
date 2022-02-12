@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
+import { Section, Block } from 'react-native-responsive-layout';
 
 import PageLayout from '../../../components/PageLayout';
 import BottomSection from './BottomSection';
@@ -31,8 +32,62 @@ const Age = (props) => {
     <>
       <PageLayout>
         <Text style={styles.heading}>Epigenetic Age</Text>
-        <AgeExplanationText themeColor={data.themeColor} />
-        <CenterImage image={AmbassadorsData[name].image} data={data} />
+        <Block
+          xsSize="100%"
+          smSize="100%"
+          mdSize="100%"
+          lgSize="100%"
+          xlSize="100%"
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingBottom: 20,
+          }}
+          mdVisible
+          xxlHidden>
+          <AgeExplanationText themeColor={data.themeColor} />
+        </Block>
+        <Section
+          stretch
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            flexWrap: 'wrap',
+          }}>
+          <Block
+            xsSize="100%"
+            smSize="100%"
+            mdSize="50%"
+            lgSize="50%"
+            xlSize="50%"
+            style={{ paddingBottom: 20 }}>
+            <CenterImage image={AmbassadorsData[name].image} data={data} />
+          </Block>
+
+          {/*Hidden in potrait mode*/}
+          <Block
+            xsSize="100%"
+            smSize="100%"
+            mdSize="50%"
+            lgSize="50%"
+            xlSize="50%"
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignContent: 'center',
+              paddingBottom: 20,
+            }}
+            mdHidden
+            xxlVisible>
+            <AgeExplanationText themeColor={data.themeColor} />
+          </Block>
+        </Section>
         <BottomSection data={data} />
       </PageLayout>
     </>

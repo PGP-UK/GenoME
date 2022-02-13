@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-
-import ImageKey from './Imagekey.js';
 import { PageText } from '../../../components/Text';
 
 const dataFile = {
@@ -31,7 +29,6 @@ const BottomSection = withSizeInfo(({ sizeSelector, data, name }) => {
   return (
     <Grid>
       <Section>
-        <ImageKey data={data} />
         <Block xsSize="100%" style={rowStyles}>
           <PageText style={styles.footer}>
             The smoking prediction was calculated from 187 epigenetic variants

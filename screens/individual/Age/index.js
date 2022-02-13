@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
 
 import PageLayout from '../../../components/PageLayout';
+import { PageHeader } from '../../../components/Text';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
 import AgeExplanationText from './AgeExplanationText';
@@ -31,7 +32,7 @@ const Age = (props) => {
   return (
     <>
       <PageLayout>
-        <Text style={styles.heading}>Epigenetic Age</Text>
+        <PageHeader>Epigenetic Age</PageHeader>
         <Block
           xsSize="100%"
           smSize="100%"
@@ -45,6 +46,8 @@ const Age = (props) => {
             alignContent: 'center',
             paddingBottom: 20,
           }}
+          xsHidden
+          smHidden
           mdVisible
           xxlHidden>
           <AgeExplanationText themeColor={data.themeColor} />
@@ -71,8 +74,8 @@ const Age = (props) => {
 
           {/*Hidden in potrait mode*/}
           <Block
-            xsSize="100%"
-            smSize="100%"
+            xsSize="0%"
+            smSize="0%"
             mdSize="50%"
             lgSize="50%"
             xlSize="50%"
@@ -83,6 +86,8 @@ const Age = (props) => {
               alignContent: 'center',
               paddingBottom: 20,
             }}
+            xsHidden
+            smHidden
             mdHidden
             xxlVisible>
             <AgeExplanationText themeColor={data.themeColor} />

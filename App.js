@@ -18,7 +18,7 @@ const App = () => {
       <AppLoading
         startAsync={cacheResourcesAsync}
         onFinish={() => setAppReady(true)}
-        onError={console.warn}d
+        onError={console.warn}
       />
     );
   }
@@ -60,9 +60,6 @@ async function cacheResourcesAsync() {
     require('./assets/images/age_pie_charts/momodou.png'),
     require('./assets/images/age_pie_charts/colin.png'),
     require('./assets/images/smokers/no-smoking.png'),
-    require('./assets/images/smokers/no-smoking.png'),
-    require('./assets/images/smokers/no-smoking.png'),
-    require('./assets/images/smokers/no-smoking.png'),
     require('./assets/images/health_screen_SNV/stephan_heart_SNV.png'),
     require('./assets/images/health_screen_SNV/stephan_crohn_SNV.png'),
     require('./assets/images/health_screen_SNV/stephan_ovarian_SNV.png'),
@@ -88,6 +85,10 @@ async function cacheResourcesAsync() {
     require('./assets/images/ovarian_profiles/momodou_ovarian_profile.png'),
     require('./assets/images/ovarian_profiles/stephan_ovarian_profile.png'),
     require('./assets/images/ancestry_screen_pie/ancestry_world.jpeg'),
+    require("./assets/images/about_us/more-information_globe.png"),
+    require("./assets/images/about_us/more-information_twitter.png"),
+    require("./assets/images/about_us/more-information_blogs.png"),
+    require("./assets/images/about_us/more-information_www.png"),
     require('./assets/images/eyes/blue_eye.png'),
     require('./assets/images/eyes/brown_eye.png'),
     require('./assets/images/eyes/brown_eye.png'),

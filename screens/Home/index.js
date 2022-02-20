@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   },
   bottom_footer_text: {
     color: '#666E7A',
+    marginBottom: 25,
   },
 });
 

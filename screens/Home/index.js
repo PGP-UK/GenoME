@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Text } from '@ui-kitten/components';
 
 import { Section } from 'react-native-responsive-layout';
 import PageLayout from '../../components/PageLayout';

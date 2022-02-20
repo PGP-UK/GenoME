@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
-import { Text } from '@ui-kitten/components';
+import { PageText } from '../../components/Text';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
@@ -68,12 +68,12 @@ const Ambassador = (props) => {
         }
         style={styles.box}>
         <AmbassadorImage source={image} />
-        <Text category="p1" style={[styles.header, { color: themeColor }]}>
+        <PageText category="p1" style={[styles.header, { color: themeColor }]}>
           {hexId}
-        </Text>
-        <Text category="p1" style={styles.secondLineText}>
+        </PageText>
+        <PageText category="p1" style={styles.secondLineText}>
           Also known as: {name}
-        </Text>
+        </PageText>
       </Pressable>
     </Block>
   );

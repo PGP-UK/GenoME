@@ -43,10 +43,12 @@ const Home = (props) => {
           <Ambassadors navigation={navigation} />
         </Section>
 
-        <Section style={{ flex: 1, flexWrap: 'wrap-reverse' }}>
-          <PageFooter style={styles.footer_text}>
+        <Section style={{ flex: 1, flexWrap: 'wrap' }}>
+          <PageFooter style={styles.top_footer_text}>
             Tap here to listen to 'GenoME' our ambassador's genetic code for
-            their eye colour. {'\n'}
+            their eye colour.
+          </PageFooter>
+          <PageFooter style={styles.bottom_footer_text}>
             'GenoME' was peformed by The Benyounes Quartet and composed by
             Deidre Gribbin.
           </PageFooter>
@@ -63,9 +65,11 @@ const styles = StyleSheet.create({
   main_text: {
     marginBottom: 20,
   },
-  footer_text: {
+  top_footer_text: {
+    color: '#63BEE1',
+  },
+  bottom_footer_text: {
     color: '#666E7A',
-    paddingBottom: 50,
   },
 });
 

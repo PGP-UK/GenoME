@@ -52,7 +52,6 @@ const PageFooter = (props) => {
       category="p1"
       baseStyle={Styles.footer_base}
       sizeSelectorStyles={{
-        sm: Styles.page_footer_xs,
         lg: Styles.page_text_lg,
       }}
     />
@@ -70,6 +69,7 @@ const Styles = StyleSheet.create({
   },
   page_footer_base: {
     color: '#666E7A',
+    fontSize: 20,
   },
   page_text_lg: {
     fontSize: 23,

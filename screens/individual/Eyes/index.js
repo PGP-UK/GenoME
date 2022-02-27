@@ -6,7 +6,7 @@ import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { Section, Block } from 'react-native-responsive-layout';
 import { Video } from 'expo-av';
-import StephanEyeVideo from "../../../assets/videos/stephan_eyes.mp4";
+import StephanEyeVideo from "../../../assets/videos/stephan_eyes.gif";
 import { PageHeader } from '../../../components/Text';
 
 const AllAmbassadors = {
@@ -198,29 +198,3 @@ const styles = StyleSheet.create({
 });
 
 export default Eyes;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

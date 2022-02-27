@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, Pressable } from 'react-native';
+import { StyleSheet, Image, Pressable, View } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { Section, Block } from 'react-native-responsive-layout';
@@ -12,24 +12,28 @@ const AllAmbassadors = {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/stephan_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/stephan.gif'),
     themeColor: '#8CD8C4',
   },
   colin: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/colin_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/colin_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/colin_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/colin.gif'),
     themeColor: '#9C82DE',
   },
   laura: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/laura_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/laura_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/laura_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/laura.gif'),
     themeColor: '#F6BD4A',
   },
   momodou: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/momodou_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/momodou_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/momodou_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/momodou.gif'),
     themeColor: '#D94553',
   },
 };
@@ -49,6 +53,46 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
     />
   );
 });
+
+const AmbassadorRow = () => {
+  return (
+    <>
+      <Block
+        xsSize="100%"
+        mdSize="40%"
+        style={{ justifyContent: 'flex-end', flexDirection: 'row-reverse' }}>
+        <View>
+          <Image
+            source={AllAmbassadors.stephan.image}
+            style={{ width: 100, height: 100 }}
+            resizeMode="contain"
+          />
+        </View>
+        <View>
+          <Image
+            source={AllAmbassadors.laura.image}
+            style={{ width: 100, height: 100 }}
+            resizeMode="contain"
+          />
+        </View>
+        <View>
+          <Image
+            source={AllAmbassadors.momodou.image}
+            style={{ width: 100, height: 100 }}
+            resizeMode="contain"
+          />
+        </View>
+        <View>
+          <Image
+            source={AllAmbassadors.colin.image}
+            style={{ width: 100, height: 100 }}
+            resizeMode="contain"
+          />
+        </View>
+      </Block>
+    </>
+  );
+};
 
 const SNVImages = ({
   name,
@@ -90,11 +134,12 @@ const Health = (props) => {
     <>
       <PageLayout>
         <Section>
-          <Block>
+          <Block xsSize="100%" mdSize="60%">
             <PageHeader category="h1" style={styles.header}>
               Health
             </PageHeader>
           </Block>
+          <AmbassadorRow />
         </Section>
         <Section>
           <Block>

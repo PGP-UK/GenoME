@@ -54,41 +54,65 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const AmbassadorRow = () => {
+const AmbassadorRow = ({ navigation, name }) => {
   return (
     <>
       <Block
         xsSize="100%"
         mdSize="40%"
-        style={{ justifyContent: 'flex-end', flexDirection: 'row-reverse' }}>
-        <View>
+        style={{ justifyContent: 'flex-end', flexDirection: 'row' }}>
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Health', {
+              name: stephan.toLowerCase(),
+            })
+          }
+          style={{ paddingRight: 10 }}>
           <Image
             source={AllAmbassadors.stephan.image}
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
           />
-        </View>
-        <View>
+        </Pressable>
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Health', {
+              name: laura.toLowerCase(),
+            })
+          }
+          style={{ paddingRight: 10 }}>
           <Image
             source={AllAmbassadors.laura.image}
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
           />
-        </View>
-        <View>
+        </Pressable>
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Health', {
+              name: momodou.toLowerCase(),
+            })
+          }
+          style={{ paddingRight: 10 }}>
           <Image
             source={AllAmbassadors.momodou.image}
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
           />
-        </View>
-        <View>
+        </Pressable>
+        <Pressable
+          onPress={() =>
+            navigation.navigate('Health', {
+              name: colin.toLowerCase(),
+            })
+          }
+          style={{ paddingRight: 10 }}>
           <Image
             source={AllAmbassadors.colin.image}
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
           />
-        </View>
+        </Pressable>
       </Block>
     </>
   );
@@ -139,7 +163,7 @@ const Health = (props) => {
               Health
             </PageHeader>
           </Block>
-          <AmbassadorRow />
+          <AmbassadorRow navigation={navigation} name={name} />
         </Section>
         <Section>
           <Block>

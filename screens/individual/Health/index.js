@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
@@ -6,6 +6,7 @@ import { Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import { PageHeader } from '../../../components/Text';
+import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const AllAmbassadors = {
   stephan: {
@@ -54,58 +55,6 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const AmbassadorImage = ({ name, image, navigation }) => {
-  return (
-    <>
-      <Pressable
-        onPress={() =>
-          navigation.navigate('Health', {
-            name: name,
-          })
-        }
-        style={{ paddingRight: 5 }}>
-        <Image
-          source={image}
-          style={{ width: 90, height: 90 }}
-          resizeMode="contain"
-        />
-      </Pressable>
-    </>
-  );
-};
-
-const AmbassadorRow = ({ navigation }) => {
-  return (
-    <>
-      <Block
-        xsSize="100%"
-        mdSize="40%"
-        style={{ justifyContent: 'flex-end', flexDirection: 'row' }}>
-        <AmbassadorImage
-          name={'stephan'}
-          image={AllAmbassadors.stephan.image}
-          navigation={navigation}
-        />
-        <AmbassadorImage
-          name={'laura'}
-          image={AllAmbassadors.laura.image}
-          navigation={navigation}
-        />
-        <AmbassadorImage
-          name={'momodou'}
-          image={AllAmbassadors.momodou.image}
-          navigation={navigation}
-        />
-        <AmbassadorImage
-          name={'colin'}
-          image={AllAmbassadors.colin.image}
-          navigation={navigation}
-        />
-      </Block>
-    </>
-  );
-};
-
 const SNVImages = ({
   name,
   image,
@@ -151,7 +100,11 @@ const Health = (props) => {
               Health
             </PageHeader>
           </Block>
-          <AmbassadorRow navigation={navigation} name={name} />
+          <AmbassadorSwitch
+            AllAmbassadors={AllAmbassadors}
+            navigation={navigation}
+            name={name}
+          />
         </Section>
         <Section>
           <Block>

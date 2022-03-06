@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Image, Pressable, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Image, Pressable } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { Section, Block } from 'react-native-responsive-layout';
@@ -54,65 +54,53 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const AmbassadorRow = ({ navigation, name }) => {
+const AmbassadorImage = ({ name, image, navigation }) => {
+  return (
+    <>
+      <Pressable
+        onPress={() =>
+          navigation.navigate('Health', {
+            name: name,
+          })
+        }
+        style={{ paddingRight: 10 }}>
+        <Image
+          source={image}
+          style={{ width: 90, height: 90 }}
+          resizeMode="contain"
+        />
+      </Pressable>
+    </>
+  );
+};
+
+const AmbassadorRow = ({ navigation }) => {
   return (
     <>
       <Block
         xsSize="100%"
         mdSize="40%"
         style={{ justifyContent: 'flex-end', flexDirection: 'row' }}>
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Health', {
-              name: stephan.toLowerCase(),
-            })
-          }
-          style={{ paddingRight: 10 }}>
-          <Image
-            source={AllAmbassadors.stephan.image}
-            style={{ width: 90, height: 90 }}
-            resizeMode="contain"
-          />
-        </Pressable>
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Health', {
-              name: laura.toLowerCase(),
-            })
-          }
-          style={{ paddingRight: 10 }}>
-          <Image
-            source={AllAmbassadors.laura.image}
-            style={{ width: 90, height: 90 }}
-            resizeMode="contain"
-          />
-        </Pressable>
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Health', {
-              name: momodou.toLowerCase(),
-            })
-          }
-          style={{ paddingRight: 10 }}>
-          <Image
-            source={AllAmbassadors.momodou.image}
-            style={{ width: 90, height: 90 }}
-            resizeMode="contain"
-          />
-        </Pressable>
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Health', {
-              name: colin.toLowerCase(),
-            })
-          }
-          style={{ paddingRight: 10 }}>
-          <Image
-            source={AllAmbassadors.colin.image}
-            style={{ width: 90, height: 90 }}
-            resizeMode="contain"
-          />
-        </Pressable>
+        <AmbassadorImage
+          name={'stephan'}
+          image={AllAmbassadors.stephan.image}
+          navigation={navigation}
+        />
+        <AmbassadorImage
+          name={'laura'}
+          image={AllAmbassadors.laura.image}
+          navigation={navigation}
+        />
+        <AmbassadorImage
+          name={'momodou'}
+          image={AllAmbassadors.momodou.image}
+          navigation={navigation}
+        />
+        <AmbassadorImage
+          name={'colin'}
+          image={AllAmbassadors.colin.image}
+          navigation={navigation}
+        />
       </Block>
     </>
   );

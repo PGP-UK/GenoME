@@ -63,7 +63,7 @@ const AmbassadorImage = ({ name, image, navigation }) => {
             name: name,
           })
         }
-        style={{ paddingRight: 10 }}>
+        style={{ paddingRight: 5 }}>
         <Image
           source={image}
           style={{ width: 90, height: 90 }}

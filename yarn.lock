@@ -4094,7 +4094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-constants@npm:~11.0.2":
+"expo-constants@npm:~11.0.1, expo-constants@npm:~11.0.2":
   version: 11.0.2
   resolution: "expo-constants@npm:11.0.2"
   dependencies:
@@ -4137,6 +4137,18 @@ __metadata:
   version: 9.2.0
   resolution: "expo-keep-awake@npm:9.2.0"
   checksum: d69c0739f998e84ac7e121669680e3bcffa3368d82372661b1ee8a44b513a56761511c096a864c77f5c01bf9714cd78e90de31226ded055884f80a4c81511ebf
+  languageName: node
+  linkType: hard
+
+"expo-linking@npm:~2.3.1":
+  version: 2.3.1
+  resolution: "expo-linking@npm:2.3.1"
+  dependencies:
+    expo-constants: ~11.0.1
+    invariant: ^2.2.4
+    qs: ^6.5.0
+    url-parse: ^1.4.4
+  checksum: a2801864c468e3d66011153720aef6445b4da3d63915f006903206e03990b4df64b27bc8b9989bf426d1e8f27bbb49f416f18b7d668ca1a8ece975b5cc56adc5
   languageName: node
   linkType: hard
 
@@ -6669,6 +6681,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"object-inspect@npm:^1.9.0":
+  version: 1.12.0
+  resolution: "object-inspect@npm:1.12.0"
+  checksum: 2b36d4001a9c921c6b342e2965734519c9c58c355822243c3207fbf0aac271f8d44d30d2d570d450b2cc6f0f00b72bcdba515c37827d2560e5f22b1899a31cf4
+  languageName: node
+  linkType: hard
+
 "object-keys@npm:^1.0.12, object-keys@npm:^1.1.1":
   version: 1.1.1
   resolution: "object-keys@npm:1.1.1"
@@ -7154,6 +7173,15 @@ fsevents@^1.2.7:
     end-of-stream: ^1.1.0
     once: ^1.3.1
   checksum: e42e9229fba14732593a718b04cb5e1cfef8254544870997e0ecd9732b189a48e1256e4e5478148ecb47c8511dca2b09eae56b4d0aad8009e6fac8072923cfc9
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.5.0":
+  version: 6.10.3
+  resolution: "qs@npm:6.10.3"
+  dependencies:
+    side-channel: ^1.0.4
+  checksum: 0fac5e6c7191d0295a96d0e83c851aeb015df7e990e4d3b093897d3ac6c94e555dbd0a599739c84d7fa46d7fee282d94ba76943983935cf33bba6769539b8019
   languageName: node
   linkType: hard
 
@@ -7679,6 +7707,7 @@ fsevents@^1.2.7:
     expo: ^42.0.5
     expo-app-loading: 1.1.2
     expo-av: ~9.2.3
+    expo-linking: ~2.3.1
     expo-status-bar: ~1.0.4
     expo-video-player: ^2.0.3
     expo-web-browser: ~9.2.0
@@ -7963,6 +7992,17 @@ fsevents@^1.2.7:
     array-reduce: ~0.0.0
     jsonify: ~0.0.0
   checksum: 982a4fdf2d474f0dc40885de4222f100ba457d7c75d46b532bf23b01774b8617bc62522c6825cb1fa7dd4c54c18e9dcbae7df2ca8983101841b6f2e6a7cacd2f
+  languageName: node
+  linkType: hard
+
+"side-channel@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "side-channel@npm:1.0.4"
+  dependencies:
+    call-bind: ^1.0.0
+    get-intrinsic: ^1.0.2
+    object-inspect: ^1.9.0
+  checksum: 351e41b947079c10bd0858364f32bb3a7379514c399edb64ab3dce683933483fc63fb5e4efe0a15a2e8a7e3c436b6a91736ddb8d8c6591b0460a24bb4a1ee245
   languageName: node
   linkType: hard
 

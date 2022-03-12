@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet, Image, View, TouchableWithoutFeedback } from 'react-native';
 import { Text } from '@ui-kitten/components';
+import * as Linking from 'expo-linking';
 
 const SocialMedia = (props) => {
   const { navigation } = props;
@@ -8,21 +9,31 @@ const SocialMedia = (props) => {
 <View style={[styles.container, {flexDirection: "column"}]}>
   
   <View style={{ flex: 1, flexDirection:"row", justifyContent:"space-evenly"}}>
-    <Text style={styles.socialMediaText }>Twitter</Text>
+    <Text style={styles.socialMediaText } onPress={()=>Linking.openURL("https://twitter.com/pgpuk_genomes")}>Twitter</Text>
+    <TouchableWithoutFeedback onPress={() =>
+             Linking.openURL('https://twitter.com/pgpuk_genomes')}>
     <Image 
-      style={styles.socialMediaLogo}
-      source={require('../../../assets/images/about_us/more-information_twitter.png')}
-    /> 
-    <Text style={styles.socialMediaText}>Blogs</Text>
+      style={styles.socialMediaLogo} 
+      source={require('../../../assets/images/about_us/more-information_twitter.png')} 
+    />
+    </TouchableWithoutFeedback> 
+    <Text style={styles.socialMediaText} onPress={()=>Linking.openURL("https://pgpukblog.wordpress.com/")}>Blogs</Text>
+    <TouchableWithoutFeedback onPress={() =>
+             Linking.openURL('https://pgpukblog.wordpress.com/')}>
     <Image 
       style={styles.socialMediaLogo}
       source={require('../../../assets/images/about_us/more-information_blogs.png')}
     /> 
-    <Text style={styles.socialMediaText}>Web</Text>
+    </TouchableWithoutFeedback>
+    <Text style={styles.socialMediaText} onPress={()=>Linking.openURL("https://www.personalgenomes.org.uk/")}>Web</Text>
+    <TouchableWithoutFeedback onPress={() =>
+             Linking.openURL('https://www.personalgenomes.org.uk/')}>
     <Image 
       style={styles.socialMediaLogo}
       source={require('../../../assets/images/about_us/more-information_www.png')}
-    /> 
+      
+    />
+    </TouchableWithoutFeedback>
     </View>
    
     <View style={{ flex: 1 }}>

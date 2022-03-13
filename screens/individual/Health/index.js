@@ -95,7 +95,7 @@ const Health = (props) => {
     <>
       <PageLayout>
         <Section>
-          <Block xsSize="100%" mdSize="60%">
+          <Block xsSize="100%" mdSize="90%">
             <PageHeader category="h1" style={styles.header}>
               Health
             </PageHeader>

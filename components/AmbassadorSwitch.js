@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, Pressable } from 'react-native';
-import { Block } from 'react-native-responsive-layout';
+import { IndexPath, Select } from '@ui-kitten/components';
+import { PageText } from '../components/Text';
+import { Section, Block } from 'react-native-responsive-layout';
 
 const AmbassadorImage = ({ name, image, navigation, page }) => {
   return (
@@ -14,21 +16,23 @@ const AmbassadorImage = ({ name, image, navigation, page }) => {
         style={{ paddingRight: 5 }}>
         <Image
           source={image}
-          style={{ width: 90, height: 90 }}
+          style={{ width: 60, height: 60 }}
           resizeMode="contain"
         />
+        <PageText style={{ fontSize: 15 }}>{name}</PageText>
       </Pressable>
     </>
   );
 };
 
 const AmbassadorSwitch = ({ AllAmbassadors, navigation, page }) => {
+  const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(0));
   return (
     <>
-      <Block
-        xsSize="100%"
-        mdSize="40%"
-        style={{ justifyContent: 'flex-end', flexDirection: 'row' }}>
+      <Select
+        style={{ width: 75 }}
+        selectedIndex={selectedIndex}
+        onSelect={(index) => setSelectedIndex(index)}>
         <AmbassadorImage
           name={'stephan'}
           image={AllAmbassadors.stephan.image}
@@ -53,7 +57,7 @@ const AmbassadorSwitch = ({ AllAmbassadors, navigation, page }) => {
           navigation={navigation}
           page={page}
         />
-      </Block>
+      </Select>
     </>
   );
 };

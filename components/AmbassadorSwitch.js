@@ -2,12 +2,12 @@ import React from 'react';
 import { Image, Pressable } from 'react-native';
 import { Block } from 'react-native-responsive-layout';
 
-const AmbassadorImage = ({ name, image, navigation }) => {
+const AmbassadorImage = ({ name, image, navigation, page }) => {
   return (
     <>
       <Pressable
         onPress={() =>
-          navigation.navigate('Health', {
+          navigation.navigate(page, {
             name: name,
           })
         }
@@ -22,7 +22,7 @@ const AmbassadorImage = ({ name, image, navigation }) => {
   );
 };
 
-const AmbassadorSwitch = ({ AllAmbassadors, navigation }) => {
+const AmbassadorSwitch = ({ AllAmbassadors, navigation, page }) => {
   return (
     <>
       <Block
@@ -33,21 +33,25 @@ const AmbassadorSwitch = ({ AllAmbassadors, navigation }) => {
           name={'stephan'}
           image={AllAmbassadors.stephan.image}
           navigation={navigation}
+          page={page}
         />
         <AmbassadorImage
           name={'laura'}
           image={AllAmbassadors.laura.image}
           navigation={navigation}
+          page={page}
         />
         <AmbassadorImage
           name={'momodou'}
           image={AllAmbassadors.momodou.image}
           navigation={navigation}
+          page={page}
         />
         <AmbassadorImage
           name={'colin'}
           image={AllAmbassadors.colin.image}
           navigation={navigation}
+          page={page}
         />
       </Block>
     </>

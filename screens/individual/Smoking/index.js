@@ -51,6 +51,7 @@ const Smoking = (props) => {
           AllAmbassadors={AllAmbassadors}
           navigation={navigation}
           name={name}
+          page={'Smoking'}
         />
       </Section>
       <Block

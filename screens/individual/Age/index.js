@@ -49,6 +49,7 @@ const Age = (props) => {
             AllAmbassadors={AllAmbassadors}
             navigation={navigation}
             name={name}
+            page={'Age'}
           />
         </Section>
         <Block

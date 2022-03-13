@@ -104,6 +104,7 @@ const Health = (props) => {
             AllAmbassadors={AllAmbassadors}
             navigation={navigation}
             name={name}
+            page={'Health'}
           />
         </Section>
         <Section>

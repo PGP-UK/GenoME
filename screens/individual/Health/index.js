@@ -6,30 +6,35 @@ import { Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import { PageHeader } from '../../../components/Text';
+import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const AllAmbassadors = {
   stephan: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/stephan_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/stephan.gif'),
     themeColor: '#8CD8C4',
   },
   colin: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/colin_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/colin_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/colin_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/colin.gif'),
     themeColor: '#9C82DE',
   },
   laura: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/laura_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/laura_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/laura_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/laura.gif'),
     themeColor: '#F6BD4A',
   },
   momodou: {
     SNV_heart_image: require(`../../../assets/images/health_screen_SNV/momodou_heart_SNV.png`),
     SNV_crohn_image: require(`../../../assets/images/health_screen_SNV/momodou_crohn_SNV.png`),
     SNV_ovarian_image: require(`../../../assets/images/health_screen_SNV/momodou_ovarian_SNV.png`),
+    image: require('../../../assets/images/home_screen_profiles/momodou.gif'),
     themeColor: '#D94553',
   },
 };
@@ -90,11 +95,16 @@ const Health = (props) => {
     <>
       <PageLayout>
         <Section>
-          <Block>
+          <Block xsSize="100%" mdSize="60%">
             <PageHeader category="h1" style={styles.header}>
               Health
             </PageHeader>
           </Block>
+          <AmbassadorSwitch
+            AllAmbassadors={AllAmbassadors}
+            navigation={navigation}
+            name={name}
+          />
         </Section>
         <Section>
           <Block>

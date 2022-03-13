@@ -1,37 +1,56 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
 
 import PageLayout from '../../../components/PageLayout';
+import { PageHeader } from '../../../components/Text';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
 import AgeExplanationText from './AgeExplanationText';
+import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const AgeData = require('../../../assets/data/age/data.json');
 
-const AmbassadorsData = {
+const AllAmbassadors = {
   stephan: {
-    image: require('../../../assets/images/age_pie_charts/stephan.png'),
+    AgeImage: require('../../../assets/images/age_pie_charts/stephan.png'),
+    image: require('../../../assets/images/home_screen_profiles/stephan.gif'),
+    themeColor: '#8CD8C4',
   },
   laura: {
-    image: require('../../../assets/images/age_pie_charts/laura.png'),
+    AgeImage: require('../../../assets/images/age_pie_charts/laura.png'),
+    image: require('../../../assets/images/home_screen_profiles/laura.gif'),
+    themeColor: '#F6BD4A',
   },
   momodou: {
-    image: require('../../../assets/images/age_pie_charts/momodou.png'),
+    AgeImage: require('../../../assets/images/age_pie_charts/momodou.png'),
+    image: require('../../../assets/images/home_screen_profiles/momodou.gif'),
+    themeColor: '#D94553',
   },
   colin: {
-    image: require('../../../assets/images/age_pie_charts/colin.png'),
+    AgeImage: require('../../../assets/images/age_pie_charts/colin.png'),
+    image: require('../../../assets/images/home_screen_profiles/colin.gif'),
+    themeColor: '#9C82DE',
   },
 };
 
 const Age = (props) => {
-  const { route } = props;
+  const { route, navigation } = props;
   const { name } = route.params;
   const data = AgeData[name];
   return (
     <>
       <PageLayout>
-        <Text style={styles.heading}>Epigenetic Age</Text>
+        <Section>
+          <Block>
+            <PageHeader>Epigenetic Age</PageHeader>
+          </Block>
+          <AmbassadorSwitch
+            AllAmbassadors={AllAmbassadors}
+            navigation={navigation}
+            name={name}
+          />
+        </Section>
         <Block
           xsSize="100%"
           smSize="100%"
@@ -45,6 +64,8 @@ const Age = (props) => {
             alignContent: 'center',
             paddingBottom: 20,
           }}
+          xsHidden
+          smHidden
           mdVisible
           xxlHidden>
           <AgeExplanationText themeColor={data.themeColor} />
@@ -66,13 +87,13 @@ const Age = (props) => {
             lgSize="50%"
             xlSize="50%"
             style={{ paddingBottom: 20 }}>
-            <CenterImage image={AmbassadorsData[name].image} data={data} />
+            <CenterImage image={AllAmbassadors[name].AgeImage} data={data} />
           </Block>
 
           {/*Hidden in potrait mode*/}
           <Block
-            xsSize="100%"
-            smSize="100%"
+            xsSize="0%"
+            smSize="0%"
             mdSize="50%"
             lgSize="50%"
             xlSize="50%"
@@ -83,6 +104,8 @@ const Age = (props) => {
               alignContent: 'center',
               paddingBottom: 20,
             }}
+            xsHidden
+            smHidden
             mdHidden
             xxlVisible>
             <AgeExplanationText themeColor={data.themeColor} />

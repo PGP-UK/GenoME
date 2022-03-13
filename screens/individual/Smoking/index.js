@@ -7,34 +7,52 @@ import SmokingExText from './SmokingExText';
 import ImageKey from './Imagekey.js';
 import { StyleSheet, Text } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
+import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const dataFile = {
   data: require(`../../../assets/data/age/data.json`),
 };
 
-const AmbassadorsData = {
+const AllAmbassadors = {
   stephan: {
-    image: require(`../../../assets/images/smokers/nonsmoking.png`),
+    SmokingImage: require(`../../../assets/images/smokers/nonsmoking.png`),
+    image: require('../../../assets/images/home_screen_profiles/stephan.gif'),
+    themeColor: '#8CD8C4',
   },
   laura: {
-    image: require(`../../../assets/images/smokers/nonsmoking.png`),
+    Smokingmage: require(`../../../assets/images/smokers/nonsmoking.png`),
+    image: require('../../../assets/images/home_screen_profiles/laura.gif'),
+    themeColor: '#F6BD4A',
   },
   momodou: {
-    image: require(`../../../assets/images/smokers/nonsmoking.png`),
+    SmokingImage: require(`../../../assets/images/smokers/nonsmoking.png`),
+    image: require('../../../assets/images/home_screen_profiles/momodou.gif'),
+    themeColor: '#D94553',
   },
   colin: {
-    image: require(`../../../assets/images/smokers/nonsmoking.png`),
+    Smokingmage: require(`../../../assets/images/smokers/nonsmoking.png`),
+    image: require('../../../assets/images/home_screen_profiles/colin.gif'),
+    themeColor: '#9C82DE',
   },
 };
 
 const Smoking = (props) => {
-  const { route } = props;
+  const { route, navigation } = props;
   const { name } = route.params;
   const data = dataFile.data[name];
 
   return (
     <PageLayout>
-      <PageHeader style={[styles.heading]}>Smoking Prediction</PageHeader>
+      <Section>
+        <Block>
+          <PageHeader style={[styles.heading]}>Smoking Prediction</PageHeader>
+        </Block>
+        <AmbassadorSwitch
+          AllAmbassadors={AllAmbassadors}
+          navigation={navigation}
+          name={name}
+        />
+      </Section>
       <Block
         xsSize="100%"
         smSize="100%"
@@ -72,7 +90,7 @@ const Smoking = (props) => {
           xlSize="50%"
           style={{ paddingBottom: 20 }}>
           <CenterImage
-            source={AmbassadorsData[name].image}
+            source={AllAmbassadors[name].SmokingImage}
             data={dataFile.data[name]}
           />
         </Block>

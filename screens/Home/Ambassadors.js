@@ -36,13 +36,13 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const numImagesPerRow = sizeSelector({
     xs: 1,
     sm: 2,
-    md: 4,
+    md: 2,
     lg: 2,
-    xl: 2,
+    xl: 4,
     xxl: 4,
   });
   const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
   return (
     <Image
       {...props}

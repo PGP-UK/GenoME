@@ -20,7 +20,7 @@ const AllAmbassadors = {
     themeColor: '#8CD8C4',
   },
   laura: {
-    Smokingmage: require(`../../../assets/images/smokers/nonsmoking.png`),
+    SmokingImage: require(`../../../assets/images/smokers/nonsmoking.png`),
     image: require('../../../assets/images/home_screen_profiles/laura.gif'),
     themeColor: '#F6BD4A',
   },
@@ -30,7 +30,7 @@ const AllAmbassadors = {
     themeColor: '#D94553',
   },
   colin: {
-    Smokingmage: require(`../../../assets/images/smokers/nonsmoking.png`),
+    SmokingImage: require(`../../../assets/images/smokers/nonsmoking.png`),
     image: require('../../../assets/images/home_screen_profiles/colin.gif'),
     themeColor: '#9C82DE',
   },

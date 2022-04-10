@@ -14,7 +14,6 @@ const ImageKey = withSizeInfo(({ sizeSelector, data }) => {
       <Text style={[styles.actual, { color: data.themeColor }]}>
         My epigenetic variants correctly predicted me to be a:{'\n'}
         {data.smoker}
-        {'\n'}
       </Text>
       <Text style={styles.epigenetic}>
         Actual Smoking status:{'\n'}

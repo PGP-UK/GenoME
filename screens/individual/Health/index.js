@@ -6,7 +6,6 @@ import { Section, Block } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import { PageHeader } from '../../../components/Text';
-import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const AllAmbassadors = {
   stephan: {
@@ -100,12 +99,6 @@ const Health = (props) => {
               Health
             </PageHeader>
           </Block>
-          <AmbassadorSwitch
-            AllAmbassadors={AllAmbassadors}
-            navigation={navigation}
-            name={name}
-            page={'Health'}
-          />
         </Section>
         <Section>
           <Block>

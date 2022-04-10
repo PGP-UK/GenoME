@@ -7,7 +7,6 @@ import { PageHeader } from '../../../components/Text';
 import BottomSection from './BottomSection';
 import CenterImage from './CenterImage';
 import AgeExplanationText from './AgeExplanationText';
-import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const AgeData = require('../../../assets/data/age/data.json');
 
@@ -45,12 +44,6 @@ const Age = (props) => {
           <Block>
             <PageHeader>Epigenetic Age</PageHeader>
           </Block>
-          <AmbassadorSwitch
-            AllAmbassadors={AllAmbassadors}
-            navigation={navigation}
-            name={name}
-            page={'Age'}
-          />
         </Section>
         <Block
           xsSize="100%"

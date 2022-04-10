@@ -7,7 +7,6 @@ import SmokingExText from './SmokingExText';
 import ImageKey from './Imagekey.js';
 import { StyleSheet, Text } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
-import { AmbassadorSwitch } from '../../../components/AmbassadorSwitch';
 
 const dataFile = {
   data: require(`../../../assets/data/age/data.json`),
@@ -47,12 +46,6 @@ const Smoking = (props) => {
         <Block>
           <PageHeader style={[styles.heading]}>Smoking Prediction</PageHeader>
         </Block>
-        <AmbassadorSwitch
-          AllAmbassadors={AllAmbassadors}
-          navigation={navigation}
-          name={name}
-          page={'Smoking'}
-        />
       </Section>
       <Block
         xsSize="100%"

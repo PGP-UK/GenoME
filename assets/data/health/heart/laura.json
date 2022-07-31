@@ -1,0 +1,14 @@
+{
+    "risk": {
+      "first": "Normal",
+      "second": "Increased (+)",
+      "third": "Increased (++)"
+    },
+    "population": {
+      "percent": "24%",
+      "colour": "#F6BB41"
+    },
+    "message":"This version of the variant increases my risk of heart disease",
+    "themeColor": "#F6BD4A"
+  }
+  

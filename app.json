@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "GenoME",
-    "slug": "GenoME",
+    "slug": "PGP-UK-GenoME",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,19 +14,17 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*", "assets/images/**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.pgpuk.genome"
+      "bundleIdentifier": "uk.org.personalgenomes.genome"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.pgpuk.genome"
+      "package": "uk.org.personalgenomes.genome"
     },
     "web": {
       "favicon": "./assets/favicon.png"

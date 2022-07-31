@@ -1,5 +1,5 @@
 {
-  "name": "genome",
+  "name": "GenoME",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "expo": "~45.0.0",
+    "expo-dev-client": "~1.0.1",
     "expo-status-bar": "~1.3.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-responsive-layout": "^1.2.0",
     "react-native-web": "0.17.7"
   },
   "devDependencies": {
@@ -23,5 +25,6 @@
     "@types/react-native": "~0.66.13",
     "typescript": "~4.3.5"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@3.2.2"
 }

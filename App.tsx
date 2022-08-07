@@ -1,5 +1,8 @@
+// To ignore the "ViewPropTypes will be removed from React Native" Warning
+import './src/components/ignoreWarnings'
+
 import React, { useCallback, useEffect, useState } from "react";
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Asset } from "expo-asset";
@@ -7,28 +10,22 @@ import * as SplashScreen from "expo-splash-screen";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import FastImage from 'react-native-fast-image'
 
-import AppNavigator from "./components/AppNavigator";
+import AppNavigator from "./src/components/AppNavigator";
 
-// Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
 const App = () => {
   const [appReady, setAppReady] = useState(false);
 
-  //code below from https://docs.expo.dev/versions/latest/sdk/splash-screen/
   useEffect(() => {
     async function prepare() {
       try {
-        // Pre-load fonts, make any API calls you need to do here
         await cacheResourcesAsync()
-        // Artificially delay for two seconds to simulate a slow loading
-        // experience. Please remove this if you copy and paste the code!
-        await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
       } finally {
-        // Tell the application to render
         setAppReady(true);
       }
     }
@@ -38,11 +35,6 @@ const App = () => {
 
   const onLayoutRootView = useCallback(async () => {
     if (appReady) {
-      // This tells the splash screen to hide immediately! If we call this after
-      // `setAppIsReady`, then we may see a blank screen while the app is
-      // loading its initial state and rendering its first pixels. So instead,
-      // we hide the splash screen once we know the root view has already
-      // performed layout.
       await SplashScreen.hideAsync();
     }
   }, [appReady]);
@@ -65,10 +57,6 @@ const App = () => {
 
 async function cacheResourcesAsync() {
   const images = [
-    require("./assets/images/home_screen_profiles/stephan.gif"),
-    require("./assets/images/home_screen_profiles/laura.gif"),
-    require("./assets/images/home_screen_profiles/momodou.gif"),
-    require("./assets/images/home_screen_profiles/colin.gif"),
     require("./assets/images/landing_screen_icons/globe-europe-light.png"),
     require("./assets/images/landing_screen_icons/eye-light.png"),
     require("./assets/images/landing_screen_icons/heartbeat-light.png"),
@@ -125,11 +113,16 @@ async function cacheResourcesAsync() {
     require("./assets/videos/momodou_eyes.mp4"),
   ];
 
-  const cacheImages = images.map((image) =>
-    Asset.fromModule(image).downloadAsync()
-  );
+  const cdnUrls = [
+    "/images/home_screen_profiles/stephan.gif",
+    "/images/home_screen_profiles/laura.gif",
+    "/images/home_screen_profiles/momodou.gif",
+    "/images/home_screen_profiles/colin.gif",
+  ].map(e => ({uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/{e}`}))
 
-  return Promise.all(cacheImages);
+  const cacheImages = FastImage.preload(cdnUrls)
+
+  return cacheImages;
 }
 
 export default App;

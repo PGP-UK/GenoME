@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { View } from 'react-native'
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Asset } from "expo-asset";
 import * as SplashScreen from "expo-splash-screen";
-
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
@@ -16,24 +16,12 @@ SplashScreen.preventAutoHideAsync();
 const App = () => {
   const [appReady, setAppReady] = useState(false);
 
-  /*
-  if (!appReady) {
-    return (
-      <AppLoading
-        startAsync={cacheResourcesAsync}
-        onFinish={() => setAppReady(true)}
-        onError={console.warn}
-      />
-    );
-  } 
-  */
-
   //code below from https://docs.expo.dev/versions/latest/sdk/splash-screen/
   useEffect(() => {
     async function prepare() {
       try {
         // Pre-load fonts, make any API calls you need to do here
-        await startAsync={cacheResourcesAsync}
+        await cacheResourcesAsync()
         // Artificially delay for two seconds to simulate a slow loading
         // experience. Please remove this if you copy and paste the code!
         await new Promise(resolve => setTimeout(resolve, 2000));
@@ -64,15 +52,14 @@ const App = () => {
   }
 
   return (
-    <>
-      <SafeAreaProvider>
-        <IconRegistry icons={EvaIconsPack} />
-        <ApplicationProvider {...eva} theme={eva.light}>
-          <AppNavigator />
-          <StatusBar style="auto" />
-        </ApplicationProvider>
-      </SafeAreaProvider>
-    </>
+    <SafeAreaProvider>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <View onLayout={onLayoutRootView} />
+        {appReady && <AppNavigator />}
+        <StatusBar style="auto" />
+      </ApplicationProvider>
+    </SafeAreaProvider>
   );
 };
 

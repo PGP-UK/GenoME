@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "../screens/Home";
-/*import About from "../screens/About";
+import About from "../screens/About";
 import Age from "../screens/individual/Age";
 import Ancestry from "../screens/individual/Ancestry";
 import Eyes from "../screens/individual/Eyes";
@@ -11,7 +11,7 @@ import Health from "../screens/individual/Health";
 import Diseases from "../screens/individual/Health/Diseases";
 import Landing from "../screens/individual/Landing";
 import Smoking from "../screens/individual/Smoking";
-import Variant from "../screens/individual/Variant";*/
+import Variant from "../screens/individual/Variant";
 
 const Stack = createStackNavigator();
 
@@ -25,15 +25,7 @@ const AppNavigator = () => {
         }}
       >
         <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-/* Put back into function for other pages
-
         <Stack.Screen name="About" component={About} />
-
         <Stack.Screen
           name="Variant"
           component={Variant}
@@ -75,6 +67,10 @@ const AppNavigator = () => {
           component={Diseases}
           initialParams={{ name: "stephan" }}
         />
-*/
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default AppNavigator;

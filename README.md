@@ -3,6 +3,8 @@
 ## Installation
 
 ```bash
+npm install -g expo-cli
+npm install -g eas-cli
 yarn install
 ```
 

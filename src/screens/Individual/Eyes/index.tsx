@@ -80,7 +80,7 @@ const EyeVideos = ({ image }) => (
   </Block>
 );
 
-const Eyes = (props) => {
+const Eyes = ((props):any) => {
   const [videoNotLoaded, setVideoNotLoaded] = useState(false);
   const { route, navigation } = props;
   const { name } = route.params;

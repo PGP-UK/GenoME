@@ -5,8 +5,11 @@ import SocialMedia from "./SocialMedia";
 import { PageHeader, PageText } from "../../components/Text";
 import { Section, Block } from "react-native-responsive-layout";
 
-const About = (props) => {
+const About = (props: any) => {
   const { navigation } = props;
+  interface Props {
+    navigation: any
+  }
   return (
     <>
       <PageLayout>
@@ -23,7 +26,7 @@ const About = (props) => {
           }}
         >
           <Block>
-            <PageHeader style={styles.header}>
+            <PageHeader style={styles.headerRow}>
               About PGP-UK and the global network of Personal Genome Projects
             </PageHeader>
           </Block>

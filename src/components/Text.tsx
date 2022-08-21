@@ -61,7 +61,7 @@ const PageFooter = (props) => {
 const Styles = StyleSheet.create({
   page_header_base: {
     color: "#63BEE1",
-    fontWeight: "400",
+    fontWeight: "900",
   },
   page_text_base: {
     color: "#666E7A",

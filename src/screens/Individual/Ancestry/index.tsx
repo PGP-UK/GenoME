@@ -23,7 +23,7 @@ const AllAmbassadorsData = {
   },
 };
 
-const Ancestry = (props) => {
+const Ancestry = (props: { route: any; }) => {
   const { route } = props;
   const { name } = route.params;
 

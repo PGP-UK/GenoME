@@ -26,7 +26,7 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
   return (
     <Section>
       <Block xsSize="100%" mdSize="35%">
-        <PageHeader style={headerStyles}>Ancestry</PageHeader>
+        <PageHeader category="h5" style={headerStyles}>Ancestry</PageHeader>
         <PageText category="p1" style={styles.main_text}>
           Different populations have their own distinctive pattern of genetic
           variants. By comparing thousands of my variants with those of
@@ -65,14 +65,14 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
 
 const styles = StyleSheet.create({
   headerxs: {
-    color: "#666E7A",
-    marginTop: 60,
+    color: "#63BEE1",
+    // marginTop: 60,
     marginBottom: 20,
     marginLeft: 30,
   },
   headerlg: {
-    color: "#666E7A",
-    marginTop: 50,
+    color: "#63BEE1",
+    // marginTop: 50,
     marginBottom: 20,
     marginLeft: 20,
   },

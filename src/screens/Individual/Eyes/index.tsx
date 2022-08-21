@@ -34,7 +34,7 @@ const AllAmbassadors = {
   },
 };
 
-const EyeImage = withSizeInfo(({ sizeSelector, ...props }) => {
+const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
@@ -49,7 +49,7 @@ const EyeImage = withSizeInfo(({ sizeSelector, ...props }) => {
     />
   );
 });
-const EyeVideo = withSizeInfo(({ sizeSelector, ...props }) => {
+const EyeVideo = withSizeInfo(({ sizeSelector, ...props }:any) => {
   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
@@ -65,7 +65,7 @@ const EyeVideo = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const EyeImages = ({ image, themeColor, header }) => (
+const EyeImages = ({ image, themeColor, header }:any) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
     <EyeImage source={image} resizeMode="contain" />
     <PageHeader style={[styles.header2, { color: themeColor }]}>
@@ -74,13 +74,13 @@ const EyeImages = ({ image, themeColor, header }) => (
   </Block>
 );
 
-const EyeVideos = ({ image }) => (
+const EyeVideos = ({ image } :any) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
     <EyeVideo source={image} resizeMode="contain" />
   </Block>
 );
 
-const Eyes = ((props):any) => {
+const Eyes = ({props}:any) => {
   const [videoNotLoaded, setVideoNotLoaded] = useState(false);
   const { route, navigation } = props;
   const { name } = route.params;

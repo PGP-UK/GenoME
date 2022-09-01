@@ -5,10 +5,10 @@ import { useSafeAreaFrame } from "react-native-safe-area-context";
 import { StyleSheet, View, Image } from "react-native";
 import { PageText } from "../../../../components/Text";
 import { PageHeader } from "../../../../components/Text";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const { image } = props
+  const { image } = props;
   const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
   const ImagePercent = sizeSelector({ xs: 0.8, md: 0.3, lg: 0.3, xl: 0.4 });
   const imageWidth = Math.round(useSafeAreaFrame().width * ImagePercent) - 40;

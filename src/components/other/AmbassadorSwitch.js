@@ -1,8 +1,8 @@
-import React from 'react';
-import { Image, Pressable } from 'react-native';
-import { IndexPath, Select } from '@ui-kitten/components';
-import { PageText } from '../Text';
-import { Section, Block } from 'react-native-responsive-layout';
+import React from "react";
+import { Image, Pressable } from "react-native";
+import { IndexPath, Select } from "@ui-kitten/components";
+import { PageText } from "../Text";
+import { Section, Block } from "react-native-responsive-layout";
 
 const AmbassadorImage = ({ name, image, navigation, page }) => {
   return (
@@ -13,7 +13,8 @@ const AmbassadorImage = ({ name, image, navigation, page }) => {
             name: name,
           })
         }
-        style={{ paddingRight: 5 }}>
+        style={{ paddingRight: 5 }}
+      >
         <Image
           source={image}
           style={{ width: 60, height: 60 }}
@@ -32,27 +33,28 @@ const AmbassadorSwitch = ({ AllAmbassadors, navigation, page }) => {
       <Select
         style={{ width: 75 }}
         selectedIndex={selectedIndex}
-        onSelect={(index) => setSelectedIndex(index)}>
+        onSelect={(index) => setSelectedIndex(index)}
+      >
         <AmbassadorImage
-          name={'stephan'}
+          name={"stephan"}
           image={AllAmbassadors.stephan.image}
           navigation={navigation}
           page={page}
         />
         <AmbassadorImage
-          name={'laura'}
+          name={"laura"}
           image={AllAmbassadors.laura.image}
           navigation={navigation}
           page={page}
         />
         <AmbassadorImage
-          name={'momodou'}
+          name={"momodou"}
           image={AllAmbassadors.momodou.image}
           navigation={navigation}
           page={page}
         />
         <AmbassadorImage
-          name={'colin'}
+          name={"colin"}
           image={AllAmbassadors.colin.image}
           navigation={navigation}
           page={page}

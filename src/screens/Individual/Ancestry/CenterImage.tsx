@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { image } = props;
@@ -20,7 +20,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const CenterImage = ({image}) => {
+const CenterImage = ({ image }) => {
   return (
     <Section>
       <Block style={{ alignItems: "center", marginTop: 50 }}>

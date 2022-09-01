@@ -1,15 +1,15 @@
 // To ignore the "ViewPropTypes will be removed from React Native" Warning
-import './src/components/ignoreWarnings'
+import "./src/components/ignoreWarnings";
 
 import React, { useCallback, useEffect, useState } from "react";
-import { View } from 'react-native'
+import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 import AppNavigator from "./src/components/AppNavigator";
 
@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     async function prepare() {
       try {
-        await cacheResourcesAsync()
+        await cacheResourcesAsync();
       } catch (e) {
         console.warn(e);
       } finally {
@@ -55,10 +55,13 @@ const App = () => {
 };
 
 async function cacheResourcesAsync() {
-  const cdnUrl = "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets"
+  const cdnUrl = "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets";
   const videoUrls = [
-    "stephan_eyes.mp4", "colin_eyes.mp4", "laura_eyes.mp4", "momodou_eyes.mp4",
-  ]
+    "stephan_eyes.mp4",
+    "colin_eyes.mp4",
+    "laura_eyes.mp4",
+    "momodou_eyes.mp4",
+  ];
 
   const cdnUrls = [
     "home_screen_profiles/stephan.gif",
@@ -116,9 +119,9 @@ async function cacheResourcesAsync() {
     "about_us/more-information_twitter.png",
     "about_us/more-information_blogs.png",
     "about_us/more-information_www.png",
-  ].map(e => ({uri: `${cdnUrl}/images/{e}`}))
+  ].map((e) => ({ uri: `${cdnUrl}/images/{e}` }));
 
-  const cacheImages = FastImage.preload(cdnUrls)
+  const cacheImages = FastImage.preload(cdnUrls);
 
   return cacheImages;
 }

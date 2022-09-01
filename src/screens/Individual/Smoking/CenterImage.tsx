@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const { image } = props
+  const { image } = props;
   const imagePercentage = sizeSelector({
     xs: 0.8,
     md: 0.8,

@@ -1,12 +1,8 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
 import { Text } from "@ui-kitten/components";
 import * as Linking from "expo-linking";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const SocialMedia = () => (
   <View style={[styles.container, { flexDirection: "column" }]}>
@@ -24,7 +20,9 @@ const SocialMedia = () => (
       >
         <FastImage
           style={styles.socialMediaLogo}
-          source={{ uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_twitter.png"}}
+          source={{
+            uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_twitter.png",
+          }}
         />
       </TouchableWithoutFeedback>
       <Text
@@ -38,7 +36,9 @@ const SocialMedia = () => (
       >
         <FastImage
           style={styles.socialMediaLogo}
-          source={{ uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_blogs.png"}}
+          source={{
+            uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_blogs.png",
+          }}
         />
       </TouchableWithoutFeedback>
       <Text
@@ -52,7 +52,9 @@ const SocialMedia = () => (
       >
         <FastImage
           style={styles.socialMediaLogo}
-          source={{ uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_www.png"}}
+          source={{
+            uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_www.png",
+          }}
         />
       </TouchableWithoutFeedback>
     </View>

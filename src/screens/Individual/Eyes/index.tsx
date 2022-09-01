@@ -35,9 +35,8 @@ const AllAmbassadors = {
   },
 };
 
-
 const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
-  const {image} = props
+  const { image } = props;
   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
@@ -50,7 +49,7 @@ const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
         uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
       }}
       resizeMode={FastImage.resizeMode.contain}
-      style={{ width: imageWidth, height: imageWidth, alignSelf: "center"}}
+      style={{ width: imageWidth, height: imageWidth, alignSelf: "center" }}
     />
   );
 });
@@ -73,7 +72,7 @@ const EyeVideo = withSizeInfo(({ sizeSelector, ...props }: any) => {
 
 const EyeImages = ({ image, themeColor, header }:any) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
-    <EyeImage image={`eyes/${image}`}  />
+    <EyeImage image={`eyes/${image}`} />
     <PageHeader style={[styles.header2, { color: themeColor }]}>
       {header}
     </PageHeader>

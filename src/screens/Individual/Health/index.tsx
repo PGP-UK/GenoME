@@ -6,7 +6,7 @@ import { Section, Block } from "react-native-responsive-layout";
 import PageLayout from "../../../components/PageLayout";
 import { PageText } from "../../../components/Text";
 import { PageHeader } from "../../../components/Text";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const AllAmbassadors = {
   stephan: {
@@ -36,7 +36,7 @@ const AllAmbassadors = {
 };
 
 const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const {image } = props
+  const { image } = props;
   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 

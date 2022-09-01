@@ -4,7 +4,7 @@ import PageLayout from "../../components/PageLayout";
 import SocialMedia from "./SocialMedia";
 import { PageHeader, PageText } from "../../components/Text";
 import { Section, Block } from "react-native-responsive-layout";
-import ImageBackground from './ImageBackground'
+import ImageBackground from "./ImageBackground";
 
 const About = (props: any) => {
   const { navigation } = props;
@@ -87,7 +87,9 @@ const About = (props: any) => {
         >
           <Block>
             <ImageBackground
-              source={{uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_globe.png"}}
+              source={{
+                uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_globe.png",
+              }}
             >
               <PageText style={styles.bottom_red_text}>
                 DISCLAIMER: The generation of genomic data is not an error-free

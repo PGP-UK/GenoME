@@ -6,7 +6,7 @@ import { Section, Block, Grid } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 import TextSection from "./TextSection";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const ThemeColors = {
   stephan: "#8CD8C4",

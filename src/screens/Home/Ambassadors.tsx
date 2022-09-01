@@ -4,7 +4,7 @@ import { PageText } from "../../components/Text";
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
-import FastImage from 'react-native-fast-image'
+import FastImage from "react-native-fast-image";
 
 const AllAmbassadors = [
   {
@@ -48,12 +48,12 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, image, ...props }) => {
     <FastImage
       style={{ width: imageWidth, height: imageWidth }}
       source={{
-            uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/home_screen_profiles/${image}`,
-            priority: FastImage.priority.high,
-            cache: FastImage.cacheControl.cacheOnly
-        }}
-        resizeMode={FastImage.resizeMode.contain}
-      />
+        uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/home_screen_profiles/${image}`,
+        priority: FastImage.priority.high,
+        cache: FastImage.cacheControl.cacheOnly,
+      }}
+      resizeMode={FastImage.resizeMode.contain}
+    />
   );
 });
 

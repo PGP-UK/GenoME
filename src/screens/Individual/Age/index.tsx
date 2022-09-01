@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { Section, Block } from "react-native-responsive-layout";
 
 import PageLayout from "../../../components/PageLayout";
@@ -9,22 +8,22 @@ import CenterImage from "./CenterImage";
 import AgeExplanationText from "./AgeExplanationText";
 
 const AgeData = require("../../../../assets/data/age/data.json");
-
+const LottieDir = "./../../../../assets/images/lottie_animations";
 const AllAmbassadors = {
   stephan: {
-    AgeImage: "stephan.png",
+    AgeImage: require(`${LottieDir}/stephan_age.json`),
     themeColor: "#8CD8C4",
   },
   laura: {
-    AgeImage: "laura.png",
+    AgeImage: require(`${LottieDir}/laura_age.json`),
     themeColor: "#F6BD4A",
   },
   momodou: {
-    AgeImage: "momodou.png",
+    AgeImage: require(`${LottieDir}/momodou_age.json`),
     themeColor: "#D94553",
   },
   colin: {
-    AgeImage: "colin.png",
+    AgeImage: require(`${LottieDir}/colin_age.json`),
     themeColor: "#9C82DE",
   },
 };

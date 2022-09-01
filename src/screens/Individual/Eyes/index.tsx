@@ -86,7 +86,7 @@ const EyeVideos = ({ image } :any) => (
 );
 
 
-const Eyes = ({props}: any) => {
+const Eyes = (props: any) => {
   const { route } = props;
   const { name } = route.params;
   const eyeData = AllAmbassadors[name];

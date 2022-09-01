@@ -5,22 +5,23 @@ import { Grid, Section, Block } from "react-native-responsive-layout";
 import TopText from "./TopText";
 import FastImage from "react-native-fast-image";
 
+const LottieDir = "./../../../../assets/images/lottie_animations";
 const AllAmbassadorsData = {
   stephan: {
     data: require(`../../../../assets/data/ancestry/stephan.json`),
-    image: "stephan_ancestry.jpeg",
+    image: require(`${LottieDir}/stephan_ancestry.json`),
   },
   colin: {
     data: require(`../../../../assets/data/ancestry/colin.json`),
-    image: "colin_ancestry.jpeg",
+    image: require(`${LottieDir}/colin_ancestry.json`),
   },
   laura: {
     data: require(`../../../../assets/data/ancestry/laura.json`),
-    image: "laura_ancestry.jpeg",
+    image: require(`${LottieDir}/laura_ancestry.json`),
   },
   momodou: {
     data: require(`../../../../assets/data/ancestry/momodou.json`),
-    image: "momodou_ancestry.jpeg",
+    image: require(`${LottieDir}/momodou_ancestry.json`),
   },
 };
 

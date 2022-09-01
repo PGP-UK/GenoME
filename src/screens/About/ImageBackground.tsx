@@ -4,7 +4,7 @@ import FastImage from "react-native-fast-image";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 
 const ImageBackground = (props) => {
-  const { children, style = {}, imageStyle, imageRef, ...rest } = props;
+  const { children, style = {}, imageStyle, ...rest } = props;
 
   return (
     <View style={style}>

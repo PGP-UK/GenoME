@@ -30,7 +30,7 @@ const AllAmbassadors = {
 };
 
 const Age = (props) => {
-  const { route, navigation } = props;
+  const { route } = props;
   const { name } = route.params;
   const data = AgeData[name];
   return (
@@ -110,14 +110,5 @@ const Age = (props) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  heading: {
-    color: "#63BEE1",
-    marginBottom: 20,
-    fontSize: 40,
-    fontWeight: "400",
-  },
-});
 
 export default Age;

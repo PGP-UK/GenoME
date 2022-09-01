@@ -30,13 +30,12 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const CenterRow = ({ image, data }) => {
-  return (
-    <Block>
-      <CenterImage image={image} />
-    </Block>
-  );
-};
+const CenterRow = ({ image }) => (
+  <Block>
+    <CenterImage image={image} />
+  </Block>
+);
+
 
 const styles = StyleSheet.create({
   image: {

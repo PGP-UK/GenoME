@@ -5,7 +5,7 @@ import BottomSection from "./BottomSection";
 import CenterImage from "./CenterImage";
 import SmokingExText from "./SmokingExText";
 import ImageKey from "./Imagekey";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { Section, Block } from "react-native-responsive-layout";
 
 const dataFile = {
@@ -13,7 +13,7 @@ const dataFile = {
 };
 
 const Smoking = (props) => {
-  const { route, navigation } = props;
+  const { route } = props;
   const { name } = route.params;
   const data = dataFile.data[name];
 

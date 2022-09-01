@@ -2,7 +2,7 @@ import React from "react";
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { PageText } from "../../../../components/Text";
 import { PageHeader } from "../../../../components/Text";
 import FastImage from "react-native-fast-image";

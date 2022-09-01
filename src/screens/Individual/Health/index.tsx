@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Image, Pressable } from "react-native";
+import { StyleSheet, Pressable } from "react-native";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { Section, Block } from "react-native-responsive-layout";

@@ -7,7 +7,7 @@ import { Grid } from "react-native-responsive-layout";
 const PageLayout = ({ children, backgroundColor = "#fff" }) => {
   return (
     <SafeAreaView
-      style={[styles.safeView, , { backgroundColor: backgroundColor }]}
+      style={[styles.safeView, { backgroundColor: backgroundColor }]}
     >
       <Grid scrollable stretchable>
         <Layout style={[styles.layout, { backgroundColor: backgroundColor }]}>

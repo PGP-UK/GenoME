@@ -14,22 +14,6 @@ const TextSection = ({ textStyle, lines }) => (
   </>
 );
 
-const LeftText = ({ textStyle, data }) => (
-  <TextSection
-    textStyle={textStyle}
-    lines={[
-      "These numbers reflect how many single nucleotide variants (SNVs) were identified in my genome",
-    ]}
-  />
-);
-
-const RightText = ({ textStyle, data }) => (
-  <TextSection
-    textStyle={textStyle}
-    lines={["Number of private variants:", data.num, data.percent]}
-  />
-);
-
 const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
   const mainStyles = sizeSelector({
     xs: styles.mainSm,

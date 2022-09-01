@@ -12,11 +12,6 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
     xs: styles.headerxs,
     lg: styles.headerlg,
   });
-  const rightTextStyles = sizeSelector({
-    xs: styles.rightTextxs,
-    md: styles.rightTextmd,
-    lg: styles.rightTextlg,
-  });
   const percent_boxStyles = sizeSelector({
     xs: styles.percent_boxxs,
     md: styles.percent_boxmd,

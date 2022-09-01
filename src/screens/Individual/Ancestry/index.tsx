@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { View } from "react-native";
 import PageLayout from "../../../components/PageLayout";
 import { Grid, Section, Block } from "react-native-responsive-layout";
 import TopText from "./TopText";
@@ -54,48 +54,5 @@ const Ancestry = (props) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  header: {
-    color: "#666E7A",
-    marginTop: 100,
-    marginBottom: 20,
-    marginLeft: 50,
-  },
-  main_text: {
-    color: "#666E7A",
-    fontSize: 25,
-    marginBottom: 20,
-    marginLeft: 50,
-    lineHeight: 45,
-  },
-  percent_box: {
-    alignItems: "flex-end",
-    marginBottom: 20,
-    marginTop: 100,
-    paddingRight: 50,
-  },
-  percent_text: {
-    fontSize: 25,
-  },
-  leftTextSm: {
-    fontSize: 35,
-    color: "#45B0D4",
-    textAlign: "center",
-  },
-  leftTextMd: {
-    fontSize: 35,
-    color: "#45B0D4",
-    textAlign: "left",
-  },
-  rightTextSm: {
-    fontSize: 35,
-    textAlign: "center",
-  },
-  rightTextMd: {
-    fontSize: 35,
-    textAlign: "right",
-  },
-});
 
 export default Ancestry;

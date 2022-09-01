@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Image, StyleSheet, Pressable } from "react-native";
+import React from "react";
+import { Image, StyleSheet } from "react-native";
 import PageLayout from "../../../components/PageLayout";
 import { PageText } from "../../../components/Text";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
@@ -85,13 +85,13 @@ const EyeVideos = ({ image } :any) => (
   </Block>
 );
 
+
 const Eyes = ({props}: any) => {
-  const [videoNotLoaded, setVideoNotLoaded] = useState(false);
-  const { route, navigation } = props;
+  const { route } = props;
   const { name } = route.params;
   const eyeData = AllAmbassadors[name];
   const themeColor = eyeData.themeColor;
-  const header = eyeData.colorText;
+
   return (
     <>
       <PageLayout>

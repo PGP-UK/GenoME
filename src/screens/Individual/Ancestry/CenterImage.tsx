@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
@@ -31,14 +31,5 @@ const CenterImage = ({ image }) => {
     </Section>
   );
 };
-
-const styles = StyleSheet.create({
-  imageMd: {
-    alignSelf: "center",
-  },
-  imageSm: {
-    alignSelf: "center",
-  },
-});
 
 export default CenterImage;

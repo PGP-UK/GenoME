@@ -33,7 +33,7 @@ const AllAmbassadors = [
   },
 ];
 
-const AmbassadorImage = withSizeInfo(({ sizeSelector, image, ...props }) => {
+const AmbassadorImage = withSizeInfo(({ sizeSelector, image }) => {
   const numImagesPerRow = sizeSelector({
     xs: 1,
     sm: 2,

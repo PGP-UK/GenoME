@@ -12,29 +12,6 @@ const dataFile = {
   data: require(`../../../../assets/data/age/data.json`),
 };
 
-const AllAmbassadors = {
-  stephan: {
-    SmokingImage: require(`../../../../assets/images/smokers/nonsmoking.png`),
-    image: require("../../../../assets/images/home_screen_profiles/stephan.gif"),
-    themeColor: "#8CD8C4",
-  },
-  laura: {
-    SmokingImage: require(`../../../../assets/images/smokers/nonsmoking.png`),
-    image: require("../../../../assets/images/home_screen_profiles/laura.gif"),
-    themeColor: "#F6BD4A",
-  },
-  momodou: {
-    SmokingImage: require(`../../../../assets/images/smokers/nonsmoking.png`),
-    image: require("../../../../assets/images/home_screen_profiles/momodou.gif"),
-    themeColor: "#D94553",
-  },
-  colin: {
-    SmokingImage: require(`../../../../assets/images/smokers/nonsmoking.png`),
-    image: require("../../../../assets/images/home_screen_profiles/colin.gif"),
-    themeColor: "#9C82DE",
-  },
-};
-
 const Smoking = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
@@ -87,7 +64,7 @@ const Smoking = (props) => {
           style={{ paddingBottom: 20 }}
         >
           <CenterImage
-            source={AllAmbassadors[name].SmokingImage}
+            image={"smokers/nonsmoking.png"}
             data={dataFile.data[name]}
           />
         </Block>

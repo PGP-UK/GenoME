@@ -35,7 +35,7 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
       </Block>
 
       <Block xsSize="100%" mdSize="35%">
-        <CenterImage source={image.image} />
+        <CenterImage image={image} />
       </Block>
 
       <Block xsSize="100%" mdSize="30%" style={percent_boxStyles}>

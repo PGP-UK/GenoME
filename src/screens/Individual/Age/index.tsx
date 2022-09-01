@@ -12,23 +12,19 @@ const AgeData = require("../../../../assets/data/age/data.json");
 
 const AllAmbassadors = {
   stephan: {
-    AgeImage: require("../../../../assets/images/age_pie_charts/stephan.png"),
-    image: require("../../../../assets/images/home_screen_profiles/stephan.gif"),
+    AgeImage: "stephan.png",
     themeColor: "#8CD8C4",
   },
   laura: {
-    AgeImage: require("../../../../assets/images/age_pie_charts/laura.png"),
-    image: require("../../../../assets/images/home_screen_profiles/laura.gif"),
+    AgeImage: "laura.png",
     themeColor: "#F6BD4A",
   },
   momodou: {
-    AgeImage: require("../../../../assets/images/age_pie_charts/momodou.png"),
-    image: require("../../../../assets/images/home_screen_profiles/momodou.gif"),
+    AgeImage: "momodou.png",
     themeColor: "#D94553",
   },
   colin: {
-    AgeImage: require("../../../../assets/images/age_pie_charts/colin.png"),
-    image: require("../../../../assets/images/home_screen_profiles/colin.gif"),
+    AgeImage: "colin.png",
     themeColor: "#9C82DE",
   },
 };

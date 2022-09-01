@@ -5,8 +5,10 @@ import { useSafeAreaFrame } from "react-native-safe-area-context";
 import { StyleSheet, View, Image } from "react-native";
 import { PageText } from "../../../../components/Text";
 import { PageHeader } from "../../../../components/Text";
+import FastImage from 'react-native-fast-image'
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const { image } = props
   const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
   const ImagePercent = sizeSelector({ xs: 0.8, md: 0.3, lg: 0.3, xl: 0.4 });
   const imageWidth = Math.round(useSafeAreaFrame().width * ImagePercent) - 40;
@@ -15,10 +17,12 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <Image
-      {...props}
+    <FastImage
+      source={{
+        uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
+      }}
+      // resizeMode={FastImage.resizeMode.contain}
       style={[ImageStyles, { width: finalImageWidth, height: finalImageWidth }]}
-      // resizeMode="contain"
     />
   );
 });
@@ -160,7 +164,7 @@ const MiddleSection = (props) => {
           xlSize="50%"
           style={{ paddingBottom: 20 }}
         >
-          <AmbassadorImage source={image} />
+          <AmbassadorImage image={image} />
         </Block>
 
         {/* Hidden in small screens */}

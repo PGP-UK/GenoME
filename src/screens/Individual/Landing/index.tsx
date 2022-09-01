@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Image, Pressable } from "react-native";
+import { StyleSheet, Pressable } from "react-native";
 import { Text } from "@ui-kitten/components";
 import PageLayout from "../../../components/PageLayout";
 import { Section, Block, Grid } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 import TextSection from "./TextSection";
+import FastImage from 'react-native-fast-image'
 
 const ThemeColors = {
   stephan: "#8CD8C4",
@@ -17,35 +18,38 @@ const ThemeColors = {
 const Icons = [
   {
     pageName: "Ancestry",
-    image: require("../../../../assets/images/landing_screen_icons/globe-europe-light.png"),
+    image: "globe-europe-light.png",
   },
   {
     pageName: "Eyes",
-    image: require("../../../../assets/images/landing_screen_icons/eye-light.png"),
+    image: "eye-light.png",
   },
   {
     pageName: "Health",
-    image: require("../../../../assets/images/landing_screen_icons/heartbeat-light.png"),
+    image: "heartbeat-light.png",
   },
   {
     pageName: "Age",
-    image: require("../../../../assets/images/landing_screen_icons/birthday-cake-light.png"),
+    image: "birthday-cake-light.png",
   },
   {
     pageName: "Smoking",
-    image: require("../../../../assets/images/landing_screen_icons/smoking-light.png"),
+    image: "smoking-light.png",
   },
 ];
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const { icon } = props;
   const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 5 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
   return (
-    <Image
-      {...props}
+    <FastImage
+      source={{
+        uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/landing_screen_icons/${icon}`,
+      }}
+      resizeMode={FastImage.resizeMode.contain}
       style={{ width: imageWidth, height: imageWidth }}
-      resizeMode="contain"
     />
   );
 });
@@ -64,7 +68,7 @@ const LandingIcon = ({ IconData, name, navigation }) => {
         }
         style={styles.box}
       >
-        <Iconimage source={IconData.image} />
+        <Iconimage icon={IconData.image} />
         <Text category="h4" style={styles.iconText}>
           {IconData.pageName}
         </Text>

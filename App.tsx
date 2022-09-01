@@ -2,10 +2,9 @@
 import './src/components/ignoreWarnings'
 
 import React, { useCallback, useEffect, useState } from "react";
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Asset } from "expo-asset";
 import * as SplashScreen from "expo-splash-screen";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
@@ -56,69 +55,68 @@ const App = () => {
 };
 
 async function cacheResourcesAsync() {
-  const images = [
-    require("./assets/images/landing_screen_icons/globe-europe-light.png"),
-    require("./assets/images/landing_screen_icons/eye-light.png"),
-    require("./assets/images/landing_screen_icons/heartbeat-light.png"),
-    require("./assets/images/landing_screen_icons/birthday-cake-light.png"),
-    require("./assets/images/landing_screen_icons/smoking-light.png"),
-    require("./assets/images/ancestry_screen_pie/stephan_ancestry.jpeg"),
-    require("./assets/images/ancestry_screen_pie/colin_ancestry.jpeg"),
-    require("./assets/images/ancestry_screen_pie/laura_ancestry.jpeg"),
-    require("./assets/images/ancestry_screen_pie/momodou_ancestry.jpeg"),
-    require("./assets/images/variant_screen_pie_charts/stephan.png"),
-    require("./assets/images/variant_screen_pie_charts/laura.png"),
-    require("./assets/images/variant_screen_pie_charts/momodou.png"),
-    require("./assets/images/variant_screen_pie_charts/colin.png"),
-    require("./assets/images/age_pie_charts/stephan.png"),
-    require("./assets/images/age_pie_charts/laura.png"),
-    require("./assets/images/age_pie_charts/momodou.png"),
-    require("./assets/images/age_pie_charts/colin.png"),
-    require("./assets/images/smokers/no-smoking.png"),
-    require("./assets/images/health_screen_SNV/stephan_heart_SNV.png"),
-    require("./assets/images/health_screen_SNV/stephan_crohn_SNV.png"),
-    require("./assets/images/health_screen_SNV/stephan_ovarian_SNV.png"),
-    require("./assets/images/health_screen_SNV/laura_heart_SNV.png"),
-    require("./assets/images/health_screen_SNV/laura_crohn_SNV.png"),
-    require("./assets/images/health_screen_SNV/laura_ovarian_SNV.png"),
-    require("./assets/images/health_screen_SNV/momodou_heart_SNV.png"),
-    require("./assets/images/health_screen_SNV/momodou_crohn_SNV.png"),
-    require("./assets/images/health_screen_SNV/momodou_ovarian_SNV.png"),
-    require("./assets/images/health_screen_SNV/colin_heart_SNV.png"),
-    require("./assets/images/health_screen_SNV/colin_crohn_SNV.png"),
-    require("./assets/images/health_screen_SNV/colin_ovarian_SNV.png"),
-    require("./assets/images/crohns_profiles/colin_crohn_profile.png"),
-    require("./assets/images/crohns_profiles/momodou_crohn_profile.png"),
-    require("./assets/images/crohns_profiles/stephan_crohn_profile.png"),
-    require("./assets/images/crohns_profiles/laura_crohn_profile.png"),
-    require("./assets/images/heart_profiles/colin_heart_profile.png"),
-    require("./assets/images/heart_profiles/momodou_heart_profile.png"),
-    require("./assets/images/heart_profiles/stephan_heart_profile.png"),
-    require("./assets/images/heart_profiles/laura_heart_profile.png"),
-    require("./assets/images/ovarian_profiles/laura_ovarian_profile.png"),
-    require("./assets/images/ovarian_profiles/colin_ovarian_profile.png"),
-    require("./assets/images/ovarian_profiles/momodou_ovarian_profile.png"),
-    require("./assets/images/ovarian_profiles/stephan_ovarian_profile.png"),
-    require("./assets/images/ancestry_screen_pie/ancestry_world.jpeg"),
-    require("./assets/images/about_us/more-information_globe.png"),
-    require("./assets/images/about_us/more-information_twitter.png"),
-    require("./assets/images/about_us/more-information_blogs.png"),
-    require("./assets/images/about_us/more-information_www.png"),
-    require("./assets/images/eyes/blue_eye.png"),
-    require("./assets/images/eyes/brown_eye.png"),
-    require("./assets/images/eyes/brown_eye.png"),
-    require("./assets/videos/stephan_eyes.mp4"),
-    require("./assets/videos/colin_eyes.mp4"),
-    require("./assets/videos/laura_eyes.mp4"),
-    require("./assets/videos/momodou_eyes.mp4"),
-  ];
+  const cdnUrl = "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets"
+  const videoUrls = [
+    "stephan_eyes.mp4", "colin_eyes.mp4", "laura_eyes.mp4", "momodou_eyes.mp4",
+  ]
 
   const cdnUrls = [
-    "/images/home_screen_profiles/stephan.gif",
-    "/images/home_screen_profiles/laura.gif",
-    "/images/home_screen_profiles/momodou.gif",
-    "/images/home_screen_profiles/colin.gif",
-  ].map(e => ({uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/{e}`}))
+    "home_screen_profiles/stephan.gif",
+    "home_screen_profiles/laura.gif",
+    "home_screen_profiles/momodou.gif",
+    "home_screen_profiles/colin.gif",
+    "landing_screen_icons/globe-europe-light.png",
+    "landing_screen_icons/eye-light.png",
+    "landing_screen_icons/heartbeat-light.png",
+    "landing_screen_icons/birthday-cake-light.png",
+    "landing_screen_icons/smoking-light.png",
+    "ancestry_screen_pie/stephan_ancestry.jpeg",
+    "ancestry_screen_pie/colin_ancestry.jpeg",
+    "ancestry_screen_pie/laura_ancestry.jpeg",
+    "ancestry_screen_pie/momodou_ancestry.jpeg",
+    "ancestry_screen_pie/ancestry_world.jpeg",
+    "variant_screen_pie_charts/stephan.png",
+    "variant_screen_pie_charts/laura.png",
+    "variant_screen_pie_charts/momodou.png",
+    "variant_screen_pie_charts/colin.png",
+    "age_pie_charts/stephan.png",
+    "age_pie_charts/laura.png",
+    "age_pie_charts/momodou.png",
+    "age_pie_charts/colin.png",
+    "smokers/no-smoking.png",
+    "health_screen_SNV/stephan_heart_SNV.png",
+    "health_screen_SNV/stephan_crohn_SNV.png",
+    "health_screen_SNV/stephan_ovarian_SNV.png",
+    "health_screen_SNV/laura_heart_SNV.png",
+    "health_screen_SNV/laura_crohn_SNV.png",
+    "health_screen_SNV/laura_ovarian_SNV.png",
+    "health_screen_SNV/momodou_heart_SNV.png",
+    "health_screen_SNV/momodou_crohn_SNV.png",
+    "health_screen_SNV/momodou_ovarian_SNV.png",
+    "health_screen_SNV/colin_heart_SNV.png",
+    "health_screen_SNV/colin_crohn_SNV.png",
+    "health_screen_SNV/colin_ovarian_SNV.png",
+    "crohns_profiles/colin_crohn_profile.png",
+    "crohns_profiles/momodou_crohn_profile.png",
+    "crohns_profiles/stephan_crohn_profile.png",
+    "crohns_profiles/laura_crohn_profile.png",
+    "heart_profiles/colin_heart_profile.png",
+    "heart_profiles/momodou_heart_profile.png",
+    "heart_profiles/stephan_heart_profile.png",
+    "heart_profiles/laura_heart_profile.png",
+    "ovarian_profiles/laura_ovarian_profile.png",
+    "ovarian_profiles/colin_ovarian_profile.png",
+    "ovarian_profiles/momodou_ovarian_profile.png",
+    "ovarian_profiles/stephan_ovarian_profile.png",
+    "eyes/blue_eye.png",
+    "eyes/brown_eye.png",
+    "eyes/brown_eye.png",
+
+    "about_us/more-information_globe.png",
+    "about_us/more-information_twitter.png",
+    "about_us/more-information_blogs.png",
+    "about_us/more-information_www.png",
+  ].map(e => ({uri: `${cdnUrl}/images/{e}`}))
 
   const cacheImages = FastImage.preload(cdnUrls)
 

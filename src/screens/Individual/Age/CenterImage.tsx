@@ -1,10 +1,12 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
+import FastImage from "react-native-fast-image";
 
 const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const { image } = props;
   const imagePercentage = sizeSelector({ xs: 0.8, md: 0.8, xl: 0.8, xxl: 0.4 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width * imagePercentage) - 40;
@@ -14,13 +16,15 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
 
   return (
     <View style={{ justifyContent: "center", flex: 1 }}>
-      <Image
-        {...props}
+      <FastImage
+        source={{
+          uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/age_pie_charts/${image}`,
+        }}
+        resizeMode={FastImage.resizeMode.contain}
         style={[
           styles.image,
           { width: finalImageWidth, height: finalImageWidth },
         ]}
-        resizeMode="contain"
       />
     </View>
   );
@@ -29,7 +33,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
 const CenterRow = ({ image, data }) => {
   return (
     <Block>
-      <CenterImage source={image} />
+      <CenterImage image={image} />
     </Block>
   );
 };

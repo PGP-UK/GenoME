@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, ImageBackground, Linking } from "react-native";
+import { StyleSheet } from "react-native";
 import PageLayout from "../../components/PageLayout";
 import SocialMedia from "./SocialMedia";
 import { PageHeader, PageText } from "../../components/Text";
 import { Section, Block } from "react-native-responsive-layout";
+import ImageBackground from './ImageBackground'
 
 const About = (props: any) => {
   const { navigation } = props;
@@ -82,13 +83,11 @@ const About = (props: any) => {
             alignItems: "center",
             alignContent: "center",
             flexWrap: "wrap",
-            marginBottom: 20,
           }}
         >
           <Block>
             <ImageBackground
-              style={styles.bottomImage}
-              source={require("../../../assets/images/about_us/more-information_globe.png")}
+              source={{uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_globe.png"}}
             >
               <PageText style={styles.bottom_red_text}>
                 DISCLAIMER: The generation of genomic data is not an error-free
@@ -132,11 +131,9 @@ const styles = StyleSheet.create({
     //position: 'relative',
   },
   bottomImage: {
-    height: 225,
-    width: 370,
     marginTop: 20,
     justifyContent: "center",
-    alignItems: "center",
+    alignSelf: "center",
   },
   socialMedia: {
     marginTop: 20,

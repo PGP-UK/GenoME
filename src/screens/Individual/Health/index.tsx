@@ -6,39 +6,37 @@ import { Section, Block } from "react-native-responsive-layout";
 import PageLayout from "../../../components/PageLayout";
 import { PageText } from "../../../components/Text";
 import { PageHeader } from "../../../components/Text";
+import FastImage from 'react-native-fast-image'
 
 const AllAmbassadors = {
   stephan: {
-    SNV_heart_image: require(`../../../../assets/images/health_screen_SNV/stephan_heart_SNV.png`),
-    SNV_crohn_image: require(`../../../../assets/images/health_screen_SNV/stephan_crohn_SNV.png`),
-    SNV_ovarian_image: require(`../../../../assets/images/health_screen_SNV/stephan_ovarian_SNV.png`),
-    image: require("../../../../assets/images/home_screen_profiles/stephan.gif"),
+    SNV_heart_image: "stephan_heart_SNV.png",
+    SNV_crohn_image: "stephan_crohn_SNV.png",
+    SNV_ovarian_image: "stephan_ovarian_SNV.png",
     themeColor: "#8CD8C4",
   },
   colin: {
-    SNV_heart_image: require(`../../../../assets/images/health_screen_SNV/colin_heart_SNV.png`),
-    SNV_crohn_image: require(`../../../../assets/images/health_screen_SNV/colin_crohn_SNV.png`),
-    SNV_ovarian_image: require(`../../../../assets/images/health_screen_SNV/colin_ovarian_SNV.png`),
-    image: require("../../../../assets/images/home_screen_profiles/colin.gif"),
+    SNV_heart_image: "colin_heart_SNV.png",
+    SNV_crohn_image: "colin_crohn_SNV.png",
+    SNV_ovarian_image: "colin_ovarian_SNV.png",
     themeColor: "#9C82DE",
   },
   laura: {
-    SNV_heart_image: require(`../../../../assets/images/health_screen_SNV/laura_heart_SNV.png`),
-    SNV_crohn_image: require(`../../../../assets/images/health_screen_SNV/laura_crohn_SNV.png`),
-    SNV_ovarian_image: require(`../../../../assets/images/health_screen_SNV/laura_ovarian_SNV.png`),
-    image: require("../../../../assets/images/home_screen_profiles/laura.gif"),
+    SNV_heart_image: "laura_heart_SNV.png",
+    SNV_crohn_image: "laura_crohn_SNV.png",
+    SNV_ovarian_image: "laura_ovarian_SNV.png",
     themeColor: "#F6BD4A",
   },
   momodou: {
-    SNV_heart_image: require(`../../../../assets/images/health_screen_SNV/momodou_heart_SNV.png`),
-    SNV_crohn_image: require(`../../../../assets/images/health_screen_SNV/momodou_crohn_SNV.png`),
-    SNV_ovarian_image: require(`../../../../assets/images/health_screen_SNV/momodou_ovarian_SNV.png`),
-    image: require("../../../../assets/images/home_screen_profiles/momodou.gif"),
+    SNV_heart_image: "momodou_heart_SNV.png",
+    SNV_crohn_image: "momodou_crohn_SNV.png",
+    SNV_ovarian_image: "momodou_ovarian_SNV.png",
     themeColor: "#D94553",
   },
 };
 
 const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const {image } = props
   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
@@ -46,10 +44,12 @@ const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
     Math.round(useSafeAreaFrame().width / numImagesPerRow) -
     spacingBetweenImages;
   return (
-    <Image
-      {...props}
+    <FastImage
+      source={{
+        uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
+      }}
+      resizeMode={FastImage.resizeMode.contain}
       style={{ width: imageWidth, height: imageWidth }}
-      resizeMode="contain"
     />
   );
 });
@@ -79,7 +79,7 @@ const SNVImages = ({
       }
       style={styles.box}
     >
-      <SNVImage source={image} resizeMode="contain" />
+      <SNVImage image={`health_screen_SNV/${image}`} resizeMode="contain" />
       <PageHeader style={[styles.header2, { color: themeColor }]}>
         {header}
       </PageHeader>

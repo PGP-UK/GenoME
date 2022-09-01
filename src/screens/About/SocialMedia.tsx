@@ -1,12 +1,12 @@
 import React from "react";
 import {
   StyleSheet,
-  Image,
   View,
   TouchableWithoutFeedback,
 } from "react-native";
 import { Text } from "@ui-kitten/components";
 import * as Linking from "expo-linking";
+import FastImage from 'react-native-fast-image'
 
 const SocialMedia = () => (
   <View style={[styles.container, { flexDirection: "column" }]}>
@@ -22,9 +22,9 @@ const SocialMedia = () => (
       <TouchableWithoutFeedback
         onPress={() => Linking.openURL("https://twitter.com/pgpuk_genomes")}
       >
-        <Image
+        <FastImage
           style={styles.socialMediaLogo}
-          source={require("../../../assets/images/about_us/more-information_twitter.png")}
+          source={{ uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_twitter.png"}}
         />
       </TouchableWithoutFeedback>
       <Text
@@ -36,9 +36,9 @@ const SocialMedia = () => (
       <TouchableWithoutFeedback
         onPress={() => Linking.openURL("https://pgpukblog.wordpress.com/")}
       >
-        <Image
+        <FastImage
           style={styles.socialMediaLogo}
-          source={require("../../../assets/images/about_us/more-information_blogs.png")}
+          source={{ uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_blogs.png"}}
         />
       </TouchableWithoutFeedback>
       <Text
@@ -50,9 +50,9 @@ const SocialMedia = () => (
       <TouchableWithoutFeedback
         onPress={() => Linking.openURL("https://www.personalgenomes.org.uk/")}
       >
-        <Image
+        <FastImage
           style={styles.socialMediaLogo}
-          source={require("../../../assets/images/about_us/more-information_www.png")}
+          source={{ uri: "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_www.png"}}
         />
       </TouchableWithoutFeedback>
     </View>

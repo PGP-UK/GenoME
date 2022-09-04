@@ -1,9 +1,9 @@
-const IS_DEV = process.env.APP_VARIANT === 'development';
+const IS_PREVIEW = process.env.APP_VARIANT === 'preview';
 
 export default {
   expo: {
-    name: IS_DEV ? 'GenoME Client' : 'GenoME',
-    slug: "PGP-UK-GenoME",
+    name: IS_PREVIEW ? 'GenoME' : 'GenoME Client',
+    slug: IS_PREVIEW ? "PGP-UK-GenoME" : "PGP-UK-GenoME-dev",
     version: "1.0.0",
     orientation: "default",
     icon: "./assets/icon.png",
@@ -19,14 +19,14 @@ export default {
     assetBundlePatterns: ["**/*", "assets/images/**/*"],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: IS_DEV ? "dev.uk.org.personalgenomes.genome" : "uk.org.personalgenomes.genome",
+      bundleIdentifier: IS_PREVIEW ? "uk.org.personalgenomes.genome" : "dev.uk.org.personalgenomes.genome",
     },
     android: {
       adaptiveIcon: {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#FFFFFF",
       },
-      package: IS_DEV ? "dev.uk.org.personalgenomes.genome" : "uk.org.personalgenomes.genome",
+      package: IS_PREVIEW ? "uk.org.personalgenomes.genome" : "dev.uk.org.personalgenomes.genome",
     },
     web: {
       favicon: "./assets/favicon.png",

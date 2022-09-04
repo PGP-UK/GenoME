@@ -5,7 +5,7 @@ export default {
     name: IS_DEV ? 'GenoME Client' : 'GenoME',
     slug: "PGP-UK-GenoME",
     version: "1.0.0",
-    orientation: "portrait",
+    orientation: "default",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
     splash: {

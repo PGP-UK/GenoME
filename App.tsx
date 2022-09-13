@@ -122,6 +122,10 @@ async function cacheResourcesAsync() {
   ].map((e) => ({ uri: `${cdnUrl}/images/{e}` }));
 
   const cacheImages = FastImage.preload(cdnUrls);
+  // FastImage.preload does NOT return a promise
+  // So we do not know when all image have been preloaded...
+  // See https://github.com/DylanVann/react-native-fast-image/pull/437
+  // Maybe replace with https://www.npmjs.com/package/@georstat/react-native-image-cache
 
   return cacheImages;
 }

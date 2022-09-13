@@ -50,7 +50,6 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, image }) => {
       source={{
         uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/home_screen_profiles/${image}`,
         priority: FastImage.priority.high,
-        cache: FastImage.cacheControl.cacheOnly,
       }}
       resizeMode={FastImage.resizeMode.contain}
     />

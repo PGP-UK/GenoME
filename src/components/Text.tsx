@@ -1,7 +1,7 @@
-import React from "react";
-import { Text } from "@ui-kitten/components";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { StyleSheet } from "react-native";
+import React from 'react';
+import { Text } from '@ui-kitten/components';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { StyleSheet } from 'react-native';
 
 const PgpText = withSizeInfo((props) => {
   const {
@@ -50,7 +50,7 @@ const PageFooter = (props) => {
     <PgpText
       {...props}
       category="p1"
-      baseStyle={Styles.footer_base}
+      baseStyle={Styles.page_footer_base}
       sizeSelectorStyles={{
         lg: Styles.page_text_lg,
       }}
@@ -60,15 +60,15 @@ const PageFooter = (props) => {
 
 const Styles = StyleSheet.create({
   page_header_base: {
-    color: "#63BEE1",
-    fontWeight: "400",
+    color: '#63BEE1',
+    fontWeight: '400',
   },
   page_text_base: {
-    color: "#666E7A",
+    color: '#666E7A',
     fontSize: 20,
   },
   page_footer_base: {
-    color: "#666E7A",
+    color: '#666E7A',
     fontSize: 20,
   },
   page_text_lg: {

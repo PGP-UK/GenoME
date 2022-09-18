@@ -28,7 +28,7 @@ const AllAmbassadors = {
   },
 };
 
-const Age = (props) => {
+const Age = (props: { route: any; }) => {
   const { route } = props;
   const { name } = route.params;
   const data = AgeData[name];

@@ -68,6 +68,13 @@ const About = (props: any) => {
               navigation={navigation}
               SocialMediaStyle={styles.socialMedia}
             />
+            <PageText style={styles.main_text1}>
+              We look forward to making great science with you!
+            </PageText>
+            <PageText style={styles.main_text2}>
+              Director: Professor Stephan Beck {'\n'}
+              Location: University College London
+            </PageText>
           </Block>
         </Section>
 
@@ -107,6 +114,15 @@ const About = (props: any) => {
 const styles = StyleSheet.create({
   headerRow: {
     marginBottom: 25,
+  },
+  main_text2: {
+    textAlign: 'left',
+  },
+  main_text1: {
+    marginBottom: 10,
+    paddingTop: 40,
+    paddingBottom: 20,
+    textAlign: 'left',
   },
   main_text: {
     color: '#666E7A',

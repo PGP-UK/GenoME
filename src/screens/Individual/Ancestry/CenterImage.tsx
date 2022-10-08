@@ -19,7 +19,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   return (
     <>
       <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
-      <View style={{ alignContent: 'center', paddingLeft: 80 }}>
+      <View style={{ alignContent: 'center', paddingLeft: '25%' }}>
         <Lottie
           ref={lottieRef}
           source={image}

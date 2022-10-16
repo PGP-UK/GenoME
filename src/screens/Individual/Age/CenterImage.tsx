@@ -35,7 +35,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
             {
               width: finalImageWidth,
               height: finalImageWidth,
-              paddingLeft: 80,
+              paddingLeft: '22%',
             },
           ]}
           onAnimationFinish={() => {

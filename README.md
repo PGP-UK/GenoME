@@ -1,29 +1,63 @@
 # GenoME
 
-## Installation
+The PGP-UK GenoME app.
+
+## Setup
 
 ```bash
-npm install -g expo-cli
-npm install -g eas-cli
+brew install asdf cocoapods fastlane
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+asdf install nodejs 18.10.0
+asdf install ruby 3.1.2
+
+asdf global nodejs 18.10.0
+asdf global ruby 3.1.2
+
+npm install -g expo-cli eas-cli
+```
+
+## Install
+
+```bash
 yarn install
 ```
 
-## Building
+## Development on IOS (Mac Only)
 
-During development, it is best to Build IOS + Android Builds with Expo Development Client
+First, login into the EAS Account.
 
 ```bash
 eas login
-
-eas build --platform all --profile development
-
-# after installing the built app, start expo client
-expo start --dev-client  --tunnel
 ```
 
-Alternatively generate an app without the development client:
+Next, build the app locally
 
 ```bash
+eas build --platform ios --profile simulator
+```
+
+This will generate a .tar.gz file, which you need to uncompress and then drag over to the IOS simulator.
+
+Next start the dev-client:
+
+```bash
+expo start --ios --dev-client
+```
+
+## Development For Android
+
+> TODO
+
+## Development using EAS Build (Remote)
+
+> Note, these builds can take some time.
+
+Here you can run the following two commands. The development profile is for development and requires that you also run `expo start --dev-client`, while the preview command includes the entire app in its current state.
+
+```bash
+eas build --platform all --profile development
 eas build --platform all --profile preview
 ```
 

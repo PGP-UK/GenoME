@@ -10,6 +10,16 @@
         "APP_VARIANT": "development"
       }
     },
+    "simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "APP_VARIANT": "development"
+      }
+    },
     "preview": {
       "distribution": "internal",
       "env": {

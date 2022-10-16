@@ -31,5 +31,10 @@ export default {
     web: {
       favicon: "./assets/favicon.png",
     },
+    extra: {
+      eas: {
+        projectId: "2d0a3a0e-accc-4e0c-85cd-44d7e6cb0aa3"
+      }
+    }
   },
 };

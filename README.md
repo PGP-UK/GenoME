@@ -5,7 +5,7 @@ The PGP-UK GenoME app.
 ## Setup
 
 ```bash
-brew install asdf cocoapods fastlane
+brew install asdf cocoapods fastlane ngrok
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 
@@ -15,7 +15,7 @@ asdf install ruby 3.1.2
 asdf global nodejs 18.10.0
 asdf global ruby 3.1.2
 
-npm install -g expo-cli eas-cli
+npm install -g expo-cli eas-cli ngrok react-devtools
 ```
 
 ## Install
@@ -35,7 +35,7 @@ eas login
 Next, build the app locally
 
 ```bash
-eas build --platform ios --profile simulator
+eas build --platform ios --profile simulator --local
 ```
 
 This will generate a .tar.gz file, which you need to uncompress and then drag over to the IOS simulator.

@@ -23,7 +23,6 @@ const About = (props: any) => {
             alignItems: 'center',
             alignContent: 'center',
             flexWrap: 'wrap',
-            marginBottom: 40,
           }}>
           <Block>
             <PageHeader style={styles.headerRow}>
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     marginTop: 150,
     textAlign: 'auto',
-    //position: 'relative',
+    // position: 'relative',
   },
   bottomImage: {
     marginTop: 20,

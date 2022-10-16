@@ -1,12 +1,12 @@
-import React from "react";
-import PageLayout from "../../../components/PageLayout";
-import { PageHeader } from "../../../components/Text";
-import BottomSection from "./BottomSection";
-import CenterImage from "./CenterImage";
-import SmokingExText from "./SmokingExText";
-import ImageKey from "./Imagekey";
-import { StyleSheet } from "react-native";
-import { Section, Block } from "react-native-responsive-layout";
+import React from 'react';
+import PageLayout from '../../../components/PageLayout';
+import { PageHeader } from '../../../components/Text';
+import BottomSection from './BottomSection';
+import CenterImage from './CenterImage';
+import SmokingExText from './SmokingExText';
+import ImageKey from './Imagekey';
+import { StyleSheet } from 'react-native';
+import { Section, Block } from 'react-native-responsive-layout';
 
 const dataFile = {
   data: require(`../../../../assets/data/age/data.json`),
@@ -31,38 +31,35 @@ const Smoking = (props) => {
         lgSize="100%"
         xlSize="100%"
         style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
           paddingBottom: 20,
         }}
         xsHidden
         smHidden
         mdVisible
-        xxlHidden
-      >
+        xxlHidden>
         <SmokingExText data={dataFile.data[name]} />
       </Block>
       <Section
         stretch
         style={{
           flex: 1,
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
-          flexWrap: "wrap",
-        }}
-      >
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
+          flexWrap: 'wrap',
+        }}>
         <Block
           xsSize="100%"
           smSize="100%"
           mdSize="50%"
           lgSize="50%"
           xlSize="50%"
-          style={{ paddingBottom: 20 }}
-        >
+          style={{ paddingBottom: 20 }}>
           <CenterImage
             image={"smokers/nonsmoking.png"}
             data={dataFile.data[name]}
@@ -75,29 +72,27 @@ const Smoking = (props) => {
           lgSize="50%"
           xlSize="50%"
           style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center",
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
             paddingBottom: 20,
           }}
           xsHidden
           smHidden
           mdHidden
-          xxlVisible
-        >
+          xxlVisible>
           <SmokingExText data={dataFile.data[name]} />
         </Block>
       </Section>
       <Block
         style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
           paddingBottom: 20,
-        }}
-      >
+        }}>
         <ImageKey data={data} />
       </Block>
       <Block
@@ -107,10 +102,10 @@ const Smoking = (props) => {
         lgSize="50%"
         xlSize="50%"
         style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
           paddingBottom: 20,
         }}
         xsVisible
@@ -118,8 +113,7 @@ const Smoking = (props) => {
         mdHidden
         lgHidden
         xlHidden
-        xxlHidden
-      >
+        xxlHidden>
         <SmokingExText data={dataFile.data[name]} />
       </Block>
       <BottomSection data={dataFile.data[name]} />
@@ -129,7 +123,7 @@ const Smoking = (props) => {
 
 const styles = StyleSheet.create({
   heading: {
-    color: "#63BEE1",
+    color: '#63BEE1',
     marginBottom: 20,
   },
 });

@@ -4,7 +4,7 @@ import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 import FastImage from "react-native-fast-image";
 
-const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
+const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
   const { image } = props;
   const imagePercentage = sizeSelector({
     xs: 0.8,
@@ -19,15 +19,15 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <View style={{ justifyContent: "center", flex: 1 }}>
+    <View style={{ justifyContent: "center", flex: 1,}}>
       <FastImage
         source={{
           uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
         }}
         resizeMode={FastImage.resizeMode.contain}
         style={[
-          styles.image,
-          { width: finalImageWidth, height: finalImageWidth },
+          styles.image, {backgroundColor: data.themeColor,},
+          { width: finalImageWidth, height: finalImageWidth,},
         ]}
       />
     </View>

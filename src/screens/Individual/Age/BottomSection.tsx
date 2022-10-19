@@ -17,9 +17,29 @@ const BottomSection = withSizeInfo(({ sizeSelector, data }) => {
     <Grid>
       <Section>
         <ImageKey data={data} />
-        <Block smHidden mdHidden>
-          <AgeExplanationText themeColor={data.themeColor} />
-        </Block>
+        <Section>
+         <Block
+            xsSize="100%"
+            smSize="100%"
+            mdSize="100%"
+            lgSize="100%"
+            xlSize="100%"
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              alignContent: "center",
+              paddingBottom: 20,
+            }}
+            xsVisible
+            smVisible
+            mdHidden
+            xlHidden
+            xxlHidden
+          >
+            <AgeExplanationText themeColor={data.themeColor} />
+          </Block>
+        </Section>
         <Block xsSize="100%" style={rowStyles}>
           <PageText style={styles.footer}>
             Epigenetic variants are chemical changes to your DNA, which alter

@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "400",
     padding: 10,
+    marginTop: 10,
   },
 });
 

@@ -56,6 +56,7 @@ const Age = (props) => {
           xsHidden
           smHidden
           mdVisible
+          xlHidden
           xxlHidden
         >
           <AgeExplanationText themeColor={data.themeColor} />
@@ -99,6 +100,7 @@ const Age = (props) => {
             xsHidden
             smHidden
             mdHidden
+            xlVisible
             xxlVisible
           >
             <AgeExplanationText themeColor={data.themeColor} />

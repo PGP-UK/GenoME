@@ -4,6 +4,7 @@ import PageLayout from '../../../components/PageLayout';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import TopText from './TopText';
 import FastImage from 'react-native-fast-image';
+import GlobeImage from './GlobeImage';
 
 const LottieDir = './../../../../assets/images/lottie_animations';
 const AllAmbassadorsData = {
@@ -39,13 +40,9 @@ const Ancestry = (props) => {
             <TopText data={data} image={image} />
           </Section>
           <Section>
-            <Block hidden xlVisible>
+            <Block>
               <View>
-                <FastImage
-                  source={{ uri: ancestryWorldUrl }}
-                  resizeMode={FastImage.resizeMode.contain}
-                  style={{ height: 500, width: 1340 }}
-                />
+                <GlobeImage />
               </View>
             </Block>
           </Section>

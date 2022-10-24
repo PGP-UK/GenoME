@@ -7,16 +7,12 @@ import CenterImage from './CenterImage';
 import { PageHeader } from '../../../components/Text';
 import { PageText } from '../../../components/Text';
 
-const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
-  const percent_boxStyles = sizeSelector({
-    xs: styles.percent_boxxs,
-    md: styles.percent_boxmd,
-    lg: styles.percent_boxlg,
-  });
+const TopText = (props) => {
+  const { data, image } = props;
 
   return (
-    <Section>
-      <Block xsSize="100%" mdSize="35%">
+    <>
+      <Block>
         <PageHeader style={styles.header}>Ancestry</PageHeader>
         <PageText category="p1" style={styles.main_text}>
           Different populations have their own distinctive pattern of genetic
@@ -24,17 +20,14 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
           individuals from different populations, my ancestry can be predicted.
         </PageText>
       </Block>
-
-      <Block xsSize="100%" mdSize="35%">
+      <Block xsSize="100%" mdSize="100%">
         <CenterImage image={image} />
       </Block>
-
-      <Block xsSize="100%" mdSize="30%" style={percent_boxStyles}>
+      <Block xsSize="100%" mdSize="100%" style={styles.percent_box}>
         <Text
           style={{
             fontSize: 45,
             color: data.themeColor,
-            textAlign: 'right',
           }}>
           {data.most_percent}
         </Text>
@@ -42,15 +35,14 @@ const TopText = withSizeInfo(({ sizeSelector, data, image }) => {
           style={{
             fontSize: 45,
             color: data.themeColor,
-            textAlign: 'right',
             marginTop: 15,
           }}>
           {data.other_percent_1}
         </Text>
       </Block>
-    </Section>
+    </>
   );
-});
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -60,22 +52,14 @@ const styles = StyleSheet.create({
   main_text: {
     marginBottom: 20,
   },
-  percent_boxxs: {
+  percent_box: {
     alignItems: 'center',
-    marginBottom: 20,
-    marginTop: 50,
   },
   percent_boxmd: {
-    alignItems: 'flex-end',
-    marginBottom: 20,
-    marginTop: 100,
-    paddingRight: 50,
+    alignItems: 'center',
   },
   percent_boxlg: {
-    alignItems: 'flex-end',
-    marginBottom: 20,
-    marginTop: 100,
-    paddingRight: 50,
+    alignItems: 'center',
   },
   percent_text: {
     fontSize: 25,

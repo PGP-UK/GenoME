@@ -1,11 +1,11 @@
-import React from "react";
-import { View } from "react-native";
-import PageLayout from "../../../components/PageLayout";
-import { Grid, Section, Block } from "react-native-responsive-layout";
-import TopText from "./TopText";
-import FastImage from "react-native-fast-image";
+import React from 'react';
+import { View } from 'react-native';
+import PageLayout from '../../../components/PageLayout';
+import { Grid, Section, Block } from 'react-native-responsive-layout';
+import TopText from './TopText';
+import FastImage from 'react-native-fast-image';
 
-const LottieDir = "./../../../../assets/images/lottie_animations";
+const LottieDir = './../../../../assets/images/lottie_animations';
 const AllAmbassadorsData = {
   stephan: {
     data: require(`../../../../assets/data/ancestry/stephan.json`),
@@ -30,16 +30,15 @@ const Ancestry = (props) => {
   const { name } = route.params;
   const { data, image } = AllAmbassadorsData[name];
   const ancestryWorldUrl =
-    "https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/ancestry_screen_pie/ancestry_world.jpeg";
+    'https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/ancestry_screen_pie/ancestry_world.jpeg';
   return (
     <>
       <PageLayout>
         <Grid>
-          <Section mdSize="50%">
+          <Section>
             <TopText data={data} image={image} />
           </Section>
-
-          <Section mdSize="50%">
+          <Section>
             <Block hidden xlVisible>
               <View>
                 <FastImage

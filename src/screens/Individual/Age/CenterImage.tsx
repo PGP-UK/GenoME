@@ -16,6 +16,12 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
+  const imagePadding = sizeSelector({
+    xs: '10%',
+    md: '22%',
+    lg: '22%',
+    xxl: '10%',
+  });
 
   return (
     <>
@@ -35,7 +41,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
             {
               width: finalImageWidth,
               height: finalImageWidth,
-              paddingLeft: '22%',
+              paddingLeft: imagePadding,
             },
           ]}
           onAnimationFinish={() => {
@@ -56,6 +62,22 @@ const CenterRow = ({ image }) => (
 const styles = StyleSheet.create({
   image: {
     alignSelf: 'center',
+  },
+  center_animation_xs: {
+    alignContent: 'center',
+    paddingLeft: '23%',
+  },
+  center_animation_md: {
+    alignContent: 'center',
+    paddingLeft: '23%',
+  },
+  center_animation_lg: {
+    alignContent: 'center',
+    paddingLeft: '23%',
+  },
+  center_animation_xxl: {
+    alignContent: 'center',
+    paddingLeft: '8%',
   },
 });
 

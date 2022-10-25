@@ -16,7 +16,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 1);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
-  const center_animation_style = sizeSelector({
+  const centerAnimationStyle = sizeSelector({
     xs: styles.center_animation_xs,
     md: styles.center_animation_md,
     lg: styles.center_animation_lg,
@@ -26,7 +26,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   return (
     <>
       <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
-      <View style={center_animation_style}>
+      <View style={centerAnimationStyle}>
         <Lottie
           ref={lottieRef}
           source={image}

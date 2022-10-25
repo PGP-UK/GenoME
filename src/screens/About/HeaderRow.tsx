@@ -1,9 +1,9 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { Layout, Button } from "@ui-kitten/components";
-import { Grid, Section, Block } from "react-native-responsive-layout";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { PageHeader } from "../../components/Text";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Layout, Button } from '@ui-kitten/components';
+import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { PageHeader } from '../../components/Text';
 
 const BackBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
@@ -11,8 +11,7 @@ const BackBtn = ({ layoutStyle, navigation }) => (
       size="small"
       status="primary"
       style={styles.headerBtn}
-      onPress={() => navigation.navigate("Home")}
-    >
+      onPress={() => navigation.navigate('Home')}>
       BACK
     </Button>
   </Layout>
@@ -47,21 +46,21 @@ const HeaderText = () => (
 const styles = StyleSheet.create({
   header: {
     marginBottom: 25,
-    alignItems: "center",
+    alignItems: 'center',
   },
   headerBtn: {
-    backgroundColor: "#3BAEDA",
+    backgroundColor: '#3BAEDA',
     borderWidth: 0,
-    color: "#fff",
+    color: '#fff',
   },
   headerBtnLayoutXs: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginTop: 10,
   },
   headerBtnLayoutMd: {
-    flexDirection: "row-reverse",
-    alignItems: "center",
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
     marginBottom: 10,
   },
 });

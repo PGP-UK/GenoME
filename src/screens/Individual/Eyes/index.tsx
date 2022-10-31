@@ -102,7 +102,8 @@ const Eyes = (props: any) => {
             </PageHeader>
           </Block>
         </Section>
-        <Section
+
+        {/* <Section
           stretch
           style={{
             flex: 1,
@@ -114,7 +115,8 @@ const Eyes = (props: any) => {
           }}
         >
           <EyeVideos image={eyeData.eye_video} />
-        </Section>
+        </Section> */}
+
         <Section
           stretch
           style={{

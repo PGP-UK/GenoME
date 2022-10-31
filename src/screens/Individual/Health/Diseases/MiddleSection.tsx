@@ -153,6 +153,7 @@ const MiddleSection = (props) => {
           mdVisible
           xlHidden
         >
+          
           <VariantRisk riskData={data.risk} />
         </Block>
 
@@ -164,6 +165,7 @@ const MiddleSection = (props) => {
           xlSize="50%"
           style={{ paddingBottom: 20 }}
         >
+          
           <AmbassadorImage image={image} />
         </Block>
 
@@ -176,6 +178,7 @@ const MiddleSection = (props) => {
           xlSize="50%"
           mdHidden
         >
+         
           <VariantRisk riskData={data.risk} />
         </Block>
 

@@ -79,11 +79,11 @@ const EyeImages = ({ image, themeColor, header }:any) => (
   </Block>
 );
 
-const EyeVideos = ({ image } :any) => (
-  <Block xsSize="100%" smSize="100%" mdSize="33%">
-    <EyeVideo source={image} resizeMode="contain" />
-  </Block>
-);
+// const EyeVideos = ({ image } :any) => (
+//   <Block xsSize="100%" smSize="100%" mdSize="75%">
+//     <EyeVideo source={image} resizeMode="contain" />
+//   </Block>
+// );
 
 
 const Eyes = (props: any) => {
@@ -95,13 +95,114 @@ const Eyes = (props: any) => {
   return (
     <>
       <PageLayout>
-        <Section>
+        <Section size="20%">
           <Block>
             <PageHeader category="h1" style={styles.header}>
-              Eyes
+              Eye Colour
             </PageHeader>
           </Block>
         </Section>
+
+
+
+        <Section 
+          size="80%"
+        >
+            <Block
+              size="50%"
+              hidden
+              xlVisible
+              stretch
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                // alignItems: "center",
+                // alignContent: "center",
+              }}
+            >
+              <EyeImages 
+                style={{
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  alignContent: "center",
+                }}
+                image={eyeData.eye_image}
+                themeColor={themeColor}
+                // header={eyeData.colorText}
+              />
+            </Block>
+
+
+            <Block
+              size="50%"
+              hidden
+              xlVisible            
+            >
+              <Block>
+
+              </Block>
+              <Block>
+                <PageText category="p1" style={styles.main_text}>
+                  Eye colour is determined by multiple genetic variants, some of
+                  which have been used to predict my eye colour. Below you can see
+                  my actual eyes and the predicted eye colour - how well do you
+                  think the prediction has worked?
+                </PageText>
+                <EyeImages
+                  style={{
+                    // flexDirection: "row",
+                    // justifyContent: "center",
+                    // alignItems: "center",
+                    // alignContent: "center",
+                  }}
+                  themeColor={themeColor}
+                  header={eyeData.colorText}
+                />
+              </Block>  
+              
+              <Block>
+                <EyeImages
+                  style={{
+                    // flexDirection: "row",
+                    // justifyContent: "center",
+                    // alignItems: "center",
+                    // alignContent: "center",
+                  }}
+                  themeColor={themeColor}
+                  header={eyeData.colorText}
+                />
+                
+              </Block>
+
+              
+            </Block>
+        </Section>
+
+
+
+        {/* <Section>
+
+        </Section>
+
+
+
+        <Section>
+
+        </Section> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* <Section
           stretch
@@ -117,7 +218,7 @@ const Eyes = (props: any) => {
           <EyeVideos image={eyeData.eye_video} />
         </Section> */}
 
-        <Section
+        {/* <Section
           stretch
           style={{
             flex: 1,
@@ -128,16 +229,66 @@ const Eyes = (props: any) => {
             flexWrap: "wrap",
           }}
         >
-          <Block>
+          <Block
+            stretch
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              alignContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            <EyeImages
+            image={eyeData.eye_image}
+            themeColor={themeColor}
+            header={eyeData.colorText}
+          />
+          </Block> */}
+          
+
+
+          {/* Hidden in small screens */}
+          {/* <Block
+            xlsize="50%"
+            xlSize="50%"
+            hidden
+            xlVisible
+            style={{
+             
+              alignItems: "center",
+              alignContent: "center",
+              justifyContent: "flex-end"
+            }}
+          >
             <PageText category="p1" style={styles.main_text}>
               Eye colour is determined by multiple genetic variants, some of
               which have been used to predict my eye colour. Below you can see
               my actual eyes and the predicted eye colour - how well do you
               think the prediction has worked?
             </PageText>
-          </Block>
-        </Section>
-        <Section
+          </Block> */}
+        {/* Hidden in small screens */}
+
+
+        {/* Hidden in large screens */}
+          {/* <Block
+           xlHidden>
+            <PageText category="p1" style={styles.main_text}>
+              Eye colour is determined by multiple genetic variants, some of
+              which have been used to predict my eye colour. Below you can see
+              my actual eyes and the predicted eye colour - how well do you
+              think the prediction has worked?
+            </PageText>
+          </Block> */}
+        {/* Hidden in large screens */}  
+          
+
+
+
+        {/* </Section> */}
+        {/* <Section
           stretch
           style={{
             flex: 1,
@@ -153,7 +304,7 @@ const Eyes = (props: any) => {
             themeColor={themeColor}
             header={eyeData.colorText}
           />
-        </Section>
+        </Section> */}
       </PageLayout>
     </>
   );
@@ -185,14 +336,14 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   eye_image: {
-    height: 400,
-    width: 400,
+    height: 700,
+    width: 700,
     justifyContent: "center",
     alignItems: "center",
   },
   eye_video: {
-    height: 400,
-    width: 400,
+    height: 700,
+    width: 700,
     justifyContent: "center",
     alignItems: "center",
   },

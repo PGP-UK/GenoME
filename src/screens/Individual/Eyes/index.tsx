@@ -188,8 +188,46 @@ const Eyes = (props: any) => {
             <Block
             xlHidden
             >
-              <PageText>h</PageText>
+              <PageText 
+                category="p1"
+                style={{
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  alignItems: "flex-end",
+                  alignContent: "flex-end",
+                  marginTop: 25
+                }}
+                >
+                  Eye colour is determined by multiple genetic variants, some of
+                  which have been used to predict my eye colour. Below you can see
+                  my actual eyes and the predicted eye colour - how well do you
+                  think the prediction has worked?
+                </PageText>
             </Block>  
+
+            <Block
+            xlHidden
+            stretch
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+              }}
+            >
+              <EyeImages
+                image={eyeData.eye_image}
+                themeColor={themeColor}
+                // header={eyeData.colorText}
+              />
+            </Block> 
+            <Block
+            xlHidden
+            >
+            <PageHeader style={[styles.header2, { color: themeColor, marginTop:30 }]}>
+                  {eyeData.colorText}
+                </PageHeader>
+            </Block>
         </Section>
 
 

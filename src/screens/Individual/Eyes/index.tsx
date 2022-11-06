@@ -86,6 +86,8 @@ const EyeImages = ({ image, themeColor, header }:any) => (
 // );
 
 
+
+
 const Eyes = (props: any) => {
   const { route } = props;
   const { name } = route.params;
@@ -116,17 +118,17 @@ const Eyes = (props: any) => {
               style={{
                 flexDirection: "row",
                 justifyContent: "center",
-                // alignItems: "center",
-                // alignContent: "center",
+                alignItems: "center",
+                alignContent: "center",
               }}
             >
               <EyeImages 
-                style={{
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  alignContent: "center",
-                }}
+                // style={{
+                //   flexDirection: "column",
+                //   justifyContent: "center",
+                //   alignItems: "center",
+                //   alignContent: "center",
+                // }}
                 image={eyeData.eye_image}
                 themeColor={themeColor}
                 // header={eyeData.colorText}
@@ -142,37 +144,44 @@ const Eyes = (props: any) => {
               <Block>
 
               </Block>
-              <Block>
-                <PageText category="p1" style={styles.main_text}>
+              
+              <Block
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "flex-end",
+                  // alignContent: "center",
+                }}
+              >
+                <PageText 
+                category="p1"
+                style={{
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  alignItems: "flex-end",
+                  alignContent: "flex-end",
+                }}
+                >
                   Eye colour is determined by multiple genetic variants, some of
                   which have been used to predict my eye colour. Below you can see
                   my actual eyes and the predicted eye colour - how well do you
                   think the prediction has worked?
                 </PageText>
-                <EyeImages
-                  style={{
-                    // flexDirection: "row",
-                    // justifyContent: "center",
-                    // alignItems: "center",
-                    // alignContent: "center",
-                  }}
-                  themeColor={themeColor}
-                  header={eyeData.colorText}
-                />
+   
               </Block>  
-              
+
+
               <Block>
-                <EyeImages
+                 <EyeImages
                   style={{
-                    // flexDirection: "row",
-                    // justifyContent: "center",
-                    // alignItems: "center",
-                    // alignContent: "center",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignContent: "center",
                   }}
                   themeColor={themeColor}
                   header={eyeData.colorText}
                 />
-                
               </Block>
 
               

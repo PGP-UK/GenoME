@@ -21,12 +21,13 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
     xs: styles.center_animation_xs,
     lg: styles.center_animation_lg,
     xl: styles.center_animation_xl,
+    xxl: styles.center_animation_xxl,
   });
 
   return (
     <>
       {/* Hidden in large screens */}
-      <Block xlHidden>
+      <Block lgHidden style={{ marginTop: -75 }}>
         <View style={center_animation_style}>
           <Lottie
             ref={lottieRef}
@@ -35,8 +36,8 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
             loop={false}
             progress={1}
             style={{
-              width: finalImageWidth,
-              height: finalImageWidth,
+              width: finalImageWidth + 100,
+              height: finalImageWidth + 100,
               alignSelf: 'center',
               justifyContent: 'center',
             }}
@@ -46,7 +47,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
           />
         </View>
       </Block>
-      <Block xlHidden style={styles.percent_box}>
+      <Block lgHidden style={styles.percent_box}>
         <PageText
           style={{
             fontSize: 45,
@@ -59,13 +60,14 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
             fontSize: 45,
             color: data.themeColor,
             marginTop: 15,
+            marginBottom: 75,
           }}>
           {data.other_percent_1}
         </PageText>
       </Block>
 
       {/* Visible in large screens */}
-      <Block hidden xlVisible xlSize="60%" style={{ marginTop: -150 }}>
+      <Block hidden lgVisible lgSize="50%" style={{ marginTop: -75 }}>
         <View style={center_animation_style}>
           <Lottie
             ref={lottieRef}
@@ -85,7 +87,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
           />
         </View>
       </Block>
-      <Block hidden xlVisible style={styles.percent_box} xlSize="40%">
+      <Block hidden lgVisible style={styles.percent_box} lgSize="50%">
         <PageText
           style={{
             fontSize: 45,
@@ -98,6 +100,7 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
             fontSize: 45,
             color: data.themeColor,
             marginTop: 15,
+            marginBottom: 75,
           }}>
           {data.other_percent_1}
         </PageText>
@@ -112,13 +115,16 @@ const CenterSection = ({ image, data }) => {
 
 const styles = StyleSheet.create({
   center_animation_xs: {
-    paddingLeft: '24%',
+    paddingLeft: '30%',
   },
   center_animation_lg: {
-    paddingLeft: '11%',
+    paddingLeft: '45%',
   },
   center_animation_xl: {
-    paddingLeft: '40%',
+    paddingLeft: '50%',
+  },
+  center_animation_xxl: {
+    paddingLeft: '10%',
   },
   percent_box: {
     alignItems: 'center',

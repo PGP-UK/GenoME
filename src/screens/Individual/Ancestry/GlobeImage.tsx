@@ -11,13 +11,18 @@ const GlobeImage = withSizeInfo(({ sizeSelector }) => {
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 1);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
+  const center_animation_style = sizeSelector({
+    lg: styles.center_animation_lg,
+    xl: styles.center_animation_xl,
+    xxl: styles.center_animation_xxl,
+  });
 
   const ancestryWorldUrl =
     'https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/ancestry_screen_pie/ancestry_world.jpeg';
 
   return (
     <>
-      <Block hidden xlVisible>
+      <Block hidden lgVisible style={center_animation_style}>
         <FastImage
           source={{ uri: ancestryWorldUrl }}
           resizeMode={FastImage.resizeMode.contain}
@@ -26,12 +31,22 @@ const GlobeImage = withSizeInfo(({ sizeSelector }) => {
             width: finalImageWidth,
             alignSelf: 'center',
             position: 'absolute',
-            marginTop: -200,
           }}
         />
       </Block>
     </>
   );
+});
+
+const styles = StyleSheet.create({
+  center_animation_lg: {
+    paddingLeft: '45%',
+    marginTop: -100,
+  },
+  center_animation_xl: {
+    paddingLeft: '45%',
+    marginTop: -190,
+  },
 });
 
 export default GlobeImage;

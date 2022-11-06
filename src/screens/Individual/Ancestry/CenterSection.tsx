@@ -19,32 +19,73 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
   const center_animation_style = sizeSelector({
     xs: styles.center_animation_xs,
-    md: styles.center_animation_md,
     lg: styles.center_animation_lg,
-    xxl: styles.center_animation_xxl,
+    xl: styles.center_animation_xl,
   });
 
   return (
     <>
-      <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
-      <View style={center_animation_style}>
-        <Lottie
-          ref={lottieRef}
-          source={image}
-          autoPlay
-          loop={false}
-          progress={1}
+      {/* Hidden in large screens */}
+      <Block xlHidden>
+        <View style={center_animation_style}>
+          <Lottie
+            ref={lottieRef}
+            source={image}
+            autoPlay
+            loop={false}
+            progress={1}
+            style={{
+              width: finalImageWidth,
+              height: finalImageWidth,
+              alignSelf: 'center',
+              justifyContent: 'center',
+            }}
+            onAnimationFinish={() => {
+              setDisplayReset(true);
+            }}
+          />
+        </View>
+      </Block>
+      <Block xlHidden style={styles.percent_box}>
+        <PageText
           style={{
-            width: finalImageWidth,
-            height: finalImageWidth - 50,
-            alignSelf: 'center',
-          }}
-          onAnimationFinish={() => {
-            setDisplayReset(true);
-          }}
-        />
-      </View>
-      <Block xsSize="100%" mdSize="100%" style={styles.percent_box}>
+            fontSize: 45,
+            color: data.themeColor,
+          }}>
+          {data.most_percent}
+        </PageText>
+        <PageText
+          style={{
+            fontSize: 45,
+            color: data.themeColor,
+            marginTop: 15,
+          }}>
+          {data.other_percent_1}
+        </PageText>
+      </Block>
+
+      {/* Visible in large screens */}
+      <Block hidden xlVisible xlSize="60%" style={{ marginTop: -150 }}>
+        <View style={center_animation_style}>
+          <Lottie
+            ref={lottieRef}
+            source={image}
+            autoPlay
+            loop={false}
+            progress={1}
+            style={{
+              width: finalImageWidth,
+              height: finalImageWidth,
+              alignSelf: 'center',
+              justifyContent: 'center',
+            }}
+            onAnimationFinish={() => {
+              setDisplayReset(true);
+            }}
+          />
+        </View>
+      </Block>
+      <Block hidden xlVisible style={styles.percent_box} xlSize="40%">
         <PageText
           style={{
             fontSize: 45,
@@ -71,23 +112,18 @@ const CenterSection = ({ image, data }) => {
 
 const styles = StyleSheet.create({
   center_animation_xs: {
-    alignContent: 'center',
-    paddingLeft: '23%',
-  },
-  center_animation_md: {
-    alignContent: 'center',
-    paddingLeft: '23%',
+    paddingLeft: '24%',
   },
   center_animation_lg: {
-    alignContent: 'center',
-    paddingLeft: '23%',
+    paddingLeft: '11%',
   },
-  center_animation_xxl: {
-    alignContent: 'center',
-    paddingLeft: '8%',
+  center_animation_xl: {
+    paddingLeft: '40%',
   },
   percent_box: {
     alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
 

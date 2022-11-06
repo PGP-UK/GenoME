@@ -36,17 +36,13 @@ const Ancestry = (props) => {
       <PageLayout>
         <Grid>
           <Section>
-            <Block>
-              <TopText />
-            </Block>
+            <TopText />
           </Section>
-          <Block xsSize="100%" mdSize="100%">
-            <CenterSection data={data} image={image} />
-          </Block>
           <Section>
-            <Block>
-              <GlobeImage />
-            </Block>
+            <CenterSection data={data} image={image} />
+          </Section>
+          <Section>
+            <GlobeImage />
           </Section>
         </Grid>
       </PageLayout>

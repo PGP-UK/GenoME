@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     paddingLeft: '8%',
   },
+  percent_box: {
+    alignItems: 'center',
+  },
 });
 
 export default GlobeImage;

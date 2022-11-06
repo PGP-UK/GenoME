@@ -4,13 +4,14 @@ import { View } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import { PageText } from '../../../components/Text';
 import Lottie from 'lottie-react-native';
 import LottieReset from '../../../components/LottieReset';
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const { data, image } = props;
   const lottieRef = useRef();
   const [displayReset, setDisplayReset] = useState(false);
-  const { image } = props;
   const imagePercentage = sizeSelector({ xs: 1, xxl: 0.4 });
   const imageWidth = Math.round(useSafeAreaFrame().width * imagePercentage);
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 1);
@@ -43,12 +44,29 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
           }}
         />
       </View>
+      <Block xsSize="100%" mdSize="100%" style={styles.percent_box}>
+        <PageText
+          style={{
+            fontSize: 45,
+            color: data.themeColor,
+          }}>
+          {data.most_percent}
+        </PageText>
+        <PageText
+          style={{
+            fontSize: 45,
+            color: data.themeColor,
+            marginTop: 15,
+          }}>
+          {data.other_percent_1}
+        </PageText>
+      </Block>
     </>
   );
 });
 
-const CenterImage = ({ image }) => {
-  return <Iconimage image={image} />;
+const CenterSection = ({ image, data }) => {
+  return <Iconimage data={data} image={image} />;
 };
 
 const styles = StyleSheet.create({
@@ -68,6 +86,9 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     paddingLeft: '8%',
   },
+  percent_box: {
+    alignItems: 'center',
+  },
 });
 
-export default CenterImage;
+export default CenterSection;

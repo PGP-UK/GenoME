@@ -14,16 +14,7 @@ const About = (props: any) => {
   return (
     <>
       <PageLayout>
-        <Section
-          stretch
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignContent: 'center',
-            flexWrap: 'wrap',
-          }}>
+        <Section>
           <Block>
             <PageHeader style={styles.headerRow}>
               About PGP-UK and the global network of Personal Genome Projects
@@ -69,31 +60,38 @@ const About = (props: any) => {
               Director: Professor Stephan Beck {'\n'}
               Location: University College London
             </PageText>
-            <SocialMedia
-              navigation={navigation}
-              SocialMediaStyle={styles.socialMedia}
-            />
           </Block>
         </Section>
 
         <Section stretch>
-          <Block>
+          <Block style={styles.backgroundImage}>
             <ImageBackground
               source={{
                 uri: 'https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/about_us/more-information_globe.png',
               }}></ImageBackground>
           </Block>
         </Section>
-        <PageText style={styles.bottom_red_text}>
-          DISCLAIMER: The generation of genomic data is not an error-free
-          process and our analysis system is still under development. becasue
-          the body of knowledge of genetic and epigenetic variants has many
-          uncertainties, we cannot guarantee that our analyses are either
-          accurate or complete.
-        </PageText>
-        <PageText style={styles.bottom_text}>
-          This app was designed and developed by the PGP-UK/GenoME team.
-        </PageText>
+        <Section style={styles.bottomSection}>
+          <Block>
+            <PageText style={styles.bottom_red_text}>
+              DISCLAIMER: The generation of genomic data is not an error-free
+              process and our analysis system is still under development. becasue
+              the body of knowledge of genetic and epigenetic variants has many
+              uncertainties, we cannot guarantee that our analyses are either
+              accurate or complete.
+            </PageText>
+            <PageText style={styles.bottom_text}>
+              This app was designed and developed by the PGP-UK/GenoME team.
+            </PageText>
+          </Block>
+          <Block>
+          <SocialMedia
+              navigation={navigation}
+              SocialMediaStyle={styles.socialMedia}
+            />
+          </Block>
+        </Section>
+        
       </PageLayout>
     </>
   );
@@ -126,6 +124,13 @@ const styles = StyleSheet.create({
     fontSize: 10,
     textAlign: 'auto',
     // position: 'relative',
+  },
+  bottomSection: {
+    paddingTop: 10,
+  },
+  backgroundImage:{
+    paddingTop: 20,
+    paddingBottom: 25,
   },
   bottomImage: {
     marginTop: 20,

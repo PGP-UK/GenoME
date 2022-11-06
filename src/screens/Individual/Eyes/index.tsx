@@ -37,7 +37,7 @@ const AllAmbassadors = {
 
 const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
   const { image } = props;
-  const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
+  const numImagesPerRow = sizeSelector({ xs: 1, md: 2 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
   const imageWidth =
@@ -49,26 +49,33 @@ const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
         uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
       }}
       resizeMode={FastImage.resizeMode.contain}
-      style={{ width: imageWidth, height: imageWidth, alignSelf: "center" }}
+      style={{ 
+        width: imageWidth, 
+        height: imageWidth, 
+        alignSelf: "center",
+        alignItems: "center",
+        marginTop: 100
+        
+      }}
     />
   );
 });
 
-const EyeVideo = withSizeInfo(({ sizeSelector, ...props }: any) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
-  const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
+// const EyeVideo = withSizeInfo(({ sizeSelector, ...props }: any) => {
+//   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
+//   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
-  const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) -
-    spacingBetweenImages;
-  return (
-    <Image
-      {...props}
-      style={{ width: imageWidth, height: imageWidth }}
-      resizeMode="contain"
-    />
-  );
-});
+//   const imageWidth =
+//     Math.round(useSafeAreaFrame().width / numImagesPerRow) -
+//     spacingBetweenImages;
+//   return (
+//     <Image
+//       {...props}
+//       style={{ width: imageWidth, height: imageWidth }}
+//       resizeMode="contain"
+//     />
+//   );
+// });
 
 const EyeImages = ({ image, themeColor, header }:any) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
@@ -89,7 +96,7 @@ const EyeImages = ({ image, themeColor, header }:any) => (
 
 
 const Eyes = (props: any) => {
-  const { route } = props;
+  const { route} = props;
   const { name } = route.params;
   const eyeData = AllAmbassadors[name];
   const themeColor = eyeData.themeColor;
@@ -122,18 +129,15 @@ const Eyes = (props: any) => {
                 alignContent: "center",
               }}
             >
-              <EyeImages 
-                // style={{
-                //   flexDirection: "column",
-                //   justifyContent: "center",
-                //   alignItems: "center",
-                //   alignContent: "center",
-                // }}
+              <EyeImages
                 image={eyeData.eye_image}
                 themeColor={themeColor}
                 // header={eyeData.colorText}
               />
             </Block>
+
+             
+
 
 
             <Block
@@ -141,9 +145,6 @@ const Eyes = (props: any) => {
               hidden
               xlVisible            
             >
-              <Block>
-
-              </Block>
               
               <Block
                 style={{
@@ -160,6 +161,7 @@ const Eyes = (props: any) => {
                   // justifyContent: "center",
                   alignItems: "flex-end",
                   alignContent: "flex-end",
+                  marginTop: 275
                 }}
                 >
                   Eye colour is determined by multiple genetic variants, some of
@@ -172,20 +174,22 @@ const Eyes = (props: any) => {
 
 
               <Block>
-                 <EyeImages
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    alignContent: "center",
-                  }}
-                  themeColor={themeColor}
-                  header={eyeData.colorText}
-                />
+                <PageHeader style={[styles.header2, { color: themeColor, marginTop:80 }]}>
+                  {eyeData.colorText}
+                </PageHeader>
               </Block>
 
               
             </Block>
+
+
+
+
+            <Block
+            xlHidden
+            >
+              <PageText>h</PageText>
+            </Block>  
         </Section>
 
 

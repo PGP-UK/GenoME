@@ -37,7 +37,7 @@ const AllAmbassadors = {
 
 const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
   const { image } = props;
-  const numImagesPerRow = sizeSelector({ xs: 1, md: 2 });
+  const numImagesPerRow = sizeSelector({ xs: 1, md: 1.3, xl: 2 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
   const imageWidth =

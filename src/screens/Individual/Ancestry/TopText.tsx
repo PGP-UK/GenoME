@@ -24,48 +24,6 @@ const styles = StyleSheet.create({
   main_text: {
     marginBottom: 20,
   },
-  percent_box: {
-    alignItems: 'center',
-  },
-  percent_boxmd: {
-    alignItems: 'center',
-  },
-  percent_boxlg: {
-    alignItems: 'center',
-  },
-  percent_text: {
-    fontSize: 25,
-  },
-  rightTextxs: {
-    fontSize: 35,
-    textAlign: 'center',
-  },
-  rightTextmd: {
-    fontSize: 35,
-    textAlign: 'center',
-  },
-  rightTextlg: {
-    fontSize: 35,
-    textAlign: 'right',
-  },
-  // // rightTextlowerxs: {
-  // //   fontSize: 45,
-  // //   color: data.themeColor,
-  // //   textAlign: 'right',
-  // //   marginTop: 15,
-  // // },
-  // // rightTextlowermd: {
-  // //   fontSize: 45,
-  // //   color: data.themeColor,
-  // //   textAlign: 'right',
-  // //   marginTop: 15,
-  // // },
-  // // rightTextlowerlg: {
-  // //   fontSize: 45,
-  // //   color: data.themeColor,
-  // //   textAlign: 'right',
-  // //   marginTop: 15,
-  // },
 });
 
 export default TopText;

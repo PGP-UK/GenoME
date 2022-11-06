@@ -1,9 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
 import PageLayout from '../../../components/PageLayout';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import TopText from './TopText';
-import FastImage from 'react-native-fast-image';
+import CenterSection from './CenterSection';
 import GlobeImage from './GlobeImage';
 
 const LottieDir = './../../../../assets/images/lottie_animations';
@@ -37,13 +36,16 @@ const Ancestry = (props) => {
       <PageLayout>
         <Grid>
           <Section>
-            <TopText data={data} image={image} />
+            <Block>
+              <TopText />
+            </Block>
           </Section>
+          <Block xsSize="100%" mdSize="100%">
+            <CenterSection data={data} image={image} />
+          </Block>
           <Section>
             <Block>
-              <View>
-                <GlobeImage />
-              </View>
+              <GlobeImage />
             </Block>
           </Section>
         </Grid>

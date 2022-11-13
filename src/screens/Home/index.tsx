@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text} from "react-native";
 
 import { Section } from "react-native-responsive-layout";
 import PageLayout from "../../components/PageLayout";
@@ -16,9 +16,9 @@ const Home = (props) => {
         <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
 
         <PageText style={styles.main_text}>
-          The Personal Genome Project UK (PGP-UK) is a community of active
-          participants who share their DNA sequence, medical records and trait
-          data for reasearch under open access.
+          The Personal Genome Project UK (PGP-UK) is a community of <Text style={styles.pop_up_links}>active participants </Text> 
+          who share their DNA sequence, medical records and trait
+          data for reasearch under <Text style={styles.pop_up_links}>open access</Text>.
         </PageText>
 
         <PageText style={styles.main_text}>
@@ -71,6 +71,9 @@ const styles = StyleSheet.create({
   bottom_footer_text: {
     color: "#666E7A",
     marginBottom: 25,
+  },
+  pop_up_links: {
+    color: "#63BEE1",
   },
 });
 

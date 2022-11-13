@@ -11,7 +11,7 @@ const ImageBackground = (props) => {
       <FastImage
         {...rest}
         style={[
-          StyleSheet.absoluteFill,
+          
           {
             width: useSafeAreaFrame().width,
             height: useSafeAreaFrame().width * 0.3,

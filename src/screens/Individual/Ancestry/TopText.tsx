@@ -9,10 +9,10 @@ const TopText = (props) => {
   const { navigation } = props;
   return (
     <>
-      <Block xsSize="70%" mdSize="70%">
+      <Block xsSize="80%" mdSize="70%">
         <PageHeader style={styles.header}>Ancestry</PageHeader>
       </Block>
-      <Block xsSize="30%" mdSize="30%">
+      <Block xsSize="20%" mdSize="30%">
         <BackButton navigation={navigation} />
       </Block>
       <Block>

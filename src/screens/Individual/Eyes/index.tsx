@@ -102,12 +102,12 @@ const Eyes = (props: any) => {
     <>
       <PageLayout>
         <Section size="20%">
-          <Block xsSize="70%" mdSize="70%">
+          <Block xsSize="80%" mdSize="70%">
             <PageHeader category="h1" style={styles.header}>
               Eye Colour
             </PageHeader>
           </Block>
-          <Block xsSize="30%" mdSize="30%">
+          <Block xsSize="20%" mdSize="30%">
             <BackButton navigation={navigation} />
           </Block>
         </Section>

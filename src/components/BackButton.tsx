@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   headerBtnLayoutXs: {
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
   },

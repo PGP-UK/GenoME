@@ -50,14 +50,14 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
 
 const styles = StyleSheet.create({
   headerxs: {
-    marginTop: 30,
+    marginTop: 10,
     marginBottom: 20,
     textAlign: 'center',
     fontWeight: '400',
     color: 'white',
   },
   headerlg: {
-    marginTop: 60,
+    marginTop: 0,
     marginBottom: 20,
     marginLeft: 30,
     fontSize: 75,

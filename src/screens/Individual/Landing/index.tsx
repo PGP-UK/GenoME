@@ -17,6 +17,10 @@ const ThemeColors = {
 
 const Icons = [
   {
+    pageName: "My Story",
+    image: "globe-europe-light.png",
+  },
+  {
     pageName: "Ancestry",
     image: "globe-europe-light.png",
   },
@@ -44,7 +48,7 @@ const Icons = [
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { icon } = props;
-  const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 6 });
+  const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 5 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
   return (
@@ -63,7 +67,7 @@ const LandingIcon = ({ IconData, name, navigation }) => {
     <Block
       xsSize="50%"
       smSize="33%"
-      mdSize="16.6%"
+      mdSize="20%"
       style={styles.landingIconWrapper}
     >
       <Pressable

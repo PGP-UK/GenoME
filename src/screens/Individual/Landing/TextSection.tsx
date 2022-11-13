@@ -22,7 +22,7 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
 
   return (
     <Section>
-      <Block>
+      <Block style={{ flexDirection: 'row-reverse' }}>
         <BackButton navigation={navigation} />
       </Block>
       <Block xsSize="100%" lgSize="100%">

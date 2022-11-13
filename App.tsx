@@ -73,6 +73,7 @@ async function cacheResourcesAsync() {
     "landing_screen_icons/heartbeat-light.png",
     "landing_screen_icons/birthday-cake-light.png",
     "landing_screen_icons/smoking-light.png",
+    "landing_screen_icons/variant-light.png",
     "ancestry_screen_pie/stephan_ancestry.jpeg",
     "ancestry_screen_pie/colin_ancestry.jpeg",
     "ancestry_screen_pie/laura_ancestry.jpeg",

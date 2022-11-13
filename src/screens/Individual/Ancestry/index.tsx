@@ -1,6 +1,6 @@
 import React from 'react';
 import PageLayout from '../../../components/PageLayout';
-import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { Grid, Section } from 'react-native-responsive-layout';
 import TopText from './TopText';
 import CenterSection from './CenterSection';
 import GlobeImage from './GlobeImage';
@@ -26,7 +26,7 @@ const AllAmbassadorsData = {
 };
 
 const Ancestry = (props) => {
-  const { route } = props;
+  const { route, navigation } = props;
   const { name } = route.params;
   const { data, image } = AllAmbassadorsData[name];
   const ancestryWorldUrl =
@@ -36,7 +36,7 @@ const Ancestry = (props) => {
       <PageLayout>
         <Grid>
           <Section>
-            <TopText />
+            <TopText navigation={navigation} />
           </Section>
           <Section>
             <CenterSection data={data} image={image} />

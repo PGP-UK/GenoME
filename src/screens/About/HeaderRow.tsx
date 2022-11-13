@@ -4,6 +4,7 @@ import { Layout, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { PageHeader } from '../../components/Text';
+import BackButton from '../../components/BackButton';
 
 const BackBtn = ({ layoutStyle, navigation }) => (
   <Layout style={layoutStyle}>
@@ -26,11 +27,11 @@ const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
   return (
     <Grid>
       <Section style={HeaderStyle}>
-        <Block xsSize="100%" mdSize="70%">
+        <Block xsSize="100%" mdSize="80%">
           <HeaderText />
         </Block>
-        <Block xsSize="100%" mdSize="30%">
-          <BackBtn layoutStyle={btnStyles} navigation={navigation} />
+        <Block xsSize="100%" mdSize="20%" style={{ paddingBottom: 25 }}>
+          <BackButton navigation={navigation} />
         </Block>
       </Section>
     </Grid>

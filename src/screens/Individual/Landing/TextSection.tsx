@@ -1,13 +1,14 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { Text } from "@ui-kitten/components";
-import { Section, Block } from "react-native-responsive-layout";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Text } from '@ui-kitten/components';
+import { Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import BackButton from '../../../components/BackButton';
 
-const TextSection = withSizeInfo(({ sizeSelector }) => {
+const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
+  const { navigation } = props;
   const headerStyles = sizeSelector({
     xs: styles.headerxs,
-    md: styles.headermd,
     lg: styles.headerlg,
   });
   const subheaderStyles = sizeSelector({
@@ -21,6 +22,9 @@ const TextSection = withSizeInfo(({ sizeSelector }) => {
 
   return (
     <Section>
+      <Block style={{ flexDirection: 'row-reverse' }}>
+        <BackButton navigation={navigation} />
+      </Block>
       <Block xsSize="100%" lgSize="100%">
         <Text category="h1" style={headerStyles}>
           My GENOME contains many layers of INFORMATION, including GENETIC and
@@ -46,20 +50,20 @@ const TextSection = withSizeInfo(({ sizeSelector }) => {
 
 const styles = StyleSheet.create({
   headerxs: {
-    marginTop: 30,
+    marginTop: 10,
     marginBottom: 20,
-    textAlign: "center",
-    fontWeight: "400",
-    color: "white",
+    textAlign: 'center',
+    fontWeight: '400',
+    color: 'white',
   },
   headerlg: {
-    marginTop: 60,
+    marginTop: 0,
     marginBottom: 20,
     marginLeft: 30,
     fontSize: 75,
-    fontWeight: "400",
-    textAlign: "center",
-    color: "white",
+    fontWeight: '400',
+    textAlign: 'center',
+    color: 'white',
   },
   // headermd: {
   //   marginTop: 30,
@@ -73,31 +77,31 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     fontSize: 25,
-    fontWeight: "300",
-    textAlign: "center",
-    color: "white",
+    fontWeight: '300',
+    textAlign: 'center',
+    color: 'white',
   },
   subheaderlg: {
     marginTop: 10,
     marginBottom: 20,
     fontSize: 35,
-    fontWeight: "300",
-    textAlign: "center",
-    color: "white",
+    fontWeight: '300',
+    textAlign: 'center',
+    color: 'white',
   },
   main_textxs: {
     marginTop: 10,
     marginBottom: 20,
     fontSize: 20,
-    textAlign: "center",
-    color: "white",
+    textAlign: 'center',
+    color: 'white',
   },
   main_textlg: {
     marginTop: 10,
     marginBottom: 20,
     fontSize: 25,
-    textAlign: "center",
-    color: "white",
+    textAlign: 'center',
+    color: 'white',
   },
 });
 

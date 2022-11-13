@@ -5,6 +5,7 @@ import SocialMedia from './SocialMedia';
 import { PageHeader, PageText } from '../../components/Text';
 import { Section, Block } from 'react-native-responsive-layout';
 import ImageBackground from './ImageBackground';
+import HeaderRow from './HeaderRow';
 
 const About = (props: any) => {
   const { navigation } = props;
@@ -16,9 +17,7 @@ const About = (props: any) => {
       <PageLayout>
         <Section>
           <Block>
-            <PageHeader style={styles.headerRow}>
-              About PGP-UK and the global network of Personal Genome Projects
-            </PageHeader>
+            <HeaderRow />
           </Block>
         </Section>
         <Section
@@ -75,23 +74,22 @@ const About = (props: any) => {
           <Block>
             <PageText style={styles.bottom_red_text}>
               DISCLAIMER: The generation of genomic data is not an error-free
-              process and our analysis system is still under development. becasue
-              the body of knowledge of genetic and epigenetic variants has many
-              uncertainties, we cannot guarantee that our analyses are either
-              accurate or complete.
+              process and our analysis system is still under development.
+              becasue the body of knowledge of genetic and epigenetic variants
+              has many uncertainties, we cannot guarantee that our analyses are
+              either accurate or complete.
             </PageText>
             <PageText style={styles.bottom_text}>
               This app was designed and developed by the PGP-UK/GenoME team.
             </PageText>
           </Block>
           <Block>
-          <SocialMedia
+            <SocialMedia
               navigation={navigation}
               SocialMediaStyle={styles.socialMedia}
             />
           </Block>
         </Section>
-        
       </PageLayout>
     </>
   );
@@ -128,7 +126,7 @@ const styles = StyleSheet.create({
   bottomSection: {
     paddingTop: 10,
   },
-  backgroundImage:{
+  backgroundImage: {
     paddingTop: 20,
     paddingBottom: 25,
   },

@@ -36,11 +36,15 @@ const Icons = [
     pageName: "Smoking",
     image: "smoking-light.png",
   },
+  {
+    pageName: "Variant",
+    image: "variant-light.png",
+  },
 ];
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { icon } = props;
-  const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 5 });
+  const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 6 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
   return (
@@ -59,7 +63,7 @@ const LandingIcon = ({ IconData, name, navigation }) => {
     <Block
       xsSize="50%"
       smSize="33%"
-      mdSize="20%"
+      mdSize="16.6%"
       style={styles.landingIconWrapper}
     >
       <Pressable

@@ -37,7 +37,7 @@ const AllAmbassadors = {
 
 const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
   const { image } = props;
-  const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
+  const numImagesPerRow = sizeSelector({ xs: 1, md: 1.3, xl: 2 });
   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
   const imageWidth =
@@ -49,26 +49,33 @@ const EyeImage = withSizeInfo(({ sizeSelector, ...props }: any) => {
         uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
       }}
       resizeMode={FastImage.resizeMode.contain}
-      style={{ width: imageWidth, height: imageWidth, alignSelf: "center" }}
+      style={{ 
+        width: imageWidth, 
+        height: imageWidth, 
+        alignSelf: "center",
+        alignItems: "center",
+        marginTop: 100
+        
+      }}
     />
   );
 });
 
-const EyeVideo = withSizeInfo(({ sizeSelector, ...props }: any) => {
-  const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
-  const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
+// const EyeVideo = withSizeInfo(({ sizeSelector, ...props }: any) => {
+//   const numImagesPerRow = sizeSelector({ xs: 1, md: 3 });
+//   const spacingBetweenImages = sizeSelector({ xs: 40, sm: 120, md: 80 });
 
-  const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) -
-    spacingBetweenImages;
-  return (
-    <Image
-      {...props}
-      style={{ width: imageWidth, height: imageWidth }}
-      resizeMode="contain"
-    />
-  );
-});
+//   const imageWidth =
+//     Math.round(useSafeAreaFrame().width / numImagesPerRow) -
+//     spacingBetweenImages;
+//   return (
+//     <Image
+//       {...props}
+//       style={{ width: imageWidth, height: imageWidth }}
+//       resizeMode="contain"
+//     />
+//   );
+// });
 
 const EyeImages = ({ image, themeColor, header }:any) => (
   <Block xsSize="100%" smSize="100%" mdSize="33%">
@@ -79,15 +86,17 @@ const EyeImages = ({ image, themeColor, header }:any) => (
   </Block>
 );
 
-const EyeVideos = ({ image } :any) => (
-  <Block xsSize="100%" smSize="100%" mdSize="33%">
-    <EyeVideo source={image} resizeMode="contain" />
-  </Block>
-);
+// const EyeVideos = ({ image } :any) => (
+//   <Block xsSize="100%" smSize="100%" mdSize="75%">
+//     <EyeVideo source={image} resizeMode="contain" />
+//   </Block>
+// );
+
+
 
 
 const Eyes = (props: any) => {
-  const { route } = props;
+  const { route} = props;
   const { name } = route.params;
   const eyeData = AllAmbassadors[name];
   const themeColor = eyeData.themeColor;
@@ -95,14 +104,158 @@ const Eyes = (props: any) => {
   return (
     <>
       <PageLayout>
-        <Section>
+        <Section size="20%">
           <Block>
             <PageHeader category="h1" style={styles.header}>
-              Eyes
+              Eye Colour
             </PageHeader>
           </Block>
         </Section>
-        <Section
+
+
+
+        <Section 
+          size="80%"
+        >
+            <Block
+              size="50%"
+              hidden
+              xlVisible
+              stretch
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+              }}
+            >
+              <EyeImages
+                image={eyeData.eye_image}
+                themeColor={themeColor}
+                // header={eyeData.colorText}
+              />
+            </Block>
+
+             
+
+
+
+            <Block
+              size="50%"
+              hidden
+              xlVisible            
+            >
+              
+              <Block
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "flex-end",
+                  // alignContent: "center",
+                }}
+              >
+                <PageText 
+                category="p1"
+                style={{
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  alignItems: "flex-end",
+                  alignContent: "flex-end",
+                  marginTop: 275
+                }}
+                >
+                  Eye colour is determined by multiple genetic variants, some of
+                  which have been used to predict my eye colour. Below you can see
+                  my actual eyes and the predicted eye colour - how well do you
+                  think the prediction has worked?
+                </PageText>
+   
+              </Block>  
+
+
+              <Block>
+                <PageHeader style={[styles.header2, { color: themeColor, marginTop:80 }]}>
+                  {eyeData.colorText}
+                </PageHeader>
+              </Block>
+
+              
+            </Block>
+
+
+
+
+            <Block
+            xlHidden
+            >
+              <PageText 
+                category="p1"
+                style={{
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  alignItems: "flex-end",
+                  alignContent: "flex-end",
+                  marginTop: 25
+                }}
+                >
+                  Eye colour is determined by multiple genetic variants, some of
+                  which have been used to predict my eye colour. Below you can see
+                  my actual eyes and the predicted eye colour - how well do you
+                  think the prediction has worked?
+                </PageText>
+            </Block>  
+
+            <Block
+            xlHidden
+            stretch
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+              }}
+            >
+              <EyeImages
+                image={eyeData.eye_image}
+                themeColor={themeColor}
+                // header={eyeData.colorText}
+              />
+            </Block> 
+            <Block
+            xlHidden
+            >
+            <PageHeader style={[styles.header2, { color: themeColor, marginTop:30 }]}>
+                  {eyeData.colorText}
+                </PageHeader>
+            </Block>
+        </Section>
+
+
+
+        {/* <Section>
+
+        </Section>
+
+
+
+        <Section>
+
+        </Section> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <Section
           stretch
           style={{
             flex: 1,
@@ -114,8 +267,9 @@ const Eyes = (props: any) => {
           }}
         >
           <EyeVideos image={eyeData.eye_video} />
-        </Section>
-        <Section
+        </Section> */}
+
+        {/* <Section
           stretch
           style={{
             flex: 1,
@@ -126,16 +280,66 @@ const Eyes = (props: any) => {
             flexWrap: "wrap",
           }}
         >
-          <Block>
+          <Block
+            stretch
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              alignContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            <EyeImages
+            image={eyeData.eye_image}
+            themeColor={themeColor}
+            header={eyeData.colorText}
+          />
+          </Block> */}
+          
+
+
+          {/* Hidden in small screens */}
+          {/* <Block
+            xlsize="50%"
+            xlSize="50%"
+            hidden
+            xlVisible
+            style={{
+             
+              alignItems: "center",
+              alignContent: "center",
+              justifyContent: "flex-end"
+            }}
+          >
             <PageText category="p1" style={styles.main_text}>
               Eye colour is determined by multiple genetic variants, some of
               which have been used to predict my eye colour. Below you can see
               my actual eyes and the predicted eye colour - how well do you
               think the prediction has worked?
             </PageText>
-          </Block>
-        </Section>
-        <Section
+          </Block> */}
+        {/* Hidden in small screens */}
+
+
+        {/* Hidden in large screens */}
+          {/* <Block
+           xlHidden>
+            <PageText category="p1" style={styles.main_text}>
+              Eye colour is determined by multiple genetic variants, some of
+              which have been used to predict my eye colour. Below you can see
+              my actual eyes and the predicted eye colour - how well do you
+              think the prediction has worked?
+            </PageText>
+          </Block> */}
+        {/* Hidden in large screens */}  
+          
+
+
+
+        {/* </Section> */}
+        {/* <Section
           stretch
           style={{
             flex: 1,
@@ -151,7 +355,7 @@ const Eyes = (props: any) => {
             themeColor={themeColor}
             header={eyeData.colorText}
           />
-        </Section>
+        </Section> */}
       </PageLayout>
     </>
   );
@@ -183,14 +387,14 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   eye_image: {
-    height: 400,
-    width: 400,
+    height: 700,
+    width: 700,
     justifyContent: "center",
     alignItems: "center",
   },
   eye_video: {
-    height: 400,
-    width: 400,
+    height: 700,
+    width: 700,
     justifyContent: "center",
     alignItems: "center",
   },

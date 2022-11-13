@@ -7,21 +7,25 @@ import SmokingExText from './SmokingExText';
 import ImageKey from './Imagekey';
 import { StyleSheet } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
+import BackButton from '../../../components/BackButton';
 
 const dataFile = {
   data: require(`../../../../assets/data/age/data.json`),
 };
 
 const Smoking = (props) => {
-  const { route } = props;
+  const { route, navigation } = props;
   const { name } = route.params;
   const data = dataFile.data[name];
 
   return (
     <PageLayout>
       <Section>
-        <Block>
+        <Block smSize="70%" mdSize="70%">
           <PageHeader style={[styles.heading]}>Smoking Prediction</PageHeader>
+        </Block>
+        <Block smSize="30%" mdSize="30%">
+          <BackButton navigation={navigation} />
         </Block>
       </Section>
       <Block
@@ -61,7 +65,7 @@ const Smoking = (props) => {
           xlSize="50%"
           style={{ paddingBottom: 20 }}>
           <CenterImage
-            image={"smokers/nonsmoking.png"}
+            image={'smokers/nonsmoking.png'}
             data={dataFile.data[name]}
           />
         </Block>

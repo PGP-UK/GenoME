@@ -1,37 +1,38 @@
-import React from "react";
-import { StyleSheet, Pressable } from "react-native";
-import { useSafeAreaFrame } from "react-native-safe-area-context";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { Section, Block } from "react-native-responsive-layout";
-import PageLayout from "../../../components/PageLayout";
-import { PageText } from "../../../components/Text";
-import { PageHeader } from "../../../components/Text";
-import FastImage from "react-native-fast-image";
+import React from 'react';
+import { StyleSheet, Pressable } from 'react-native';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { Section, Block } from 'react-native-responsive-layout';
+import PageLayout from '../../../components/PageLayout';
+import { PageText } from '../../../components/Text';
+import { PageHeader } from '../../../components/Text';
+import FastImage from 'react-native-fast-image';
+import BackButton from '../../../components/BackButton';
 
 const AllAmbassadors = {
   stephan: {
-    SNV_heart_image: "stephan_heart_SNV.png",
-    SNV_crohn_image: "stephan_crohn_SNV.png",
-    SNV_ovarian_image: "stephan_ovarian_SNV.png",
-    themeColor: "#8CD8C4",
+    SNV_heart_image: 'stephan_heart_SNV.png',
+    SNV_crohn_image: 'stephan_crohn_SNV.png',
+    SNV_ovarian_image: 'stephan_ovarian_SNV.png',
+    themeColor: '#8CD8C4',
   },
   colin: {
-    SNV_heart_image: "colin_heart_SNV.png",
-    SNV_crohn_image: "colin_crohn_SNV.png",
-    SNV_ovarian_image: "colin_ovarian_SNV.png",
-    themeColor: "#9C82DE",
+    SNV_heart_image: 'colin_heart_SNV.png',
+    SNV_crohn_image: 'colin_crohn_SNV.png',
+    SNV_ovarian_image: 'colin_ovarian_SNV.png',
+    themeColor: '#9C82DE',
   },
   laura: {
-    SNV_heart_image: "laura_heart_SNV.png",
-    SNV_crohn_image: "laura_crohn_SNV.png",
-    SNV_ovarian_image: "laura_ovarian_SNV.png",
-    themeColor: "#F6BD4A",
+    SNV_heart_image: 'laura_heart_SNV.png',
+    SNV_crohn_image: 'laura_crohn_SNV.png',
+    SNV_ovarian_image: 'laura_ovarian_SNV.png',
+    themeColor: '#F6BD4A',
   },
   momodou: {
-    SNV_heart_image: "momodou_heart_SNV.png",
-    SNV_crohn_image: "momodou_crohn_SNV.png",
-    SNV_ovarian_image: "momodou_ovarian_SNV.png",
-    themeColor: "#D94553",
+    SNV_heart_image: 'momodou_heart_SNV.png',
+    SNV_crohn_image: 'momodou_crohn_SNV.png',
+    SNV_ovarian_image: 'momodou_ovarian_SNV.png',
+    themeColor: '#D94553',
   },
 };
 
@@ -68,17 +69,15 @@ const SNVImages = ({
     mdSize="33%"
     lgSize="33%"
     xlSize="50%"
-    xxlSize="33%"
-  >
+    xxlSize="33%">
     <Pressable
       onPress={() =>
-        navigation.navigate("Diseases", {
+        navigation.navigate('Diseases', {
           name: name.toLowerCase(),
           disease: disease,
         })
       }
-      style={styles.box}
-    >
+      style={styles.box}>
       <SNVImage image={`health_screen_SNV/${image}`} resizeMode="contain" />
       <PageHeader style={[styles.header2, { color: themeColor }]}>
         {header}
@@ -96,10 +95,13 @@ const Health = (props) => {
     <>
       <PageLayout>
         <Section>
-          <Block xsSize="100%" mdSize="90%">
+          <Block xsSize="70%" mdSize="70%">
             <PageHeader category="h1" style={styles.header}>
               Health
             </PageHeader>
+          </Block>
+          <Block xsSize="30%" mdSize="30%">
+            <BackButton navigation={navigation} />
           </Block>
         </Section>
         <Section>
@@ -127,16 +129,15 @@ const Health = (props) => {
           stretch
           style={{
             flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            flexWrap: 'wrap',
+          }}>
           <SNVImages
             disease="heart"
-            header={"Heart Disease"}
+            header={'Heart Disease'}
             name={name}
             image={healthData.SNV_heart_image}
             themeColor={themeColor}
@@ -152,7 +153,7 @@ const Health = (props) => {
           />
           <SNVImages
             disease="ovarian"
-            header={"Ovarian Cancer"}
+            header={'Ovarian Cancer'}
             name={name}
             image={healthData.SNV_ovarian_image}
             themeColor={themeColor}
@@ -166,12 +167,12 @@ const Health = (props) => {
 
 const styles = StyleSheet.create({
   header: {
-    color: "#63BEE1",
+    color: '#63BEE1',
     marginBottom: 25,
   },
   header2: {
-    fontWeight: "400",
-    textAlign: "center",
+    fontWeight: '400',
+    textAlign: 'center',
     marginTop: 20,
     marginBottom: 25,
   },
@@ -182,7 +183,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   box: {
-    alignItems: "center",
+    alignItems: 'center',
     padding: 10,
     // marginTop: 10,
     // marginBottom: 10,

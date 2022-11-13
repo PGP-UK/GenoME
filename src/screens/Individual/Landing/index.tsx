@@ -18,7 +18,7 @@ const ThemeColors = {
 const Icons = [
   {
     pageName: "My Story",
-    image: "globe-europe-light.png",
+    image: "user-light.png",
   },
   {
     pageName: "Ancestry",

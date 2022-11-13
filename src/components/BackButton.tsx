@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Button } from '@ui-kitten/components';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
-const HomeButton = withSizeInfo(({ sizeSelector, navigation }) => {
+const BackButton = withSizeInfo(({ sizeSelector, navigation }) => {
   const btnStyles = sizeSelector({
     xs: styles.headerBtnLayoutXs,
     md: styles.headerBtnLayoutMd,
@@ -14,8 +14,8 @@ const HomeButton = withSizeInfo(({ sizeSelector, navigation }) => {
         size="small"
         status="primary"
         style={styles.headerBtn}
-        onPress={() => navigation.navigate('Home')}>
-        HOME
+        onPress={() => navigation.goBack()}>
+        BACK
       </Button>
     </View>
   );
@@ -28,14 +28,14 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   headerBtnLayoutXs: {
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
   },
   headerBtnLayoutMd: {
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     marginBottom: 10,
   },
 });
 
-export default HomeButton;
+export default BackButton;

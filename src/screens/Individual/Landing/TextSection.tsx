@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-import HomeButton from '../../../components/HomeButton';
+import BackButton from '../../../components/BackButton';
 
 const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
   const { navigation } = props;
@@ -22,9 +22,14 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
 
   return (
     <Section>
-      {/*<Block>
-        <HomeButton navigation={navigation} xsSize="100%" lgSize="100%" />
-      </Block> */}
+      <Block>
+        <BackButton
+          navigation={navigation}
+          pageName={'Home'}
+          xsSize="100%"
+          lgSize="100%"
+        />
+      </Block>
       <Block xsSize="100%" lgSize="100%">
         <Text category="h1" style={headerStyles}>
           My GENOME contains many layers of INFORMATION, including GENETIC and

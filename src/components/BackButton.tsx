@@ -28,12 +28,12 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   headerBtnLayoutXs: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     marginTop: 10,
   },
   headerBtnLayoutMd: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     marginBottom: 10,
   },
 });

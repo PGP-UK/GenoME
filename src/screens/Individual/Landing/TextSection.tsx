@@ -23,12 +23,7 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
   return (
     <Section>
       <Block>
-        <BackButton
-          navigation={navigation}
-          pageName={'Home'}
-          xsSize="100%"
-          lgSize="100%"
-        />
+        <BackButton navigation={navigation} />
       </Block>
       <Block xsSize="100%" lgSize="100%">
         <Text category="h1" style={headerStyles}>

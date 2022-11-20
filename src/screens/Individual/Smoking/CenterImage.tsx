@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 import FastImage from "react-native-fast-image";
@@ -19,14 +19,14 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <View style={{ justifyContent: "center", flex: 1,}}>
-      <FastImage
+    <View style= {{ justifyContent: "center", flex: 1,}}>
+      <Image
         source={{
           uri: `https://cdn.jsdelivr.net/gh/PGP-UK/GenoME/assets/images/${image}`,
         }}
         resizeMode={FastImage.resizeMode.contain}
         style={[
-          styles.image, {backgroundColor: data.themeColor,},
+          styles.image, {tintColor: data.themeColor,},
           { width: finalImageWidth, height: finalImageWidth,},
         ]}
       />

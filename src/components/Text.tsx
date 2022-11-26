@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Modal } from '@ui-kitten/components';
+import { Text, Modal, Card } from '@ui-kitten/components';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { StyleSheet, Pressable } from 'react-native';
 
@@ -78,16 +78,18 @@ const TextModal = (props) => {
         backdropStyle={Styles.backdrop}
         visible={visible}
         onBackdropPress={() => setVisible(false)}>
-        <Pressable onPress={() => setVisible(false)}>
-          <PgpText
-            category="p1"
-            baseStyle={Styles.page_footer_base}
-            sizeSelectorStyles={{
-              lg: Styles.page_text_lg,
-            }}>
-            {modal_text}
-          </PgpText>
-        </Pressable>
+        <Card>
+          <Pressable onPress={() => setVisible(false)}>
+            <PgpText
+              category="p1"
+              baseStyle={Styles.page_footer_base}
+              sizeSelectorStyles={{
+                lg: Styles.page_text_lg,
+              }}>
+              {modal_text}
+            </PgpText>
+          </Pressable>
+        </Card>
       </Modal>
     </>
   );

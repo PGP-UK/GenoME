@@ -16,11 +16,23 @@ const Home = (props) => {
         <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of{' '}
-          <TextModal style={styles.pop_up_links} modal_text={'Hello'}>
+          <TextModal
+            style={styles.pop_up_links}
+            modal_text={
+              'PGP-UK encourages its participants to be active and to engage \nin Citizen Science by taking on the roles of both subject and scientist.'
+            }>
             active participants{' '}
           </TextModal>
           who share their DNA sequence, medical records and trait data for
-          reasearch under <Text style={styles.pop_up_links}>open access</Text>.
+          reasearch under{' '}
+          <TextModal
+            style={styles.pop_up_links}
+            modal_text={
+              'PGP-UK defines open access as non-restrictive access and useage of data released by the project.\nThis means the data is freely available to everyone.'
+            }>
+            open access
+          </TextModal>
+          .
         </PageText>
 
         <PageText style={styles.main_text}>

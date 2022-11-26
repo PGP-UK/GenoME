@@ -1,44 +1,44 @@
-import React from "react";
-import { StyleSheet, Pressable } from "react-native";
-import { Text } from "@ui-kitten/components";
-import PageLayout from "../../../components/PageLayout";
-import { Section, Block, Grid } from "react-native-responsive-layout";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { useSafeAreaFrame } from "react-native-safe-area-context";
-import TextSection from "./TextSection";
-import FastImage from "react-native-fast-image";
+import React from 'react';
+import { StyleSheet, Pressable } from 'react-native';
+import { Text } from '@ui-kitten/components';
+import PageLayout from '../../../components/PageLayout';
+import { Section, Block, Grid } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import TextSection from './TextSection';
+import FastImage from 'react-native-fast-image';
 
 const ThemeColors = {
-  stephan: "#8CD8C4",
-  laura: "#F6BD4A",
-  momodou: "#D94553",
-  colin: "#9C82DE",
+  stephan: '#8CD8C4',
+  laura: '#F6BD4A',
+  momodou: '#D94553',
+  colin: '#9C82DE',
 };
 
 const Icons = [
   {
-    pageName: "Ancestry",
-    image: "globe-europe-light.png",
+    pageName: 'Ancestry',
+    image: 'globe-europe-light.png',
   },
   {
-    pageName: "Eyes",
-    image: "eye-light.png",
+    pageName: 'Eyes',
+    image: 'eye-light.png',
   },
   {
-    pageName: "Health",
-    image: "heartbeat-light.png",
+    pageName: 'Health',
+    image: 'heartbeat-light.png',
   },
   {
-    pageName: "Age",
-    image: "birthday-cake-light.png",
+    pageName: 'Age',
+    image: 'birthday-cake-light.png',
   },
   {
-    pageName: "Smoking",
-    image: "smoking-light.png",
+    pageName: 'Smoking',
+    image: 'smoking-light.png',
   },
   {
-    pageName: "Variant",
-    image: "variant-light.png",
+    pageName: 'Variant',
+    image: 'variant-light.png',
   },
 ];
 
@@ -64,14 +64,12 @@ const LandingIcon = ({ IconData, name, navigation }) => {
       xsSize="50%"
       smSize="33%"
       mdSize="16.6%"
-      style={styles.landingIconWrapper}
-    >
+      style={styles.landingIconWrapper}>
       <Pressable
         onPress={() =>
           navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
         }
-        style={styles.box}
-      >
+        style={styles.box}>
         <Iconimage icon={IconData.image} />
         <Text category="h4" style={styles.iconText}>
           {IconData.pageName}
@@ -89,7 +87,7 @@ const Landing = (props) => {
     <>
       <PageLayout backgroundColor={ThemeColors[name]}>
         <Grid>
-          <TextSection />
+          <TextSection themeColor={ThemeColors[name]} />
           <Section style={styles.iconsWrapper}>
             {Icons.map((IconData, idx) => (
               <LandingIcon
@@ -108,10 +106,10 @@ const Landing = (props) => {
 
 const styles = StyleSheet.create({
   landingIconWrapper: {
-    alignItems: "center",
+    alignItems: 'center',
   },
   box: {
-    alignItems: "center",
+    alignItems: 'center',
     padding: 10,
     marginBottom: 10,
   },
@@ -119,32 +117,32 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 205 / 2,
-    overflow: "hidden",
+    overflow: 'hidden',
     borderWidth: 3,
   },
   avcontainer: {
-    alignItems: "center",
-    flexWrap: "wrap",
+    alignItems: 'center',
+    flexWrap: 'wrap',
     padding: 8,
-    flexWrap: "wrap",
+    flexWrap: 'wrap',
   },
   button_style: {
-    color: "white",
-    backgroundColor: "#00d5ff",
+    color: 'white',
+    backgroundColor: '#00d5ff',
     padding: 10,
   },
   headerBtn: {
-    backgroundColor: "#3BAEDA",
+    backgroundColor: '#3BAEDA',
     borderWidth: 0,
-    color: "#fff",
+    color: '#fff',
   },
   iconText: {
     paddingTop: 7,
-    textAlign: "center",
-    color: "white",
+    textAlign: 'center',
+    color: 'white',
   },
   iconsWrapper: {
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 });
 

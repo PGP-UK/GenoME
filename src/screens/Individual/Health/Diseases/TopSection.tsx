@@ -24,12 +24,12 @@ const TopSection = (props) => {
   const textData = textInformation[disease];
   return (
     <Section style={{ marginBottom: 20 }}>
-      <Block smSize="10%" mdSize="70%">
+      <Block smSize="80%" mdSize="70%">
         <PageHeader category="h1" style={styles.header1}>
           {textData.heading}
         </PageHeader>
       </Block>
-      <Block smSize="90%" mdSize="30%">
+      <Block smSize="20%" mdSize="30%">
         <BackButton navigation={navigation} />
       </Block>
       <PageHeader

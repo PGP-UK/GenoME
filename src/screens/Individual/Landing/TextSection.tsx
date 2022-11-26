@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Button } from '@ui-kitten/components';
-import { Text } from '@ui-kitten/components';
+import { Text, Card } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { TextModal } from '../../../components/Text';
 import BackButton from '../../../components/BackButton';
 
 const BackBtn = ({ navigation }) => (
@@ -17,7 +18,7 @@ const BackBtn = ({ navigation }) => (
 );
 
 const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
-  const { navigation } = props;
+  const { navigation, themeColor } = props;
   const headerStyles = sizeSelector({
     xs: styles.headerxs,
     lg: styles.headerlg,
@@ -48,9 +49,16 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
           majority of variants are shared between individuals whilst others are
           private (in this case, unique to me or my family).
         </Text>
-        <Text category="h5" style={mainTextStyles}>
-          What is a PRIVATE, GENETIC, or EPIGENETIC variant?
-        </Text>
+        <Card>
+          <TextModal
+            category="h5"
+            style={[mainTextStyles, { color: themeColor }]}
+            modal_text={
+              'Genetic variants are changes in the DNA sequence; for example: TCCGA to TCTGA. \n\nA variant is defined as private (unique to me or my family) if it has not been recorded in any of the main public variant databases. \n\nEpigenetic variants are chemical changes to the DNA, which alter its function without changing the DNA sequence.'
+            }>
+            What is a PRIVATE, GENETIC, or EPIGENETIC variant?
+          </TextModal>
+        </Card>
         <Text category="h5" style={mainTextStyles}>
           Tap below to explore a few of my variants which we do know about.
         </Text>
@@ -86,7 +94,7 @@ const styles = StyleSheet.create({
   // },
   subheaderxs: {
     marginTop: 10,
-    marginBottom: 20,
+
     fontSize: 25,
     fontWeight: '300',
     textAlign: 'center',
@@ -113,6 +121,9 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'center',
     color: 'white',
+  },
+  press_text: {
+    backgroundColor: 'white',
   },
 });
 

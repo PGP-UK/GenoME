@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text } from '@ui-kitten/components';
+import { Text, Modal, Card } from '@ui-kitten/components';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Pressable } from 'react-native';
 
 const PgpText = withSizeInfo((props) => {
   const {
@@ -58,6 +58,43 @@ const PageFooter = (props) => {
   );
 };
 
+const TextModal = (props) => {
+  const { modal_text } = props;
+  const [visible, setVisible] = React.useState(false);
+  return (
+    <>
+      <Pressable onPress={() => setVisible(true)}>
+        <PgpText
+          {...props}
+          category="p1"
+          baseStyle={Styles.page_footer_base}
+          sizeSelectorStyles={{
+            lg: Styles.page_text_lg,
+          }}
+        />
+      </Pressable>
+
+      <Modal
+        backdropStyle={Styles.backdrop}
+        visible={visible}
+        onBackdropPress={() => setVisible(false)}>
+        <Card>
+          <Pressable onPress={() => setVisible(false)}>
+            <PgpText
+              category="p1"
+              baseStyle={Styles.page_footer_base}
+              sizeSelectorStyles={{
+                lg: Styles.page_text_lg,
+              }}>
+              {modal_text}
+            </PgpText>
+          </Pressable>
+        </Card>
+      </Modal>
+    </>
+  );
+};
+
 const Styles = StyleSheet.create({
   page_header_base: {
     color: '#63BEE1',
@@ -77,6 +114,9 @@ const Styles = StyleSheet.create({
   page_footer_xs: {
     fontSize: 10,
   },
+  backdrop: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
 });
 
-export { PageHeader, PageText, PageFooter };
+export { PageHeader, PageText, PageFooter, TextModal };

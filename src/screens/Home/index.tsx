@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, Pressable } from 'react-native';
 
 import { Section } from 'react-native-responsive-layout';
 import PageLayout from '../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import Ambassadors from './Ambassadors';
-import { PageText, PageFooter } from '../../components/Text';
+import { PageText, PageFooter, TextModal } from '../../components/Text';
 
 const Home = (props) => {
   const { navigation } = props;
@@ -14,10 +14,11 @@ const Home = (props) => {
     <>
       <PageLayout>
         <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
-
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of{' '}
-          <Text style={styles.pop_up_links}>active participants </Text>
+          <TextModal style={styles.pop_up_links} modal_text={'Hello'}>
+            active participants{' '}
+          </TextModal>
           who share their DNA sequence, medical records and trait data for
           reasearch under <Text style={styles.pop_up_links}>open access</Text>.
         </PageText>

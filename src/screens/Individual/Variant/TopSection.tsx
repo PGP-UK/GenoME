@@ -1,8 +1,10 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { Text } from "@ui-kitten/components";
-import { Section, Block } from "react-native-responsive-layout";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Text } from '@ui-kitten/components';
+import { Section, Block } from 'react-native-responsive-layout';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { PageHeader } from '../../../components/Text';
+import BackButton from '../../../components/BackButton';
 
 const TextSection = ({ textStyle, lines }) => (
   <>
@@ -14,7 +16,8 @@ const TextSection = ({ textStyle, lines }) => (
   </>
 );
 
-const TopSection = withSizeInfo(({ sizeSelector, data }) => {
+const TopSection = withSizeInfo(({ sizeSelector, data, ...props }) => {
+  const { navigation } = props;
   const rowStyles = sizeSelector({
     xs: styles.textRowSm,
     md: styles.textRowMd,
@@ -30,11 +33,17 @@ const TopSection = withSizeInfo(({ sizeSelector, data }) => {
 
   return (
     <Section style={styles.main}>
+      <Block smSize="80%" mdSize="70%">
+        <PageHeader style={styles.header}>Variants</PageHeader>
+      </Block>
+      <Block smSize="20%" mdSize="30%" style={{ flexDirection: 'row-reverse' }}>
+        <BackButton navigation={navigation} />
+      </Block>
       <Block xsSize="100%" mdSize="50%" style={rowStyles}>
         <TextSection
           textStyle={leftTextStyles}
           lines={[
-            "Total Number of variants:",
+            'Total Number of variants:',
             data.total.num,
             data.total.percent,
           ]}
@@ -44,7 +53,7 @@ const TopSection = withSizeInfo(({ sizeSelector, data }) => {
         <TextSection
           textStyle={[rightTextStyles, { color: data.themeColor }]}
           lines={[
-            "Number of shared variants:",
+            'Number of shared variants:',
             data.shared.num,
             data.shared.percent,
           ]}
@@ -59,27 +68,30 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+  header: {
+    marginBottom: 30,
+  },
   textRowSm: {
     marginTop: 20,
   },
   textRowMd: {},
   leftTextSm: {
     fontSize: 35,
-    color: "#45B0D4",
-    textAlign: "center",
+    color: '#45B0D4',
+    textAlign: 'center',
   },
   leftTextMd: {
     fontSize: 35,
-    color: "#45B0D4",
-    textAlign: "left",
+    color: '#45B0D4',
+    textAlign: 'left',
   },
   rightTextSm: {
     fontSize: 35,
-    textAlign: "center",
+    textAlign: 'center',
   },
   rightTextMd: {
     fontSize: 35,
-    textAlign: "right",
+    textAlign: 'right',
   },
 });
 

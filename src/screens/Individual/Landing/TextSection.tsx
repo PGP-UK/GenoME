@@ -1,9 +1,20 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { Button } from '@ui-kitten/components';
 import { Text } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import BackButton from '../../../components/BackButton';
+
+const BackBtn = ({ navigation }) => (
+  <Button
+    size="small"
+    status="primary"
+    style={styles.headerBtn}
+    onPress={() => navigation.goBack()}>
+    BACK
+  </Button>
+);
 
 const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
   const { navigation } = props;

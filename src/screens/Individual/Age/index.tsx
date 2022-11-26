@@ -36,10 +36,10 @@ const Age = (props) => {
     <>
       <PageLayout>
         <Section>
-          <Block smSize="10%" mdSize="70%">
+          <Block smSize="80%" mdSize="70%">
             <PageHeader>Epigenetic Age</PageHeader>
           </Block>
-          <Block smSize="90%" mdSize="30%">
+          <Block smSize="20%" mdSize="30%">
             <BackButton navigation={navigation} />
           </Block>
         </Section>

@@ -95,12 +95,12 @@ const Health = (props) => {
     <>
       <PageLayout>
         <Section>
-          <Block xsSize="80%" mdSize="70%">
+          <Block xsSize="80%" mdSize="80%">
             <PageHeader category="h1" style={styles.header}>
               Health
             </PageHeader>
           </Block>
-          <Block xsSize="20%" mdSize="30%">
+          <Block xsSize="20%" mdSize="20%">
             <BackButton navigation={navigation} />
           </Block>
         </Section>

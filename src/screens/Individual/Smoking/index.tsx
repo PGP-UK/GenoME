@@ -21,10 +21,10 @@ const Smoking = (props) => {
   return (
     <PageLayout>
       <Section>
-        <Block smSize="70%" mdSize="70%">
+        <Block smSize="80%" mdSize="70%">
           <PageHeader style={[styles.heading]}>Smoking Prediction</PageHeader>
         </Block>
-        <Block smSize="30%" mdSize="30%">
+        <Block smSize="20%" mdSize="30%">
           <BackButton navigation={navigation} />
         </Block>
       </Section>

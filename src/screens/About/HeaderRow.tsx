@@ -6,18 +6,6 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { PageHeader } from '../../components/Text';
 import BackButton from '../../components/BackButton';
 
-const BackBtn = ({ layoutStyle, navigation }) => (
-  <Layout style={layoutStyle}>
-    <Button
-      size="small"
-      status="primary"
-      style={styles.headerBtn}
-      onPress={() => navigation.navigate('Home')}>
-      BACK
-    </Button>
-  </Layout>
-);
-
 const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
   const btnStyles = sizeSelector({
     xs: styles.headerBtnLayoutXs,

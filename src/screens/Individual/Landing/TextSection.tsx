@@ -7,16 +7,6 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { TextModal } from '../../../components/Text';
 import BackButton from '../../../components/BackButton';
 
-const BackBtn = ({ navigation }) => (
-  <Button
-    size="small"
-    status="primary"
-    style={styles.headerBtn}
-    onPress={() => navigation.goBack()}>
-    BACK
-  </Button>
-);
-
 const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
   const { navigation, themeColor } = props;
   const headerStyles = sizeSelector({

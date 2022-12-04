@@ -17,7 +17,7 @@ const About = (props: any) => {
       <PageLayout>
         <Section>
           <Block>
-            <HeaderRow />
+            <HeaderRow navigation={navigation} />
           </Block>
         </Section>
         <Section

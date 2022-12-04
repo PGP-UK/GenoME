@@ -87,7 +87,7 @@ const Landing = (props) => {
     <>
       <PageLayout backgroundColor={ThemeColors[name]}>
         <Grid>
-          <TextSection themeColor={ThemeColors[name]} />
+          <TextSection themeColor={ThemeColors[name]} navigation={navigation} />
           <Section style={styles.iconsWrapper}>
             {Icons.map((IconData, idx) => (
               <LandingIcon

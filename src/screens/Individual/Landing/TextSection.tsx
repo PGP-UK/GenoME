@@ -39,16 +39,16 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
           majority of variants are shared between individuals whilst others are
           private (in this case, unique to me or my family).
         </Text>
-        <Card>
-          <TextModal
-            category="h5"
-            style={[mainTextStyles, { color: themeColor }]}
-            modal_text={
-              'Genetic variants are changes in the DNA sequence; for example: TCCGA to TCTGA. \n\nA variant is defined as private (unique to me or my family) if it has not been recorded in any of the main public variant databases. \n\nEpigenetic variants are chemical changes to the DNA, which alter its function without changing the DNA sequence.'
-            }>
-            What is a PRIVATE, GENETIC, or EPIGENETIC variant?
-          </TextModal>
-        </Card>
+        <TextModal
+          category="h5"
+          style={[mainTextStyles, { color: themeColor }]}
+          modal_text={
+            'Genetic variants are changes in the DNA sequence; for example: TCCGA to TCTGA. \n\nA variant is defined as private (unique to me or my family) if it has not been recorded in any of the main public variant databases. \n\nEpigenetic variants are chemical changes to the DNA, which alter its function without changing the DNA sequence.'
+          }>
+            <Text category="h5" style={mainTextStyles}>
+              What is a PRIVATE, GENETIC, or EPIGENETIC variant?
+            </Text>
+        </TextModal>
         <Text category="h5" style={mainTextStyles}>
           Tap below to explore a few of my variants which we do know about.
         </Text>

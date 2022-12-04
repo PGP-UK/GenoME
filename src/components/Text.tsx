@@ -78,7 +78,7 @@ const TextModal = (props) => {
         backdropStyle={Styles.backdrop}
         visible={visible}
         onBackdropPress={() => setVisible(false)}>
-        <Card>
+        <Card style={{margin: 30}}>
           <Pressable onPress={() => setVisible(false)}>
             <PgpText
               category="p1"

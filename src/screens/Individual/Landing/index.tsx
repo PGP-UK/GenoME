@@ -17,6 +17,10 @@ const ThemeColors = {
 
 const Icons = [
   {
+    pageName: 'Variant',
+    image: 'variant-light.png',
+  },
+  {
     pageName: 'Ancestry',
     image: 'globe-europe-light.png',
   },
@@ -35,11 +39,7 @@ const Icons = [
   {
     pageName: 'Smoking',
     image: 'smoking-light.png',
-  },
-  {
-    pageName: 'Variant',
-    image: 'variant-light.png',
-  },
+  }
 ];
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {

@@ -25,13 +25,13 @@ const AllAmbassadorsData = {
 };
 
 const Variant = (props) => {
-  const { route } = props;
+  const { route, navigation } = props;
   const { name } = route.params;
   const { data, image } = AllAmbassadorsData[name];
   return (
     <>
       <PageLayout>
-        <TopSection data={data} />
+        <TopSection data={data} navigation={navigation} />
         <CenterImage image={`variant_screen_pie_charts/${image}`} />
         <BottomSection data={data} />
       </PageLayout>

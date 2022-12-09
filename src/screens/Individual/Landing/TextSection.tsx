@@ -33,7 +33,7 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
           EPIGENETIC information.
         </Text>
         <Text category="h5" style={subheaderStyles}>
-          My DNA sequence is about 99.9% identical to other people's DNA. the
+          My DNA sequence is about 99.9% identical to other people's DNA. The
           remaining 0.1% is what makes me unique, which amounts to several
           million changes. These changes are called "genetic variants". The
           majority of variants are shared between individuals whilst others are

@@ -75,7 +75,7 @@ const About = (props: any) => {
             <PageText style={styles.bottom_red_text}>
               DISCLAIMER: The generation of genomic data is not an error-free
               process and our analysis system is still under development.
-              becasue the body of knowledge of genetic and epigenetic variants
+              because the body of knowledge of genetic and epigenetic variants
               has many uncertainties, we cannot guarantee that our analyses are
               either accurate or complete.
             </PageText>

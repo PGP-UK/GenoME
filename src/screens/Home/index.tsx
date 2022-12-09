@@ -19,7 +19,7 @@ const Home = (props) => {
           <TextModal
             style={styles.pop_up_links}
             modal_text={
-              'PGP-UK encourages its participants to be active and to engage \nin Citizen Science by taking on the roles of both subject and scientist.'
+              'PGP-UK encourages its participants to be active and to engage in Citizen Science by taking on the roles of both subject and scientist.'
             }>
             active participants{' '}
           </TextModal>
@@ -28,7 +28,7 @@ const Home = (props) => {
           <TextModal
             style={styles.pop_up_links}
             modal_text={
-              'PGP-UK defines open access as non-restrictive access and useage of data released by the project.\nThis means the data is freely available to everyone.'
+              'PGP-UK defines open access as non-restrictive access and usage of data released by the project.\n\nThis means the data is freely available to everyone.'
             }>
             open access
           </TextModal>
@@ -43,7 +43,7 @@ const Home = (props) => {
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of active
           participants who share their DNA sequence, medical records and trait
-          data for reasearch under open access.
+          data for research under open access.
         </PageText>
 
         <Section

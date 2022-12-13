@@ -54,7 +54,7 @@ const Age = (props) => {
             justifyContent: 'center',
             alignItems: 'center',
             alignContent: 'center',
-            paddingBottom: 20,
+            paddingBottom: 2,
           }}
           xsHidden
           smHidden
@@ -79,7 +79,7 @@ const Age = (props) => {
             mdSize="50%"
             lgSize="50%"
             xlSize="50%"
-            style={{ paddingBottom: 20 }}>
+            style={{ paddingBottom: 2 }}>
             <CenterImage image={AllAmbassadors[name].AgeImage} data={data} />
           </Block>
 

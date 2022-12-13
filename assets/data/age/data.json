@@ -1,9 +1,9 @@
 {
     "stephan":{
         "Name": "Stephan",
-        "Age": "57",
-        "Epigenetic": "56",
-        "Diferrence":"1",
+        "Age": "59",
+        "Epigenetic": "54",
+        "Diferrence":"5",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
         "themeColor": "#8CD8C4",
@@ -11,8 +11,8 @@
     },
     "laura":{
         "Name": "Laura",
-        "Age": "46",
-        "Epigenetic": "44",
+        "Age": "44",
+        "Epigenetic": "42",
         "Diferrence":"2",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",
@@ -22,7 +22,7 @@
     "momodou":{
         "Name": "Momodou",
         "Age": "57",
-        "Epigenetic": "56",
+        "Epigenetic": "58",
         "Diferrence":"1",
         "AccDec": "Acceleration",
         "Identifier": "uk35C650",

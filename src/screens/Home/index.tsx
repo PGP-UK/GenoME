@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
   },
   pop_up_links: {
     color: '#63BEE1',
+    paddingTop: 5,
   },
 });
 

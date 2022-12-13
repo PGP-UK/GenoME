@@ -46,7 +46,7 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
             'Genetic variants are changes in the DNA sequence; for example: TCCGA to TCTGA. \n\nA variant is defined as private (unique to me or my family) if it has not been recorded in any of the main public variant databases. \n\nEpigenetic variants are chemical changes to the DNA, which alter its function without changing the DNA sequence.'
           }>
             <Text category="h5" style={mainTextStyles}>
-              What is a PRIVATE, GENETIC, or EPIGENETIC variant?
+              Tap here to find out more about what a private, genetic or epigenetic variant is.
             </Text>
         </TextModal>
         <Text category="h5" style={mainTextStyles}>

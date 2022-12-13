@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
     paddingTop: 7,
     textAlign: 'center',
     color: 'white',
+    fontSize: 25,
   },
   iconsWrapper: {
     justifyContent: 'center',

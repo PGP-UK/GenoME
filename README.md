@@ -35,7 +35,16 @@ eas login
 Next, build the app locally
 
 ```bash
+# If you want to use the app inside a simulator
 eas build --platform ios --profile simulator --local
+
+# This creates an expo client - that can be connected to with expo start --dev-client
+eas build --platform ios --profile development 
+eas build --platform android --profile development 
+
+# This creates a specific version of the app - which can be installed on devices.
+eas build --platform ios --profile preview
+eas build --platform android --profile preview
 ```
 
 This will generate a .tar.gz file, which you need to uncompress and then drag over to the IOS simulator.
@@ -43,7 +52,11 @@ This will generate a .tar.gz file, which you need to uncompress and then drag ov
 Next start the dev-client:
 
 ```bash
+# If you have a local simulator open
 expo start --ios --dev-client
+
+# If connecting to a dev client installed on a device
+expo start --dev-client --tunnel
 ```
 
 ## Development For Android

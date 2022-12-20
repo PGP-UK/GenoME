@@ -1,57 +1,28 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Layout, Button } from '@ui-kitten/components';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
-import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { PageHeader } from '../../components/Text';
 import BackButton from '../../components/BackButton';
 
-const HeaderRow = withSizeInfo(({ sizeSelector, navigation, HeaderStyle }) => {
-  const btnStyles = sizeSelector({
-    xs: styles.headerBtnLayoutXs,
-    md: styles.headerBtnLayoutMd,
-  });
-
+const HeaderRow = ({navigation }) => {
   return (
     <Grid>
-      <Section style={HeaderStyle}>
+      <Section style={styles.headerRow}>
         <Block xsSize="100%" mdSize="80%">
-          <HeaderText />
+          <PageHeader>About PGP-UK</PageHeader>
         </Block>
-        <Block xsSize="100%" mdSize="20%" style={{ paddingBottom: 25 }}>
+        <Block xsSize="100%" mdSize="20%" >
           <BackButton navigation={navigation} />
         </Block>
       </Section>
     </Grid>
   );
-});
-
-const HeaderText = () => (
-  <PageHeader style={styles.header}>
-    About PGP-UK and the global network of Personal Genome Projects
-  </PageHeader>
-);
+};
 
 const styles = StyleSheet.create({
-  header: {
-    marginBottom: 25,
-    alignItems: 'center',
-  },
-  headerBtn: {
-    backgroundColor: '#3BAEDA',
-    borderWidth: 0,
-    color: '#fff',
-  },
-  headerBtnLayoutXs: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  headerBtnLayoutMd: {
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
+  headerRow: {
     marginBottom: 10,
-  },
+  }
 });
 
 export default HeaderRow;

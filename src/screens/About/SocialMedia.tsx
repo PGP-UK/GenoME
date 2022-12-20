@@ -56,9 +56,7 @@ const SocialMedia = () => (
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'space-evenly',
-    marginVertical: 50,
+
   },
 
   main_text2: {

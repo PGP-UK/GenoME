@@ -5,7 +5,7 @@ import { Section } from 'react-native-responsive-layout';
 import PageLayout from '../../components/PageLayout';
 import HeaderRow from './HeaderRow';
 import Ambassadors from './Ambassadors';
-import { PageText, PageFooter, TextModal } from '../../components/Text';
+import { PageText, TextModal } from '../../components/Text';
 
 const Home = (props) => {
   const { navigation } = props;
@@ -23,13 +23,11 @@ const Home = (props) => {
             }>
             active participants{' '}
           </TextModal>
-          who share their DNA sequence, medical records and trait data for
-          reasearch under{' '}
+          who share their genomes and personal data for
+          research under{' '}
           <TextModal
             style={styles.pop_up_links}
-            modal_text={
-              'PGP-UK defines open access as non-restrictive access and usage of data released by the project.\n\nThis means the data is freely available to everyone.'
-            }>
+            modal_text={'PGP-UK data is openly and freely available without any restrictions.'}>
             open access
           </TextModal>
           .
@@ -38,12 +36,6 @@ const Home = (props) => {
         <PageText style={styles.main_text}>
           Four PGP-UK participants have volunteered as ambassadors to share
           their identities and genomes to showcase the project.
-        </PageText>
-
-        <PageText style={styles.main_text}>
-          The Personal Genome Project UK (PGP-UK) is a community of active
-          participants who share their DNA sequence, medical records and trait
-          data for research under open access.
         </PageText>
 
         <Section
@@ -74,10 +66,10 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
   headerRow: {
-    marginBottom: 25,
   },
   main_text: {
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   top_footer_text: {
     color: '#63BEE1',
@@ -88,7 +80,6 @@ const styles = StyleSheet.create({
   },
   pop_up_links: {
     color: '#63BEE1',
-    paddingTop: 5,
   },
 });
 

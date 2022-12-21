@@ -16,7 +16,7 @@ export default {
     updates: {
       fallbackToCacheTimeout: 0,
     },
-    assetBundlePatterns: ["**/*", "assets/images/**/*"],
+    assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
       bundleIdentifier: IS_PREVIEW ? "uk.org.personalgenomes.genome" : "dev.uk.org.personalgenomes.genome",

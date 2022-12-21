@@ -2,80 +2,84 @@
 
 The PGP-UK GenoME app.
 
-## Setup
+## Installation
+
+```bash
+yarn install
+```
+
+Next, login into the EAS Account.
+
+```bash
+eas login
+```
+
+## Working with a iOS Simulator
+
+### Setup
 
 ```bash
 brew install asdf cocoapods fastlane ngrok
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 
-asdf install nodejs 18.10.0
+asdf install nodejs 19.2.0
 asdf install ruby 3.1.2
 
-asdf global nodejs 18.10.0
+asdf global nodejs 19.2.0
 asdf global ruby 3.1.2
 
-npm install -g expo-cli eas-cli ngrok react-devtools
+npm install -g eas-cli
 ```
 
-## Install
+### Run
+
+1. First create the development client locally
 
 ```bash
-yarn install
-```
-
-## Development on IOS (Mac Only)
-
-First, login into the EAS Account.
-
-```bash
-eas login
-```
-
-Next, build the app locally
-
-```bash
-# If you want to use the app inside a simulator
 eas build --platform ios --profile simulator --local
+```
 
-# This creates an expo client - that can be connected to with expo start --dev-client
-eas build --platform ios --profile development 
-eas build --platform android --profile development 
+2. This will generate an `.tar.gz` file containing an `.app` file. Drag and drop this into the Simulator
 
-# This creates a specific version of the app - which can be installed on devices.
+3. Start the development server
+
+```bash
+yarn run --ios --dev-client
+```
+
+## Development on a physical Device.
+
+1. If using an IOS Device, for first time, you will need to add this to the development profile
+
+```bash
+eas device:create
+```
+
+2. Next Generate a development client using the online EAS service.
+
+```bash
+eas build --platform ios --profile development
+eas build --platform android --profile development
+```
+
+3. Install the build development client on the physical device.
+
+4. Start the development client
+
+```bash
+yarn run --tunnel --dev-client
+```
+
+## Building a preview version of the app
+
+This allows you to install a specific version of the app - i.e. it is similar to the final app.
+
+```bash
 eas build --platform ios --profile preview
 eas build --platform android --profile preview
-```
-
-This will generate a .tar.gz file, which you need to uncompress and then drag over to the IOS simulator.
-
-Next start the dev-client:
-
-```bash
-# If you have a local simulator open
-expo start --ios --dev-client
-
-# If connecting to a dev client installed on a device
-expo start --dev-client --tunnel
 ```
 
 ## Development For Android
 
 > TODO
-
-## Development using EAS Build (Remote)
-
-> Note, these builds can take some time.
-
-Here you can run the following two commands. The development profile is for development and requires that you also run `expo start --dev-client`, while the preview command includes the entire app in its current state.
-
-```bash
-eas build --platform all --profile development
-eas build --platform all --profile preview
-```
-
-### Adding IOS Devices
-
-```bash
-eas device:create
-```

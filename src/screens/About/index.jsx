@@ -1,0 +1,131 @@
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Section, Block } from 'react-native-responsive-layout';
+
+import PageLayout from '../../components/PageLayout';
+import { PageText } from '../../components/Text';
+
+import SocialMedia from './SocialMedia';
+import ImageBackground from './ImageBackground';
+import HeaderRow from './HeaderRow';
+
+const About = (props) => {
+  const { navigation } = props;
+  return (
+    <>
+      <PageLayout>
+        <Section>
+          <Block>
+            <HeaderRow navigation={navigation} />
+          </Block>
+        </Section>
+        <Section
+          stretch
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            flexWrap: 'wrap',
+          }}>
+          <Block>
+            <PageText style={styles.main_text}>
+              PGP-UK is part of the global network of Personal
+              Genome Projects, which all share the vision of advancing science
+              through open data sharing. Currently, there are projects in
+              America, Austria, Canada, China and the UK. There are multiple
+              ways to join the PGP-UK community and keep up-to-date with the
+              project - just follow the links below.
+              {"\n\n"}
+              We look forward to doing great science with you!
+              {"\n\n"}
+              The PGP-UK Team
+            </PageText>
+          </Block>
+        </Section>
+
+        <Section stretch>
+          <Block style={styles.backgroundImage}>
+            <ImageBackground source={require('./../../../assets/About/more-information_globe.png')} />
+          </Block>
+        </Section>
+        <Section style={styles.bottomSection}>
+          <Block>
+            <PageText style={styles.bottom_red_text}>
+              DISCLAIMER: The generation of genomic data is not an error-free
+              ways to join the PGP-UK community and keep up-to-date with the
+              project - just follow the links below.
+              {"\n\n"}
+              We look forward to doing great science with you!
+              {"\n\n"}
+              The PGP-UK Team
+            </PageText>
+            <PageText style={styles.bottom_text}>
+              This app was designed and developed by the PGP-UK/GenoME team.
+            </PageText>
+          </Block>
+          <Block>
+            <SocialMedia
+              navigation={navigation}
+              SocialMediaStyle={styles.socialMedia}
+            />
+          </Block>
+        </Section>
+      </PageLayout>
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  headerRow: {
+    marginBottom: 25,
+  },
+  main_text2: {
+    textAlign: 'left',
+  },
+  main_text1: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    textAlign: 'left',
+  },
+  main_text: {
+    color: '#666E7A',
+  },
+  bottom_text: {
+    color: '#666E7A',
+    fontSize: 10,
+    position: 'relative',
+    marginTop: 5,
+    marginBottom: 20,
+  },
+  bottom_red_text: {
+    color: '#ff0000',
+    fontSize: 10,
+    textAlign: 'auto',
+    // position: 'relative',
+  },
+  bottomSection: {
+    paddingTop: 10,
+  },
+  backgroundImage: {
+    paddingTop: 20,
+    paddingBottom: 25,
+  },
+  bottomImage: {
+    marginTop: 20,
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  socialMedia: {
+    marginTop: 20,
+    marginBottom: 25,
+  },
+
+  socialMediaLogo: {
+    width: 50,
+    height: 50,
+  },
+});
+
+export default About;

@@ -2,7 +2,6 @@ import React from "react";
 import { Image, Pressable } from "react-native";
 import { IndexPath, Select } from "@ui-kitten/components";
 import { PageText } from "../Text";
-import { Section, Block } from "react-native-responsive-layout";
 
 const AmbassadorImage = ({ name, image, navigation, page }) => {
   return (

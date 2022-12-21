@@ -1,0 +1,74 @@
+diff --git a/src/components/grid/index.js b/src/components/grid/index.js
+index 6c0d406a7d75e6b6dbbd786c4d4b7e12531c00b8..ee0c55f7821ca4d9b887a1466af01cb2cd41952c 100644
+--- a/src/components/grid/index.js
++++ b/src/components/grid/index.js
+@@ -1,6 +1,6 @@
+ import React, { Component } from 'react';
+ import PropTypes from 'prop-types';
+-import { Dimensions, StyleSheet, View, ViewPropTypes } from 'react-native';
++import { Dimensions, StyleSheet, View } from 'react-native';
+ 
+ import {
+   BREAKPOINT_VALUES,
+@@ -48,6 +48,8 @@ class Grid extends Component {
+   constructor(props, context) {
+     super(props, context);
+ 
++    this.dimensionsRef = React.createRef();
++
+     let width = 0;
+     let height = 0;
+ 
+@@ -112,7 +114,10 @@ class Grid extends Component {
+   });
+ 
+   componentDidMount() {
+-    Dimensions.addEventListener('change', this.windowResizeHandler);
++    this.dimensionsRef.current = Dimensions.addEventListener(
++      "change",
++      this.windowResizeHandler
++    );
+ 
+     // Subscribe to parent updates if they provide them and parent provides them
+     if (this.props.relativeTo === 'parent') {
+@@ -123,7 +128,9 @@ class Grid extends Component {
+   }
+ 
+   componentWillUnmount() {
+-    Dimensions.removeEventListener('change', this.windowResizeHandler);
++    //? React Native has depreciated removeEventListener on Dimensions
++    //Dimensions.removeEventListener("change", this.windowResizeHandler);
++    this.dimensionsRef.current.remove();
+ 
+     // On unmount we need to unsubscribe from parent subscriber.
+     if (this.props.relativeTo === 'parent') {
+@@ -213,7 +220,7 @@ Grid.propTypes = {
+   horizontal: PropTypes.bool,
+   scrollable: PropTypes.bool,
+   relativeTo: PropTypes.oneOf(['parent', 'self', 'window']),
+-  style: ViewPropTypes.style,
++  style: PropTypes.object,
+   stretchable: PropTypes.bool,
+ 
+   children: PropTypes.oneOfType([
+diff --git a/src/components/section/index.js b/src/components/section/index.js
+index db94071048e33b42124f444934dd87dac600f543..72e0a2ed6d326f219466181f70b4fa98c5f93146 100644
+--- a/src/components/section/index.js
++++ b/src/components/section/index.js
+@@ -1,6 +1,6 @@
+ import React from 'react';
+ import PropTypes from 'prop-types';
+-import { StyleSheet, View, ViewPropTypes } from 'react-native';
++import { StyleSheet, View } from 'react-native';
+ 
+ import { DirectionProp } from '../../shared/props';
+ import { checkInsideGrid, warn } from '../../utils';
+@@ -61,7 +61,7 @@ Section.propTypes = {
+     PropTypes.arrayOf(PropTypes.node),
+     PropTypes.node,
+   ]).isRequired,
+-  style: ViewPropTypes.style,
++  style: PropTypes.object,
+   stretch: PropTypes.bool,
+ };
+ 

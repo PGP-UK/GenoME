@@ -104,12 +104,12 @@ const allImages = [
   require('./assets/Individual/Health/ovarian/momodou_ovarian_profile.png'),
   require('./assets/Individual/Health/crohns/momodou_crohn_profile.png'),
 
-  require("..assets/Individual/Variant/stephan.png"),
-  require("..assets/Individual/Variant/colin.png"),
-  require("..assets/Individual/Variant/laura.png"),
-  require("..assets/Individual/Variant/momodou.png"),
+  require("./assets/Individual/Variant/stephan.png"),
+  require("./assets/Individual/Variant/colin.png"),
+  require("./assets/Individual/Variant/laura.png"),
+  require("./assets/Individual/Variant/momodou.png"),
 
-  require('..assets/Individual/Smoking/nonsmoking.png')
+  require('./assets/Individual/Smoking/nonsmoking.png')
 ]
 
 export default App;

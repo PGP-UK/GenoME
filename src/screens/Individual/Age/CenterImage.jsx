@@ -21,10 +21,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   return (
     <>
       <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
-      <View
-        style={{
-          alignContent: 'center',
-        }}>
+      <View style={{alignContent: 'center'}}>
         <Lottie
           ref={lottieRef}
           source={image}

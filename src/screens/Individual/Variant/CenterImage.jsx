@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useRef, useState } from 'react';
 import { StyleSheet, View } from "react-native";
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
-import FastImage from '@cuvent/react-native-fast-image';
+import Lottie from 'lottie-react-native';
+
+import LottieReset from '../../../components/LottieReset';
 
 const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { image } = props;
-  const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
+  const lottieRef = useRef();
+  const [displayReset, setDisplayReset] = useState(false);
+
   const imageWidth = Math.round(useSafeAreaFrame().width * 0.8) - 40;
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
   const finalImageWidth =
@@ -16,14 +20,24 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   return (
     <Section stretch>
       <Block>
-        <View style={{ justifyContent: "center", flex: 1 }}>
-          <FastImage
+        <LottieReset lottieRef={lottieRef} displayReset={displayReset}/>
+        <View>
+          <Lottie
+            ref={lottieRef}
             source={image}
-            resizeMode={FastImage.resizeMode.contain}
-            style={[
-              ImageStyles,
-              { width: finalImageWidth, height: finalImageWidth },
-            ]}
+            autoPlay
+            loop={false}
+            progress={1}
+            style={{
+              width: finalImageWidth + 100,
+              height: finalImageWidth + 100,
+              alignSelf: 'center',
+              alignContent: 'center',
+              justifyContent: 'center',
+            }}
+            onAnimationFinish={() => {
+              setDisplayReset(true);
+            }}
           />
         </View>
       </Block>

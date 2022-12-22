@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
 
     fontSize: 25,
-    fontWeight: '300',
+    fontWeight: '400',
     textAlign: 'center',
     color: 'white',
   },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     fontSize: 35,
-    fontWeight: '300',
+    fontWeight: '400',
     textAlign: 'center',
     color: 'white',
   },

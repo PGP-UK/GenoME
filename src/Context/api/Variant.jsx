@@ -1,19 +1,19 @@
 const AllAmbassadorsData = {
   stephan: {
     data: require(`../../../assets/Individual/Variant/stephan.json`),
-    image: require("../../../assets/Individual/Variant/stephan.png"),
+    image: require("../../../assets/Individual/Variant/lottie/stephan.json"),
   },
   colin: {
     data: require(`../../../assets/Individual/Variant/colin.json`),
-    image: require("../../../assets/Individual/Variant/colin.png"),
+    image: require("../../../assets/Individual/Variant/lottie/colin.json"),
   },
   laura: {
     data: require(`../../../assets/Individual/Variant/laura.json`),
-    image: require("../../../assets/Individual/Variant/laura.png"),
+    image: require("../../../assets/Individual/Variant/lottie/laura.json"),
   },
   momodou: {
     data: require(`../../../assets/Individual/Variant/momodou.json`),
-    image: require("../../../assets/Individual/Variant/momodou.png"),
+    image: require("../../../assets/Individual/Variant/lottie/momodou.json"),
   },
 };
 

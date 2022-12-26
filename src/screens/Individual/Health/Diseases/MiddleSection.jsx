@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useRef, useState } from 'react';
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 import { StyleSheet, View } from "react-native";
-import FastImage from '@cuvent/react-native-fast-image';
+import Lottie from 'lottie-react-native';
+
 
 import { PageText } from "../../../../components/Text";
 import { PageHeader } from "../../../../components/Text";
+import LottieReset from '../../../../components/LottieReset';
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
+  const lottieRef = useRef();
+  const [displayReset, setDisplayReset] = useState(false);
+
   const { image } = props;
   const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
   const ImagePercent = sizeSelector({ xs: 0.8, md: 0.3, lg: 0.3, xl: 0.4 });
@@ -18,11 +23,28 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <FastImage
-      source={image}
-      // resizeMode={FastImage.resizeMode.contain}
-      style={[ImageStyles, { width: finalImageWidth, height: finalImageWidth }]}
-    />
+    <>
+      <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
+      <View style={{alignContent: 'center'}}>
+        <Lottie
+          ref={lottieRef}
+          source={image}
+          autoPlay
+          loop={false}
+          progress={1}
+          style={[
+            ImageStyles,
+            {
+              width: finalImageWidth,
+              height: finalImageWidth,
+            },
+          ]}
+          onAnimationFinish={() => {
+            setDisplayReset(true);
+          }}
+        />
+      </View>
+    </>
   );
 });
 

@@ -38,8 +38,8 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
             loop={false}
             progress={1}
             style={{
-              width: finalImageWidth + 100,
-              height: finalImageWidth + 100,
+              width: finalImageWidth,
+              height: finalImageWidth,
               alignSelf: 'center',
               justifyContent: 'center',
             }}
@@ -116,18 +116,6 @@ const CenterSection = ({ image, data }) => {
 };
 
 const styles = StyleSheet.create({
-  center_animation_xs: {
-    paddingLeft: '30%',
-  },
-  center_animation_lg: {
-    paddingLeft: '45%',
-  },
-  center_animation_xl: {
-    paddingLeft: '50%',
-  },
-  center_animation_xxl: {
-    paddingLeft: '10%',
-  },
   percent_box: {
     alignItems: 'center',
     alignSelf: 'center',

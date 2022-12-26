@@ -4,19 +4,28 @@ import { Card, Modal} from '@ui-kitten/components';
 
 import { PageText } from './Text';
 import DataContext from '../Context/DataContext';
+import IntroVideo from '../components/IntroVideo';
 
 const ModalData = {
   'active_participants': {
     header: "Active Participants",
-    body: "PGP-UK encourages its participants to be active and to engage in Citizen Science by taking on the roles of both subject and scientist."
+    body: <PageText children={"PGP-UK encourages its participants to be active and to engage in Citizen Science by taking on the roles of both subject and scientist."}/>,
+    hideOnPress: true
   },
   "open_access": {
     header: "Open Access",
-    body: "PGP-UK data is openly and freely available without any restrictions."
+    body: <PageText children={"PGP-UK data is openly and freely available without any restrictions."}/>,
+    hideOnPress: true
   },
   "genetic_variants": {
     header: 'Genetic Variants',
-    body: 'Genetic variants are changes in the DNA sequence; for example: TCCGA to TCTGA. \n\nA variant is defined as private (unique to me or my family) if it has not been recorded in any of the main public variant databases. \n\nEpigenetic variants are chemical changes to the DNA, which alter its function without changing the DNA sequence.'
+    body: <PageText children={"Genetic variants are changes in the DNA sequence; for example: TCCGA to TCTGA. \n\nA variant is defined as private (unique to me or my family) if it has not been recorded in any of the main public variant databases. \n\nEpigenetic variants are chemical changes to the DNA, which alter its function without changing the DNA sequence."}/>,
+    hideOnPress: true
+  },
+  "intro_video": {
+    header: 'Video',
+    body: <IntroVideo/>,
+    hideOnPress: false
   }
 }
 
@@ -24,7 +33,8 @@ const ModalView = () => {
   const { modalId, setModalId} = useContext(DataContext)
   const modalVisible = modalId == 'hidden' ? false : true
   const modalHeader = ModalData[modalId]?.header
-  const modalText = ModalData[modalId]?.body
+  const modalBody = ModalData[modalId]?.body
+  const hideOnPress = ModalData[modalId]?.hideOnPress
 
   return (
     <>
@@ -34,9 +44,9 @@ const ModalView = () => {
         visible={modalVisible}
         onBackdropPress={() => setModalId('hidden')}>
         <Card style={{position: 'absolute', top: '30%', margin: 30 }}>
-          <Pressable onPress={() => setModalId('hidden')}>
+          <Pressable onPress={() => hideOnPress && setModalId('hidden')}>
             <PageText style={{color: '#63BEE1', marginBottom: 5, fontWeight: '500'}}>{modalHeader}</PageText>
-            <PageText>{modalText}</PageText>
+            {modalBody}
           </Pressable>
         </Card>
       </Modal>

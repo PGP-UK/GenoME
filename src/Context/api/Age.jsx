@@ -19,6 +19,6 @@ const AllAmbassadors = {
 };
 
 export default {
-  AgeData: AgeData ,
+  AgeData: AgeData,
   AllAmbassadors: AllAmbassadors
 }

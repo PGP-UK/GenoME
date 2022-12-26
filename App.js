@@ -24,8 +24,11 @@ const App = () => {
     } else if (assetsError != undefined) {
       console.log('Caching Failed - Continuing anyway')
       setAppReady(true);
-    } else {
-      console.log('App Ready')
+    } else if (assets !== undefined && allAssets === undefined) {
+      console.log('Important Assets Loaded')
+      setAppReady(true);
+    } else if (assets !== undefined && allAssets !== undefined) {
+      console.log('All Assets Loaded')
       setAppReady(true);
     }
   })
@@ -68,6 +71,11 @@ const importantImages = [
 ]
 
 const allImages = [
+  require('./assets/Individual/Landing/IntroVideos/stephan.mp4'),
+  require('./assets/Individual/Landing/IntroVideos/colin.mp4'),
+  require('./assets/Individual/Landing/IntroVideos/laura.mp4'),
+  require('./assets/Individual/Landing/IntroVideos/momodou.mp4'),
+
   require('./assets/About/more-information_globe.png'),
   require('./assets/About/more-information_twitter.png'),
   require('./assets/About/more-information_blogs.png'),

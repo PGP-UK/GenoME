@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import { StyleSheet } from 'react-native';
-import { Text } from '@ui-kitten/components';
+import { StyleSheet, View,  Pressable } from 'react-native';
+import { Text, Icon } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
@@ -44,6 +44,16 @@ const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
         <Text category="h5" style={mainTextStyles} onPress={() => setModalId('genetic_variants')}>
           Tap here to find out more about what a private, genetic or epigenetic variant is.
         </Text>
+        <Pressable onPress={() => setModalId('intro_video')}>
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+            <View style={[styles.button, {flexDirection: 'row', alignContent: 'center'}]} appearance='outline' size='giant' status='control'>
+              <Icon style={{width: 40, height: 40, alignSelf: 'baseline'}} fill='#fff' name='play-circle-outline' />
+              <Text category="h2" style={[headerStyles, {marginLeft: 5, marginTop: 5, marginBottom: 5}]}>
+                Watch My Story
+              </Text>
+            </View>
+          </View>
+        </Pressable>
         <Text category="h5" style={mainTextStyles}>
           Tap below to explore a few of my variants which we do know about.
         </Text>
@@ -59,6 +69,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '400',
     color: 'white',
+  },
+  button: {
+    borderStyle: 'solid',
+    borderWidth: 3,
+    borderColor:'white',
+    padding: 10,
+    borderRadius: 20,
+    color: 'white',
+    backgroundColor: 'transparent',
+    fontSize: 40,
   },
   headerlg: {
     marginTop: 0,

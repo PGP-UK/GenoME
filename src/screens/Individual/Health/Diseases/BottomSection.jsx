@@ -30,7 +30,7 @@ const BottomSection = (props) => {
   const textData = textInformation[disease];
   return (
     <Section>
-      <Block>
+      <Block style={{paddingTop: 25}}>
         <PageText category="p1" style={styles.top_text}>
           {textData.topText}
         </PageText>

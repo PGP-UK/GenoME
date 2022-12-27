@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import PageLayout from '../../../../components/PageLayout';
-
+import { Section} from "react-native-responsive-layout";
 import TopSection from './TopSection';
 import MiddleSection from './MiddleSection';
 import BottomSection from './BottomSection';
@@ -18,13 +18,24 @@ const Diseases = (props) => {
     <>
       <PageLayout>
         <TopSection disease={disease} data={data} navigation={navigation} />
-        <MiddleSection
-          disease={disease}
-          data={data}
-          name={name}
-          image={image}
-        />
-        <BottomSection disease={disease} />
+        <Section
+        stretch
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+          <MiddleSection
+            disease={disease}
+            data={data}
+            name={name}
+            image={image}
+          />
+          <BottomSection disease={disease} />
+        </Section>
       </PageLayout>
     </>
   );

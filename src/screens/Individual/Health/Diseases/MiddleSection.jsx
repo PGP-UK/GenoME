@@ -137,17 +137,7 @@ const MiddleSection = (props) => {
   const backgroundColour = data.population.colour;
   return (
     <>
-      <Section
-        stretch
-        style={{
-          flex: 1,
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
-          flexWrap: "wrap",
-        }}
-      >
+      
         {/* Hidden in large screens */}
         <Block
           style={{
@@ -230,7 +220,6 @@ const MiddleSection = (props) => {
         >
           <VariantRisk riskData={data.risk} />
         </Block>
-      </Section>
     </>
   );
 };

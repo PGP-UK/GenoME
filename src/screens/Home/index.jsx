@@ -16,7 +16,7 @@ const Home = (props) => {
   return (
     <>
       <PageLayout>
-        <HeaderRow navigation={navigation} HeaderStyle={styles.headerRow} />
+        <HeaderRow/>
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of{' '}
           <PageText onPress={() => setModalId('active_participants')} style={styles.pop_up_links}>
@@ -49,9 +49,6 @@ const Home = (props) => {
 };
 
 const styles = StyleSheet.create({
-  headerRow: {
-    marginBottom: 25,
-  },
   main_text: {
     marginBottom: 20,
   },

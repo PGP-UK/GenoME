@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Section, Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
@@ -12,47 +12,36 @@ const CenterImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const lottieRef = useRef();
   const [displayReset, setDisplayReset] = useState(false);
 
+  const heightPadding = sizeSelector({ xs: 0, xl: 200})
+
   const imageWidth = Math.round(useSafeAreaFrame().width * 0.8) - 40;
-  const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
-  const finalImageWidth =
-    imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
+  const maxImageHeight = (Math.round(useSafeAreaFrame().height * 0.8) - heightPadding);
+  const finalImageWidth = imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <Section stretch>
+    <Section>
       <Block>
         <LottieReset lottieRef={lottieRef} displayReset={displayReset}/>
-        <View>
-          <Lottie
-            ref={lottieRef}
-            source={image}
-            autoPlay
-            loop={false}
-            progress={1}
-            style={{
-              width: finalImageWidth + 100,
-              height: finalImageWidth + 100,
-              alignSelf: 'center',
-              alignContent: 'center',
-              justifyContent: 'center',
-            }}
-            onAnimationFinish={() => {
-              setDisplayReset(true);
-            }}
-          />
-        </View>
+        <Lottie
+          ref={lottieRef}
+          source={image}
+          autoPlay
+          loop={false}
+          progress={1}
+          style={[{width: finalImageWidth,height: finalImageWidth,}, styles.image]}
+          onAnimationFinish={ () => setDisplayReset(true) }
+        />
       </Block>
     </Section>
   );
 });
 
 const styles = StyleSheet.create({
-  imageMd: {
-    alignSelf: "center",
-    marginTop: -50,
-  },
-  imageSm: {
-    alignSelf: "center",
-  },
+  image: {
+    alignSelf: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+  }
 });
 
 export default CenterImage;

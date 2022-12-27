@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useRef} from "react";
 import { Video } from 'expo-av';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
@@ -8,7 +8,7 @@ import { PageText } from '../Text'
 
 const IntroVideo = () => {
   const imageWidth = Math.round(useSafeAreaFrame().width - 110);
-  const videoRef = React.useRef(null);
+  const videoRef = useRef(null);
 
   const route = useRoute();
   const name = route?.params?.name || 'stephan';

@@ -18,11 +18,11 @@ const Icons = [
   },
   {
     pageName: 'Ancestry',
-    image: require('./../../../../assets/Individual/Landing/globe-europe-light.png'),
+    image: require('./../../../../assets/Individual/Landing/earth.png'),
   },
   {
     pageName: 'Eyes',
-    image: require('./../../../../assets/Individual/Landing/eye-light.png'),
+    image: require('./../../../../assets/Individual/Landing/eye-regular.png'),
   },
   {
     pageName: 'Health',
@@ -30,11 +30,11 @@ const Icons = [
   },
   {
     pageName: 'Age',
-    image: require('./../../../../assets/Individual/Landing/birthday-cake-light.png'),
+    image: require('./../../../../assets/Individual/Landing/cake-candles-regular.png'),
   },
   {
     pageName: 'Smoking',
-    image: require('./../../../../assets/Individual/Landing/smoking-light.png'),
+    image: require('./../../../../assets/Individual/Landing/smoking-regular.png'),
   }
 ];
 

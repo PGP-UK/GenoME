@@ -18,23 +18,23 @@ const Icons = [
   },
   {
     pageName: 'Ancestry',
-    image: require('./../../../../assets/Individual/Landing/earth.png'),
+    image: require('./../../../../assets/Individual/Landing/earth-icon.png'),
   },
   {
     pageName: 'Eyes',
-    image: require('./../../../../assets/Individual/Landing/eye-regular.png'),
+    image: require('./../../../../assets/Individual/Landing/eye-icon.png'),
   },
   {
     pageName: 'Health',
-    image: require('./../../../../assets/Individual/Landing/filebeat-light.png'),
+    image: require('./../../../../assets/Individual/Landing/health-icon.png'),
   },
   {
     pageName: 'Age',
-    image: require('./../../../../assets/Individual/Landing/cake-candles-regular.png'),
+    image: require('./../../../../assets/Individual/Landing/age-icon.png'),
   },
   {
     pageName: 'Smoking',
-    image: require('./../../../../assets/Individual/Landing/smoking-regular.png'),
+    image: require('./../../../../assets/Individual/Landing/smoking-icon.png'),
   }
 ];
 

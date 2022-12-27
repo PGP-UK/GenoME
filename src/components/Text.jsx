@@ -59,4 +59,4 @@ const Styles = StyleSheet.create({
   },
 });
 
-export { PageHeader, PageText };
+export { PageHeader, PageText, PgpText };

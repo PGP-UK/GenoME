@@ -10,33 +10,41 @@ import PageLayout from '../../../components/PageLayout';
 import DataContext from '../../../Context/DataContext';
 
 import TextSection from './TextSection';
+import Icons from './Icons'
 
-const Icons = [
-  {
-    pageName: 'Variant',
-    image: require('./../../../../assets/Individual/Landing/variant-light.png'),
-  },
-  {
-    pageName: 'Ancestry',
-    image: require('./../../../../assets/Individual/Landing/globe-europe-light.png'),
-  },
-  {
-    pageName: 'Eyes',
-    image: require('./../../../../assets/Individual/Landing/eye-light.png'),
-  },
-  {
-    pageName: 'Health',
-    image: require('./../../../../assets/Individual/Landing/filebeat-light.png'),
-  },
-  {
-    pageName: 'Age',
-    image: require('./../../../../assets/Individual/Landing/birthday-cake-light.png'),
-  },
-  {
-    pageName: 'Smoking',
-    image: require('./../../../../assets/Individual/Landing/smoking-light.png'),
-  }
-];
+const Landing = (props) => {
+  const { route, navigation } = props;
+  const { name } = route.params;
+  const { landing: { ThemeColors } } = useContext(DataContext)
+
+  return (
+    <PageLayout backgroundColor={ThemeColors[name]}>
+      <TextSection />
+      <Grid>
+        <Section style={styles.iconsWrapper}>
+          {Icons.map((IconData, idx) => (
+            <LandingIcon key={idx} IconData={IconData} name={name} navigation={navigation} />
+          ))}
+        </Section>
+      </Grid>
+    </PageLayout>
+  );
+};
+
+const LandingIcon = ({ IconData, name, navigation }) => (
+  <Block xsSize="50%" smSize="33%" mdSize="16.6%" style={styles.landingIconWrapper}>
+    <Pressable
+      onPress={() =>
+        navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
+      }
+      style={styles.box}>
+      <Iconimage icon={IconData.image} />
+      <Text category="h4" style={styles.iconText}>
+        {IconData.pageName}
+      </Text>
+    </Pressable>
+  </Block>
+);
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { icon } = props;
@@ -52,53 +60,6 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   );
 });
 
-const LandingIcon = ({ IconData, name, navigation }) => {
-  return (
-    <Block
-      xsSize="50%"
-      smSize="33%"
-      mdSize="16.6%"
-      style={styles.landingIconWrapper}>
-      <Pressable
-        onPress={() =>
-          navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
-        }
-        style={styles.box}>
-        <Iconimage icon={IconData.image} />
-        <Text category="h4" style={styles.iconText}>
-          {IconData.pageName}
-        </Text>
-      </Pressable>
-    </Block>
-  );
-};
-
-const Landing = (props) => {
-  const { route, navigation } = props;
-  const { name } = route.params;
-  const {landing: {ThemeColors}} = useContext(DataContext)
-
-  return (
-    <>
-      <PageLayout backgroundColor={ThemeColors[name]}>
-        <Grid>
-          <TextSection themeColor={ThemeColors[name]} navigation={navigation} />
-          <Section style={styles.iconsWrapper}>
-            {Icons.map((IconData, idx) => (
-              <LandingIcon
-                key={idx}
-                IconData={IconData}
-                name={name}
-                navigation={navigation}
-              />
-            ))}
-          </Section>
-        </Grid>
-      </PageLayout>
-    </>
-  );
-};
-
 const styles = StyleSheet.create({
   landingIconWrapper: {
     alignItems: 'center',
@@ -107,29 +68,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     marginBottom: 10,
-  },
-  avpic: {
-    width: 200,
-    height: 200,
-    borderRadius: 205 / 2,
-    overflow: 'hidden',
-    borderWidth: 3,
-  },
-  avcontainer: {
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    padding: 8,
-    flexWrap: 'wrap',
-  },
-  button_style: {
-    color: 'white',
-    backgroundColor: '#00d5ff',
-    padding: 10,
-  },
-  headerBtn: {
-    backgroundColor: '#3BAEDA',
-    borderWidth: 0,
-    color: '#fff',
   },
   iconText: {
     paddingTop: 7,

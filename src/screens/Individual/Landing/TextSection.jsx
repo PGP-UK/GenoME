@@ -2,74 +2,124 @@ import React, {useContext} from 'react';
 import { StyleSheet, View,  Pressable } from 'react-native';
 import { Text, Icon } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
-import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 
 import BackButton from '../../../components/BackButton';
 import DataContext from '../../../Context/DataContext'
+import { PgpText } from '../../../components/Text'
 
-const TextSection = withSizeInfo(({ sizeSelector, ...props }) => {
+const TextSection = () => {
   const { setModalId } = useContext(DataContext);
 
-  const { navigation, themeColor } = props;
-  const headerStyles = sizeSelector({
-    xs: styles.headerxs,
-    lg: styles.headerlg,
-  });
-  const subheaderStyles = sizeSelector({
-    xs: styles.subheaderxs,
-    lg: styles.subheaderlg,
-  });
-  const mainTextStyles = sizeSelector({
-    xs: styles.main_textxs,
-    lg: styles.main_textlg,
-  });
+  const mainHeaderStyles = {
+    xs: [styles.mainHeaderBase, styles.mainHeaderXs],
+    lg: [styles.mainHeaderBase, styles.mainHeaderLg],
+    xl: [styles.mainHeaderBase, styles.mainHeaderXl],
+  }
+  const subheaderStyles = {
+    xs: [styles.subHeaderBase, styles.subHeaderXs],
+    lg: [styles.subHeaderBase, styles.subHeaderLg],
+    xl: [styles.subHeaderBase, styles.subHeaderXl],
+
+  }
+  const mainTextStyles = {
+    xs: [styles.mainTextBase, styles.mainTextXs],
+    lg: [styles.mainTextBase, styles.mainTextLg],
+    xl: [styles.mainTextBase, styles.mainTextXl]
+  }
 
   return (
     <Section>
       <Block style={{ flexDirection: 'row-reverse' }}>
-        <BackButton navigation={navigation} />
+        <BackButton />
       </Block>
-      <Block xsSize="100%" lgSize="100%">
-        <Text category="h1" style={headerStyles}>
-          My GENOME contains many layers of INFORMATION, including GENETIC and
-          EPIGENETIC information.
-        </Text>
-        <Text category="h5" style={subheaderStyles}>
-          My DNA sequence is about 99.9% identical to other people's DNA. The
-          remaining 0.1% is what makes me unique, which amounts to several
-          million changes. These changes are called "genetic variants". The
-          majority of variants are shared between individuals whilst others are
+      <Block>
+        <PgpText category="h1" sizeSelectorStyles={mainHeaderStyles}>
+          My GENOME contains many layers of INFORMATION, including GENETIC and EPIGENETIC information.
+        </PgpText>
+        <PgpText category="p1" sizeSelectorStyles={subheaderStyles}>
+          My DNA sequence is about 99.9% identical to other people's DNA. The remaining 0.1% is what makes me unique, which amounts to several
+          million changes. These changes are called "genetic variants". The majority of variants are shared between individuals whilst others are
           private (in this case, unique to me or my family).
-        </Text>
-        <Text category="h5" style={mainTextStyles} onPress={() => setModalId('genetic_variants')}>
+        </PgpText>
+        <PgpText category="p1" sizeSelectorStyles={mainTextStyles} onPress={() => setModalId('genetic_variants')}>
           Tap here to find out more about what a private, genetic or epigenetic variant is.
-        </Text>
-        <Pressable onPress={() => setModalId('intro_video')}>
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-            <View style={[styles.button, {flexDirection: 'row', alignContent: 'center'}]} appearance='outline' size='giant' status='control'>
-              <Icon style={{width: 40, height: 40, alignSelf: 'baseline'}} fill='#fff' name='play-circle-outline' />
-              <Text category="h2" style={[headerStyles, {marginLeft: 5, marginTop: 5, marginBottom: 5}]}>
-                Watch My Story
-              </Text>
-            </View>
-          </View>
-        </Pressable>
-        <Text category="h5" style={mainTextStyles}>
+        </PgpText>
+        <MyStoryButton setModalId={setModalId}/>
+        <PgpText category="p1" sizeSelectorStyles={mainTextStyles}>
           Tap below to explore a few of my variants which we do know about.
-        </Text>
+        </PgpText>
       </Block>
     </Section>
   );
-});
+}
+
+const MyStoryButton = ({setModalId}) => (
+  <Pressable onPress={() => setModalId('intro_video')}>
+    <View style={styles.buttonContainer}>
+      <View style={styles.button} appearance='outline' size='giant' status='control'>
+        <Icon style={styles.button_icon} fill='#fff' name='play-circle-outline' />
+        <Text category="h2" style={{color: '#fff'}}>
+          Watch My Story
+        </Text>
+      </View>
+    </View>
+  </Pressable>
+)
 
 const styles = StyleSheet.create({
-  headerxs: {
-    marginTop: 10,
-    marginBottom: 20,
+  // MainHeader
+  mainHeaderBase: {
+    marginTop: 5,
+    marginBottom: 15,
     textAlign: 'center',
     fontWeight: '400',
     color: 'white',
   },
+  mainHeaderXs: {
+    fontSize: 36
+  },
+  mainHeaderLg: {
+    fontSize: 50,
+  },
+  mainHeaderXl: {
+    fontSize: 75,
+    marginRight: 30,
+    marginLeft: 30
+  },
+  // SubHeader
+  subHeaderBase: {
+    marginBottom: 10,
+    fontWeight: '400',
+    textAlign: 'center',
+    color: 'white',
+  },
+  subHeaderXs: {
+    fontSize: 24,
+  },
+  subHeaderLg: {
+    fontSize: 26
+  },
+  subHeaderXl: {
+    fontSize: 36,
+    marginRight: 22,
+    marginLeft: 22
+  },
+  // MainText
+  mainTextBase: {
+    textAlign: 'center',
+    color: 'white',
+    marginBottom: 20,
+  },
+  mainTextXs: {
+    fontSize: 22,
+  },
+  mainTextLg: {
+    fontSize: 24
+  },
+  mainTextXl: {
+    fontSize: 32,
+  },
+
   button: {
     borderStyle: 'solid',
     borderWidth: 3,
@@ -79,56 +129,19 @@ const styles = StyleSheet.create({
     color: 'white',
     backgroundColor: 'transparent',
     fontSize: 40,
+    flexDirection: 'row',
+    alignContent: 'center',
+    alignItems: 'center'
   },
-  headerlg: {
-    marginTop: 0,
-    marginBottom: 20,
-    marginLeft: 30,
-    fontSize: 75,
-    fontWeight: '400',
-    textAlign: 'center',
-    color: 'white',
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 15
   },
-  // headermd: {
-  //   marginTop: 30,
-  //   marginBottom: 20,
-  //   textAlign: 'center',
-  //   fontWeight: '400',
-  //   // color: 'white',
-  //   fontSize: 35,
-  // },
-  subheaderxs: {
-    marginTop: 10,
-
-    fontSize: 25,
-    fontWeight: '400',
-    textAlign: 'center',
-    color: 'white',
-  },
-  subheaderlg: {
-    marginTop: 10,
-    marginBottom: 20,
-    fontSize: 35,
-    fontWeight: '400',
-    textAlign: 'center',
-    color: 'white',
-  },
-  main_textxs: {
-    marginTop: 10,
-    marginBottom: 20,
-    fontSize: 20,
-    textAlign: 'center',
-    color: 'white',
-  },
-  main_textlg: {
-    marginTop: 10,
-    marginBottom: 20,
-    fontSize: 25,
-    textAlign: 'center',
-    color: 'white',
-  },
-  press_text: {
-    backgroundColor: 'white',
+  button_icon: {
+    width: 40,
+    height: 40,
+    marginRight: 5
   },
 });
 

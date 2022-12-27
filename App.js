@@ -15,8 +15,11 @@ SplashScreen.preventAutoHideAsync();
 
 const App = () => {
   const [appReady, setAppReady] = useState(false);
-  const [assets, assetsError] = useAssets(importantImages);
-  const [allAssets, allAssetsError] = useAssets(allImages);
+  const [assets, assetsError] = useAssets(importantImages[0]);
+  const [allAssets, allAssetsError] = useAssets(allImages[0]);
+
+  // const [assets, assetsError] = useAssets(importantImages);
+  // const [allAssets, allAssetsError] = useAssets(allImages);
 
   useEffect(() => {
     if (assets === undefined) {

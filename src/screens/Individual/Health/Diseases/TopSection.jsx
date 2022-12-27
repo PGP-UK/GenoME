@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   },
   header2: {
     marginTop: 5,
+    paddingBottom: 20,
   },
 });
 

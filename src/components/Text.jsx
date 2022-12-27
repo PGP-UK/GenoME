@@ -22,12 +22,12 @@ const PgpText = withSizeInfo((props) => {
   );
 });
 
-const PageHeader = (props) => {
+const PageHeader = ({category, baseStyle, ...restProps}) => {
   return (
     <PgpText
-      {...props}
-      category="h1"
-      baseStyle={Styles.page_header_base}
+      {...restProps}
+      category={category || "h1"}
+      baseStyle={[baseStyle, Styles.page_header_base]}
     />
   );
 };

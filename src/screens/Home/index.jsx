@@ -1,22 +1,21 @@
 import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
-import { Section } from 'react-native-responsive-layout';
 
 import PageLayout from '../../components/PageLayout';
 import { PageText } from '../../components/Text';
+import HeaderRow from '../../components/HeaderRow';
+
 import DataContext from '../../Context/DataContext'
 
-import HeaderRow from './HeaderRow';
 import Ambassadors from './Ambassadors';
 
-const Home = (props) => {
-  const { navigation } = props;
+const Home = () => {
   const { setModalId } = useContext(DataContext);
 
   return (
     <>
       <PageLayout>
-        <HeaderRow/>
+        <HeaderRow headerText="Personal Genome Project" btnText="MORE INFORMATION" btnLocation="About"/>
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of{' '}
           <PageText onPress={() => setModalId('active_participants')} style={styles.pop_up_links}>
@@ -34,15 +33,7 @@ const Home = (props) => {
           their identities and genomes to showcase the project.
         </PageText>
 
-        <Section
-          stretch
-          style={{
-            alignItems: 'center',
-            alignContent: 'center',
-            paddingBottom: 50,
-          }}>
-          <Ambassadors navigation={navigation} />
-        </Section>
+        <Ambassadors />
       </PageLayout>
     </>
   );

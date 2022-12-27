@@ -2,8 +2,12 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button } from '@ui-kitten/components';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useNavigation } from '@react-navigation/native';
 
-const BackButton = withSizeInfo(({ sizeSelector, navigation }) => {
+
+const BackButton = withSizeInfo(({ sizeSelector }) => {
+  const navigation = useNavigation();
+
   const btnStyles = sizeSelector({
     xs: styles.headerBtnLayoutXs,
     md: styles.headerBtnLayoutMd,

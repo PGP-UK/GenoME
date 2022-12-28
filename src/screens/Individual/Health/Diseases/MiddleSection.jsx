@@ -1,250 +1,109 @@
-import React, { useRef, useState } from 'react';
-import { Section, Block } from "react-native-responsive-layout";
+import React from 'react';
+import { Block } from "react-native-responsive-layout";
 import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { useSafeAreaFrame } from "react-native-safe-area-context";
 import { StyleSheet, View } from "react-native";
-import Lottie from 'lottie-react-native';
 
-
-import { PageText } from "../../../../components/Text";
+import { PageText, PgpText } from "../../../../components/Text";
 import { PageHeader } from "../../../../components/Text";
-import LottieReset from '../../../../components/LottieReset';
-
-const AmbassadorImage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const lottieRef = useRef();
-  const [displayReset, setDisplayReset] = useState(false);
-
-  const { image } = props;
-  const ImageStyles = sizeSelector({ xs: styles.imageSm, md: styles.imageMd });
-  const ImagePercent = sizeSelector({ xs: 0.8, md: 0.3, lg: 0.3, xl: 0.4 });
-  const imageWidth = Math.round(useSafeAreaFrame().width * ImagePercent) - 40;
-  const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
-  const finalImageWidth =
-    imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
-
-  return (
-    <>
-      <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
-      <View style={{alignContent: 'center'}}>
-        <Lottie
-          ref={lottieRef}
-          source={image}
-          autoPlay
-          loop={false}
-          progress={1}
-          style={[
-            ImageStyles,
-            {
-              width: finalImageWidth,
-              height: finalImageWidth,
-            },
-          ]}
-          onAnimationFinish={() => {
-            setDisplayReset(true);
-          }}
-        />
-      </View>
-    </>
-  );
-});
-
-const ColorSplitText = withSizeInfo(({ sizeSelector }) => {
-  const ColorSplitStyles = sizeSelector({
-    xs: styles.xsColorSplitText,
-    md: styles.mdColorSplitText,
-  });
-  return (
-    <PageText style={ColorSplitStyles}>
-      The colour split illustrates how common each variant type is in the
-      population.
-    </PageText>
-  );
-});
-
-const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
-  const ImageStyles = sizeSelector({
-    xs: styles.xsHeader3,
-    md: styles.mdHeader3,
-  });
-
-  return (
-    <View>
-      <Block
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
-        }}
-      >
-        <PageText style={styles.header2}>Risk with each variant type:</PageText>
-      </Block>
-      {/* Hidden in large screens */}
-      <Block xlHidden>
-        <PageHeader category="h4" style={ImageStyles}>
-          <View style={styles.square1} />
-          &nbsp;
-          {riskData.first}
-        </PageHeader>
-        <PageHeader category="h4" style={ImageStyles}>
-          <View style={styles.square2} />
-          &nbsp;
-          {riskData.second}
-        </PageHeader>
-        <PageHeader category="h4" style={ImageStyles}>
-          <View style={styles.square3} />
-          &nbsp;
-          {riskData.third}
-        </PageHeader>
-      </Block>
-
-      {/* Hidden in small screens */}
-      <Block
-        hidden
-        xlVisible
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
-        }}
-      >
-        <PageHeader category="h4" style={ImageStyles}>
-          <View style={styles.square1} />
-          &nbsp;
-          {riskData.first}
-          &nbsp;
-          <View style={styles.square2} />
-          &nbsp;
-          {riskData.second}
-          &nbsp;
-          <View style={styles.square3} />
-          &nbsp;
-          {riskData.third}
-          &nbsp;
-        </PageHeader>
-      </Block>
-      {/* Hidden in small screens */}
-      <Block hidden mdVisible xlHidden>
-        <ColorSplitText />
-      </Block>
-    </View>
-  );
-});
+import LottieAnimation from '../../../../components/LottieAnimation'
 
 const MiddleSection = (props) => {
   const { data, image } = props;
   const backgroundColour = data.population.colour;
   return (
     <>
-      
-        {/* Hidden in large screens */}
-        <Block
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center",
-            paddingBottom: 20,
-          }}
-          mdHidden
-          xlVisible
-        >
-          <ColorSplitText />
-        </Block>
+      <Block xsSize="100%" mdSize="50%" style={{ paddingBottom: 20 }}>
+        <LottieAnimation image={image} imagePercentages={{xs: 0.8, md: 0.3, xl: 0.4}} />
+        <PgpText
+          category="c1"
+          sizeSelectorStyles={{xs: styles.xsColorSplitText, md: styles.mdColorSplitText}}>
+          The colour split illustrates how common each variant type is in the
+          population.
+        </PgpText>
+      </Block>
 
-        {/* Hidden in large screens */}
-        <Block
-          xsSize="100%"
-          smSize="100%"
-          mdSize="33%"
-          lgSize="33%"
-          xlSize="50%"
-          hidden
-          mdVisible
-          xlHidden
-        >
-          <VariantRisk riskData={data.risk} />
-        </Block>
+      {/* Smaller screens only */}
+      <Block xsSize="100%" mdHidden>
+        <VariantRisk riskData={data.risk} />
+      </Block>
 
-        <Block
-          xsSize="100%"
-          smSize="100%"
-          mdSize="33%"
-          lgSize="33%"
-          xlSize="50%"
-          style={{ paddingBottom: 20 }}
-        >
-          <AmbassadorImage image={image} />
-        </Block>
-
-        {/* Hidden in small screens */}
-        <Block
-          xsSize="100%"
-          smSize="100%"
-          mdSize="33%"
-          lgSize="33%"
-          xlSize="50%"
-          mdHidden
-        >
-          <VariantRisk riskData={data.risk} />
-        </Block>
-
-        <Block
-          xsSize="100%"
-          smSize="100%"
-          mdSize="33%"
-          lgSize="33%"
-          xlSize="40%"
-          style={{ paddingTop: 30 }}
-        >
-          <PageText
-            style={[styles.box_text, { backgroundColor: backgroundColour }]}
-          >
-            There are three versions of this variant and{" "}
-            {data.population.percent} of the population have the same variant as
-            me. {"\n"}
-            {"\n"}
-            {data.message}
-          </PageText>
-        </Block>
-
-        <Block
-          xsSize="100%"
-          smSize="100%"
-          mdSize="33%"
-          lgSize="33%"
-          xlSize="100%"
-          hidden
-          xlVisible
-        >
-          <VariantRisk riskData={data.risk} />
-        </Block>
+      {/*  larger screens only */}
+      <Block xsSize="100%" mdSize="50%" hidden mdVisible>
+        <PageText style={[styles.box_text, { backgroundColor: backgroundColour }]}>
+          There are three versions of this variant and {data.population.percent} of
+          the population have the same variant as me. {"\n\n"}{data.message}
+        </PageText>
+        <VariantRisk riskData={data.risk} />
+      </Block>
     </>
   );
 };
 
+const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
+  const containerStyles = sizeSelector({xs: {}, md: styles.container})
+  const ImageStyles = sizeSelector({xs: styles.xsHeader3, md: styles.mdHeader3 });
+
+  return (
+    <>
+      <Block style={containerStyles}>
+        <PageHeader category="h5" style={styles.header2}>Risk with each variant type:</PageHeader>
+      </Block>
+
+      <Block style={containerStyles}>
+        <View style={styles.squareWrapper}>
+          <View style={styles.square1} />
+          <PageHeader category="h6" style={ImageStyles}>{riskData.first}</PageHeader>
+        </View>
+        <View style={styles.squareWrapper}>
+          <View style={styles.square2} />
+          <PageHeader category="h6" style={ImageStyles}>{riskData.second}</PageHeader>
+        </View>
+        <View style={styles.squareWrapper}>
+          <View style={styles.square3} />
+          <PageHeader category="h6" style={ImageStyles}>{riskData.third}</PageHeader>
+        </View>
+      </Block>
+    </>
+  );
+});
+
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
+    justifyItems: 'center'
+  },
   header2: {
     color: "#666E7A",
-    marginBottom: 10,
+    marginBottom: 3,
+    marginTop: 10,
   },
   mdHeader3: {
-    fontSize: 25,
+    marginRight: 10,
+    marginLeft: 3,
+    fontSize: 22,
     color: "#666E7A",
   },
   xsHeader3: {
-    fontSize: 25,
+    marginRight: 10,
+    marginLeft: 3,
+    fontSize: 22,
     color: "#666E7A",
-  },
-  main_text: {
-    color: "#666E7A",
-    marginBottom: 20,
   },
   box_text: {
     color: "white",
     padding: 10,
+    marginTop: 20,
     marginBottom: 20,
+    maxWidth: 450,
+    alignSelf: 'center'
+  },
+  squareWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5
   },
   square1: {
     width: 25,
@@ -261,21 +120,19 @@ const styles = StyleSheet.create({
     height: 25,
     backgroundColor: "#F6BB41",
   },
-  imageMd: {
-    alignSelf: "center",
-    // marginTop: -50,
-  },
-  imageSm: {
-    alignSelf: "center",
-  },
   xsColorSplitText: {
     textAlign: "center",
-    marginBottom: 20,
     color: "#666E7A",
+    fontSize: 18,
   },
   mdColorSplitText: {
-    marginTop: 20,
+    maxWidth: 450,
+    alignSelf: 'center',
+    textAlign: 'center',
+    marginLeft: 30,
+    marginRight: 60,
     color: "#666E7A",
+    fontSize: 22,
   },
 });
 

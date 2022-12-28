@@ -13,6 +13,7 @@ const DataContext = createContext({});
 
 export function DataProvider(props) {
   const [modalId, setModalId] = useState('hidden')
+  const themeColors = { stephan: '#8CD8C4', colin: '#9C82DE', laura: '#F6BD4A', momodou: '#D94553', }
 
   return (
     <DataContext.Provider
@@ -20,6 +21,7 @@ export function DataProvider(props) {
       value={{
         modalId: modalId,
         setModalId: setModalId,
+        themeColors: themeColors,
         home: HomeData,
         age: AgeData,
         ancestry: AncestryData,

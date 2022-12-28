@@ -36,7 +36,7 @@ const LottieAnimation = withSizeInfo(({ sizeSelector, ...props }) => {
 const styles = StyleSheet.create({
   lottie: {
     alignSelf: 'center',
-    justifyContent: 'center',
+    justifySelf: 'center',
   }
 });
 

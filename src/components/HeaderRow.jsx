@@ -7,12 +7,13 @@ import { useNavigation } from '@react-navigation/native';
 
 import { PageHeader } from "./Text";
 
-const HeaderRow = ({ headerText, btnText, btnLocation, backBtn }) => {
+const HeaderRow = (props) => {
+  const { children, btnText, btnLocation, backBtn } = props
   return (
     <Grid>
       <Section>
         <Block xsSize="100%" mdSize="70%">
-          <HeaderText headerText={headerText}/>
+          <HeaderText>{children}</HeaderText>
         </Block>
         <Block xsSize="100%" mdSize="30%">
           <SideButton backBtn={backBtn} btnText={btnText} btnLocation={btnLocation} />
@@ -23,24 +24,21 @@ const HeaderRow = ({ headerText, btnText, btnLocation, backBtn }) => {
 }
 
 const HeaderText = withSizeInfo(({ sizeSelector, ...props}) => {
-  const { headerText } = props
+  const { children } = props
   const headerRowStyles = sizeSelector({
     xs: styles.headerRowXs,
     md: styles.headerRowMd,
   });
 
   return (
-    <PageHeader baseStyle={headerRowStyles}>{headerText}</PageHeader>
+    <PageHeader baseStyle={headerRowStyles}>{children}</PageHeader>
   )
 })
 
 const SideButton = withSizeInfo(({ sizeSelector, ...props }) => {
   const navigation = useNavigation();
   const { btnText, btnLocation, backBtn } = props
-  const buttonContainerStyles = sizeSelector({
-    xs: styles.btnXs,
-    md: styles.btnMd
-  })
+  const buttonContainerStyles = sizeSelector({ xs: styles.btnXs, md: styles.btnMd })
 
   return (
     <View style={buttonContainerStyles}>

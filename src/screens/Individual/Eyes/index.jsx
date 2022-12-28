@@ -22,7 +22,7 @@ const Eyes = (props) => {
   return (
     <>
       <PageLayout>
-        <HeaderRow headerText="Eye Colour" backBtn />
+        <HeaderRow backBtn>Eye Colour</HeaderRow>
         <PageText category="p1">
           Eye colour is determined by multiple genetic variants, some of which have been used to predict my eye colour.
           Below you can see my actual eyes and the predicted eye colour - how well do you think the prediction has worked?
@@ -30,10 +30,10 @@ const Eyes = (props) => {
 
         <Grid stretchable>
           <Section stretch style={styles.container}>
-            <Block size="50%" hidden xlVisible>
+            <Block size="50%" hidden mdVisible>
               <EyeVideo source={eyeData.eyeCloseUp}/>
             </Block>
-            <Block size="50%" hidden xlVisible >
+            <Block size="50%" hidden mdVisible >
               <EyeImage image={eyeData.actualEyeImage} />
               <PageHeader style={[styles.myPredictedEyeColour, { color: themeColor }]}>
                 {eyeData.colorText}
@@ -43,7 +43,7 @@ const Eyes = (props) => {
         </Grid>
         <Grid>
           <Section>
-            <Block xlHidden>
+            <Block mdHidden>
               <EyeVideo source={eyeData.eyeCloseUp}/>
               <PageHeader style={[styles.myPredictedEyeColour, { color: themeColor }]}>
                 {eyeData.colorText}

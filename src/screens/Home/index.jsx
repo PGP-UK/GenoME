@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <PageLayout>
-        <HeaderRow headerText="Personal Genome Project" btnText="MORE INFORMATION" btnLocation="About"/>
+        <HeaderRow btnText="MORE INFORMATION" btnLocation="About">Personal Genome Project</HeaderRow>
         <PageText style={styles.main_text}>
           The Personal Genome Project UK (PGP-UK) is a community of{' '}
           <PageText onPress={() => setModalId('active_participants')} style={styles.pop_up_links}>

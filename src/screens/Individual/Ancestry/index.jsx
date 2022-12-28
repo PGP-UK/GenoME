@@ -18,7 +18,7 @@ const Ancestry = (props) => {
 
   return (
     <PageLayout>
-      <HeaderRow headerText="Ancestry" backBtn />
+      <HeaderRow backBtn>Ancestry</HeaderRow>
       <PageText category="p1" style={styles.main_text}>
         Different populations have their own distinctive pattern of genetic
         variants. By comparing thousands of my variants with those of

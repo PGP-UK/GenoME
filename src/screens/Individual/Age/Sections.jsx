@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from "react-native";
 import { PageText, PgpText } from "../../../components/Text";
 
-const AgeExplanationText = ({ themeColor }) => (
+const BoxText = ({ themeColor }) => (
   <PageText style={[styles.box, { backgroundColor: themeColor }]}>
     Epigenetic age was calculated from 353 epigenetic variants across the
     participant's genome. These epigenetic variants correlate very well with
@@ -13,7 +13,7 @@ const AgeExplanationText = ({ themeColor }) => (
   </PageText>
 );
 
-const EpigeneticExplanationText = () => (
+const InfoText = () => (
   <PgpText category="p1" sizeSelectorStyles={{ xs: styles.textXs, md: styles.texMd }}>
     Epigenetic variants are chemical changes to your DNA, which alter
     how it is used without changing the DNA sequence. As people age,
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
 
 })
 
-export {AgeExplanationText, EpigeneticExplanationText, ImageKey};
+export {BoxText, InfoText, ImageKey};

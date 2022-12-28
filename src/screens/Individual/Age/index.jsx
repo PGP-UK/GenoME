@@ -7,7 +7,7 @@ import DataContext from '../../../Context/DataContext';
 import HeaderRow from '../../../components/HeaderRow';
 import LottieAnimation from '../../../components/LottieAnimation';
 
-import {AgeExplanationText, EpigeneticExplanationText, ImageKey} from './Sections';
+import {BoxText, InfoText, ImageKey} from './Sections';
 
 const Age = (props) => {
   const { route } = props;
@@ -22,7 +22,7 @@ const Age = (props) => {
       <HeaderRow backBtn>Epigenetic Age</HeaderRow>
       <Grid stretchable>
         <Section>
-          <EpigeneticExplanationText/>
+          <InfoText/>
         </Section>
         <Section style={styles.container} stretch>
           <Block xsSize="100%" mdSize="50%" style={{ paddingBottom: 2 }}>
@@ -33,7 +33,7 @@ const Age = (props) => {
 
           <Block xsSize="100%" mdSize="50%" >
             <ImageKey data={data} />
-            <AgeExplanationText themeColor={themeColor} />
+            <BoxText themeColor={themeColor} />
           </Block>
         </Section>
       </Grid>

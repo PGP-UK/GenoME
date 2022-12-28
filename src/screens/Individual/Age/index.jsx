@@ -1,98 +1,53 @@
 import React, { useContext } from 'react';
-import { Section, Block } from 'react-native-responsive-layout';
+import { StyleSheet } from "react-native";
+import { Grid, Section, Block } from 'react-native-responsive-layout';
 
 import PageLayout from '../../../components/PageLayout';
-import { PageHeader } from '../../../components/Text';
-import BackButton from '../../../components/BackButton';
 import DataContext from '../../../Context/DataContext';
+import HeaderRow from '../../../components/HeaderRow';
+import LottieAnimation from '../../../components/LottieAnimation';
 
-import BottomSection from './BottomSection';
-import CenterImage from './CenterImage';
-import AgeExplanationText from './AgeExplanationText';
+import {AgeExplanationText, EpigeneticExplanationText, ImageKey} from './Sections';
 
 const Age = (props) => {
-  const { route, navigation } = props;
+  const { route } = props;
   const { name } = route.params;
-  const { age: { AgeData, AllAmbassadors }} = useContext(DataContext)
+  const { age: { AgeData, AllAmbassadors }, themeColors} = useContext(DataContext)
   const data = AgeData[name];
+  const themeColor = themeColors[name]
   const allAmbassadorsData = AllAmbassadors[name]
+
   return (
-    <>
-      <PageLayout>
+    <PageLayout>
+      <HeaderRow backBtn>Epigenetic Age</HeaderRow>
+      <Grid stretchable>
         <Section>
-          <Block smSize="80%" mdSize="70%">
-            <PageHeader>Epigenetic Age</PageHeader>
-          </Block>
-          <Block smSize="20%" mdSize="30%">
-            <BackButton navigation={navigation} />
-          </Block>
+          <EpigeneticExplanationText/>
         </Section>
-        <Block
-          xsSize="100%"
-          smSize="100%"
-          mdSize="100%"
-          lgSize="100%"
-          xlSize="100%"
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignContent: 'center',
-            paddingBottom: 2,
-          }}
-          xsHidden
-          smHidden
-          mdVisible
-          xlHidden
-          xxlHidden>
-          <AgeExplanationText themeColor={data.themeColor} />
-        </Block>
-        <Section
-          stretch
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignContent: 'center',
-            flexWrap: 'wrap',
-          }}>
-          <Block
-            xsSize="100%"
-            smSize="100%"
-            mdSize="50%"
-            lgSize="50%"
-            xlSize="50%"
-            style={{ paddingBottom: 2 }}>
-            <CenterImage image={allAmbassadorsData.AgeImage} data={data} />
+        <Section style={styles.container} stretch>
+          <Block xsSize="100%" mdSize="50%" style={{ paddingBottom: 2 }}>
+            <LottieAnimation
+              image={allAmbassadorsData.AgeImage}
+              imagePercentages={{ xs: 0.8, xxl: 0.4 }} />
           </Block>
 
-          {/*Hidden in potrait mode*/}
-          <Block
-            xsSize="0%"
-            smSize="0%"
-            mdSize="50%"
-            lgSize="50%"
-            xlSize="50%"
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignContent: 'center',
-              paddingBottom: 20,
-            }}
-            xsHidden
-            smHidden
-            mdHidden
-            xlVisible
-            xxlVisible>
-            <AgeExplanationText themeColor={data.themeColor} />
+          <Block xsSize="100%" mdSize="50%" >
+            <ImageKey data={data} />
+            <AgeExplanationText themeColor={themeColor} />
           </Block>
         </Section>
-        <BottomSection data={data} />
-      </PageLayout>
-    </>
+      </Grid>
+    </PageLayout>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+})
 
 export default Age;

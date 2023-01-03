@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import * as SplashScreen from "expo-splash-screen";
-import * as eva from "@eva-design/eva";
-import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
-import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import React, { useCallback, useEffect, useState } from 'react';
+import { View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import * as SplashScreen from 'expo-splash-screen';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { useAssets } from 'expo-asset';
 
-import AppNavigator from "./src/components/AppNavigator";
+import AppNavigator from './src/components/AppNavigator';
 import { DataProvider } from './src/Context/DataContext';
 
 SplashScreen.preventAutoHideAsync();
@@ -23,18 +23,18 @@ const App = () => {
 
   useEffect(() => {
     if (assets === undefined) {
-      console.log('App Not Ready')
+      console.log('App Not Ready');
     } else if (assetsError != undefined) {
-      console.log('Caching Failed - Continuing anyway')
+      console.log('Caching Failed - Continuing anyway');
       setAppReady(true);
     } else if (assets !== undefined && allAssets === undefined) {
-      console.log('Important Assets Loaded')
+      console.log('Important Assets Loaded');
       setAppReady(true);
     } else if (assets !== undefined && allAssets !== undefined) {
-      console.log('All Assets Loaded')
+      console.log('All Assets Loaded');
       setAppReady(true);
     }
-  })
+  });
 
   const onLayoutRootView = useCallback(async () => {
     if (appReady) {
@@ -66,12 +66,12 @@ const importantImages = [
   require('./assets/Home/momodou.gif'),
   require('./assets/Home/colin.gif'),
   require('./assets/Individual/Landing/variant-light.png'),
-  require('./assets/Individual/Landing/globe-europe-light.png'),
-  require('./assets/Individual/Landing/eye-light.png'),
-  require('./assets/Individual/Landing/filebeat-light.png'),
-  require('./assets/Individual/Landing/birthday-cake-light.png'),
-  require('./assets/Individual/Landing/smoking-light.png'),
-]
+  require('./assets/Individual/Landing/ancestry-icon.png'),
+  require('./assets/Individual/Landing/eyes-icon.png'),
+  require('./assets/Individual/Landing/health-icon.png'),
+  require('./assets/Individual/Landing/age-icon.png'),
+  require('./assets/Individual/Landing/smoking-icon.png'),
+];
 
 const allImages = [
   require('./assets/Individual/Landing/IntroVideos/stephan.mp4'),
@@ -103,12 +103,12 @@ const allImages = [
   require('./assets/Individual/Health/crohns/momodou_crohn_SNV.png'),
   require('./assets/Individual/Health/ovarian/momodou_ovarian_SNV.png'),
 
-  require("./assets/Individual/Variant/stephan.png"),
-  require("./assets/Individual/Variant/colin.png"),
-  require("./assets/Individual/Variant/laura.png"),
-  require("./assets/Individual/Variant/momodou.png"),
+  require('./assets/Individual/Variant/stephan.png'),
+  require('./assets/Individual/Variant/colin.png'),
+  require('./assets/Individual/Variant/laura.png'),
+  require('./assets/Individual/Variant/momodou.png'),
 
-  require('./assets/Individual/Smoking/nonsmoking.png')
-]
+  require('./assets/Individual/Smoking/nonsmoking.png'),
+];
 
 export default App;

@@ -8,8 +8,7 @@ import { PageHeader } from '../../../../components/Text';
 import LottieAnimation from '../../../../components/LottieAnimation';
 
 const MiddleSection = (props) => {
-  const { data, image } = props;
-  const backgroundColour = data.population.colour;
+  const { risk, message, image, population: { colour, percent } } = props;
   return (
     <>
       <Block xsSize="100%" mdSize="50%" style={{ paddingBottom: 20 }}>
@@ -30,24 +29,24 @@ const MiddleSection = (props) => {
 
       {/* Smaller screens only */}
       <Block xsSize="100%" mdHidden>
-        <VariantRisk riskData={data.risk} />
+        <VariantRisk riskData={risk} />
         <PageText
-          style={[styles.box_text, { backgroundColor: backgroundColour }]}>
-          There are three versions of this variant and {data.population.percent}{' '}
+          style={[styles.box_text, { backgroundColor: colour }]}>
+          There are three versions of this variant and {percent}{' '}
           of the population have the same variant as me. {'\n\n'}
-          {data.message}
+          {message}
         </PageText>
       </Block>
 
       {/*  larger screens only */}
       <Block xsSize="100%" mdSize="50%" hidden mdVisible>
         <PageText
-          style={[styles.box_text, { backgroundColor: backgroundColour }]}>
-          There are three versions of this variant and {data.population.percent}{' '}
+          style={[styles.box_text, { backgroundColor: colour }]}>
+          There are three versions of this variant and {percent}{' '}
           of the population have the same variant as me. {'\n\n'}
-          {data.message}
+          {message}
         </PageText>
-        <VariantRisk riskData={data.risk} />
+        <VariantRisk riskData={risk} />
       </Block>
     </>
   );

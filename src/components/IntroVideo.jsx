@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import { View } from 'react-native';
 import { Video, Audio } from 'expo-av';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';

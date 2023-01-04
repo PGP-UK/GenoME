@@ -15,11 +15,8 @@ import { useNavigation } from '@react-navigation/native';
 const Health = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const {
-    health: { AllAmbassadorsData, diseaseIcons },
-    themeColors,
-  } = useContext(DataContext);
-  const healthData = AllAmbassadorsData[name];
+  const { health, diseaseIcons, themeColors } = useContext(DataContext);
+  const data = health[name];
   const themeColor = themeColors[name];
   return (
     <PageLayout>
@@ -54,7 +51,7 @@ const Health = (props) => {
               key={icon.disease}
               disease={icon.disease}
               header={icon.header}
-              image={healthData[icon.disease].snvIcon}
+              image={data[icon.disease].snvIcon}
               name={name}
               themeColor={themeColor}
             />

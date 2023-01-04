@@ -12,43 +12,34 @@ import MiddleSection from './MiddleSection';
 const Diseases = (props) => {
   const { route } = props;
   const { name, disease } = route.params;
-  const {
-    health: { AllAmbassadorsData, diseaseData },
-    themeColors,
-  } = useContext(DataContext);
-
+  const { health, diseaseData,themeColors } = useContext(DataContext);
+  const data = health[name][disease]
   const themeColor = themeColors[name];
-  const personalDiseaseData = AllAmbassadorsData[name][disease];
-  const { data, image } = personalDiseaseData;
-  const diseaseInfo = diseaseData[disease];
-
+  const {header, id, infoHeader, infoFooter} = diseaseData[disease];
+  console.log(data)
   return (
     <PageLayout>
       <HeaderRow goBackBtn displayAmbassadorSwitch>
-        {diseaseInfo.header}
+        {header}
         {'\n'}
         <PageHeader category="h3" style={{ color: themeColor }}>
-          Genetic variant ID: {diseaseInfo.id}
+          Genetic variant ID: {id}
         </PageHeader>
       </HeaderRow>
       <Block>
-        <PageText category="p1">{diseaseInfo.infoHeader}</PageText>
+        <PageText category="p1">{infoHeader}</PageText>
       </Block>
 
       <Grid>
         <Section style={styles.container}>
-          <MiddleSection
-            disease={disease}
-            data={data}
-            name={name}
-            image={image}
+          <MiddleSection {...data}
           />
         </Section>
       </Grid>
 
       <Block>
         <PageText category="p1" style={{ marginTop: 15 }}>
-          {diseaseInfo.infoFooter}
+          {infoFooter}
         </PageText>
       </Block>
     </PageLayout>

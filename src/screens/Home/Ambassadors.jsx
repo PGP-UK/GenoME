@@ -8,11 +8,12 @@ import { useNavigation } from '@react-navigation/native';
 
 import { PageText } from '../../components/Text';
 
-import DataContext from '../../Context/DataContext'
+import DataContext from '../../Context/DataContext';
 
 const AmbassadorImage = withSizeInfo(({ sizeSelector, image }) => {
-  const numImagesPerRow = sizeSelector({xs: 1, sm: 2, md: 4 });
-  const imageWidth = Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
+  const numImagesPerRow = sizeSelector({ xs: 1, sm: 2, md: 4 });
+  const imageWidth =
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 80;
   return (
     <FastImage
       style={{ width: imageWidth, height: imageWidth }}
@@ -24,21 +25,19 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, image }) => {
 
 const Ambassador = (props) => {
   const navigation = useNavigation();
-  const { name, hexId, image, themeColor } = props;
+  const { label, name, hexId, image, themeColor } = props;
 
   return (
     <Block xsSize="100%" smSize="50%" mdSize="25%">
       <Pressable
-        onPress={() =>
-          navigation.navigate('Landing', { name: name.toLowerCase() })
-        }
+        onPress={() => navigation.navigate('Landing', { name: name })}
         style={styles.box}>
         <AmbassadorImage image={image} />
         <PageText category="p1" style={[styles.header, { color: themeColor }]}>
           {hexId}
         </PageText>
         <PageText category="p1" style={styles.secondLineText}>
-          Also known as: {'\n'} {name}
+          Also known as: {'\n'} {label}
         </PageText>
       </Pressable>
     </Block>
@@ -46,8 +45,10 @@ const Ambassador = (props) => {
 };
 
 const Ambassadors = ({ navigation }) => {
-  const { home: { allAmbassadors = [] } } = useContext(DataContext)
-  return(
+  const {
+    home: { allAmbassadors = [] },
+  } = useContext(DataContext);
+  return (
     <Grid>
       <Section style={styles.ambassadorWrapper}>
         {allAmbassadors.map((AmbassadorData, idx) => (
@@ -56,7 +57,7 @@ const Ambassadors = ({ navigation }) => {
       </Section>
     </Grid>
   );
-}
+};
 
 const styles = StyleSheet.create({
   ambassadorWrapper: {

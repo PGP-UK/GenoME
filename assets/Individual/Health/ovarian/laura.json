@@ -1,14 +1,13 @@
 {
-    "risk": {
-      "first": "Normal",
-      "second": "Reduced (-)",
-      "third": "Reduced (-)"
-    },
-    "population": {
-      "percent": "9%",
-      "colour": "#34BC99"
-    },
-    "message":"This version of the variant suggests a reduced risk of ovarian cancer",
-    "themeColor": "#F6BD4A"
-  }
-  
+  "risk": {
+    "first": "Normal",
+    "second": "Reduced (-)",
+    "third": "Reduced (-)"
+  },
+  "population": {
+    "percent": "9%",
+    "colour": "#34BC99"
+  },
+  "message": "This version of the variant suggests a reduced risk of ovarian cancer",
+  "themeColor": "#F6BD4A"
+}

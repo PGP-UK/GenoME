@@ -1,14 +1,13 @@
 {
-    "risk": {
-      "first": "Normal",
-      "second": "Increased (+)",
-      "third": "Increased (++)"
-    },
-    "population": {
-      "percent": "1%",
-      "colour": "#34BC99"
-    },
-    "message":"This version of the variant increases my risk of Crohn's disease",
-    "themeColor": "#8CD8C4"
-  }
-  
+  "risk": {
+    "first": "Normal",
+    "second": "Increased (+)",
+    "third": "Increased (++)"
+  },
+  "population": {
+    "percent": "1%",
+    "colour": "#34BC99"
+  },
+  "message": "This version of the variant increases my risk of Crohn's disease",
+  "themeColor": "#8CD8C4"
+}

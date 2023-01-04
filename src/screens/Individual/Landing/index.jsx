@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, Pressable } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { Section, Block, Grid } from 'react-native-responsive-layout';
@@ -10,12 +10,14 @@ import PageLayout from '../../../components/PageLayout';
 import DataContext from '../../../Context/DataContext';
 
 import TextSection from './TextSection';
-import Icons from './Icons'
+import Icons from './Icons';
 
 const Landing = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
-  const { landing: { ThemeColors } } = useContext(DataContext)
+  const {
+    landing: { ThemeColors },
+  } = useContext(DataContext);
 
   return (
     <PageLayout backgroundColor={ThemeColors[name]}>
@@ -23,7 +25,12 @@ const Landing = (props) => {
       <Grid>
         <Section style={styles.iconsWrapper}>
           {Icons.map((IconData, idx) => (
-            <LandingIcon key={idx} IconData={IconData} name={name} navigation={navigation} />
+            <LandingIcon
+              key={idx}
+              IconData={IconData}
+              name={name}
+              navigation={navigation}
+            />
           ))}
         </Section>
       </Grid>
@@ -32,7 +39,11 @@ const Landing = (props) => {
 };
 
 const LandingIcon = ({ IconData, name, navigation }) => (
-  <Block xsSize="50%" smSize="33%" mdSize="16.6%" style={styles.landingIconWrapper}>
+  <Block
+    xsSize="50%"
+    smSize="33%"
+    mdSize="16.6%"
+    style={styles.landingIconWrapper}>
     <Pressable
       onPress={() =>
         navigation.navigate(IconData.pageName, { name: name.toLowerCase() })

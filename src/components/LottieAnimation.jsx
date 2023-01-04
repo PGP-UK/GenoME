@@ -19,25 +19,28 @@ const LottieAnimation = withSizeInfo(({ sizeSelector, ...props }) => {
 
   return (
     <>
-      <LottieReset lottieRef={lottieRef} displayReset={displayReset}/>
+      <LottieReset lottieRef={lottieRef} displayReset={displayReset} />
       <Lottie
         ref={lottieRef}
         source={image}
         autoPlay
         loop={false}
         progress={1}
-        style={[{ width: finalImageWidth, height: finalImageWidth }, styles.lottie]}
-        onAnimationFinish={() => setDisplayReset(true) }
+        style={[
+          { width: finalImageWidth, height: finalImageWidth },
+          styles.lottie,
+        ]}
+        onAnimationFinish={() => setDisplayReset(true)}
       />
     </>
-  )
-})
+  );
+});
 
 const styles = StyleSheet.create({
   lottie: {
     alignSelf: 'center',
     justifySelf: 'center',
-  }
+  },
 });
 
-export default LottieAnimation
+export default LottieAnimation;

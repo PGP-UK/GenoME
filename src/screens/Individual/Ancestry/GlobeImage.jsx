@@ -7,7 +7,7 @@ import FastImage from '@cuvent/react-native-fast-image';
 const GlobeImage = withSizeInfo(({ sizeSelector }) => {
   const imagePercentage = sizeSelector({ xs: 0.9 });
   const imageWidth = Math.round(useSafeAreaFrame().width * imagePercentage);
-  const maxImageHeight = useSafeAreaFrame().height * imagePercentage
+  const maxImageHeight = useSafeAreaFrame().height * imagePercentage;
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
@@ -16,7 +16,7 @@ const GlobeImage = withSizeInfo(({ sizeSelector }) => {
       source={require('./../../../../assets/About/ancestry_world.jpeg')}
       resizeMode={FastImage.resizeMode.contain}
       style={{
-        height: finalImageWidth * .4,
+        height: finalImageWidth * 0.4,
         width: finalImageWidth,
         alignSelf: 'center',
       }}
@@ -24,7 +24,6 @@ const GlobeImage = withSizeInfo(({ sizeSelector }) => {
   );
 });
 
-const styles = StyleSheet.create({
-});
+const styles = StyleSheet.create({});
 
 export default GlobeImage;

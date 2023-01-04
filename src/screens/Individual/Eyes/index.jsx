@@ -15,27 +15,34 @@ import DataContext from '../../../Context/DataContext';
 const Eyes = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const { eyes: { AllAmbassadors } } = useContext(DataContext)
+  const {
+    eyes: { AllAmbassadors },
+  } = useContext(DataContext);
   const eyeData = AllAmbassadors[name];
   const themeColor = eyeData.themeColor;
 
   return (
     <>
       <PageLayout>
-        <HeaderRow backBtn>Eye Colour</HeaderRow>
+        <HeaderRow goBackBtn displayAmbassadorSwitch>
+          Eye Colour
+        </HeaderRow>
         <PageText category="p1">
-          Eye colour is determined by multiple genetic variants, some of which have been used to predict my eye colour.
-          Below you can see my actual eyes and the predicted eye colour - how well do you think the prediction has worked?
+          Eye colour is determined by multiple genetic variants, some of which
+          have been used to predict my eye colour. Below you can see my actual
+          eyes and the predicted eye colour - how well do you think the
+          prediction has worked?
         </PageText>
 
         <Grid stretchable>
           <Section stretch style={styles.container}>
             <Block size="50%" hidden mdVisible>
-              <EyeVideo source={eyeData.eyeCloseUp}/>
+              <EyeVideo source={eyeData.eyeCloseUp} />
             </Block>
-            <Block size="50%" hidden mdVisible >
+            <Block size="50%" hidden mdVisible>
               <EyeImage image={eyeData.actualEyeImage} />
-              <PageHeader style={[styles.myPredictedEyeColour, { color: themeColor }]}>
+              <PageHeader
+                style={[styles.myPredictedEyeColour, { color: themeColor }]}>
                 {eyeData.colorText}
               </PageHeader>
             </Block>
@@ -44,8 +51,9 @@ const Eyes = (props) => {
         <Grid>
           <Section>
             <Block mdHidden>
-              <EyeVideo source={eyeData.eyeCloseUp}/>
-              <PageHeader style={[styles.myPredictedEyeColour, { color: themeColor }]}>
+              <EyeVideo source={eyeData.eyeCloseUp} />
+              <PageHeader
+                style={[styles.myPredictedEyeColour, { color: themeColor }]}>
                 {eyeData.colorText}
               </PageHeader>
               <EyeImage image={eyeData.actualEyeImage} />
@@ -58,34 +66,42 @@ const Eyes = (props) => {
 };
 
 const EyeVideo = withSizeInfo(({ sizeSelector, ...props }) => {
-  const { source } = props
+  const { source } = props;
   const videoRef = useRef(null);
 
   const numImagesPerRow = sizeSelector({ xs: 1, md: 2 });
-  const imageWidth = Math.round(useSafeAreaFrame().width / numImagesPerRow)
+  const imageWidth = Math.round(useSafeAreaFrame().width / numImagesPerRow);
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
       <Video
         shouldPlay={true}
         ref={videoRef}
-        style={[{ width: finalImageWidth, height: finalImageWidth * 0.75 }, styles.video]}
+        style={[
+          { width: finalImageWidth, height: finalImageWidth * 0.75 },
+          styles.video,
+        ]}
         isMuted // TODO - REMOVE SOUND from these videos
         source={source}
         resizeMode="contain"
       />
     </View>
-  )
+  );
 });
 
 const EyeImage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { image } = props;
 
   const numImagesPerRow = sizeSelector({ xs: 1, md: 2 });
-  const imageWidth = Math.round(useSafeAreaFrame().width / numImagesPerRow)
+  const imageWidth = Math.round(useSafeAreaFrame().width / numImagesPerRow);
   const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.8);
   const finalImageWidth =
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
@@ -94,7 +110,10 @@ const EyeImage = withSizeInfo(({ sizeSelector, ...props }) => {
     <FastImage
       source={image}
       resizeMode={FastImage.resizeMode.contain}
-      style={[{width: finalImageWidth, height: finalImageWidth}, styles.image]}
+      style={[
+        { width: finalImageWidth, height: finalImageWidth },
+        styles.image,
+      ]}
     />
   );
 });
@@ -117,12 +136,12 @@ const styles = StyleSheet.create({
     margin: 10,
     marginTop: 0,
     alignSelf: 'center',
-    justifySelf: 'center'
+    justifySelf: 'center',
   },
   video: {
     alignSelf: 'flex-end',
-    justifySelf: 'flex-end'
-  }
+    justifySelf: 'flex-end',
+  },
 });
 
 export default Eyes;

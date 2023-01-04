@@ -5,7 +5,7 @@ import { Section, Block, Grid } from 'react-native-responsive-layout';
 import PageLayout from '../../../components/PageLayout';
 import DataContext from '../../../Context/DataContext';
 import HeaderRow from '../../../components/HeaderRow';
-import { PageText } from '../../../components/Text'
+import { PageText } from '../../../components/Text';
 
 import CenterSection from './CenterSection';
 import GlobeImage from './GlobeImage';
@@ -13,12 +13,16 @@ import GlobeImage from './GlobeImage';
 const Ancestry = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const { ancestry: { AllAmbassadorsData } } = useContext(DataContext)
+  const {
+    ancestry: { AllAmbassadorsData },
+  } = useContext(DataContext);
   const { data, image } = AllAmbassadorsData[name];
 
   return (
     <PageLayout>
-      <HeaderRow backBtn>Ancestry</HeaderRow>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>
+        Ancestry
+      </HeaderRow>
       <PageText category="p1" style={styles.main_text}>
         Different populations have their own distinctive pattern of genetic
         variants. By comparing thousands of my variants with those of
@@ -41,6 +45,5 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
-
 
 export default Ancestry;

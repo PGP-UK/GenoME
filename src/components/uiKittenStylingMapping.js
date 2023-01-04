@@ -1,12 +1,11 @@
 export default {
   components: {
-    Select: {
+    Popover: {
       appearances: {
         default: {
           mapping: {
-            popoverMaxHeight: 500,
-            iconWidth: 0,
-            iconHeight: 0,
+            indicatorWidth: 10,
+            indicatorHeight: 20,
           },
         },
       },

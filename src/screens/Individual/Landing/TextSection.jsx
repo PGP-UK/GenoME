@@ -47,11 +47,14 @@ const TextSection = () => {
           sizeSelectorStyles={mainTextStyles}
           onPress={() => setModalId('genetic_variants')}>
           Tap{' '}
-          <PgpText category="p1" sizeSelectorStyles={subheaderStyles} style={styles.hereClickableText}>
+          <PgpText
+            category="p1"
+            sizeSelectorStyles={subheaderStyles}
+            style={styles.hereClickableText}>
             here
-          </PgpText>
-          {' '}to find out more about what a private, genetic or epigenetic
-          variant is.
+          </PgpText>{' '}
+          to find out more about what a private, genetic or epigenetic variant
+          is.
         </PgpText>
         <MyStoryButton setModalId={setModalId} />
         <PgpText category="p1" sizeSelectorStyles={mainTextStyles}>
@@ -162,7 +165,7 @@ const styles = StyleSheet.create({
   },
   hereClickableText: {
     textDecorationLine: 'underline',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 });
 

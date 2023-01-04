@@ -12,7 +12,7 @@ import CenterImage from './CenterImage';
 const Smoking = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const { smoking, themeColors, } = useContext(DataContext);
+  const { smoking, themeColors } = useContext(DataContext);
   const data = smoking[name];
   const themeColor = themeColors[name];
 

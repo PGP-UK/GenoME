@@ -30,9 +30,11 @@ const ImageKey = ({ data, themeColor }) => (
     <PageText style={styles.actual}>
       My epigenetic variants{' '}
       <PageText style={[styles.actual, { color: themeColor }]}>
-        {data.predicted_status == data.actual_status ? 'correctly' : 'incorrectly'}
-      </PageText>
-      {' '}predicted me to be a:{"\n"}
+        {data.predicted_status == data.actual_status
+          ? 'correctly'
+          : 'incorrectly'}
+      </PageText>{' '}
+      predicted me to be a:{'\n'}
       <PageText style={[styles.actual, { color: themeColor }]}>
         {data.predicted_status}
       </PageText>

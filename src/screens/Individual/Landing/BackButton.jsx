@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Icon } from '@ui-kitten/components';
-import { Block } from 'react-native-responsive-layout';
+import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useNavigation } from '@react-navigation/native';
 
@@ -15,17 +15,19 @@ const BackButton = withSizeInfo(({ sizeSelector }) => {
     sm: [styles.baseRow, styles.headerBtnLayoutSm],
   });
   return (
-    <Block style={{ flexDirection: 'row-reverse' }}>
-      <View style={btnStyles}>
-        <Icon
-          style={styles.icon}
-          fill="#fff"
-          name="home"
-          onPress={() => navigation.goBack()}
-        />
-        <AmbassadorSwitch selectedImageStyle={{ marginLeft: -2 }} />
-      </View>
-    </Block>
+    <Section>
+      <Block style={{ flexDirection: 'row-reverse' }}>
+        <View style={btnStyles}>
+          <Icon
+            style={styles.icon}
+            fill="#fff"
+            name="home"
+            onPress={() => navigation.goBack()}
+          />
+          <AmbassadorSwitch popOverStyles={{ left: 0 }} />
+        </View>
+      </Block>
+    </Section>
   );
 });
 

@@ -1,17 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { StyleSheet, Pressable, View } from 'react-native';
-import { Layout, Popover } from '@ui-kitten/components';
+import { Popover } from '@ui-kitten/components';
 import {
   useNavigation,
   useRoute,
   CommonActions,
 } from '@react-navigation/native';
 import FastImage from '@cuvent/react-native-fast-image';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import DataContext from '../Context/DataContext';
 
-const AmbassadorSwitch = () => {
+const AmbassadorSwitch = ({popOverStyles}) => {
   const [visible, setVisible] = useState(false);
 
   const navigation = useNavigation();
@@ -26,7 +25,7 @@ const AmbassadorSwitch = () => {
   const selectedAmbassador = allAmbassadors[currentIdx];
 
   const renderCurrentProfile = () => (
-    <Pressable onPress={() => setVisible(true)}>
+    <Pressable onPress={() => setVisible(true)} s>
       <ProfilePic
         source={selectedAmbassador.image}
         style={styles.selectedImage}
@@ -43,6 +42,8 @@ const AmbassadorSwitch = () => {
   return (
     <Popover
       shouldUseContainer={false}
+      fullWidth={true}
+      animationType="fade"
       supportedOrientations={[
         'portrait',
         'portrait-upside-down',
@@ -55,7 +56,7 @@ const AmbassadorSwitch = () => {
       visible={visible}
       anchor={renderCurrentProfile}
       onBackdropPress={() => setVisible(false)}>
-      <View style={styles.popover}>
+      <View style={[styles.popover, popOverStyles]}>
         <View style={styles.content}>
           {allAmbassadors
             .filter((_, i) => i !== currentIdx)
@@ -63,7 +64,7 @@ const AmbassadorSwitch = () => {
               <Pressable
                 key={e.name}
                 onPress={() => onProfileClick(e.name)}
-                style={{ padding: 5 }}>
+                style={{ margin: 5 }}>
                 <ProfilePic
                   source={e.image_png}
                   themeColor={themeColors[e.name]}
@@ -99,7 +100,6 @@ const styles = StyleSheet.create({
   selectedImage: {
     marginTop: -10,
     marginBottom: -10,
-    marginLeft: 10,
   },
   content: {
     flexDirection: 'column',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   popover: {
     position: 'absolute',
-    right: -5,
+    left: 12,
     top: 12,
   },
   backdrop: {

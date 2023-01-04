@@ -29,7 +29,6 @@ const TextSection = () => {
 
   return (
     <Section>
-      <BackButton />
       <Block>
         <PgpText category="h1" sizeSelectorStyles={mainHeaderStyles}>
           My GENOME contains many layers of INFORMATION, including GENETIC and

@@ -26,5 +26,5 @@ const AllAmbassadors = {
 };
 
 export default {
-  AllAmbassadors: AllAmbassadors
-}
+  AllAmbassadors: AllAmbassadors,
+};

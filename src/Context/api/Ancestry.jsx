@@ -18,5 +18,5 @@ const AllAmbassadorsData = {
 };
 
 export default {
-  AllAmbassadorsData: AllAmbassadorsData
-}
+  AllAmbassadorsData: AllAmbassadorsData,
+};

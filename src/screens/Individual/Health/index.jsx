@@ -8,46 +8,57 @@ import FastImage from '@cuvent/react-native-fast-image';
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import { PageHeader } from '../../../components/Text';
-import HeaderRow from '../../../components/HeaderRow'
+import HeaderRow from '../../../components/HeaderRow';
 import DataContext from '../../../Context/DataContext';
 import { useNavigation } from '@react-navigation/native';
 
 const Health = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const { health: {AllAmbassadorsData, diseaseIcons }, themeColors } = useContext(DataContext)
+  const {
+    health: { AllAmbassadorsData, diseaseIcons },
+    themeColors,
+  } = useContext(DataContext);
   const healthData = AllAmbassadorsData[name];
   const themeColor = themeColors[name];
   return (
     <PageLayout>
-      <HeaderRow goBackBtn displayAmbassadorSwitch>Health</HeaderRow>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>
+        Health
+      </HeaderRow>
       <Section>
         <Block>
           <PageText category="p1" style={styles.main_text}>
-            Genetic makeup can also give indications on inherited risks and general disease risks.
-            Environmental factors can also have a bearing on these results.
+            Genetic makeup can also give indications on inherited risks and
+            general disease risks. Environmental factors can also have a bearing
+            on these results.
           </PageText>
           <PageText category="p1" style={styles.main_text}>
-            Just like everyone else, I have millions of single nucleotide variants (SNVs).
-            These are positions in my DNA which differ between individuals. For the majority of my SNVs,
-            their functions are not yet known. While some SNVs act individually to increase or
-            reduce my risk for a given trait or disease, most act in groups
-            together with environmental and other factors.
+            Just like everyone else, I have millions of single nucleotide
+            variants (SNVs). These are positions in my DNA which differ between
+            individuals. For the majority of my SNVs, their functions are not
+            yet known. While some SNVs act individually to increase or reduce my
+            risk for a given trait or disease, most act in groups together with
+            environmental and other factors.
           </PageText>
           <PageText category="p1" style={styles.main_text}>
-            Tap below to explore the frequency and risk associated with three of my SNVs.
+            Tap below to explore the frequency and risk associated with three of
+            my SNVs.
           </PageText>
         </Block>
       </Section>
       <Grid>
         <Section style={styles.container}>
-          {
-            diseaseIcons.map(icon => (
-              <SNVImages key={icon.disease} disease={icon.disease} header={icon.header}
-                image={healthData[icon.disease].snvIcon} name={name} themeColor={themeColor}
-              />
-            ))
-          }
+          {diseaseIcons.map((icon) => (
+            <SNVImages
+              key={icon.disease}
+              disease={icon.disease}
+              header={icon.header}
+              image={healthData[icon.disease].snvIcon}
+              name={name}
+              themeColor={themeColor}
+            />
+          ))}
         </Section>
       </Grid>
     </PageLayout>
@@ -55,19 +66,21 @@ const Health = (props) => {
 };
 
 const SNVImages = (props) => {
-  const navigation = useNavigation()
-  const { name, image, themeColor, disease, header } = props
-  const navigationParams = { name: name.toLowerCase(), disease: disease }
+  const navigation = useNavigation();
+  const { name, image, themeColor, disease, header } = props;
+  const navigationParams = { name: name.toLowerCase(), disease: disease };
   return (
     <Block xsSize="100%" mdSize="33%" xlSize="50%" xxlSize="33%">
-      <Pressable onPress={() => navigation.navigate('Diseases', navigationParams)} style={styles.box}>
+      <Pressable
+        onPress={() => navigation.navigate('Diseases', navigationParams)}
+        style={styles.box}>
         <SNVImage image={image} />
         <PageHeader style={[styles.header, { color: themeColor }]}>
           {header}
         </PageHeader>
       </Pressable>
     </Block>
-  )
+  );
 };
 
 const SNVImage = withSizeInfo(({ sizeSelector, ...props }) => {
@@ -94,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexWrap: 'wrap',
-    marginTop: 15
+    marginTop: 15,
   },
   header: {
     fontWeight: '400',

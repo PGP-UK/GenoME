@@ -13,26 +13,42 @@ const CenterSection = (props) => {
       <Section>
         {/* Hidden in large screens */}
         <Block lgHidden>
-          <LottieAnimation image={image} imagePercentages={{ xs: 1, lg: 0.4 }} />
+          <LottieAnimation
+            image={image}
+            imagePercentages={{ xs: 1, lg: 0.4 }}
+          />
         </Block>
         <Block lgHidden style={styles.percent_box}>
-          <PageText style={[{color: data.themeColor}, styles.baseText]}>
+          <PageText style={[{ color: data.themeColor }, styles.baseText]}>
             {data.most_percent}
           </PageText>
-          <PageText style={[{color: data.themeColor}, styles.baseText, styles.secondText]}>
+          <PageText
+            style={[
+              { color: data.themeColor },
+              styles.baseText,
+              styles.secondText,
+            ]}>
             {data.other_percent_1}
           </PageText>
         </Block>
 
         {/* Visible in large screens */}
         <Block hidden lgVisible lgSize="50%">
-          <LottieAnimation image={image} imagePercentages={{ xs: 1, lg: 0.4 }} />
+          <LottieAnimation
+            image={image}
+            imagePercentages={{ xs: 1, lg: 0.4 }}
+          />
         </Block>
         <Block hidden lgVisible style={styles.percent_box} lgSize="50%">
-          <PageText style={[{color: data.themeColor}, styles.baseText]}>
+          <PageText style={[{ color: data.themeColor }, styles.baseText]}>
             {data.most_percent}
           </PageText>
-          <PageText style={[{color: data.themeColor}, styles.baseText, styles.secondText]}>
+          <PageText
+            style={[
+              { color: data.themeColor },
+              styles.baseText,
+              styles.secondText,
+            ]}>
             {data.other_percent_1}
           </PageText>
         </Block>
@@ -51,8 +67,9 @@ const styles = StyleSheet.create({
     fontSize: 45,
   },
   secondText: {
-    marginTop: 15, marginBottom: 75
-  }
+    marginTop: 15,
+    marginBottom: 75,
+  },
 });
 
 export default CenterSection;

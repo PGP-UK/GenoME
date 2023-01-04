@@ -1,16 +1,15 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { Layout } from "@ui-kitten/components";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Grid } from "react-native-responsive-layout";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Layout } from '@ui-kitten/components';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Grid } from 'react-native-responsive-layout';
 
-import Modal from './Modal'
+import Modal from './Modal';
 
-const PageLayout = ({ children, backgroundColor = "#fff" }) => {
+const PageLayout = ({ children, backgroundColor = '#fff' }) => {
   return (
     <SafeAreaView
-      style={[styles.safeView, { backgroundColor: backgroundColor }]}
-    >
+      style={[styles.safeView, { backgroundColor: backgroundColor }]}>
       <Grid scrollable stretchable>
         <Layout style={[styles.layout, { backgroundColor: backgroundColor }]}>
           <Modal />

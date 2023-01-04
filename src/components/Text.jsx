@@ -11,22 +11,25 @@ const PgpText = withSizeInfo((props) => {
     sizeSelectorStyles = {},
     baseStyle,
     category,
-    onPress
+    onPress,
   } = props;
 
   const defaultStyles = sizeSelector(sizeSelectorStyles);
   return (
-    <Text category={category} style={[baseStyle, defaultStyles, style]} onPress={onPress}>
+    <Text
+      category={category}
+      style={[baseStyle, defaultStyles, style]}
+      onPress={onPress}>
       {children}
     </Text>
   );
 });
 
-const PageHeader = ({category, baseStyle, ...restProps}) => {
+const PageHeader = ({ category, baseStyle, ...restProps }) => {
   return (
     <PgpText
       {...restProps}
-      category={category || "h1"}
+      category={category || 'h1'}
       baseStyle={[baseStyle, Styles.page_header_base]}
     />
   );

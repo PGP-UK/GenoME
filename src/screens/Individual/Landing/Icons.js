@@ -22,5 +22,5 @@ export default [
   {
     pageName: 'Smoking',
     image: require('./../../../../assets/Individual/Landing/smoking-light.png'),
-  }
+  },
 ];

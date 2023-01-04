@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, Image } from "react-native";
-import { withSizeInfo } from "react-native-responsive-layout/wrappers";
-import { useSafeAreaFrame } from "react-native-safe-area-context";
+import React from 'react';
+import { StyleSheet, Image } from 'react-native';
+import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import FastImage from '@cuvent/react-native-fast-image';
 
 const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
@@ -18,8 +18,9 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
       source={image}
       resizeMode={FastImage.resizeMode.contain}
       style={[
-        styles.image, {tintColor: data.themeColor,},
-        { width: finalImageWidth, height: finalImageWidth,},
+        styles.image,
+        { tintColor: data.themeColor },
+        { width: finalImageWidth, height: finalImageWidth },
       ]}
     />
   );
@@ -28,7 +29,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
 const styles = StyleSheet.create({
   image: {
     marginTop: 20,
-    alignSelf: "center",
+    alignSelf: 'center',
   },
 });
 

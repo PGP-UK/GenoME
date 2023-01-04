@@ -32,5 +32,5 @@ export default {
       image_png: require('./../../../assets/Home/images/colin.png'),
       themeColor: '#9C82DE',
     },
-  ]
-}
+  ],
+};

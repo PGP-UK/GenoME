@@ -4,7 +4,6 @@ import { Button } from '@ui-kitten/components';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useNavigation } from '@react-navigation/native';
 
-
 const BackButton = withSizeInfo(({ sizeSelector }) => {
   const navigation = useNavigation();
 

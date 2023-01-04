@@ -7,12 +7,12 @@ import { PgpText } from '../../../components/Text';
 const TextSection = ({ leftText, rightText, leftStyle, rightStyle }) => {
   const leftStyles = {
     xs: [styles.baseLeftText, styles.baseTextXs],
-    md: [styles.baseLeftText]
-  }
+    md: [styles.baseLeftText],
+  };
   const rightStyles = {
     xs: [styles.baseRightText, styles.baseRightTextXs, styles.baseTextXs],
-    md: [styles.baseRightText]
-  }
+    md: [styles.baseRightText],
+  };
 
   return (
     <Grid>
@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
   baseTextXs: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
   baseRightTextXs: {
-    marginTop: 15
+    marginTop: 15,
   },
 });
 

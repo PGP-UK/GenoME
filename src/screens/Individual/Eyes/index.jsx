@@ -16,53 +16,49 @@ import LottieReset from '../../../components/LottieReset';
 const Eyes = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const {
-    eyes: { AllAmbassadors },
-  } = useContext(DataContext);
-  const eyeData = AllAmbassadors[name];
-  const themeColor = eyeData.themeColor;
+  const { eyes, themeColors } = useContext(DataContext);
+  const eyeData = eyes[name];
+  const themeColor = themeColors[name];
 
   return (
-    <>
-      <PageLayout>
-        <HeaderRow goBackBtn displayAmbassadorSwitch>
-          Eye Colour
-        </HeaderRow>
-        <PageText category="p1">
-          Eye colour is determined by multiple genetic variants, some of which
-          have been used to predict my eye colour. Below you can see my actual
-          eyes and the predicted eye colour - how well do you think the
-          prediction has worked?
-        </PageText>
+    <PageLayout>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>
+        Eye Colour
+      </HeaderRow>
+      <PageText category="p1">
+        Eye colour is determined by multiple genetic variants, some of which
+        have been used to predict my eye colour. Below you can see my actual
+        eyes and the predicted eye colour - how well do you think the
+        prediction has worked?
+      </PageText>
 
-        <Grid stretchable>
-          <Section stretch style={styles.container}>
-            <Block size="50%" hidden mdVisible>
-              <EyeVideo source={eyeData.eyeCloseUp} />
-            </Block>
-            <Block size="50%" hidden mdVisible>
-              <EyeImage image={eyeData.actualEyeImage} />
-              <PageHeader
-                style={[styles.myPredictedEyeColour, { color: themeColor }]}>
-                {eyeData.colorText}
-              </PageHeader>
-            </Block>
-          </Section>
-        </Grid>
-        <Grid>
-          <Section>
-            <Block mdHidden>
-              <EyeVideo source={eyeData.eyeCloseUp} />
-              <PageHeader
-                style={[styles.myPredictedEyeColour, { color: themeColor }]}>
-                {eyeData.colorText}
-              </PageHeader>
-              <EyeImage image={eyeData.actualEyeImage} />
-            </Block>
-          </Section>
-        </Grid>
-      </PageLayout>
-    </>
+      <Grid stretchable>
+        <Section stretch style={styles.container}>
+          <Block size="50%" hidden mdVisible>
+            <EyeVideo source={eyeData.eyeCloseUp} />
+          </Block>
+          <Block size="50%" hidden mdVisible>
+            <EyeImage image={eyeData.actualEyeImage} />
+            <PageHeader
+              style={[styles.myPredictedEyeColour, { color: themeColor }]}>
+              {eyeData.colorText}
+            </PageHeader>
+          </Block>
+        </Section>
+      </Grid>
+      <Grid>
+        <Section>
+          <Block mdHidden>
+            <EyeVideo source={eyeData.eyeCloseUp} />
+            <PageHeader
+              style={[styles.myPredictedEyeColour, { color: themeColor }]}>
+              {eyeData.colorText}
+            </PageHeader>
+            <EyeImage image={eyeData.actualEyeImage} />
+          </Block>
+        </Section>
+      </Grid>
+    </PageLayout>
   );
 };
 

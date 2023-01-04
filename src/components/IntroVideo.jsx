@@ -3,8 +3,8 @@ import { Video, Audio } from 'expo-av';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
 
-import DataContext from '../../Context/DataContext';
-import { PageText } from '../Text';
+import DataContext from '../Context/DataContext';
+import { PageText } from './Text';
 
 const triggerAudio = async (ref) => {
   await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });

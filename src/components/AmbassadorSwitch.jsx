@@ -1,56 +1,75 @@
 import React, { useContext, useState } from 'react';
 import { StyleSheet, Pressable, View } from 'react-native';
-import { Popover, } from '@ui-kitten/components';
-import { useNavigation, useRoute, CommonActions } from '@react-navigation/native';
+import { Layout, Popover } from '@ui-kitten/components';
+import {
+  useNavigation,
+  useRoute,
+  CommonActions,
+} from '@react-navigation/native';
 import FastImage from '@cuvent/react-native-fast-image';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import DataContext from '../../Context/DataContext';
+import DataContext from '../Context/DataContext';
 
 const AmbassadorSwitch = () => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const navigation = useNavigation();
   const route = useRoute();
-  const { name } = route.params
+  const { name } = route.params;
   const {
     home: { allAmbassadors = [] },
     themeColors,
   } = useContext(DataContext);
 
-  const currentIdx = allAmbassadors.findIndex(e => e.name == name)
+  const currentIdx = allAmbassadors.findIndex((e) => e.name == name);
   const selectedAmbassador = allAmbassadors[currentIdx];
 
   const renderCurrentProfile = () => (
     <Pressable onPress={() => setVisible(true)}>
       <ProfilePic
-        source={selectedAmbassador.image_png}
+        source={selectedAmbassador.image}
         style={styles.selectedImage}
-        themeColor={themeColors[selectedAmbassador.name]} />
+        themeColor={themeColors[selectedAmbassador.name]}
+      />
     </Pressable>
-  )
+  );
 
   const onProfileClick = (name) => {
-    navigation.dispatch(CommonActions.setParams({ name: name }))
-    setVisible(false)
-  }
+    navigation.dispatch(CommonActions.setParams({ name: name }));
+    setVisible(false);
+  };
 
   return (
     <Popover
       shouldUseContainer={false}
+      supportedOrientations={[
+        'portrait',
+        'portrait-upside-down',
+        'landscape',
+        'landscape-left',
+        'landscape-right',
+      ]}
       backdropStyle={styles.backdrop}
-      placement='bottom end'
+      placement="bottom end"
       visible={visible}
       anchor={renderCurrentProfile}
       onBackdropPress={() => setVisible(false)}>
       <View style={styles.popover}>
         <View style={styles.content}>
-          {allAmbassadors.filter((_, i) => i !== currentIdx).map((e) => (
-            <Pressable
-              onPress={() => onProfileClick(e.name)}
-              style={{padding: 5}}>
-              <ProfilePic source={e.image_png} themeColor={themeColors[e.name]} />
-            </Pressable>
-          ))}
+          {allAmbassadors
+            .filter((_, i) => i !== currentIdx)
+            .map((e) => (
+              <Pressable
+                key={e.name}
+                onPress={() => onProfileClick(e.name)}
+                style={{ padding: 5 }}>
+                <ProfilePic
+                  source={e.image_png}
+                  themeColor={themeColors[e.name]}
+                />
+              </Pressable>
+            ))}
         </View>
       </View>
     </Popover>
@@ -89,10 +108,13 @@ const styles = StyleSheet.create({
   popover: {
     position: 'absolute',
     right: -5,
-    top: 12
+    top: 12,
   },
   backdrop: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  safeView: {
+    flex: 1,
   },
 });
 export default AmbassadorSwitch;

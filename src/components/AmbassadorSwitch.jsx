@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { IndexPath, Select, SelectItem } from '@ui-kitten/components';
-import { useNavigation, CommonActions } from '@react-navigation/native';
+import { useNavigation, useRoute, CommonActions } from '@react-navigation/native';
 import FastImage from '@cuvent/react-native-fast-image';
 
 import DataContext from '../Context/DataContext';
@@ -14,40 +14,43 @@ const ProfilePic = ({ source, style = {}, themeColor }) => (
       themeColor ? { borderColor: themeColor, borderWidth: 2 } : {},
       style,
     ]}
-    resizeMode="contain"
+    resizeMode={FastImage.resizeMode.contain}
   />
 );
 
-const AmbassadorSwitch = () => {
+const AmbassadorSwitch = ({selectedImageStyle}) => {
   const navigation = useNavigation();
+  const route = useRoute();
+  const { name } = route.params
   const {
     home: { allAmbassadors = [] },
     themeColors,
   } = useContext(DataContext);
-  const [selectedIndex, setSelectedIndex] = useState(new IndexPath(0));
+  const currentIdx = allAmbassadors.findIndex(e => e.name == name)
+  const [selectedIndex, setSelectedIndex] = useState(new IndexPath(currentIdx));
 
   const selectedAmbassador = allAmbassadors[selectedIndex - 1];
 
-  useEffect(() => {
-    navigation.dispatch(
-      CommonActions.setParams({ name: selectedAmbassador.name })
-    );
-  }, [selectedIndex]);
-
   return (
     <Select
-      style={{ width: 60, alignSelf: 'center' }}
+      style={{ width: 60, alignSelf: 'center', backgroundColor: 'transparent', border: 'none', }}
       status="control"
       size="large"
       selectedIndex={selectedIndex}
+      onSelect={(index) => {
+        navigation.dispatch(
+          CommonActions.setParams({ name: allAmbassadors[index -1].name })
+        )
+        setSelectedIndex(index)
+      }}
       value={() => (
         <ProfilePic
           source={selectedAmbassador.image_png}
-          style={styles.selectedImage}
+          style={[styles.selectedImage, selectedImageStyle]}
           themeColor={themeColors[selectedAmbassador.name]}
         />
       )}
-      onSelect={(index) => setSelectedIndex(index)}>
+    >
       {allAmbassadors.map((e) => (
         <SelectItem
           key={e.name}

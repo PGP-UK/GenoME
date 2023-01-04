@@ -3,9 +3,10 @@ import { StyleSheet, View, Pressable } from 'react-native';
 import { Text, Icon } from '@ui-kitten/components';
 import { Section, Block } from 'react-native-responsive-layout';
 
-import BackButton from '../../../components/BackButton';
 import DataContext from '../../../Context/DataContext';
 import { PgpText } from '../../../components/Text';
+
+import BackButton from './BackButton';
 
 const TextSection = () => {
   const { setModalId } = useContext(DataContext);
@@ -28,9 +29,7 @@ const TextSection = () => {
 
   return (
     <Section>
-      <Block style={{ flexDirection: 'row-reverse' }}>
-        <BackButton />
-      </Block>
+      <BackButton />
       <Block>
         <PgpText category="h1" sizeSelectorStyles={mainHeaderStyles}>
           My GENOME contains many layers of INFORMATION, including GENETIC and

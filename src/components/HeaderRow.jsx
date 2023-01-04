@@ -33,7 +33,7 @@ const HeaderWithBackBtnAndAmbassadorSwitch = ({
   children,
   displayAmbassadorSwitch = false,
 }) => (
-  <Section style={{ alignItems: 'center', marginBottom: 10 }}>
+  <Section style={{ alignItems: 'flex-start', marginBottom: 10 }}>
     <Block xsSize="80%">
       <HeaderText goBackBtn>{children}</HeaderText>
     </Block>

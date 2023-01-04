@@ -7,7 +7,11 @@ const resetLottieAnimation = (lottieRef) => {
   lottieRef.current.play();
 };
 
-const LottieReset = ({ lottieRef, displayReset, style }) => {
+const resetVideo = (videoRef) => {
+  videoRef.current.setStatusAsync({ positionMillis: 0, shouldPlay: true })
+}
+
+const LottieReset = ({ lottieRef, displayReset, style, videoRef }) => {
   return (
     <View style={[{ alignItems: 'flex-end' }, style]}>
       <View style={{ flex: 1 }}>
@@ -15,7 +19,7 @@ const LottieReset = ({ lottieRef, displayReset, style }) => {
           <Button
             size="large"
             appearance="ghost"
-            onPress={() => resetLottieAnimation(lottieRef)}>
+            onPress={() => lottieRef !== undefined ? resetLottieAnimation(lottieRef) : resetVideo(videoRef) }>
             <Icon
               fill="#8F9BB3"
               name="refresh-outline"

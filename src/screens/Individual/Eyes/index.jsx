@@ -11,6 +11,7 @@ import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import HeaderRow from '../../../components/HeaderRow';
 import DataContext from '../../../Context/DataContext';
+import LottieReset from '../../../components/LottieReset';
 
 const Eyes = (props) => {
   const { route } = props;
@@ -76,24 +77,22 @@ const EyeVideo = withSizeInfo(({ sizeSelector, ...props }) => {
     imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <Video
-        shouldPlay={true}
-        ref={videoRef}
-        style={[
-          { width: finalImageWidth, height: finalImageWidth * 0.75 },
-          styles.video,
-        ]}
-        isMuted // TODO - REMOVE SOUND from these videos
-        source={source}
-        resizeMode="contain"
-      />
-    </View>
+    <>
+      <LottieReset displayReset={true} videoRef={videoRef} />
+      <View style={styles.videoWrapper}>
+        <Video
+          shouldPlay={true}
+          ref={videoRef}
+          style={[
+            { width: finalImageWidth, height: finalImageWidth * 0.75 },
+            styles.video,
+          ]}
+          isMuted // TODO - REMOVE SOUND from these videos
+          source={source}
+          resizeMode="contain"
+        />
+      </View>
+    </>
   );
 });
 
@@ -137,6 +136,11 @@ const styles = StyleSheet.create({
     marginTop: 0,
     alignSelf: 'center',
     justifySelf: 'center',
+  },
+  videoWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   video: {
     alignSelf: 'flex-end',

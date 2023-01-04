@@ -4,8 +4,7 @@ import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import FastImage from '@cuvent/react-native-fast-image';
 
-const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
-  const { image } = props;
+const CenterImage = withSizeInfo(({ sizeSelector, image, themeColor }) => {
   const imagePercentage = sizeSelector({ xs: 0.8, md: 0.4 });
   const imageWidth =
     Math.round(useSafeAreaFrame().width * imagePercentage) - 40;
@@ -19,7 +18,7 @@ const CenterImage = withSizeInfo(({ sizeSelector, data, ...props }) => {
       resizeMode={FastImage.resizeMode.contain}
       style={[
         styles.image,
-        { tintColor: data.themeColor },
+        { tintColor: themeColor },
         { width: finalImageWidth, height: finalImageWidth },
       ]}
     />

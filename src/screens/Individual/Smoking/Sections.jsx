@@ -22,17 +22,20 @@ const InfoText = () => (
   </PgpText>
 );
 
-const ImageKey = ({ data }) => (
+const ImageKey = ({ data, themeColor }) => (
   <PgpText
     category="p1"
     baseStyle={styles.imageKeyWrapper}
     sizeSelectorStyles={{ xs: styles.textRowSm, md: {} }}>
-    <PageText style={[styles.actual, { color: data.themeColor }]}>
-      Actual Age: {data.Age} Years
-    </PageText>
-    {'\n'}
-    <PageText style={styles.epigenetic}>
-      Epigenetic Age: {data.Epigenetic} Years
+    <PageText style={styles.actual}>
+      My epigenetic variants{' '}
+      <PageText style={[styles.actual, { color: themeColor }]}>
+        {data.predicted_status == data.actual_status ? 'correctly' : 'incorrectly'}
+      </PageText>
+      {' '}predicted me to be a:{"\n"}
+      <PageText style={[styles.actual, { color: themeColor }]}>
+        {data.predicted_status}
+      </PageText>
     </PageText>
   </PgpText>
 );

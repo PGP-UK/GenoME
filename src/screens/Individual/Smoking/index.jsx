@@ -12,11 +12,8 @@ import CenterImage from './CenterImage';
 const Smoking = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const {
-    smoking: { dataFile },
-    themeColors,
-  } = useContext(DataContext);
-  const data = dataFile[name];
+  const { smoking, themeColors, } = useContext(DataContext);
+  const data = smoking[name];
   const themeColor = themeColors[name];
 
   return (
@@ -31,15 +28,12 @@ const Smoking = (props) => {
 
         <Section style={styles.container} stretch>
           <Block xsSize="100%" mdSize="50%" style={{ paddingBottom: 2 }}>
-            <CenterImage
-              image={require('../../../../assets/Individual/Smoking/nonsmoking.png')}
-              data={data}
-            />
+            <CenterImage image={data.image} themeColor={themeColor} />
           </Block>
 
           <Block xsSize="100%" mdSize="50%">
-            <ImageKey data={data} />
-            <BoxText themeColor={themeColor} />
+            <ImageKey data={data} themeColor={themeColor} />
+            <BoxText data={data} themeColor={themeColor} />
           </Block>
         </Section>
       </Grid>

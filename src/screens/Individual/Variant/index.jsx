@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import PageLayout from '../../../components/PageLayout';
 import HeaderRow from '../../../components/HeaderRow';
 import DataContext from '../../../Context/DataContext';
+import { PageText } from '../../../components/Text';
 
 import TextSection from './TextSection';
 import CenterImage from './CenterImage';
@@ -20,8 +21,12 @@ const Variant = (props) => {
       <HeaderRow goBackBtn displayAmbassadorSwitch>
         Variants
       </HeaderRow>
+      <PageText category="p1">
+        These numbers reflect how many single nucleotide variants (SNVs) were identified in my genome.
+      </PageText>
+
       <TextSection
-        leftText={`These numbers reflect how many single nucleotide variants (SNVs) were identified in my genome`}
+        leftText=''
         rightText={`Total Number of variants: ${'\n'} ${
           data.total.num
         } ${'\n'} ${data.total.percent}`}

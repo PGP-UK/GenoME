@@ -41,7 +41,7 @@ const ModalData = {
     hideOnPress: true,
   },
   intro_video: {
-    header: 'Video',
+    header: 'My Story',
     body: <IntroVideo />,
     hideOnPress: false,
   },

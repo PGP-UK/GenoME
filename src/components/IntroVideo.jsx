@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
+import { View } from 'react-native';
 import { Video, Audio } from 'expo-av';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
@@ -27,6 +28,9 @@ const IntroVideo = () => {
   }, [videoRef, status.isPlaying]);
 
   const imageWidth = Math.round(useSafeAreaFrame().width - 110);
+  const maxImageHeight = Math.round(useSafeAreaFrame().height * 0.7);
+  const finalImageWidth =
+    imageWidth > maxImageHeight ? maxImageHeight : imageWidth;
 
   return (
     <>
@@ -35,7 +39,11 @@ const IntroVideo = () => {
       </PageText>
       <Video
         ref={videoRef}
-        style={{ width: imageWidth, height: imageWidth * 0.75 }}
+        style={{
+          width: finalImageWidth,
+          height: finalImageWidth * 0.75,
+          alignSelf: 'center',
+        }}
         source={videoSrc}
         useNativeControls={true}
         resizeMode="contain"

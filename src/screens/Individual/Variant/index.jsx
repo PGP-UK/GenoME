@@ -11,8 +11,9 @@ import CenterImage from './CenterImage';
 const Variant = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const { variant } = useContext(DataContext);
+  const { variant, themeColors } = useContext(DataContext);
   const { total, shared, privateNum, image } = variant[name];
+  const themeColor = themeColors[name]
 
   return (
     <PageLayout>
@@ -30,7 +31,7 @@ const Variant = (props) => {
       <CenterImage image={image} />
       <TextSection
         leftText={`Number of shared variants: ${'\n'} ${shared.num} ${'\n'} ${shared.percent}`}
-        leftStyle={{ color: data.themeColor }}
+        leftStyle={{ color: themeColor }}
         rightText={`Number of private variants: ${'\n'} ${privateNum.num} ${'\n'} ${privateNum.percent}`}
         rightStyle={{ color: '#666d78' }}
       />

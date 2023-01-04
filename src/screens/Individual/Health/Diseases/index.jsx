@@ -8,15 +8,16 @@ import HeaderRow from '../../../../components/HeaderRow';
 import { PageHeader, PageText } from '../../../../components/Text';
 
 import MiddleSection from './MiddleSection';
+import DiseaseData from '../DiseaseData';
 
 const Diseases = (props) => {
   const { route } = props;
   const { name, disease } = route.params;
-  const { health, diseaseData,themeColors } = useContext(DataContext);
+  const { health, themeColors } = useContext(DataContext);
   const data = health[name][disease]
   const themeColor = themeColors[name];
-  const {header, id, infoHeader, infoFooter} = diseaseData[disease];
-  console.log(data)
+  const {header, id, infoHeader, infoFooter} = DiseaseData[disease];
+
   return (
     <PageLayout>
       <HeaderRow goBackBtn displayAmbassadorSwitch>

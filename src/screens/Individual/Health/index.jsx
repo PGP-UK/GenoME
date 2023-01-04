@@ -4,18 +4,21 @@ import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
 import FastImage from '@cuvent/react-native-fast-image';
+import { useNavigation } from '@react-navigation/native';
 
 import PageLayout from '../../../components/PageLayout';
 import { PageText } from '../../../components/Text';
 import { PageHeader } from '../../../components/Text';
 import HeaderRow from '../../../components/HeaderRow';
 import DataContext from '../../../Context/DataContext';
-import { useNavigation } from '@react-navigation/native';
+import DiseaseData from './DiseaseData';
+
+const diseaseIcons = Object.entries(DiseaseData).map(([_, v]) => v)
 
 const Health = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const { health, diseaseIcons, themeColors } = useContext(DataContext);
+  const { health, themeColors } = useContext(DataContext);
   const data = health[name];
   const themeColor = themeColors[name];
   return (

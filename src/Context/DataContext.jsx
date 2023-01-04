@@ -9,8 +9,6 @@ import LandingData from './api/Landing';
 import SmokingData from './api/Smoking';
 import VariantData from './api/Variant';
 
-import DiseaseData from './generic/DiseaseData';
-
 const DataContext = createContext({});
 
 export function DataProvider(props) {
@@ -37,9 +35,6 @@ export function DataProvider(props) {
         landing: LandingData,
         smoking: SmokingData,
         variant: VariantData,
-
-        diseaseData: DiseaseData,
-        diseaseIcons: Object.entries(DiseaseData).map(([_, v]) => v)
       }}
     />
   );

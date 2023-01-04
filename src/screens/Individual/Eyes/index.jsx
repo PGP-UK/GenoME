@@ -22,7 +22,7 @@ const Eyes = (props) => {
   return (
     <>
       <PageLayout>
-        <HeaderRow backBtn>Eye Colour</HeaderRow>
+        <HeaderRow goBackBtn displayAmbassadorSwitch>Eye Colour</HeaderRow>
         <PageText category="p1">
           Eye colour is determined by multiple genetic variants, some of which have been used to predict my eye colour.
           Below you can see my actual eyes and the predicted eye colour - how well do you think the prediction has worked?

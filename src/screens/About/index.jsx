@@ -14,7 +14,7 @@ const About = () => (
   <PageLayout>
     <Section>
       <Block>
-        <HeaderRow backBtn>About PGP-UK</HeaderRow>
+        <HeaderRow goBackBtn>About PGP-UK</HeaderRow>
         <PageText>
           PGP-UK is part of the global network of Personal Genome Projects, which all share the vision of advancing science
           through open data sharing. Currently, there are projects in America, Austria, Canada, China and the UK. There are multiple

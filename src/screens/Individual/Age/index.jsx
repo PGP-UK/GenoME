@@ -19,7 +19,7 @@ const Age = (props) => {
 
   return (
     <PageLayout>
-      <HeaderRow backBtn>Epigenetic Age</HeaderRow>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>Epigenetic Age</HeaderRow>
       <Grid stretchable>
         <Section>
           <InfoText/>

@@ -15,7 +15,7 @@ const Variant = (props) => {
 
   return (
     <PageLayout>
-      <HeaderRow backBtn>Variants</HeaderRow>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>Variants</HeaderRow>
       <TextSection
         leftText={`Total Number of variants: ${'\n'} ${data.total.num} ${'\n'} ${data.total.percent}`}
         rightText={`Number of shared variants: ${'\n'} ${data.shared.num} ${'\n'} ${data.shared.percent}`}

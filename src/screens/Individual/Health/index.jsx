@@ -20,7 +20,7 @@ const Health = (props) => {
   const themeColor = themeColors[name];
   return (
     <PageLayout>
-      <HeaderRow backBtn>Health</HeaderRow>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>Health</HeaderRow>
       <Section>
         <Block>
           <PageText category="p1" style={styles.main_text}>

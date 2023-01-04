@@ -18,7 +18,7 @@ const Smoking = (props) => {
 
   return (
     <PageLayout>
-      <HeaderRow backBtn>Smoking Prediction</HeaderRow>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>Smoking Prediction</HeaderRow>
       <Grid stretchable>
         <Section>
           <InfoText/>

@@ -24,13 +24,13 @@ const AmbassadorImage = withSizeInfo(({ sizeSelector, image }) => {
 
 const Ambassador = (props) => {
   const navigation = useNavigation();
-  const { name, hexId, image, themeColor } = props;
+  const { label, name, hexId, image, themeColor } = props;
 
   return (
     <Block xsSize="100%" smSize="50%" mdSize="25%">
       <Pressable
         onPress={() =>
-          navigation.navigate('Landing', { name: name.toLowerCase() })
+          navigation.navigate('Landing', { name: name })
         }
         style={styles.box}>
         <AmbassadorImage image={image} />
@@ -38,7 +38,7 @@ const Ambassador = (props) => {
           {hexId}
         </PageText>
         <PageText category="p1" style={styles.secondLineText}>
-          Also known as: {'\n'} {name}
+          Also known as: {'\n'} {label}
         </PageText>
       </Pressable>
     </Block>

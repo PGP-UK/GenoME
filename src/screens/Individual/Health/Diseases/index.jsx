@@ -21,7 +21,7 @@ const Diseases = (props) => {
 
   return (
     <PageLayout>
-      <HeaderRow backBtn>
+      <HeaderRow goBackBtn displayAmbassadorSwitch>
         {diseaseInfo.header}{'\n'}
         <PageHeader category="h3" style={{ color: themeColor}}>
           Genetic variant ID: {diseaseInfo.id}

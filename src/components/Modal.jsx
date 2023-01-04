@@ -58,10 +58,17 @@ const ModalView = () => {
     <>
       <Modal
         shouldUseContainer={false}
+        supportedOrientations={[
+          'portrait',
+          'portrait-upside-down',
+          'landscape',
+          'landscape-left',
+          'landscape-right',
+        ]}
         backdropStyle={styles.backdrop}
         visible={modalVisible}
         onBackdropPress={() => setModalId('hidden')}>
-        <Card style={{ position: 'absolute', top: '30%', margin: 30 }}>
+        <Card style={styles.modalCard}>
           <Pressable onPress={() => hideOnPress && setModalId('hidden')}>
             <PageText
               style={{ color: '#63BEE1', marginBottom: 5, fontWeight: '500' }}>
@@ -78,6 +85,12 @@ const styles = StyleSheet.create({
   pop_up_links: {
     color: '#63BEE1',
     paddingTop: 5,
+  },
+  modalCard: {
+    position: 'absolute',
+    top: '10%',
+    margin: 30,
+    alignSelf: 'center',
   },
   backdrop: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',

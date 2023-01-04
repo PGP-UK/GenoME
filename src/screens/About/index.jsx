@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
 import FastImage from '@cuvent/react-native-fast-image';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import * as Linking from 'expo-linking';
 
 import PageLayout from '../../components/PageLayout';
 import { PageText } from '../../components/Text';
@@ -20,7 +21,7 @@ const About = () => (
           which all share the vision of advancing science through open data
           sharing. Currently, there are projects in America, Austria, Canada,
           China and the UK. There are multiple ways to join the PGP-UK community
-          and keep up-to-date with the project - just follow the links at the
+          and keep up to date with the project - just follow the links at the
           bottom of this page.
           {'\n\n'}
           We look forward to doing great science with you!
@@ -41,7 +42,14 @@ const About = () => (
           United Kingdom.
         </PageText>
         <PageText style={styles.bottom_text}>
-          This app was designed and developed by the PGP-UK/GenoME team.
+          This app was designed and developed by the{' '}
+          <PageText
+            style={[styles.bottom_text, styles.link]}
+            onPress={() =>
+              Linking.openURL('https://www.personalgenomes.org.uk/team')
+            }>
+            PGP-UK/GenoME team.
+          </PageText>
         </PageText>
         <SocialMedia />
       </Block>
@@ -74,6 +82,9 @@ const styles = StyleSheet.create({
   bottom_text: {
     marginTop: 20,
     marginBottom: 20,
+  },
+  link: {
+    color: '#63BEE1',
   },
 });
 

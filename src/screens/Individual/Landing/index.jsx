@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, Pressable } from 'react-native';
+import { View, StyleSheet, Pressable } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { Section, Block, Grid } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
@@ -9,6 +9,7 @@ import FastImage from '@cuvent/react-native-fast-image';
 import PageLayout from '../../../components/PageLayout';
 import DataContext from '../../../Context/DataContext';
 
+import BackButton from './BackButton';
 import TextSection from './TextSection';
 import Icons from './Icons';
 
@@ -21,6 +22,7 @@ const Landing = (props) => {
 
   return (
     <PageLayout backgroundColor={ThemeColors[name]}>
+      <BackButton />
       <TextSection />
       <Grid>
         <Section style={styles.iconsWrapper}>
@@ -61,13 +63,15 @@ const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { icon } = props;
   const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 6 });
   const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 60;
   return (
-    <FastImage
-      source={icon}
-      resizeMode={FastImage.resizeMode.contain}
-      style={{ width: imageWidth, height: imageWidth }}
-    />
+    <View style={{ borderRadius: (imageWidth + 50)/2, borderWidth: 5, borderColor: '#fff', padding: 15 }}>
+      <FastImage
+        source={icon}
+        resizeMode={FastImage.resizeMode.contain}
+        style={{ width: imageWidth, height: imageWidth }}
+      />
+    </View>
   );
 });
 

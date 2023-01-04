@@ -31,6 +31,12 @@ const MiddleSection = (props) => {
       {/* Smaller screens only */}
       <Block xsSize="100%" mdHidden>
         <VariantRisk riskData={data.risk} />
+        <PageText
+          style={[styles.box_text, { backgroundColor: backgroundColour }]}>
+          There are three versions of this variant and {data.population.percent}{' '}
+          of the population have the same variant as me. {'\n\n'}
+          {data.message}
+        </PageText>
       </Block>
 
       {/*  larger screens only */}
@@ -48,7 +54,6 @@ const MiddleSection = (props) => {
 };
 
 const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
-  const containerStyles = sizeSelector({ xs: {}, md: styles.container });
   const ImageStyles = sizeSelector({
     xs: styles.xsHeader3,
     md: styles.mdHeader3,
@@ -56,13 +61,13 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
 
   return (
     <>
-      <Block style={containerStyles}>
+      <Block style={styles.container}>
         <PageHeader category="h5" style={styles.header2}>
           Risk with each variant type:
         </PageHeader>
       </Block>
 
-      <Block style={containerStyles}>
+      <Block style={styles.container}>
         <View style={styles.squareWrapper}>
           <View style={styles.square1} />
           <PageHeader category="h6" style={ImageStyles}>
@@ -89,6 +94,7 @@ const VariantRisk = withSizeInfo(({ sizeSelector, riskData }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
     alignContent: 'center',

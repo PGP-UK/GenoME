@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { IndexPath, Select, SelectItem } from '@ui-kitten/components';
+import { IndexPath, Select, SelectItem, } from '@ui-kitten/components';
 import { useNavigation, useRoute, CommonActions } from '@react-navigation/native';
 import FastImage from '@cuvent/react-native-fast-image';
 
-import DataContext from '../Context/DataContext';
+import DataContext from '../../Context/DataContext';
 
 const ProfilePic = ({ source, style = {}, themeColor }) => (
   <FastImage
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   selectedImage: {
     marginTop: -10,
     marginBottom: -10,
-    marginLeft: 10,
+    // marginLeft: 10,
   },
 });
 export default AmbassadorSwitch;

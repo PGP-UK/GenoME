@@ -1,22 +1,30 @@
-const AllAmbassadorsData = {
+export default {
   stephan: {
-    data: require('./../../../assets/Individual/Ancestry/stephan.json'),
-    image: require('./../../../assets/Individual/Ancestry/lottie/stephan.json'),
+    ancestryKey: [
+      { amount: 99.9, ancestry: "British", colour: '#91bb6f' },
+      { amount: 0.1, ancestry: "Other", colour: '#666d78' },
+    ],
+    image: require('./../../../assets/Individual/Ancestry/stephan.json'),
   },
   colin: {
-    data: require('./../../../assets/Individual/Ancestry/colin.json'),
-    image: require('./../../../assets/Individual/Ancestry/lottie/colin.json'),
+    ancestryKey: [
+      { amount: 99.9, ancestry: "British", colour: '#91bb6f' },
+      { amount: 0.1, ancestry: "Other", colour: '#666d78' },
+    ],
+    image: require('./../../../assets/Individual/Ancestry/colin.json'),
   },
   laura: {
-    data: require('./../../../assets/Individual/Ancestry/laura.json'),
-    image: require('./../../../assets/Individual/Ancestry/lottie/laura.json'),
+    ancestryKey: [
+      { amount: 99.9, ancestry: "Italian (Tuscany)", colour: '#f0bb48' },
+      { amount: 0.1, ancestry: "Other", colour: '#666d78' },
+    ],
+    image: require('./../../../assets/Individual/Ancestry/laura.json'),
   },
   momodou: {
-    data: require('./../../../assets/Individual/Ancestry/momodou.json'),
-    image: require('./../../../assets/Individual/Ancestry/lottie/momodou.json'),
+    ancestryKey: [
+      { amount: 92, ancestry: "African", colour: '#ed7948' },
+      { amount: 8, ancestry: "Spanish", colour: '#aabc63' },
+    ],
+    image: require('./../../../assets/Individual/Ancestry/momodou.json'),
   },
-};
-
-export default {
-  AllAmbassadorsData: AllAmbassadorsData,
 };

@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { Grid, Section, Block } from 'react-native-responsive-layout';
+import { useRoute } from '@react-navigation/native';
 
 import LottieAnimation from '../../../components/LottieAnimation';
 import { PageText } from '../../../components/Text';
+import DataContext from '../../../Context/DataContext';
 
-const CenterSection = (props) => {
-  const { data, image } = props;
+const AncestryKey = ({ancestryKey}) => (
+  <>
+    {
+      ancestryKey.map(k => (
+        <PageText key={`${k.ancestry}-${k.amount}`} style={[{ color: k.colour }, styles.baseText]}>
+          {k.amount}% {k.ancestry}
+        </PageText>
+      ))
+    }
+  </>
+)
+
+const CenterSection = () => {
+  const route = useRoute()
+  const { name } = route.params
+  const { ancestry } = useContext(DataContext);
+  const { ancestryKey = [], image } = ancestry[name];
 
   return (
     <Grid>
@@ -18,18 +35,8 @@ const CenterSection = (props) => {
             imagePercentages={{ xs: 1, lg: 0.4 }}
           />
         </Block>
-        <Block lgHidden style={styles.percent_box}>
-          <PageText style={[{ color: data.themeColor }, styles.baseText]}>
-            {data.most_percent}
-          </PageText>
-          <PageText
-            style={[
-              { color: data.themeColor },
-              styles.baseText,
-              styles.secondText,
-            ]}>
-            {data.other_percent_1}
-          </PageText>
+        <Block lgHidden style={[styles.percent_box, { marginBottom: 75}]}>
+          <AncestryKey ancestryKey={ancestryKey}/>
         </Block>
 
         {/* Visible in large screens */}
@@ -40,17 +47,7 @@ const CenterSection = (props) => {
           />
         </Block>
         <Block hidden lgVisible style={styles.percent_box} lgSize="50%">
-          <PageText style={[{ color: data.themeColor }, styles.baseText]}>
-            {data.most_percent}
-          </PageText>
-          <PageText
-            style={[
-              { color: data.themeColor },
-              styles.baseText,
-              styles.secondText,
-            ]}>
-            {data.other_percent_1}
-          </PageText>
+          <AncestryKey ancestryKey={ancestryKey}/>
         </Block>
       </Section>
     </Grid>

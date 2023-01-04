@@ -16,12 +16,11 @@ import Icons from './Icons';
 const Landing = (props) => {
   const { route, navigation } = props;
   const { name } = route.params;
-  const {
-    landing: { ThemeColors },
-  } = useContext(DataContext);
+  const { themeColors} = useContext(DataContext);
+  const themeColor = themeColors[name]
 
   return (
-    <PageLayout backgroundColor={ThemeColors[name]}>
+    <PageLayout backgroundColor={themeColor}>
       <BackButton />
       <TextSection />
       <Grid>

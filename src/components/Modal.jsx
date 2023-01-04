@@ -4,7 +4,7 @@ import { Card, Modal } from '@ui-kitten/components';
 
 import { PageText } from './Text';
 import DataContext from '../Context/DataContext';
-import IntroVideo from '../components/IntroVideo';
+import IntroVideo from '../screens/Individual/Landing/IntroVideo';
 
 const ModalData = {
   active_participants: {

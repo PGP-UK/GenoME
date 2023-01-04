@@ -3,8 +3,8 @@ import { Video, Audio } from 'expo-av';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
 
-import DataContext from '../Context/DataContext';
-import { PageText } from './Text';
+import DataContext from '../../../Context/DataContext';
+import { PageText } from '../../../components/Text';
 
 const triggerAudio = async (ref) => {
   await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
@@ -17,10 +17,8 @@ const IntroVideo = () => {
 
   const route = useRoute();
   const name = route?.params?.name || 'stephan';
-  const {
-    landing: { introVideos },
-  } = useContext(DataContext);
-  const videoSrc = introVideos[name];
+  const { landing } = useContext(DataContext);
+  const videoSrc = landing[name];
 
   useEffect(() => {
     if (status.isPlaying) triggerAudio(videoRef);

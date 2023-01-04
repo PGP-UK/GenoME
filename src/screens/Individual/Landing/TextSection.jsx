@@ -6,8 +6,6 @@ import { Section, Block } from 'react-native-responsive-layout';
 import DataContext from '../../../Context/DataContext';
 import { PgpText } from '../../../components/Text';
 
-import BackButton from './BackButton';
-
 const TextSection = () => {
   const { setModalId } = useContext(DataContext);
 

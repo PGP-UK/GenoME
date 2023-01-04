@@ -7,15 +7,11 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 import AppNavigator from './src/components/AppNavigator';
 import { DataProvider } from './src/Context/DataContext';
-import OverrideStyles from './src/components/uiKittenStylingMapping';
 
 const App = () => (
   <SafeAreaProvider>
     <IconRegistry icons={EvaIconsPack} />
-    <ApplicationProvider
-      {...eva}
-      customMapping={OverrideStyles}
-      theme={eva.light}>
+    <ApplicationProvider {...eva} theme={eva.light}>
       <DataProvider>
         <AppNavigator />
       </DataProvider>

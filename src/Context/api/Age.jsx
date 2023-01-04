@@ -1,24 +1,22 @@
-const AgeData = require('./../../../assets/Individual/Age/data.json');
-const AllAmbassadors = {
+export default {
   stephan: {
-    AgeImage: require(`./../../../assets/Individual/Age/lottie/stephan.json`),
-    themeColor: '#8CD8C4',
+    actualAge: 59,
+    epigeneticAge: 54,
+    AgeImage: require(`./../../../assets/Individual/Age/stephan.json`),
   },
   laura: {
-    AgeImage: require(`./../../../assets/Individual/Age/lottie/laura.json`),
-    themeColor: '#F6BD4A',
+    actualAge: 44,
+    epigeneticAge: 42,
+    AgeImage: require(`./../../../assets/Individual/Age/laura.json`),
   },
   momodou: {
-    AgeImage: require(`./../../../assets/Individual/Age/lottie/momodou.json`),
-    themeColor: '#D94553',
+    actualAge: 57,
+    epigeneticAge: 58,
+    AgeImage: require(`./../../../assets/Individual/Age/momodou.json`),
   },
   colin: {
-    AgeImage: require(`./../../../assets/Individual/Age/lottie/colin.json`),
-    themeColor: '#9C82DE',
+    actualAge: 57,
+    epigeneticAge: 56,
+    AgeImage: require(`./../../../assets/Individual/Age/colin.json`),
   },
-};
-
-export default {
-  AgeData: AgeData,
-  AllAmbassadors: AllAmbassadors,
 };

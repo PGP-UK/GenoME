@@ -25,17 +25,17 @@ const InfoText = () => (
   </PgpText>
 );
 
-const ImageKey = ({ data }) => (
+const ImageKey = ({ actualAge, epigeneticAge, themeColor }) => (
   <PgpText
     category="p1"
     baseStyle={styles.imageKeyWrapper}
     sizeSelectorStyles={{ xs: styles.textRowSm, md: {} }}>
-    <PageText style={[styles.actual, { color: data.themeColor }]}>
-      Actual Age: {data.Age} Years
+    <PageText style={[styles.actual, { color: themeColor }]}>
+      Actual Age: {actualAge} Years
     </PageText>
     {'\n'}
     <PageText style={styles.epigenetic}>
-      Epigenetic Age: {data.Epigenetic} Years
+      Epigenetic Age: {epigeneticAge} Years
     </PageText>
   </PgpText>
 );

@@ -12,13 +12,9 @@ import { BoxText, InfoText, ImageKey } from './Sections';
 const Age = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const {
-    age: { AgeData, AllAmbassadors },
-    themeColors,
-  } = useContext(DataContext);
-  const data = AgeData[name];
+  const { age, themeColors, } = useContext(DataContext);
+  const { actualAge, epigeneticAge, AgeImage } = age[name];
   const themeColor = themeColors[name];
-  const allAmbassadorsData = AllAmbassadors[name];
 
   return (
     <PageLayout>
@@ -32,13 +28,13 @@ const Age = (props) => {
         <Section style={styles.container} stretch>
           <Block xsSize="100%" mdSize="50%" style={{ paddingBottom: 2 }}>
             <LottieAnimation
-              image={allAmbassadorsData.AgeImage}
+              image={AgeImage}
               imagePercentages={{ xs: 0.8, xxl: 0.4 }}
             />
           </Block>
 
           <Block xsSize="100%" mdSize="50%">
-            <ImageKey data={data} />
+            <ImageKey actualAge={actualAge} epigeneticAge={epigeneticAge} themeColor={themeColor}/>
             <BoxText themeColor={themeColor} />
           </Block>
         </Section>

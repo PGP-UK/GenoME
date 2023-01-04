@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
   baseLeftText: {
     fontSize: 35,
     textAlign: 'left',
-    color: '#45B0D4',
   },
   baseRightText: {
     fontSize: 35,

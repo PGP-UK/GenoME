@@ -21,17 +21,18 @@ const Variant = (props) => {
         Variants
       </HeaderRow>
       <TextSection
-        leftText={`Total Number of variants: ${'\n'} ${
+        leftText={`These numbers reflect how many single nucleotide variants (SNVs) were identified in my genome`}
+        rightText={`Total Number of variants: ${'\n'} ${
           data.total.num
         } ${'\n'} ${data.total.percent}`}
-        rightText={`Number of shared variants: ${'\n'} ${
-          data.shared.num
-        } ${'\n'} ${data.shared.percent}`}
-        rightStyle={{ color: data.themeColor }}
+        rightStyle={{ color: '#45B0D4' }}
       />
       <CenterImage image={image} />
       <TextSection
-        leftText={`These numbers reflect how many single nucleotide variants (SNVs) were identified in my genome`}
+        leftText={`Number of shared variants: ${'\n'} ${
+          data.shared.num
+        } ${'\n'} ${data.shared.percent}`}
+        leftStyle={{ color: data.themeColor }}
         rightText={`Number of private variants: ${'\n'} ${
           data.private.num
         } ${'\n'} ${data.private.percent}`}

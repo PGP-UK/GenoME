@@ -11,10 +11,8 @@ import CenterImage from './CenterImage';
 const Variant = (props) => {
   const { route } = props;
   const { name } = route.params;
-  const {
-    variant: { AllAmbassadorsData },
-  } = useContext(DataContext);
-  const { data, image } = AllAmbassadorsData[name];
+  const { variant } = useContext(DataContext);
+  const { total, shared, privateNum, image } = variant[name];
 
   return (
     <PageLayout>
@@ -24,23 +22,16 @@ const Variant = (props) => {
       <PageText category="p1">
         These numbers reflect how many single nucleotide variants (SNVs) were identified in my genome.
       </PageText>
-
       <TextSection
         leftText=''
-        rightText={`Total Number of variants: ${'\n'} ${
-          data.total.num
-        } ${'\n'} ${data.total.percent}`}
+        rightText={`Total Number of variants: ${'\n'} ${total.num} ${'\n'} ${total.percent}`}
         rightStyle={{ color: '#45B0D4' }}
       />
       <CenterImage image={image} />
       <TextSection
-        leftText={`Number of shared variants: ${'\n'} ${
-          data.shared.num
-        } ${'\n'} ${data.shared.percent}`}
+        leftText={`Number of shared variants: ${'\n'} ${shared.num} ${'\n'} ${shared.percent}`}
         leftStyle={{ color: data.themeColor }}
-        rightText={`Number of private variants: ${'\n'} ${
-          data.private.num
-        } ${'\n'} ${data.private.percent}`}
+        rightText={`Number of private variants: ${'\n'} ${privateNum.num} ${'\n'} ${privateNum.percent}`}
         rightStyle={{ color: '#666d78' }}
       />
     </PageLayout>

@@ -16,7 +16,7 @@ const BackButton = withSizeInfo(({ sizeSelector }) => {
   });
   return (
     <Section>
-      <Block style={{ flexDirection: 'row-reverse' }}>
+      <Block>
         <View style={btnStyles}>
           <Icon
             style={styles.icon}
@@ -39,13 +39,15 @@ const styles = StyleSheet.create({
   },
   baseRow: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   headerBtnLayoutXs: {
     marginTop: 10,
+    marginBottom: 15,
   },
   headerBtnLayoutSm: {
-    marginBottom: 5,
+    marginBottom: 15,
   },
 });
 

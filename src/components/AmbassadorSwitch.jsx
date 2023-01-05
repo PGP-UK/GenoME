@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { StyleSheet, Pressable, View } from 'react-native';
-import { Popover } from '@ui-kitten/components';
+import { Popover, Icon } from '@ui-kitten/components';
 import {
   useNavigation,
   useRoute,
@@ -30,6 +30,7 @@ const AmbassadorSwitch = ({popOverStyles}) => {
         source={selectedAmbassador.image}
         style={styles.selectedImage}
         themeColor={themeColors[selectedAmbassador.name]}
+        showSwitcherIcon
       />
     </Pressable>
   );
@@ -77,16 +78,19 @@ const AmbassadorSwitch = ({popOverStyles}) => {
   );
 };
 
-const ProfilePic = ({ source, style = {}, themeColor }) => (
-  <FastImage
-    source={source}
-    style={[
-      styles.image,
-      themeColor ? { borderColor: themeColor, borderWidth: 2 } : {},
-      style,
-    ]}
-    resizeMode={FastImage.resizeMode.contain}
-  />
+const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false }) => (
+  <View style={{flexDirection: 'column'}}>
+    <FastImage
+      source={source}
+      style={[
+        styles.image,
+        themeColor ? { borderColor: themeColor, borderWidth: 2 } : {},
+        style,
+      ]}
+      resizeMode={FastImage.resizeMode.contain}
+    />
+    {showSwitcherIcon && <Icon style={styles.switcherIcon} fill='#fff' name='arrow-ios-downward-outline'/>}
+  </View>
 );
 
 const styles = StyleSheet.create({
@@ -96,6 +100,13 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     alignSelf: 'flex-end',
     justifySelf: 'flex-end',
+  },
+  switcherIcon: {
+    top: -15,
+    left: 19,
+    position: 'absolute',
+    width: 20,
+    height: 56
   },
   selectedImage: {
     marginTop: -10,

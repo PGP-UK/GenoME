@@ -10,7 +10,7 @@ import FastImage from '@cuvent/react-native-fast-image';
 
 import DataContext from '../Context/DataContext';
 
-const AmbassadorSwitch = ({popOverStyles}) => {
+const AmbassadorSwitch = ({popOverStyles, switcherIconStyles = {}, switcherIconColor = "#000"}) => {
   const [visible, setVisible] = useState(false);
 
   const navigation = useNavigation();
@@ -29,8 +29,10 @@ const AmbassadorSwitch = ({popOverStyles}) => {
       <ProfilePic
         source={selectedAmbassador.image}
         style={styles.selectedImage}
+        switcherIconStyles={[styles.switcherIcon, switcherIconStyles]}
         themeColor={themeColors[selectedAmbassador.name]}
         showSwitcherIcon
+        switcherIconColor={switcherIconColor}
       />
     </Pressable>
   );
@@ -78,7 +80,7 @@ const AmbassadorSwitch = ({popOverStyles}) => {
   );
 };
 
-const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false }) => (
+const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false, switcherIconStyles, switcherIconColor }) => (
   <View style={{flexDirection: 'column'}}>
     <FastImage
       source={source}
@@ -89,7 +91,7 @@ const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false }
       ]}
       resizeMode={FastImage.resizeMode.contain}
     />
-    {showSwitcherIcon && <Icon style={styles.switcherIcon} fill='#fff' name='arrow-ios-downward-outline'/>}
+    {showSwitcherIcon && <Icon style={switcherIconStyles} fill={switcherIconColor} name='arrow-ios-downward-outline'/>}
   </View>
 );
 
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
   },
   switcherIcon: {
     top: -15,
-    left: 19,
+    left: 45,
     position: 'absolute',
     width: 20,
     height: 56

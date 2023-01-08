@@ -24,7 +24,7 @@ const BackButton = withSizeInfo(({ sizeSelector }) => {
             name="home"
             onPress={() => navigation.goBack()}
           />
-          <AmbassadorSwitch popOverStyles={{ left: 0 }} />
+          <AmbassadorSwitch popOverStyles={{ left: 0 }} switcherIconColor="#fff" switcherIconStyles={{ left: 19 }} />
         </View>
       </Block>
     </Section>

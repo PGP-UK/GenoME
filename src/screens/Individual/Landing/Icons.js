@@ -1,26 +1,32 @@
 export default [
   {
     pageName: 'Variant',
-    image: require('./../../../../assets/Individual/Landing/variant-icon.png'),
+    icon: 'fa-light fa-dna',
+    transform: 'shrink-7'
   },
   {
     pageName: 'Ancestry',
-    image: require('./../../../../assets/Individual/Landing/ancestry-icon.png'),
+    icon: "fa-light fa-earth-americas",
+    transform: 'shrink-5'
   },
   {
     pageName: 'Eyes',
-    image: require('./../../../../assets/Individual/Landing/eyes-icon.png'),
+    icon: "fa-light fa-eye",
+    transform: 'shrink-5'
   },
   {
     pageName: 'Health',
-    image: require('./../../../../assets/Individual/Landing/health-icon.png'),
+    icon: "fa-light fa-file-waveform",
+    transform: 'shrink-6'
   },
   {
     pageName: 'Age',
-    image: require('./../../../../assets/Individual/Landing/age-icon.png'),
+    icon: "fa-light fa-cake-candles",
+    transform: 'shrink-6'
   },
   {
     pageName: 'Smoking',
-    image: require('./../../../../assets/Individual/Landing/smoking-icon.png'),
+    icon: "fa-light fa-smoking",
+    transform: 'shrink-6'
   },
 ];

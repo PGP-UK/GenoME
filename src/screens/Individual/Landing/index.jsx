@@ -4,7 +4,7 @@ import { Text } from '@ui-kitten/components';
 import { Section, Block, Grid } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
-import FastImage from '@cuvent/react-native-fast-image';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 import PageLayout from '../../../components/PageLayout';
 import DataContext from '../../../Context/DataContext';
@@ -50,7 +50,7 @@ const LandingIcon = ({ IconData, name, navigation }) => (
         navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
       }
       style={styles.box}>
-      <Iconimage icon={IconData.image} />
+      <Iconimage {...IconData} />
       <Text category="h4" style={styles.iconText}>
         {IconData.pageName}
       </Text>
@@ -59,16 +59,25 @@ const LandingIcon = ({ IconData, name, navigation }) => (
 );
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
-  const { icon } = props;
+  const { icon, transform } = props
   const numImagesPerRow = sizeSelector({ xs: 2, sm: 3, md: 6 });
   const imageWidth =
-    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 60;
+    Math.round(useSafeAreaFrame().width / numImagesPerRow) - 40;
   return (
-    <View style={{ borderRadius: (imageWidth + 50)/2, borderWidth: 5, borderColor: '#fff', padding: 15 }}>
-      <FastImage
-        source={icon}
-        resizeMode={FastImage.resizeMode.contain}
-        style={{ width: imageWidth, height: imageWidth }}
+    <View>
+      <FontAwesomeIcon
+        icon='fa-thin fa-circle'
+        size={imageWidth}
+        color='#fff'
+        style={{position: 'absolute'}}
+      />
+      <FontAwesomeIcon
+        icon={icon}
+        size={imageWidth}
+        color='#fff'
+        transform={transform}
+        // secondaryColor='#000' // For duotone icons
+        // secondaryOpacity={ 0.3 }
       />
     </View>
   );

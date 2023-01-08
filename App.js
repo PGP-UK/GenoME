@@ -10,6 +10,7 @@ import { useAssets } from 'expo-asset';
 
 import AppNavigator from './src/components/AppNavigator';
 import { DataProvider } from './src/Context/DataContext';
+import './src/components/fontawesome'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -65,13 +66,6 @@ const importantImages = [
 ];
 
 const allImages = [
-  require('./assets/Individual/Landing/variant-light.png'),
-  require('./assets/Individual/Landing/ancestry-icon.png'),
-  require('./assets/Individual/Landing/eyes-icon.png'),
-  require('./assets/Individual/Landing/health-icon.png'),
-  require('./assets/Individual/Landing/age-icon.png'),
-  require('./assets/Individual/Landing/smoking-icon.png'),
-
   require('./assets/Individual/Landing/IntroVideos/stephan.mp4'),
   require('./assets/Individual/Landing/IntroVideos/colin.mp4'),
   require('./assets/Individual/Landing/IntroVideos/laura.mp4'),

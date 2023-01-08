@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Icon } from '@ui-kitten/components';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { Section, Block } from 'react-native-responsive-layout';
 import { withSizeInfo } from 'react-native-responsive-layout/wrappers';
 import { useNavigation } from '@react-navigation/native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faHouseChimney } from '@fortawesome/sharp-solid-svg-icons/faHouseChimney'
 
 import AmbassadorSwitch from '../../../components/AmbassadorSwitch';
 
@@ -18,12 +19,9 @@ const BackButton = withSizeInfo(({ sizeSelector }) => {
     <Section>
       <Block>
         <View style={btnStyles}>
-          <Icon
-            style={styles.icon}
-            fill="#fff"
-            name="home"
-            onPress={() => navigation.goBack()}
-          />
+          <Pressable onPress={() => navigation.goBack()} >
+            <FontAwesomeIcon icon={faHouseChimney} size={30} color="white" />
+          </Pressable>
           <AmbassadorSwitch popOverStyles={{ left: 0 }} switcherIconColor="#fff" switcherIconStyles={{ left: 19 }} />
         </View>
       </Block>

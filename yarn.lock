@@ -2021,6 +2021,90 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.2.1"
+  checksum: 1a6e202beac46bc7e7bf791b37b6164b15453cc70b078456121c77d516a1077a1cfdab8aa9c77358c71f87f54560c0d9cbfb440cfb871f6d0f1f4671aabf9a0a
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.2.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: 16caf6052b77c03826274325d4bd76d11cba486411c3101a635d3342dd764df8f5b4789456c9caa1667c232853a670f91dddf0449218e5fea7a27f4396b838af
+  languageName: node
+  linkType: hard
+
+"@fortawesome/pro-duotone-svg-icons@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/pro-duotone-svg-icons@npm:6.2.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-duotone-svg-icons%2F-%2F6.2.1%2Fpro-duotone-svg-icons-6.2.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: ef75abb50b5890c8514dcc68b3250be3e2ebbefea13a634b2ca6c20161bc74d08df2d53d4c3807bc612e3a344e850cb74104efc4dd9330371ab108dee8e0bfd9
+  languageName: node
+  linkType: hard
+
+"@fortawesome/pro-light-svg-icons@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/pro-light-svg-icons@npm:6.2.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-light-svg-icons%2F-%2F6.2.1%2Fpro-light-svg-icons-6.2.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: 6625b0b06f7c8f8cdde4df9a838c5f92283ef662cba26791393997e3fc5851593548870e0e47094596467254873c5bdd82f4698321c7d6d3bf2c6892dbda7e5b
+  languageName: node
+  linkType: hard
+
+"@fortawesome/pro-regular-svg-icons@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/pro-regular-svg-icons@npm:6.2.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-regular-svg-icons%2F-%2F6.2.1%2Fpro-regular-svg-icons-6.2.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: c6de852a11af5d52850124ee72eac670b052806972c51273f3526149e9f65c30d2bc197cc6bfb0b1114e7484b8c0f4db315f48a90b445fd0011d50cd97d8f17d
+  languageName: node
+  linkType: hard
+
+"@fortawesome/pro-solid-svg-icons@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/pro-solid-svg-icons@npm:6.2.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-solid-svg-icons%2F-%2F6.2.1%2Fpro-solid-svg-icons-6.2.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: 06142dd6e6b800c7f7b8ec8f54dd6c3fa7d6b6aa0064c3d343f13cea32f0c924d3bc9c2a847f40ba052d5bf5a9e1f01180b189f5816bfd653aee9040aae9fb39
+  languageName: node
+  linkType: hard
+
+"@fortawesome/pro-thin-svg-icons@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/pro-thin-svg-icons@npm:6.2.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-thin-svg-icons%2F-%2F6.2.1%2Fpro-thin-svg-icons-6.2.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: 207ec4ab070e6522e51f0ec5afffd149973f6b24ff6226df84d19710c86ba0e382c4e4bc74af8f3181eacf60ff09d74c81a5a124d7b6620c11457bb5c6b629f2
+  languageName: node
+  linkType: hard
+
+"@fortawesome/react-native-fontawesome@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@fortawesome/react-native-fontawesome@npm:0.3.0"
+  dependencies:
+    humps: ^2.0.1
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@fortawesome/fontawesome-svg-core": ~1 || ~6
+    react-native: ">= 0.67"
+    react-native-svg: ">= 11.x"
+  checksum: 16414021674a6cbcc0f6fcec2e67485b9d06da8e5a4be1b349a315e8868e9d3892934eb46e037232a44dc9213bf914453294e88c1b3e3fde068d7c9cf2427774
+  languageName: node
+  linkType: hard
+
+"@fortawesome/sharp-solid-svg-icons@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/sharp-solid-svg-icons@npm:6.2.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fsharp-solid-svg-icons%2F-%2F6.2.1%2Fsharp-solid-svg-icons-6.2.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.1
+  checksum: f02aba2b4168c277867b36cce09b33761b05e349417a6132d73168302560aebd489d24bea2243230bf1bc596e5553615ff9832a7b34a2973213508969dba290b
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1, @gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -5585,6 +5669,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"humps@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "humps@npm:2.0.1"
+  checksum: 7d5a674cfca2f34c04562f6fd0d129b4c43a5caf85fcc1c9eacf5d0729554c9375db362c4232519b37369c94dd2560d85f96ad4091a8fbf4af4e625ab5214a30
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:0.4.24":
   version: 0.4.24
   resolution: "iconv-lite@npm:0.4.24"
@@ -7853,6 +7944,14 @@ __metadata:
     "@cuvent/react-native-fast-image": ^8.6.1
     "@eva-design/eva": ^2.1.1
     "@expo/ngrok": ^4.1.0
+    "@fortawesome/fontawesome-svg-core": ^6.2.1
+    "@fortawesome/pro-duotone-svg-icons": ^6.2.1
+    "@fortawesome/pro-light-svg-icons": ^6.2.1
+    "@fortawesome/pro-regular-svg-icons": ^6.2.1
+    "@fortawesome/pro-solid-svg-icons": ^6.2.1
+    "@fortawesome/pro-thin-svg-icons": ^6.2.1
+    "@fortawesome/react-native-fontawesome": ^0.3.0
+    "@fortawesome/sharp-solid-svg-icons": ^6.2.1
     "@react-navigation/native": ^6.1.1
     "@react-navigation/stack": ^6.3.10
     "@ui-kitten/components": ^5.1.2
@@ -7871,7 +7970,7 @@ __metadata:
     react-native-responsive-layout: ^1.2.0
     react-native-safe-area-context: 4.4.1
     react-native-screens: ~3.18.0
-    react-native-svg: 13.4.0
+    react-native-svg: ^13.6.0
   languageName: unknown
   linkType: soft
 
@@ -8285,16 +8384,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:13.4.0":
-  version: 13.4.0
-  resolution: "react-native-svg@npm:13.4.0"
+"react-native-svg@npm:^13.6.0":
+  version: 13.6.0
+  resolution: "react-native-svg@npm:13.6.0"
   dependencies:
     css-select: ^5.1.0
     css-tree: ^1.1.3
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: e630c057d6a0947c4d729538f643585a1fd9380975c1cf9adffad7647822b35219a9e1e60407f422b2b70592ed7f7e8766fab15df74f9cfce0b1c8a1c3544676
+  checksum: 6d9b43d12c885982e69fe81d0bccc9b417d977782d4f66ef6964eb33d87ebc79c0a7b7b2dcae60be2857a9ce9178efe35e28de1bc9da92a69bc736177d507770
   languageName: node
   linkType: hard
 

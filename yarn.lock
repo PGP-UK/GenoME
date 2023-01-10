@@ -4550,6 +4550,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"escape-string-regexp@npm:2.0.0":
+  version: 2.0.0
+  resolution: "escape-string-regexp@npm:2.0.0"
+  checksum: 9f8a2d5743677c16e85c810e3024d54f0c8dea6424fad3c79ef6666e81dd0846f7437f5e729dfcdac8981bc9e5294c39b4580814d114076b8d36318f46ae4395
+  languageName: node
+  linkType: hard
+
 "escape-string-regexp@npm:^1.0.5":
   version: 1.0.5
   resolution: "escape-string-regexp@npm:1.0.5"
@@ -5789,7 +5796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"invariant@npm:^2.2.2, invariant@npm:^2.2.4":
+"invariant@npm:2.2.4, invariant@npm:^2.2.2, invariant@npm:^2.2.4":
   version: 2.2.4
   resolution: "invariant@npm:2.2.4"
   dependencies:
@@ -7971,6 +7978,8 @@ __metadata:
     react-native-safe-area-context: 4.4.1
     react-native-screens: ~3.18.0
     react-native-svg: 13.4.0
+    react-native-vimeo-iframe: ^1.2.1
+    react-native-webview: 11.23.1
   languageName: unknown
   linkType: soft
 
@@ -8394,6 +8403,30 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: e630c057d6a0947c4d729538f643585a1fd9380975c1cf9adffad7647822b35219a9e1e60407f422b2b70592ed7f7e8766fab15df74f9cfce0b1c8a1c3544676
+  languageName: node
+  linkType: hard
+
+"react-native-vimeo-iframe@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "react-native-vimeo-iframe@npm:1.2.1"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-webview: "*"
+  checksum: 25c67bb56ddb0d754eded9836874d5392ba5af97a784a4ab06290024731619dc10d7a38897fef3b5a20e274d01e98b89ae4032c3dd59f13fd526ffc08f2d5bf9
+  languageName: node
+  linkType: hard
+
+"react-native-webview@npm:11.23.1":
+  version: 11.23.1
+  resolution: "react-native-webview@npm:11.23.1"
+  dependencies:
+    escape-string-regexp: 2.0.0
+    invariant: 2.2.4
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 58367276b4457a12c0ecb24084c237048a31a8b4d49f53615634052c2dfcb318824e9239909b6bfb80cc8abacab658d278f480f7ff96267d10d5ff84a8ff1373
   languageName: node
   linkType: hard
 

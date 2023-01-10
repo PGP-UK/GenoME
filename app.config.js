@@ -35,6 +35,7 @@ export default {
     web: {
       favicon: './assets/favicon.png',
     },
+    jsEngine: "hermes",
     extra: {
       eas: {
         projectId: IS_DEVELOPMENT

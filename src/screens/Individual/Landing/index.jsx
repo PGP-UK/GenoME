@@ -39,24 +39,29 @@ const Landing = (props) => {
   );
 };
 
-const LandingIcon = ({ IconData, name, navigation }) => (
-  <Block
-    xsSize="50%"
-    smSize="33%"
-    mdSize="16.6%"
-    style={styles.landingIconWrapper}>
-    <Pressable
-      onPress={() =>
-        navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
-      }
-      style={styles.box}>
-      <Iconimage {...IconData} />
-      <Text category="h4" style={styles.iconText}>
-        {IconData.pageName}
-      </Text>
-    </Pressable>
-  </Block>
-);
+const LandingIcon = withSizeInfo(({ sizeSelector, IconData, name, navigation }) => {
+  const iconTextSize = sizeSelector({ xs: 20, sm: 20, md: 20, lg: 25 });
+  return(
+    <Block
+      xsSize="50%"
+      smSize="33%"
+      mdSize="16.6%"
+      style={styles.landingIconWrapper}>
+      <Pressable
+        onPress={() =>
+          navigation.navigate(IconData.pageName, { name: name.toLowerCase() })
+        }
+        style={styles.box}>
+        <Iconimage {...IconData} />
+        <Text 
+          category="h4" 
+          style= {{paddingTop: 7, textAlign: 'center', color: 'white', fontSize: iconTextSize}}>
+          {IconData.pageName}
+        </Text>
+      </Pressable>
+    </Block>
+  )
+});
 
 const Iconimage = withSizeInfo(({ sizeSelector, ...props }) => {
   const { icon, transform } = props
@@ -91,12 +96,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     marginBottom: 10,
-  },
-  iconText: {
-    paddingTop: 7,
-    textAlign: 'center',
-    color: 'white',
-    fontSize: 25,
   },
   iconsWrapper: {
     justifyContent: 'center',

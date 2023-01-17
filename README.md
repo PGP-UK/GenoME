@@ -45,7 +45,7 @@ eas build --platform ios --profile simulator --local
 3. Start the development server
 
 ```bash
-yarn run start --ios --dev-client
+APP_VARIANT=simulator yarn run start --ios --dev-client
 ```
 
 ## Development on a physical Device.
@@ -68,7 +68,7 @@ eas build --platform android --profile development
 4. Start the development client
 
 ```bash
-yarn run start --tunnel --dev-client
+APP_VARIANT=development yarn run start --tunnel --dev-client
 ```
 
 ## Building a preview version of the app

@@ -53,9 +53,9 @@ const LandingIcon = withSizeInfo(({ sizeSelector, IconData, name, navigation }) 
         }
         style={styles.box}>
         <Iconimage {...IconData} />
-        <Text 
-          category="h4" 
-          style= {{paddingTop: 7, textAlign: 'center', color: 'white', fontSize: iconTextSize}}>
+        <Text
+          category="h4"
+          style= {[{fontSize: iconTextSize}, styles.iconText]}>
           {IconData.pageName}
         </Text>
       </Pressable>
@@ -96,6 +96,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     marginBottom: 10,
+  },
+  iconText: {
+    paddingTop: 7,
+    textAlign: 'center',
+    color: 'white',
   },
   iconsWrapper: {
     justifyContent: 'center',

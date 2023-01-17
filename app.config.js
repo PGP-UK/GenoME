@@ -20,8 +20,8 @@ export default {
     ios: {
       supportsTablet: true,
       bundleIdentifier: IS_DEVELOPMENT
-        ? 'dev.uk.org.personalgenomes.genome'
-        : 'uk.org.personalgenomes.genome'
+        ? 'dev.co.uk.UCL.Genome'
+        : 'co.uk.UCL.Genome'
     },
     android: {
       adaptiveIcon: {
@@ -29,8 +29,8 @@ export default {
         backgroundColor: '#FFFFFF',
       },
       package: IS_DEVELOPMENT
-        ? 'dev.uk.org.personalgenomes.genome'
-        : 'uk.org.personalgenomes.genome',
+        ? 'dev.co.uk.UCL.Genome'
+        : 'co.uk.UCL.Genome',
     },
     web: {
       favicon: './assets/favicon.png',

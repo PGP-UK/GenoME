@@ -4,7 +4,7 @@ export default {
   expo: {
     name: IS_DEVELOPMENT ? 'GenoME Client' : 'GenoME',
     slug: IS_DEVELOPMENT ? 'PGP-UK-GenoME-dev' : 'PGP-UK-GenoME',
-    version: '1.0.0',
+    version: '3.0.0',
     orientation: 'default',
     icon: './assets/icon.png',
     userInterfaceStyle: 'light',

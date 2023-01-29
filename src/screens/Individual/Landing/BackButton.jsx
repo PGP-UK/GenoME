@@ -22,7 +22,7 @@ const BackButton = withSizeInfo(({ sizeSelector }) => {
           <Pressable onPress={() => navigation.goBack()} >
             <FontAwesomeIcon icon={faHouseChimney} size={30} color="white" />
           </Pressable>
-          <AmbassadorSwitch popOverStyles={{ left: 0 }} switcherIconColor="#fff" switcherIconStyles={{ left: 19 }} />
+          <AmbassadorSwitch switcherIconColor="#fff" />
         </View>
       </Block>
     </Section>

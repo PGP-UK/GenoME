@@ -10,7 +10,7 @@ import FastImage from '@cuvent/react-native-fast-image';
 
 import DataContext from '../Context/DataContext';
 
-const AmbassadorSwitch = ({popOverStyles, switcherIconStyles = {}, switcherIconColor = "#000"}) => {
+const AmbassadorSwitch = ({switcherIconColor = "#000"}) => {
   const [visible, setVisible] = useState(false);
 
   const navigation = useNavigation();
@@ -25,11 +25,10 @@ const AmbassadorSwitch = ({popOverStyles, switcherIconStyles = {}, switcherIconC
   const selectedAmbassador = allAmbassadors[currentIdx];
 
   const renderCurrentProfile = () => (
-    <Pressable onPress={() => setVisible(true)} s>
+    <Pressable onPress={() => setVisible(true)} style={styles.selectedImageWrapper}>
       <ProfilePic
         source={selectedAmbassador.image}
         style={styles.selectedImage}
-        switcherIconStyles={[styles.switcherIcon, switcherIconStyles]}
         themeColor={themeColors[selectedAmbassador.name]}
         showSwitcherIcon
         switcherIconColor={switcherIconColor}
@@ -58,29 +57,28 @@ const AmbassadorSwitch = ({popOverStyles, switcherIconStyles = {}, switcherIconC
       placement="bottom end"
       visible={visible}
       anchor={renderCurrentProfile}
-      onBackdropPress={() => setVisible(false)}>
-      <View style={[styles.popover, popOverStyles]}>
-        <View style={styles.content}>
-          {allAmbassadors
-            .filter((_, i) => i !== currentIdx)
-            .map((e) => (
-              <Pressable
-                key={e.name}
-                onPress={() => onProfileClick(e.name)}
-                style={{ margin: 5 }}>
-                <ProfilePic
-                  source={e.image_png}
-                  themeColor={themeColors[e.name]}
-                />
-              </Pressable>
-            ))}
-        </View>
+      onBackdropPress={() => setVisible(false)}
+      style={styles.popover}>
+      <View style={styles.content}>
+        {allAmbassadors
+          .filter((_, i) => i !== currentIdx)
+          .map((e) => (
+            <Pressable
+              key={e.name}
+              onPress={() => onProfileClick(e.name)}
+              style={{ margin: 5 }}>
+              <ProfilePic
+                source={e.image_png}
+                themeColor={themeColors[e.name]}
+              />
+            </Pressable>
+          ))}
       </View>
     </Popover>
   );
 };
 
-const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false, switcherIconStyles, switcherIconColor }) => (
+const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false, switcherIconColor }) => (
   <View style={{flexDirection: 'column'}}>
     <FastImage
       source={source}
@@ -91,7 +89,7 @@ const ProfilePic = ({ source, style = {}, themeColor, showSwitcherIcon = false, 
       ]}
       resizeMode={FastImage.resizeMode.contain}
     />
-    {showSwitcherIcon && <Icon style={switcherIconStyles} fill={switcherIconColor} name='arrow-ios-downward-outline'/>}
+    {showSwitcherIcon && <Icon style={styles.switcherIcon} fill={switcherIconColor} name='arrow-ios-downward-outline'/>}
   </View>
 );
 
@@ -100,28 +98,35 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 30,
-    alignSelf: 'flex-end',
-    justifySelf: 'flex-end',
+    alignSelf: 'center',
+    justifySelf: 'center',
   },
   switcherIcon: {
-    top: -15,
-    left: 45,
-    position: 'absolute',
+    alignSelf: 'center',
+    justifySelf: 'center',
     width: 20,
-    height: 56
+    height: 20,
+    marginTop: 5
   },
   selectedImage: {
     marginTop: -10,
     marginBottom: -10,
+  },
+  selectedImageWrapper: {
+    flexDirection: 'row-reverse',
+    justifySelf: 'flex-end',
+    alignSelf: 'flex-end',
+    width: 60
   },
   content: {
     flexDirection: 'column',
     alignItems: 'center',
   },
   popover: {
-    position: 'absolute',
-    left: 12,
-    top: 12,
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+    alignSelf: 'center',
+    justifySelf: 'center'
   },
   backdrop: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',

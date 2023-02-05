@@ -11,7 +11,7 @@ import Ambassadors from './Ambassadors';
 
 const Home = () => {
   const { setModalId } = useContext(DataContext);
-
+  const GenoMeSong = require('../../../assets/Music/GenoME.mp3');
   return (
     <>
       <PageLayout>
@@ -47,7 +47,6 @@ const Home = () => {
         <PageText style={styles.main_text}>
           GenoME' was performed by The Benyounes Quartet and composed by Deirdre Gribbin
         </PageText>
-
       </PageLayout>
     </>
   );

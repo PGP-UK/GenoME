@@ -40,6 +40,14 @@ const Home = () => {
         </PageText>
 
         <Ambassadors />
+
+        <PageText style={styles.footer_text}>
+          Tap here to listen to 'GenoME' our ambassador's genetic code for their eye colour
+        </PageText>
+        <PageText style={styles.main_text}>
+          GenoME' was performed by The Benyounes Quartet and composed by Deirdre Gribbin
+        </PageText>
+
       </PageLayout>
     </>
   );
@@ -50,6 +58,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   pop_up_links: {
+    color: '#63BEE1',
+    paddingTop: 5,
+  },
+  footer_text: {
     color: '#63BEE1',
     paddingTop: 5,
   },

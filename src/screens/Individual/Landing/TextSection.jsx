@@ -46,7 +46,7 @@ const TextSection = () => {
           Tap{' '}
           <PgpText
             category="p1"
-            sizeSelectorStyles={subheaderStyles}
+            sizeSelectorStyles={mainTextStyles}
             style={styles.hereClickableText}>
             here
           </PgpText>{' '}
@@ -54,7 +54,7 @@ const TextSection = () => {
           is.
         </PgpText>
         <MyStoryButton setModalId={setModalId} />
-        <PgpText category="p1" sizeSelectorStyles={mainTextStyles}>
+        <PgpText category="h1" sizeSelectorStyles={mainTextStyles}>
           Tap below to explore a few of my variants which we do know about.
         </PgpText>
       </Block>

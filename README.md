@@ -14,33 +14,30 @@ Next, login into the EAS Account.
 eas login
 ```
 
-## Working with a iOS Simulator
+## Working with an iOS Simulator
 
 ### Setup
 
 ```bash
-brew install asdf cocoapods fastlane ngrok
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+brew install cocoapods fastlane ngrok
 
-asdf install nodejs 19.2.0
-asdf install ruby 3.1.2
+# Install RTX runtime manager - https://github.com/jdxcode/rtx#installation
+curl https://rtx.jdxcode.com/install.sh | sh
 
-asdf global nodejs 19.2.0
-asdf global ruby 3.1.2
+rtx install
 
 npm install -g eas-cli
 ```
 
 ### Run
 
-1. First create the development client locally
+1. First, create the development client locally
 
 ```bash
 eas build --platform ios --profile simulator --local
 ```
 
-2. This will generate an `.tar.gz` file containing an `.app` file. Drag and drop this into the Simulator
+2. This will generate a `.tar.gz` file containing a `.app` file. Drag and drop this into the Simulator
 
 3. Start the development server
 
@@ -50,13 +47,13 @@ APP_VARIANT=simulator yarn run start --ios --dev-client
 
 ## Development on a physical Device.
 
-1. If using an IOS Device, for first time, you will need to add this to the development profile
+1. If using an IOS Device, for the first time, you will need to add this to the development profile
 
 ```bash
 eas device:create
 ```
 
-2. Next Generate a development client using the online EAS service.
+2. Next, Generate a development client using the online EAS service.
 
 ```bash
 eas build --platform ios --profile development

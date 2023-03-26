@@ -25,6 +25,8 @@
     "@shopify/react-native-skia": "^0.1.176",
     "@ui-kitten/components": "^5.1.2",
     "@ui-kitten/eva-icons": "^5.1.2",
+    "@wuba/react-native-echarts": "^1.0.0",
+    "echarts": "^5.4.2",
     "expo": "^48.0.0",
     "expo-asset": "~8.9.0",
     "expo-av": "~13.2.1",

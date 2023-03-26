@@ -3125,6 +3125,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wuba/react-native-echarts@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@wuba/react-native-echarts@npm:1.0.0"
+  dependencies:
+    "@xmldom/xmldom": ^0.8.6
+    entities: ^4.4.0
+  peerDependencies:
+    "@shopify/react-native-skia": "*"
+    echarts: "*"
+    react: "*"
+    react-native: "*"
+    react-native-svg: "*"
+    zrender: "*"
+  checksum: 7a27962debe2877a2072c7aed83445eee5f552826a717ac1f9098dad93a67de6cfb8780bc6d3d5e3af7e0c88c0bd91de36ade407464ee625a438971c6fe0cf79
+  languageName: node
+  linkType: hard
+
+"@xmldom/xmldom@npm:^0.8.6":
+  version: 0.8.6
+  resolution: "@xmldom/xmldom@npm:0.8.6"
+  checksum: f17ac6d99a971a6aeb831fcfc5cfa86f367664e45815046548814b2deb17ccc421fef4e0d5ba29e66179d112b552f6caa5680064f8e7bd8a389b788a60404c8e
+  languageName: node
+  linkType: hard
+
 "@xmldom/xmldom@npm:~0.7.7":
   version: 0.7.9
   resolution: "@xmldom/xmldom@npm:0.7.9"
@@ -4728,6 +4752,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"echarts@npm:^5.4.2":
+  version: 5.4.2
+  resolution: "echarts@npm:5.4.2"
+  dependencies:
+    tslib: 2.3.0
+    zrender: 5.4.3
+  checksum: 933c28dada362314f7c7a5fd4243b44b24f75adb233f7c87541ac9a81734cb380a9683c3f56c8e559dacfddd363879e95a96f0047e33820123cd8f5b95b60f8f
+  languageName: node
+  linkType: hard
+
 "ee-first@npm:1.1.1":
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
@@ -4774,7 +4808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^4.2.0":
+"entities@npm:^4.2.0, entities@npm:^4.4.0":
   version: 4.4.0
   resolution: "entities@npm:4.4.0"
   checksum: 84d250329f4b56b40fa93ed067b194db21e8815e4eb9b59f43a086f0ecd342814f6bc483de8a77da5d64e0f626033192b1b4f1792232a7ea6b970ebe0f3187c2
@@ -8400,6 +8434,8 @@ __metadata:
     "@shopify/react-native-skia": ^0.1.176
     "@ui-kitten/components": ^5.1.2
     "@ui-kitten/eva-icons": ^5.1.2
+    "@wuba/react-native-echarts": ^1.0.0
+    echarts: ^5.4.2
     expo: ^48.0.0
     expo-asset: ~8.9.0
     expo-av: ~13.2.1
@@ -10239,6 +10275,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.3.0":
+  version: 2.3.0
+  resolution: "tslib@npm:2.3.0"
+  checksum: 8869694c26e4a7b56d449662fd54a4f9ba872c889d991202c74462bd99f10e61d5bd63199566c4284c0f742277736292a969642cc7b590f98727a7cae9529122
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^2.0.1, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
@@ -10913,5 +10956,14 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"zrender@npm:5.4.3":
+  version: 5.4.3
+  resolution: "zrender@npm:5.4.3"
+  dependencies:
+    tslib: 2.3.0
+  checksum: ae89584fbe4256217e500a74183fd5870a2bed7e7b3234cd78fcbc0a1a82da8449596b2019105927069531b567ecf94425fb171abd6cedcbf517e52fdf438722
   languageName: node
   linkType: hard
